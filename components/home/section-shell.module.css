@@ -1,5 +1,6 @@
 .section {
-  padding: 72px 0;
+  padding: 64px 0;
+  border-top: 1px solid var(--color-hairline);
 }
 
 .inner {
@@ -14,24 +15,26 @@
 
 .eyebrow {
   display: inline-flex;
-  margin-bottom: 18px;
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
+  margin-bottom: 20px;
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .title {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 4.25rem);
-  line-height: 1.02;
-  letter-spacing: 0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1;
+  letter-spacing: -1.2px;
 }
 
 .description {
-  margin: 18px 0 0;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--color-text-muted);
+  margin: 20px 0 0;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-body);
   max-width: 60ch;
 }

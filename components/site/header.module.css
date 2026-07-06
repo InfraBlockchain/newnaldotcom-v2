@@ -2,15 +2,15 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  backdrop-filter: blur(18px);
-  background: rgba(3, 6, 16, 0.72);
-  border-bottom: 1px solid rgba(155, 180, 255, 0.1);
+  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.9);
+  border-bottom: 1px solid var(--color-hairline);
 }
 
 .inner {
   width: min(var(--max-width), calc(100% - 32px));
   margin: 0 auto;
-  min-height: 76px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,9 +18,9 @@
 }
 
 .brand {
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.24em;
-  font-weight: 700;
+  text-transform: uppercase;
   color: var(--color-text);
 }
 
@@ -33,32 +33,29 @@
 }
 
 .navLink {
-  padding: 10px 14px;
-  border-radius: 999px;
-  color: var(--color-text-muted);
-  transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease;
-  border: 1px solid transparent;
+  min-height: 36px;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  border: 1px solid var(--color-button-border);
+  font-size: 0.875rem;
+  transition: border-color 180ms ease;
 }
 
 .navLink:hover {
-  color: var(--color-text);
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(155, 180, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 720px) {
   .inner {
-    min-height: auto;
     padding: 16px 0;
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav {
     width: 100%;
     justify-content: flex-start;
+    overflow-x: auto;
   }
 }

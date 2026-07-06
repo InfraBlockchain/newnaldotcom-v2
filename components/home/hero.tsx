@@ -23,12 +23,26 @@ export function Hero({ content }: HeroProps) {
           </div>
         </div>
         <div className={styles.visualPanel}>
-          <div className={styles.orbit} />
-          <div className={styles.deviceFrame}>
-            <div className={styles.deviceCore}>
-              <span className={styles.deviceLabel}>AI-Native Draft</span>
-              <p className={styles.supportingText}>{content.supportingText}</p>
+          <div className={styles.card}>
+            <span className={styles.cardLabel}>LAB NOTE</span>
+            <p className={styles.supportingText}>{content.supportingText}</p>
+            <div className={styles.signalList}>
+              <div className={styles.signalItem}>
+                <span className={styles.signalDotSunset} />
+                <span className={styles.signalText}>Placeholder Product Surface</span>
+              </div>
+              <div className={styles.signalItem}>
+                <span className={styles.signalDotDusk} />
+                <span className={styles.signalText}>Placeholder System Layer</span>
+              </div>
+              <div className={styles.signalItem}>
+                <span className={styles.signalDotBreeze} />
+                <span className={styles.signalText}>Placeholder Interaction Model</span>
+              </div>
             </div>
+            <a href="#system" className={styles.cardAction}>
+              Read Draft
+            </a>
           </div>
         </div>
       </div>
