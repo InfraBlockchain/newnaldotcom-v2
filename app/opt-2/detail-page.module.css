@@ -76,16 +76,25 @@
   z-index: 20;
 }
 
-.tabs a {
+.tab {
+  background: transparent;
   border: 1px solid rgba(21, 24, 22, 0.16);
   color: rgba(21, 24, 22, 0.72);
+  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   padding: 9px 14px;
 }
 
-.tabs a:hover {
+.tab:hover {
+  border-color: #407966;
+  color: #151816;
+}
+
+.tabActive,
+.tabActive:hover {
+  background: rgba(64, 121, 102, 0.1);
   border-color: #407966;
   color: #151816;
 }

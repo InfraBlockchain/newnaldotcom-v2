@@ -334,22 +334,12 @@
   .steps,
   .metrics,
   .pricing {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
   }
 }
 
 @media (min-width: 980px) {
   .section {
     padding: 132px 40px;
-  }
-
-  .grid,
-  .steps,
-  .metrics {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .pricing {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ContentSection } from "@/components/sections/content-section";
 import { CrossNavigation } from "@/components/sections/cross-navigation";
+import { DeviceTabs } from "@/components/sections/device-tabs";
 import { devicesContent } from "@/content/devices";
 import styles from "../detail-page.module.css";
 
@@ -23,41 +23,13 @@ export default function DevicesPage() {
           <p>{devicesContent.description}</p>
         </div>
       </header>
-      <nav className={styles.tabs} aria-label="Device sections">
-        <a href="#yali">YALI</a>
-        <a href="#illi">ILLI</a>
-        <a href="#ufo">UFO</a>
-      </nav>
-      <div className={styles.deviceGroup} id="yali">
-        {yaliSections.map((section, index) => (
-          <ContentSection
-            key={section.id}
-            priorityFigure={index === 0}
-            section={section}
-            tone={index % 2 === 0 ? "muted" : "light"}
-          />
-        ))}
-      </div>
-      <div className={styles.deviceGroup} id="illi">
-        {illiSections.map((section, index) => (
-          <ContentSection
-            key={section.id}
-            priorityFigure={index === 0}
-            section={section}
-            tone={index % 2 === 0 ? "light" : "muted"}
-          />
-        ))}
-      </div>
-      <div className={styles.deviceGroup} id="ufo">
-        {ufoSections.map((section, index) => (
-          <ContentSection
-            key={section.id}
-            priorityFigure={index === 0}
-            section={section}
-            tone={index % 2 === 0 ? "muted" : "light"}
-          />
-        ))}
-      </div>
+      <DeviceTabs
+        tabs={[
+          { id: "yali", label: "YALI", sections: yaliSections, toneOrder: ["muted", "light"] },
+          { id: "illi", label: "ILLI", sections: illiSections, toneOrder: ["light", "muted"] },
+          { id: "ufo", label: "UFO", sections: ufoSections, toneOrder: ["muted", "light"] },
+        ]}
+      />
       <CrossNavigation />
     </main>
   );

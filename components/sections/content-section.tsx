@@ -1,10 +1,16 @@
 import { Fragment } from "react";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { SectionContent } from "@/content/aios";
 import { FigurePlaceholder } from "./figure-placeholder";
 import styles from "./content-section.module.css";
 
 type Tone = "light" | "dark" | "muted";
+
+/** Prefer an even split; only use 3 columns when the count divides evenly by 3. */
+function gridColumns(count: number) {
+  return count % 3 === 0 && count >= 3 ? 3 : 2;
+}
 
 type ContentSectionProps = {
   section: SectionContent;
@@ -84,7 +90,10 @@ function FeatureGrid({
   tone: Tone;
 }) {
   return (
-    <div className={`${styles.grid} ${styles[tone]}`}>
+    <div
+      className={`${styles.grid} ${styles[tone]}`}
+      style={{ "--cols": gridColumns(features.length) } as CSSProperties}
+    >
       {features.map((feature) => (
         <article className={styles.card} key={feature.title}>
           <h3>{feature.title}</h3>
@@ -103,7 +112,10 @@ function StepFlow({
   tone: Tone;
 }) {
   return (
-    <div className={`${styles.steps} ${styles[tone]}`}>
+    <div
+      className={`${styles.steps} ${styles[tone]}`}
+      style={{ "--cols": gridColumns(steps.length) } as CSSProperties}
+    >
       {steps.map((step) => (
         <article className={styles.step} key={step.label}>
           <span>{step.label}</span>
@@ -141,7 +153,10 @@ function MetricGrid({
   tone: Tone;
 }) {
   return (
-    <div className={`${styles.metrics} ${styles[tone]}`}>
+    <div
+      className={`${styles.metrics} ${styles[tone]}`}
+      style={{ "--cols": gridColumns(metrics.length) } as CSSProperties}
+    >
       {metrics.map((metric) => (
         <div className={styles.metric} key={metric.label}>
           <strong>{metric.value}</strong>
@@ -160,7 +175,10 @@ function PricingGrid({
   tone: Tone;
 }) {
   return (
-    <div className={`${styles.pricing} ${styles[tone]}`}>
+    <div
+      className={`${styles.pricing} ${styles[tone]}`}
+      style={{ "--cols": gridColumns(pricing.length) } as CSSProperties}
+    >
       {pricing.map((item) => (
         <div className={styles.price} key={`${item.price}-${item.label}`}>
           <strong>{item.price}</strong>
