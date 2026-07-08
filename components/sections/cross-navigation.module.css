@@ -1,0 +1,57 @@
+.section {
+  background: #f6f7f5;
+  padding: 42px 20px 84px;
+}
+
+.inner {
+  display: grid;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(21, 24, 22, 0.12);
+  border-radius: var(--radius-sm);
+  display: grid;
+  overflow: hidden;
+}
+
+.cardCopy {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.card h2,
+.card p {
+  margin: 0;
+}
+
+.card h2 {
+  font-family: var(--type-display-md-family);
+  font-size: var(--type-display-md-size);
+  font-weight: var(--type-display-md-weight);
+  letter-spacing: var(--type-display-md-tracking);
+  line-height: var(--type-display-md-line);
+}
+
+.card p {
+  color: rgba(21, 24, 22, 0.68);
+  line-height: 1.55;
+}
+
+.card a {
+  color: #407966;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 760px) {
+  .inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

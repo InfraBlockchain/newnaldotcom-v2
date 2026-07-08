@@ -33,6 +33,70 @@
   --max-width: 1200px;
   --radius-sm: 8px;
   --radius-pill: 9999px;
+
+  /* opt-1 / opt-2 typography scale */
+  --font-sf-display: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --font-sf-text: "SF Pro Text", system-ui, -apple-system, sans-serif;
+
+  --type-hero-display-family: var(--font-sf-display);
+  --type-hero-display-size: 56px;
+  --type-hero-display-weight: 600;
+  --type-hero-display-line: 1.07;
+  --type-hero-display-tracking: -0.28px;
+
+  --type-display-lg-family: var(--font-sf-display);
+  --type-display-lg-size: 40px;
+  --type-display-lg-weight: 600;
+  --type-display-lg-line: 1.1;
+  --type-display-lg-tracking: 0;
+
+  --type-display-md-family: var(--font-sf-text);
+  --type-display-md-size: 34px;
+  --type-display-md-weight: 600;
+  --type-display-md-line: 1.47;
+  --type-display-md-tracking: -0.374px;
+
+  --type-lead-family: var(--font-sf-display);
+  --type-lead-size: 28px;
+  --type-lead-weight: 400;
+  --type-lead-line: 1.14;
+  --type-lead-tracking: 0.196px;
+
+  --type-lead-airy-family: var(--font-sf-text);
+  --type-lead-airy-size: 24px;
+  --type-lead-airy-weight: 300;
+  --type-lead-airy-line: 1.5;
+  --type-lead-airy-tracking: 0;
+
+  --type-tagline-family: var(--font-sf-display);
+  --type-tagline-size: 21px;
+  --type-tagline-weight: 600;
+  --type-tagline-line: 1.19;
+  --type-tagline-tracking: 0.231px;
+
+  --type-body-family: var(--font-sf-text);
+  --type-body-size: 17px;
+  --type-body-weight: 400;
+  --type-body-line: 1.47;
+  --type-body-tracking: -0.374px;
+
+  --type-caption-family: var(--font-sf-text);
+  --type-caption-size: 14px;
+  --type-caption-weight: 400;
+  --type-caption-line: 1.43;
+  --type-caption-tracking: -0.224px;
+
+  --type-button-utility-family: var(--font-sf-text);
+  --type-button-utility-size: 14px;
+  --type-button-utility-weight: 400;
+  --type-button-utility-line: 1.29;
+  --type-button-utility-tracking: -0.224px;
+
+  --type-nav-link-family: var(--font-sf-text);
+  --type-nav-link-size: 12px;
+  --type-nav-link-weight: 400;
+  --type-nav-link-line: 1;
+  --type-nav-link-tracking: -0.12px;
 }
 
 * {
