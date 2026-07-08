@@ -17,7 +17,7 @@ export const devicesContent = {
       ],
       figure: {
         type: "image",
-        label: "YALI representative hero shot image placeholder",
+        label: "yali-hero",
       },
     },
     {
@@ -29,6 +29,10 @@ export const devicesContent = {
         "The artist speaks. The fan receives. Nothing is personal.",
         "Artists and their AI companions can interact with fans based on fan’s unique data, preferences, and context. This enables personalized, always-on engagement that feels authentic, relevant, and emotionally meaningful.",
       ],
+      figure: {
+        type: "image",
+        label: "yali-device",
+      },
     },
     {
       id: "yali-use-cases",
@@ -39,6 +43,10 @@ export const devicesContent = {
         "Today’s fan platforms only connect you when you open an app or new content is released.",
         "YALI stays with you throughout the day.",
       ],
+      figure: {
+        type: "image",
+        label: "yali-everyday",
+      },
       featureGroups: [
         {
           items: [
@@ -100,7 +108,7 @@ export const devicesContent = {
       ],
       figure: {
         type: "image",
-        label: "ILLI representative hero cut image placeholder",
+        label: "illi-hero",
       },
     },
     {
@@ -130,6 +138,10 @@ export const devicesContent = {
         "Today’s care waits for a request — or a crisis.",
         "ILLI stays present throughout the day.",
       ],
+      figure: {
+        type: "image",
+        label: "illi-workout",
+      },
       featureGroups: [
         {
           items: [

@@ -73,11 +73,12 @@
 
 .ctaBtn {
   align-items: center;
-  background: #00a4ff;
-  border-radius: 4px;
-  color: #000;
+  background: #79d5af;
+  border-radius: var(--radius-sm);
+  color: #0d0f0e;
   display: inline-flex;
   flex: 0 0 auto;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   justify-content: center;
   letter-spacing: 0.06em;
@@ -85,7 +86,9 @@
   min-height: 34px;
   padding: 0 13px;
   text-transform: uppercase;
-  transition: opacity 160ms ease;
+  transition:
+    background 160ms ease,
+    opacity 160ms ease;
 }
 
 .ctaBtn:hover {
