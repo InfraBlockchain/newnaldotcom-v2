@@ -263,6 +263,68 @@ function DiagramThreeCircles(): JSX.Element {
   );
 }
 
+/* ── UFO U3: AIOS → My Data → UFO Connection ── */
+function DiagramAIOStoUFO(): JSX.Element {
+  const nodes = [
+    { label: "AIOS", sub: "AI Operating System", x: 110 },
+    { label: "MY DATA", sub: "Your personal context", x: 310 },
+    { label: "PHONE", sub: "The UFO app", x: 510 },
+    { label: "UFO", sub: "Physical device", x: 710 },
+  ];
+
+  return (
+    <svg
+      viewBox="0 0 820 280"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ width: "100%", height: "100%" }}
+      aria-hidden="true"
+    >
+      {/* Connector lines */}
+      {nodes.slice(0, -1).map((node, i) => (
+        <g key={i}>
+          <line
+            x1={node.x + 52} y1="120"
+            x2={nodes[i + 1].x - 52} y2="120"
+            stroke="rgba(21,24,22,0.18)" strokeWidth="1"
+          />
+          {/* Arrow head */}
+          <polygon
+            points={`${nodes[i + 1].x - 52},115 ${nodes[i + 1].x - 40},120 ${nodes[i + 1].x - 52},125`}
+            fill="rgba(21,24,22,0.25)"
+          />
+        </g>
+      ))}
+
+      {/* Nodes */}
+      {nodes.map((node, i) => (
+        <g key={i}>
+          <circle
+            cx={node.x} cy="120" r="52"
+            fill={i === 3 ? GREEN : "#eff1ef"}
+            stroke={i === 3 ? "none" : "rgba(21,24,22,0.16)"}
+            strokeWidth="1"
+          />
+          <text x={node.x} y="113" textAnchor="middle"
+            style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.1em", fill: i === 3 ? "#fff" : DARK }}>
+            {node.label}
+          </text>
+          <text x={node.x} y="190" textAnchor="middle"
+            style={{ fontFamily: SANS, fontSize: 11, fill: MUTED }}>
+            {node.sub}
+          </text>
+        </g>
+      ))}
+
+      {/* Footer */}
+      <text x="410" y="245" textAnchor="middle"
+        style={{ fontFamily: SANS, fontSize: 11, fill: MUTED }}>
+        With your permission, AIOS personalizes every hunt.
+      </text>
+    </svg>
+  );
+}
+
 export const DIAGRAM_COMPONENTS: Record<string, () => JSX.Element> = {
   "Newnal logo connected to 1 - data utilization and 0 - complete disconnection":
     DiagramDataSovereignty,
@@ -271,4 +333,5 @@ export const DIAGRAM_COMPONENTS: Record<string, () => JSX.Element> = {
     DiagramPhoneNumberModel,
   "Three overlapping circles diagram: Your Life, Your Family, Trusted Services":
     DiagramThreeCircles,
+  "AIOS to My Data to UFO connection diagram": DiagramAIOStoUFO,
 };

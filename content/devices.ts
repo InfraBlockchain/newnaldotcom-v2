@@ -2,8 +2,8 @@ import type { ProductContent } from "./aios";
 
 export const devicesContent = {
   anchorId: "devices",
-  title: "Devices Run By Newnal aios — YALI & ILLI",
-  description: "YALI & ILLI — AI companions built on Newnal aios.",
+  title: "Devices Run By Newnal aios — YALI, ILLI & UFO",
+  description: "YALI, ILLI & UFO — AI companions built on Newnal aios.",
   sections: [
     {
       id: "yali-hero",
@@ -162,6 +162,178 @@ export const devicesContent = {
               description: "Orders your favorites automatically",
             },
           ],
+        },
+      ],
+    },
+    /* ── UFO ── */
+    {
+      id: "ufo-hero",
+      eyebrow: "UFO / U1",
+      title: "The Real World Is the Game",
+      paragraphs: [
+        "Not a fitness tracker.",
+        "Not another game played through a screen.",
+        "Not a loyalty app built around points.",
+        "Newnal UFO is a real-world treasure-hunting game powered by Newnal AIOS.",
+        "Every month, a new Treasure Map transforms cities, trails, parks, and landmarks into playable territory. Runners move through the real world, follow the light from their UFO device, and discover physical Treasure Cards hidden around them.",
+        "The more you move, the more power you build.",
+        "The more people you bring, the greater the treasure becomes.",
+      ],
+      cta: {
+        label: "See How the Hunt Works",
+        href: "#",
+      },
+      figure: {
+        type: "image",
+        label: "UFO device hero shot placeholder",
+      },
+    },
+    {
+      id: "ufo-overview",
+      eyebrow: "UFO / U2",
+      title: "Real-World Treasure Hunting Powered by Newnal AIOS",
+      paragraphs: [
+        "Powered by Newnal AIOS and your personal data, every hunt is different.",
+      ],
+      features: [
+        {
+          title: "Real-World Treasure Hunting",
+          description: "Explore physical locations and discover treasures hidden beyond the screen.",
+        },
+        {
+          title: "AI-Personalized Rewards",
+          description: "Unlock rewards selected around your preferences, routines, and context.",
+        },
+        {
+          title: "Movement-Powered Progress",
+          description: "Running, walking, and exploring charge your Power Gauge.",
+        },
+        {
+          title: "More Power Together",
+          description: "Connect with other Runners to unlock larger shared rewards.",
+        },
+      ],
+    },
+    {
+      id: "ufo-aios",
+      eyebrow: "UFO / U3",
+      title: "Where AI Meets the Physical World",
+      paragraphs: [
+        "With the user's permission, Newnal AIOS learns from their My Data—including interests, routines, movement, preferences, relationships, and everyday context.",
+        "AIOS uses that understanding to shape the experience around the individual:",
+      ],
+      bullets: [
+        "Which rewards are most relevant",
+        "Which treasure categories become available",
+        "How movement contributes to progression",
+        "When individual or team challenges should unlock",
+        "What kind of treasure will feel genuinely valuable",
+      ],
+      figure: {
+        type: "diagram",
+        label: "AIOS to My Data to UFO connection diagram",
+      },
+    },
+    {
+      id: "ufo-objects",
+      eyebrow: "UFO / U4",
+      title: "The Objects That Power the Hunt",
+      paragraphs: [
+        "Two objects work together to guide the hunt.",
+      ],
+      features: [
+        {
+          title: "The UFO Device",
+          description:
+            "A small, circular game device designed to travel wherever the Runner goes. Attach it to a shoe lace, wrist strap, shoulder bag, keyring, or clothing mount. Its 360-degree light ring responds to the distance between the Runner and the hidden treasure—guiding from 100 meters to the final discovery.",
+        },
+        {
+          title: "Treasure Card",
+          description:
+            "Physical cards hidden at real-world locations. Each card contains an embedded IC chip with a unique blockchain-linked identity. The reward is not printed on the card. A Treasure Card remains an UnFound Object until it is discovered and tagged—only then does Newnal AIOS reveal the reward.",
+        },
+      ],
+    },
+    {
+      id: "ufo-hunt",
+      eyebrow: "UFO / U5",
+      title: "Follow the Map. Then Follow the Light.",
+      paragraphs: [
+        "Newnal UFO begins as a mobile game and gradually moves the Runner away from the screen.",
+        "The app guides the first part of the journey. Once the Runner enters the treasure zone, the UFO Device takes over.",
+      ],
+      steps: [
+        {
+          label: "01. Activate",
+          description:
+            "Open the UFO app and connect your UFO Device. When Runner Mode is activated, your monthly Treasure Map opens and available treasure zones appear across the real world.",
+        },
+        {
+          label: "02. Navigate",
+          description:
+            "Select a treasure zone from the map. The app guides you toward the approximate location until you are within 100 meters of the hidden Treasure Card. The exact location remains concealed.",
+        },
+        {
+          label: "03. Look Up",
+          description:
+            "Once in the 100-meter zone, put the phone away and follow the light. The UFO Device's 360-degree light ring shifts: Mystic Blue (100M) → Intense Orange (50M) → Golden Strobe (10M).",
+        },
+        {
+          label: "04. Tag and Reveal",
+          description:
+            "Find the hidden Treasure Card and tag it with your UFO Device at the discovery location. Newnal AIOS verifies the card and instantly opens the reward inside the app.",
+        },
+      ],
+    },
+    {
+      id: "ufo-rewards",
+      eyebrow: "UFO / U6",
+      title: "My Data-Powered Treasure",
+      paragraphs: [
+        "The Same Card. A Different Treasure for Everyone.",
+        "With the user's permission, Newnal AIOS uses My Data to understand what kind of reward will matter to the person who discovers the card.",
+        "The physical Treasure Card may be identical. What it reveals depends on the Runner.",
+      ],
+      features: [
+        {
+          title: "Running habits + active lifestyle",
+          description: "→ Running Shoe Reward",
+        },
+        {
+          title: "Morning routine + coffee preference",
+          description: "→ Coffee Reward",
+        },
+        {
+          title: "Upcoming anniversary + relationship context",
+          description: "→ Dining Experience",
+        },
+      ],
+    },
+    {
+      id: "ufo-power",
+      eyebrow: "UFO / U7",
+      title: "The Power Gauge",
+      paragraphs: [
+        "The Power Gauge transforms physical movement into game progression.",
+        "Walking, running, climbing, and exploring increase your Power. Longer and more active journeys build it faster.",
+        "Power grows faster when people move together. Runners can connect their UFO Devices and form a party with family, friends, partners, or other players they meet in the field.",
+      ],
+      features: [
+        {
+          title: "0–30% — Explorer Tier",
+          description: "Access regular Treasure Maps and everyday rewards.",
+        },
+        {
+          title: "30–70% — Runner Tier",
+          description: "Unlock new locations and higher-value Treasure Cards.",
+        },
+        {
+          title: "70–90% — Rare Tier",
+          description: "Gain access to Hidden Maps and Rare Card missions.",
+        },
+        {
+          title: "90%+ — Legendary Tier",
+          description: "Qualify for Super Final Treasure challenges.",
         },
       ],
     },

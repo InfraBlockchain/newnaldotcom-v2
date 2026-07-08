@@ -15,7 +15,11 @@ export default function OptTwoHubPage() {
       <section className={styles.hero} aria-labelledby="opt-2-title">
         <div className={styles.heroInner}>
           <p className={styles.kicker}>Newnal product architecture</p>
-          <h1 id="opt-2-title">ONE ARCHITECTURE. COMPLETE DATA SOVEREIGNTY</h1>
+          <h1 id="opt-2-title">
+            ONE ARCHITECTURE.
+            <br />
+            COMPLETE DATA SOVEREIGNTY
+          </h1>
           <p>From 100% open to absolute zero.</p>
         </div>
       </section>

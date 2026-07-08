@@ -46,9 +46,9 @@ export const siteContent = {
     },
     {
       title: "Newnal aios Devices",
-      summary: "YALI & ILLI — AI companions built on Newnal aios.",
+      summary: "YALI, ILLI & UFO — AI companions built on Newnal aios.",
       href: "/opt-2/devices",
-      figureLabel: "YALI and ILLI companion device visual placeholder",
+      figureLabel: "YALI, ILLI and UFO companion device visual placeholder",
     },
   ] satisfies HubCard[],
 };

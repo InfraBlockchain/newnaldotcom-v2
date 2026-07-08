@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 
 export default function OptOnePage() {
   const yaliSections = devicesContent.sections.slice(0, 3);
-  const illiSections = devicesContent.sections.slice(3);
+  const illiSections = devicesContent.sections.slice(3, 6);
+  const ufoSections = devicesContent.sections.slice(6);
 
   return (
     <div className={styles.page} id="top">
@@ -31,7 +32,11 @@ export default function OptOnePage() {
         <section className={styles.hero} aria-labelledby="opt-1-title">
           <div className={styles.heroInner}>
             <p className={styles.heroKicker}>Newnal product architecture</p>
-            <h1 id="opt-1-title">ONE ARCHITECTURE. COMPLETE DATA SOVEREIGNTY</h1>
+            <h1 id="opt-1-title">
+              ONE ARCHITECTURE.
+              <br />
+              COMPLETE DATA SOVEREIGNTY
+            </h1>
             <p>From 100% open to absolute zero.</p>
           </div>
         </section>
@@ -96,6 +101,17 @@ export default function OptOnePage() {
                 priorityFigure={index === 0}
                 section={section}
                 tone={index % 2 === 0 ? "light" : "muted"}
+              />
+            ))}
+          </div>
+          <div>
+            <div className={styles.deviceLabel}>UFO</div>
+            {ufoSections.map((section, index) => (
+              <ContentSection
+                key={section.id}
+                priorityFigure={index === 0}
+                section={section}
+                tone={index % 2 === 0 ? "muted" : "light"}
               />
             ))}
           </div>
