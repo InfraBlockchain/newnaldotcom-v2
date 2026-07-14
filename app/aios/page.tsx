@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
+import { IpPortfolio } from "@/components/shared/IpPortfolio";
 import { Reveal } from "@/components/shared/Reveal";
 import { aiosContent as c } from "@/content/aios";
 import styles from "./page.module.css";
@@ -72,7 +73,7 @@ export default function AiosPage() {
     </section>
 
     <section className={`${styles.ip} section`}>
-      <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} ↗</a>)}</div></Reveal><div className={styles.ipGrid}>{c.ip.tiles.map((tile, i) => <Reveal key={tile.title} delay={(i % 3) * 80}><article><h3>{tile.title}</h3>{tile.records.map(([title, identifier, status]) => { const href = whitepaperLinks[title]; return <div key={title}><strong>{title}</strong><span>{identifier} · {status}</span>{href && <a className={styles.documentLink} href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} PDF`}>↗</a>}</div>; })}</article></Reveal>)}</div></div>
+      <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} ↗</a>)}</div></Reveal><Reveal><IpPortfolio tiles={c.ip.tiles} whitepaperLinks={whitepaperLinks} /></Reveal></div>
     </section>
   </main>;
 }
