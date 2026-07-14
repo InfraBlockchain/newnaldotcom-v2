@@ -6,6 +6,12 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Newnal aios", description: c.hero.sub };
 
+const whitepaperLinks: Record<string, string> = {
+  "Newnal Web3 ai Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-1-Web3-ai.pdf",
+  "Newnal Web3 ai OS Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-2-Web3-ai-OS.pdf",
+  "Newnal ai Agent Place Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-4-Newnal-ai-Agent-Place.pdf",
+};
+
 function Spectrum() {
   return <div className={styles.spectrum} role="img" aria-label="Data sovereignty spectrum from zero, Private Phone, to one hundred, Newnal AIOS">
     <div className={styles.spectrumTop}><b>0</b><span>Newnal (foundation)</span><b>100</b></div>
@@ -66,7 +72,7 @@ export default function AiosPage() {
     </section>
 
     <section className={`${styles.ip} section`}>
-      <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} ↗</a>)}</div></Reveal><div className={styles.ipGrid}>{c.ip.tiles.map((tile, i) => <Reveal key={tile.title} delay={(i % 3) * 80}><article><h3>{tile.title}</h3>{tile.records.map(([title, identifier, status]) => <div key={title}><strong>{title}</strong><span>{identifier} · {status}</span></div>)}</article></Reveal>)}</div></div>
+      <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} ↗</a>)}</div></Reveal><div className={styles.ipGrid}>{c.ip.tiles.map((tile, i) => <Reveal key={tile.title} delay={(i % 3) * 80}><article><h3>{tile.title}</h3>{tile.records.map(([title, identifier, status]) => { const href = whitepaperLinks[title]; return <div key={title}><strong>{title}</strong><span>{identifier} · {status}</span>{href && <a className={styles.documentLink} href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} PDF`}>↗</a>}</div>; })}</article></Reveal>)}</div></div>
     </section>
   </main>;
 }
