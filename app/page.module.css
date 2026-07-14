@@ -1,6 +1,6 @@
 .hero { color: var(--on-stage); height: min(860px, 90vh); min-height: 620px; overflow: hidden; position: relative; }
-.heroVisual { align-items: center; background: radial-gradient(circle at 70% 35%, rgba(201,182,255,.18), transparent 28%), linear-gradient(135deg, var(--stage-2), var(--stage)); display: flex; inset: 0; justify-content: center; position: absolute; }
-.heroVisual::before, .heroVisual::after { border: 1px solid rgba(201,182,255,.14); border-radius: 50%; content: ""; height: min(65vw, 850px); position: absolute; width: min(65vw, 850px); }
+.heroVisual { align-items: center; background: radial-gradient(circle at 70% 35%, rgba(242,242,244,.12), transparent 28%), linear-gradient(135deg, var(--stage-2), var(--stage)); display: flex; inset: 0; justify-content: center; position: absolute; }
+.heroVisual::before, .heroVisual::after { border: 1px solid rgba(242,242,244,.14); border-radius: 50%; content: ""; height: min(65vw, 850px); position: absolute; width: min(65vw, 850px); }
 .heroVisual::after { height: min(46vw, 620px); width: min(46vw, 620px); }
 .heroVisual > span { color: var(--on-stage-soft); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 .overlay { background: linear-gradient(180deg, transparent 28%, rgba(10,6,17,.82)); inset: 0; position: absolute; }
@@ -16,9 +16,9 @@
 .light:hover { background: #fbfaff; }
 .dark { background: var(--stage); color: var(--on-stage); }
 .dark p { color: var(--on-stage-soft); }
-.dark:hover { background: #1b112c; }
-.violet { background: #eee9fb; }
-.violet:hover { background: #e8e1f9; }
+.dark:hover { background: var(--stage-2); }
+.neutral { background: #eeeeef; }
+.neutral:hover { background: #e7e7e9; }
 .arrow { align-self: flex-end; font-size: 2rem; transition: transform var(--dur-micro) var(--ease-soft); }
 .card:hover .arrow { transform: translateX(8px); }
 .card:focus-visible { outline-offset: -4px; }

@@ -14,7 +14,7 @@ export const metadata: Metadata = { title: "YALI", description: c.hero.lead };
 function ChapterHead({ eyebrow,title,lead,center=false }: {eyebrow:string;title:string;lead:string;center?:boolean}) { return <Reveal className={`${styles.chapterHead} ${center?styles.center:""}`}><p className="eyebrow">{eyebrow}</p><h2>{title}</h2><p>{lead}</p></Reveal>; }
 
 export default function YaliPage(){
-  return <main id="main-content" className={styles.page}>
+  return <main id="main-content" className={styles.page} data-theme="yali">
     <YaliSubnav />
     <section className={styles.hero}>
       <div className="container"><Reveal className={styles.heroHead}><p className={styles.productEyebrow}><i/>{c.hero.eyebrow}</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p></Reveal>

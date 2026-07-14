@@ -1,6 +1,18 @@
 :root {
-  --bg: #f7f5fb;
+  --bg: #f7f7f8;
   --surface: #ffffff;
+  --line: #e4e4e7;
+  --ink: #131316;
+  --ink-soft: #55555c;
+  --ink-faint: #8e8e96;
+  --stage: #131316;
+  --stage-2: #1e1e23;
+  --on-stage: #f2f2f4;
+  --on-stage-soft: #a5a5ae;
+}
+
+[data-theme="yali"] {
+  --bg: #f7f5fb;
   --line: #e5dff0;
   --ink: #16101f;
   --ink-soft: #554d63;
@@ -12,6 +24,9 @@
   --violet: #6c4bd8;
   --violet-deep: #4b2fa6;
   --lavender: #c9b6ff;
+}
+
+:root {
   --type-display-xl: clamp(2.75rem, 1rem + 5.2vw, 5.25rem);
   --type-display-l: clamp(2.25rem, 1rem + 3.4vw, 3.75rem);
   --type-display-m: clamp(1.75rem, 1rem + 1.8vw, 2.5rem);
@@ -50,8 +65,9 @@ h1 { font-size: var(--type-display-xl); line-height: 1.04; letter-spacing: -.01e
 h2 { font-size: var(--type-display-l); line-height: 1.08; letter-spacing: -.01em; }
 h1 em { font-style: italic; }
 h3 { font-size: var(--type-h3); line-height: 1.25; }
-::selection { background: var(--lavender); color: var(--ink); }
-:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+::selection { background: var(--ink); color: var(--surface); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+[data-theme="yali"] :focus-visible { outline-color: var(--violet); }
 [data-theme="private"] :focus-visible { outline-color: #7da2d4; }
 
 .container { width: min(100% - (var(--side) * 2), var(--container)); margin-inline: auto; }
@@ -78,8 +94,10 @@ h3 { font-size: var(--type-h3); line-height: 1.25; }
   transition: background var(--dur-micro), color var(--dur-micro), transform var(--dur-micro), border-color var(--dur-micro);
 }
 .button:hover { transform: translateY(-1px); }
-.buttonPrimary { background: var(--violet); color: #fff; }
-.buttonPrimary:hover { background: var(--violet-deep); }
+.buttonPrimary { background: var(--ink); color: #fff; }
+.buttonPrimary:hover { background: var(--stage-2); }
+[data-theme="yali"] .buttonPrimary { background: var(--violet); }
+[data-theme="yali"] .buttonPrimary:hover { background: var(--violet-deep); }
 .buttonSecondary { border-color: currentColor; background: transparent; }
 .button[aria-disabled="true"], button:disabled { cursor: not-allowed; opacity: .5; transform: none; }
 .skipLink {

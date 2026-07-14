@@ -3,7 +3,7 @@
 .logo { font-family: var(--font-display), Georgia, serif; font-size: 1.45rem; font-weight: 400; justify-self: start; letter-spacing: -.01em; }
 .desktopNav { align-items: center; display: flex; gap: 36px; }
 .desktopNav a { color: var(--ink-soft); font-size: .9rem; font-weight: 500; position: relative; }
-.desktopNav a::after { background: var(--violet); bottom: -8px; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: left; transition: transform var(--dur-micro); width: 100%; }
+.desktopNav a::after { background: var(--ink); bottom: -8px; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: left; transition: transform var(--dur-micro); width: 100%; }
 .desktopNav a:hover::after, .desktopNav .active::after { transform: scaleX(1); }
 .contact { justify-self: end; min-height: 40px; padding-inline: 20px; }
 .menuButton { background: none; border: 0; color: inherit; display: none; height: 44px; padding: 10px; width: 44px; }
