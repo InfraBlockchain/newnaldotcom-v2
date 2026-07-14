@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { privatePhoneContent as c } from "@/content/privatePhone";
 import styles from "./page.module.css";
@@ -22,7 +23,7 @@ export default function PrivatePhonePage() {
       <div className={styles.grid} />
       <div className={styles.heroDevice}><div className={styles.orbitA} /><div className={styles.orbitB} /><PhoneSilhouette /></div>
       {c.numbers.map((number, i) => <span key={number} className={`${styles.floatChip} ${styles[`chip${i + 1}`]}`}>{number}</span>)}
-      <Reveal className={styles.heroCopy}><p className={styles.eyebrow}>{c.hero.eyebrow}</p><h1>{c.hero.title}</h1><p className={styles.heroSub}>{c.hero.sub}</p><p>{c.hero.audience}</p><button className={styles.disabledCta} type="button" aria-disabled="true" aria-label="See How It Works — PDF coming soon">{c.hero.cta}</button></Reveal>
+      <Reveal className={styles.heroCopy}><p className={styles.eyebrow}>{c.hero.eyebrow}</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p className={styles.heroSub}>{c.hero.sub}</p><p>{c.hero.audience}</p><button className={styles.disabledCta} type="button" aria-disabled="true" aria-label="See How It Works — PDF coming soon">{c.hero.cta}</button></Reveal>
     </section>
 
     <section className={styles.section}><div className={styles.container}><ChapterHead {...c.protects} /><div className={styles.protectList}>{c.protects.items.map(([title, text], i) => <Reveal key={title} delay={i * 80}><article><span>{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="25"/><path d="M25 37l7 7 15-17"/></svg></article></Reveal>)}</div></div></section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Placeholder } from "@/components/shared/Placeholder";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
@@ -16,7 +17,7 @@ export default function YaliPage(){
   return <main id="main-content" className={styles.page}>
     <YaliSubnav />
     <section className={styles.hero}>
-      <div className="container"><Reveal className={styles.heroHead}><p className={styles.productEyebrow}><i/>{c.hero.eyebrow}</p><h1>{c.hero.title}</h1><p>{c.hero.lead}</p></Reveal>
+      <div className="container"><Reveal className={styles.heroHead}><p className={styles.productEyebrow}><i/>{c.hero.eyebrow}</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p></Reveal>
         <div className={styles.heroMedia}><div className={styles.negatives}>{c.hero.negatives.map((x,i)=><Reveal key={x} delay={i*80}><p>{x}</p></Reveal>)}<Reveal delay={240}><strong>{c.hero.closing}</strong></Reveal></div><Reveal className={styles.videoWrap}><div className={styles.aura}/><div className={styles.video}><Image src="/images/yali-hero.png" alt="YALI promotional video still" fill priority sizes="(max-width: 767px) 100vw, 60vw"/><div className={styles.videoShade}/><button type="button" disabled aria-label="Play video (coming soon)"><span/></button></div></Reveal></div>
       </div>
     </section>

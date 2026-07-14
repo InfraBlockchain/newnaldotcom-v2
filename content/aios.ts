@@ -1,5 +1,5 @@
 export const aiosContent = {
-  hero: { title: "ONE ARCHITECTURE. COMPLETE DATA SOVEREIGNTY", sub: "Intelligence that truly knows you. Data under your control." },
+  hero: { title: "ONE ARCHITECTURE. COMPLETE DATA SOVEREIGNTY", emphasis: "DATA SOVEREIGNTY", sub: "Intelligence that truly knows you. Data under your control." },
   sovereignty: {
     title: "From 100% open to absolute zero.",
     paragraphs: [

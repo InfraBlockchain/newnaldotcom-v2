@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
@@ -13,7 +14,7 @@ export default function HomePage() {
         </div>
         <div className={styles.overlay} />
         <Reveal className={styles.heroCopy}>
-          <h1 id="home-title">{homeContent.hero.title}</h1>
+          <h1 id="home-title"><EmphasizedText text={homeContent.hero.title} emphasis={homeContent.hero.emphasis} /></h1>
           <Link href="/aios">{homeContent.hero.cta}</Link>
         </Reveal>
       </section>

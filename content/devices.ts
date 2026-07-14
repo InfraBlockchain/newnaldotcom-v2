@@ -1,6 +1,7 @@
 export const devicesContent = {
   hero: {
     title: "AI companions for the lives we actually live.",
+    emphasis: "actually live",
     lead: "Powered by Newnal AIOS, our devices are built for the relationships, routines, and moments that make life personal.",
     rhythm: ["For the artist you love.", "For the family you care for.", "For the world waiting outside.", "All centered around you."],
   },

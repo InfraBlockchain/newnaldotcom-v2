@@ -4,6 +4,7 @@ export const privatePhoneContent = {
     // TODO(link): Replace the disabled CTA state when the How It Works PDF URL is provided.
     eyebrow: "CHAPTER 01 — OVERTURE",
     title: "Privacy that holds— even when trust breaks.",
+    emphasis: "trust breaks",
     sub: "Most secure phones defend against hackers. Newnal defends against the person on the other side.",
     audience: "Built for leaders, creators, executives, and anyone whose reputation is an asset.",
     cta: "See How It Works →",

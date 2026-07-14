@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { aiosContent as c } from "@/content/aios";
 import styles from "./page.module.css";
@@ -25,7 +26,7 @@ export default function AiosPage() {
   return <main id="main-content" className={styles.page}>
     <section className={styles.hero}>
       <div className={styles.glowA} /><div className={styles.glowB} />
-      <Reveal className={styles.heroInner}><h1>{c.hero.title}</h1><p>{c.hero.sub}</p></Reveal>
+      <Reveal className={styles.heroInner}><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.sub}</p></Reveal>
     </section>
 
     <section className="section">

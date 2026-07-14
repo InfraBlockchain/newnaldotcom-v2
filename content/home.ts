@@ -2,6 +2,7 @@
 export const homeContent = {
   hero: {
     title: "Intelligence that truly knows you. Data under your control.",
+    emphasis: "truly knows you",
     cta: "Explore Newnal aios →",
   },
   paths: [
