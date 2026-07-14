@@ -10,8 +10,11 @@ export default function DevicesPage() {
   return <main id="main-content">
     <section className={styles.hero}>
       <Image src="/images/devices/hero-companions.png" alt="" fill priority sizes="100vw" />
-      <div className="srOnly"><h1>{c.hero.title}</h1><p>{c.hero.lead}</p></div>
-      <div className={styles.mobileHeroCopy}><h1>{c.hero.title}</h1><p>{c.hero.rhythm.join(" ")}</p></div>
+      <div className={styles.heroCopy}>
+        <h1>{c.hero.title}</h1>
+        <p>{c.hero.rhythm.slice(0, 3).map((line) => <span key={line}>{line}</span>)}</p>
+        <p>{c.hero.rhythm[3]}</p>
+      </div>
     </section>
     <section className={styles.devices} aria-label="Companion device lineup"><DeviceAccordion /></section>
   </main>;
