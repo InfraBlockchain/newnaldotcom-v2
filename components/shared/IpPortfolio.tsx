@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import { Fragment } from "react";
 import styles from "./IpPortfolio.module.css";
 
 type PortfolioTile = {
@@ -17,49 +15,49 @@ type IpPortfolioProps = {
 };
 
 export function IpPortfolio({ tiles, whitepaperLinks }: IpPortfolioProps) {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const selectedTile = selectedIndex === null ? null : tiles[selectedIndex];
-  const recordsCount = selectedTile?.groups.reduce((count, group) => count + group.records.length, 0);
-
   return (
-    <section className={styles.portfolio} aria-label="Intellectual property categories">
-      {selectedTile ? (
-        <div id="ip-records" className={styles.records}>
-          <div className={styles.recordsHead}>
-            <button type="button" onClick={() => setSelectedIndex(null)}>← All categories</button>
-            <span>{selectedTile.title}</span>
-            <span>{recordsCount} RECORDS</span>
-          </div>
-          {selectedTile.groups.map((group) => (
-            <section key={group.title} className={styles.group}>
-              <h3>{group.title}</h3>
-              {group.records.map(([title, identifier, status]) => {
-                const href = whitepaperLinks[title];
-                return (
-                  <article key={title} className={styles.record}>
-                    <strong>{title}</strong>
-                    <span>{identifier}</span>
-                    <small>{status}</small>
-                    {href && (
-                      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} PDF`}>
-                        ↗
-                      </a>
-                    )}
-                  </article>
-                );
-              })}
-            </section>
-          ))}
-        </div>
-      ) : (
-        <div className={styles.categories}>
-          {tiles.map((tile, index) => (
-            <button key={tile.title} className={styles.category} type="button" onClick={() => setSelectedIndex(index)}>
-              {tile.title}
-            </button>
-          ))}
-        </div>
-      )}
+    <section className={styles.portfolio} aria-label="Intellectual property portfolio">
+      <div className={styles.tableWrap}>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Record</th>
+              <th scope="col">Identifier</th>
+              <th scope="col">Status</th>
+              <th scope="col"><span className="srOnly">Document</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {tiles.map((tile) => (
+              <Fragment key={tile.title}>
+                <tr className={styles.categoryRow}>
+                  <th colSpan={5} scope="rowgroup">{tile.title}</th>
+                </tr>
+                {tile.groups.map((group) => (
+                  <Fragment key={group.title}>
+                    <tr className={styles.groupRow}>
+                      <td colSpan={5}>{group.title}</td>
+                    </tr>
+                    {group.records.map(([title, identifier, status]) => {
+                      const href = whitepaperLinks[title];
+                      return (
+                        <tr key={title}>
+                          <td>{tile.title}</td>
+                          <th scope="row">{title}</th>
+                          <td>{identifier}</td>
+                          <td><span className={styles.status}>{status}</span></td>
+                          <td>{href && <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} PDF`}>↗</a>}</td>
+                        </tr>
+                      );
+                    })}
+                  </Fragment>
+                ))}
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }

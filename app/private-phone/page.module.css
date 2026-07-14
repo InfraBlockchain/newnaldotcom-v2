@@ -5,7 +5,7 @@
 .hero { align-items:flex-end; display:flex; min-height:900px; overflow:hidden; padding:0 max(48px,calc((100vw - 1280px)/2)) 96px; position:relative; }
 .grid { background-image:linear-gradient(var(--pp-line) 1px,transparent 1px),linear-gradient(90deg,var(--pp-line) 1px,transparent 1px); background-size:56px 56px; inset:0; opacity:.3; position:absolute; }
 .heroDevice { height:620px; position:absolute; right:6%; top:90px; width:520px; }.heroDevice .phone { left:50%; position:absolute; top:50%; transform:translate(-50%,-50%); }
-.orbitA,.orbitB { border:1px solid rgba(61,90,128,.45); border-radius:50%; inset:10% -20%; position:absolute; transform:rotate(-20deg); }.orbitB { inset:25% -8%; transform:rotate(20deg); }
+.orbitA,.orbitB { border:1px solid rgba(61,90,128,.3); border-radius:50%; inset:12% 2%; position:absolute; transform:rotate(-20deg); }.orbitB { inset:27% 14%; transform:rotate(20deg); }
 .heroCopy { max-width:800px; position:relative; z-index:3; }.heroCopy h1 { max-width:800px; }.heroSub { color:var(--pp-text)!important; font-size:var(--type-body-l); max-width:650px; }.heroCopy>p:last-of-type { max-width:570px; }
 .brochureCta { align-items:center; background:transparent; border:1px solid var(--pp-accent); border-radius:999px; color:var(--pp-accent); display:inline-flex; margin-top:28px; min-height:48px; padding:0 24px; }
 .brochureCta:hover { background:var(--pp-accent); color:var(--pp-bg); }
