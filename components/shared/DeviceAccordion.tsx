@@ -6,9 +6,9 @@ import { useCallback, useEffect, useState } from "react";
 import styles from "./DeviceAccordion.module.css";
 
 const slides = [
-  { id: "yali", name: "YALI", src: "/images/devices/hero-yali.png", alt: "YALI AI Artist Companion", href: "/devices/yali" },
-  { id: "illi", name: "ILLI", src: "/images/devices/hero-illi.png", alt: "ILLI AI Companion", href: undefined },
-  { id: "ufo", name: "UFO", src: "/images/devices/hero-ufo.png", alt: "UFO Real-World Adventure Device", href: undefined },
+  { id: "yali", name: "YALI", src: "/images/devices/hero-yali.png", alt: "YALI AI Artist Companion", href: "/devices/yali", cta: "Explore YALI" },
+  { id: "illi", name: "ILLI", src: "/images/devices/hero-illi.png", alt: "ILLI AI Companion", href: undefined, cta: "Coming soon" },
+  { id: "ufo", name: "UFO", src: "/images/devices/hero-ufo.png", alt: "UFO Real-World Adventure Device", href: undefined, cta: "Coming soon" },
 ] as const;
 
 export function DeviceAccordion() {
@@ -43,7 +43,9 @@ export function DeviceAccordion() {
             />
             <span className={styles.panelLabel} aria-hidden="true">{slide.name}</span>
             {isActive && <div key={slide.id} className={styles.progress} aria-hidden="true" />}
-            {isActive && slide.href && <Link className={styles.exploreLink} href={slide.href}>Explore YALI</Link>}
+            {isActive && (slide.href
+              ? <Link className={styles.exploreLink} href={slide.href}>{slide.cta}</Link>
+              : <span className={`${styles.exploreLink} ${styles.comingSoonCta}`}>{slide.cta}</span>)}
           </section>
         );
       })}
