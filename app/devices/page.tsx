@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Companion Devices", description: c.h
 export default function DevicesPage() {
   return <main id="main-content">
     <section className={styles.hero}>
-      <Image src="/images/devices/hero-lineup.png" alt="" fill priority sizes="100vw" />
+      <Image src="/images/devices/hero-companions.png" alt="" fill priority sizes="100vw" />
       <div className="srOnly"><h1>{c.hero.title}</h1><p>{c.hero.lead}</p></div>
       <div className={styles.mobileHeroCopy}><h1>{c.hero.title}</h1><p>{c.hero.rhythm.join(" ")}</p></div>
     </section>

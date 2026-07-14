@@ -6,21 +6,13 @@ import { useCallback, useEffect, useState } from "react";
 import styles from "./DeviceAccordion.module.css";
 
 const slides = [
-  { id: "yali", name: "YALI", src: "/images/devices/slide-yali.png", alt: "YALI AI Artist Companion", href: "/devices/yali" },
-  { id: "illi", name: "ILLI", src: "/images/devices/slide-illi.png", alt: "ILLI AI Companion", href: undefined },
-  { id: "ufo", name: "UFO", src: "/images/devices/slide-ufo.png", alt: "UFO Real-World Adventure Device", href: undefined },
+  { id: "yali", name: "YALI", src: "/images/devices/hero-yali.png", alt: "YALI AI Artist Companion", href: "/devices/yali" },
+  { id: "illi", name: "ILLI", src: "/images/devices/hero-illi.png", alt: "ILLI AI Companion", href: undefined },
+  { id: "ufo", name: "UFO", src: "/images/devices/hero-ufo.png", alt: "UFO Real-World Adventure Device", href: undefined },
 ] as const;
 
 export function DeviceAccordion() {
   const [active, setActive] = useState(0);
-  const slide = slides[active];
-  const controlsClassName = `${styles.controls} ${
-    slide.id === "yali" ? styles.controlsYali : slide.id === "illi" ? styles.controlsIlli : styles.controlsUfo
-  }`;
-
-  const selectSlide = useCallback((index: number) => {
-    setActive(index);
-  }, []);
 
   const advanceSlide = useCallback(() => {
     setActive((current) => (current + 1) % slides.length);
@@ -37,24 +29,28 @@ export function DeviceAccordion() {
 
   return (
     <div className={styles.slideshow}>
-      <Image key={slide.id} src={slide.src} alt={slide.alt} fill priority sizes="100vw" />
-      {slide.href && (
-        <Link className={styles.exploreLink} href={slide.href}>
-          Explore YALI
-        </Link>
-      )}
-      <nav className={controlsClassName} aria-label="Choose a companion device">
-        {slides.map((item, index) => (
-          <button
-            key={item.id}
-            type="button"
-            aria-pressed={active === index}
-            aria-label={`Show ${item.name}`}
-            onClick={() => selectSlide(index)}
-          />
-        ))}
-        <span aria-hidden="true" />
-      </nav>
+      {slides.map((slide, index) => {
+        const isActive = active === index;
+        return (
+          <section key={slide.id} className={`${styles.panel} ${isActive ? styles.active : ""}`}>
+            <Image src={slide.src} alt={isActive ? slide.alt : ""} fill priority={index === 0} sizes="(max-width: 767px) 100vw, 85vw" />
+            <button
+              className={styles.panelButton}
+              type="button"
+              aria-pressed={isActive}
+              aria-label={`Show ${slide.name}`}
+              onClick={() => setActive(index)}
+            />
+            <span className={styles.panelLabel} aria-hidden="true">{slide.name}</span>
+            {isActive && <div key={slide.id} className={styles.progress} aria-hidden="true" />}
+            {isActive && slide.href && <Link className={styles.exploreLink} href={slide.href}>Explore YALI</Link>}
+          </section>
+        );
+      })}
+      <section className={`${styles.panel} ${styles.upcoming}`} aria-label="ONNI, coming soon">
+        <span className={styles.panelLabel}>ONNI</span>
+        <span className={styles.comingSoon}>COMING SOON</span>
+      </section>
     </div>
   );
 }
