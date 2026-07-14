@@ -35,7 +35,7 @@ export const privatePhoneContent = {
     closing: "The conversation may be exposed. Your identity and words remain unverified.",
   },
   inbox: { eyebrow: "CHAPTER 05 — AN INBOX ONLY YOU FILL", title: "Freedom From Ads and Spam", lead: "Traditional networks give one number away to everyone. Newnal issues a dedicated number for every person you trust—so no one else can reach you." },
-  contacts: { eyebrow: "CHAPTER 07 — CONTACTS ON THE OTHER SIDE", title: "Your contacts can join for free.", lead: "Newnal Private Phone is built so your protection does not depend on the other person buying the same device. No Private Phone required on their side. No phone number exchange.", summary: "The other person installs the free connection app, enters the number, and joins your encrypted 1:1 communication channel." },
+  contacts: { eyebrow: "CHAPTER 07 — CONTACTS ON THE OTHER SIDE", title: "Your contacts can join for free.", lead: "Newnal Private Phone is built so your protection does not depend on the other person buying the same device. Generate a unique Newnal number, share it, and they join your encrypted channel via the free app.", summary: "No Private Phone required on their side. · No phone number exchange." },
   compare: {
     eyebrow: "CHAPTER 08 — WHERE PROTECTION LIVES", title: "Private Phone vs Free App", lead: "The free connection app allows your contacts to communicate with you securely. But the deeper protection comes from the Newnal Private Phone itself.",
     rows: [
