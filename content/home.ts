@@ -1,4 +1,3 @@
-// TODO(copy): Proposed home hero and Newnal aios card copy require final approval.
 export const homeContent = {
   hero: {
     title: "Intelligence that truly knows you. Data under your control.",

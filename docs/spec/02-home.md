@@ -25,9 +25,9 @@ S2  Three Paths   3분기 카드 (aios / Private Phone / Devices)
 ### S1 — Hero
 
 **카피**
-- H1 `[제안 — 확정 필요]`: `Intelligence that truly knows you. Data under your control.`
+- H1 `(확정 2026-07-15)`: `Intelligence that truly knows you. Data under your control.`
   (Figma Home 히어로에는 텍스트가 없음. 위 문장은 Figma aios 히어로의 서브카피에서 가져온 브랜드 스테이트먼트 — 홈 히어로로 승격 제안. 다른 문장으로 확정되면 교체)
-- 보조 CTA `[제안 — 확정 필요]`: `Explore Newnal aios →` (`/aios`)
+- 보조 CTA `(확정 2026-07-15)`: `Explore Newnal aios →` (`/aios`)
 
 **레이아웃·비주얼**
 - 높이 `min(860px, 90vh)` 풀블리드. Figma 초안의 히어로는 이미지 프레임 — 브랜드 키비주얼 1장(에셋 미확보 시 placeholder 규칙: `--stage-2` 배경 + mono 캡션 `PHOTO · brand key visual`)
@@ -40,7 +40,7 @@ S2  Three Paths   3분기 카드 (aios / Private Phone / Devices)
 
 | # | 제목 | 설명 | 목적지 |
 |---|---|---|---|
-| 1 | `Newnal aios` `[제안 — Figma 카드에 텍스트 없음]` | `The AI native OS. My AI, built from you.` `[제안 — 확정 필요]` | `/aios` |
+| 1 | `Newnal aios` `[제안 — Figma 카드에 텍스트 없음]` | `The AI native OS. My AI, built from you.` `(확정 2026-07-15)` | `/aios` |
 | 2 | `Newnal Private Phone` | `No public identity. No universal phone number.` | `/private-phone` |
 | 3 | `AI Companion Devices Powered by Newnal` | `One AIOS. Distinct companions for different lives.` | `/devices` |
 

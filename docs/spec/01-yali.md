@@ -266,9 +266,9 @@ S6  Spec + Closing    라이트   스펙 테이블 + 최종 CTA
 | 슬롯 | 파일 | 상태 |
 |---|---|---|
 | S1 영상 썸네일 | `yali-hero.png` (임시) | 실제 영상 스틸/URL 대기 |
-| S4 타일 이미지 ×4 | `yali-everyday.png` + 3장 | **3장 부족 → placeholder 규칙** |
+| S4 타일 이미지 ×4 | `yali/everyday-morning.png`, `everyday-music.png`, `everyday-encouragement.png`, `everyday-night.png` | 보유 |
 | S5 콘서트 포토 | `yali-concert.png` | 보유 |
-| S5 카드 이미지 ×3 | — | 부족 → placeholder 규칙 |
+| S5 카드 이미지 ×3 | `yali/moments-live.png`, `moments-reminders.jpg`, `moments-missed.jpg` | 보유 |
 | S6 디바이스 렌더 | `yali-device.png` 재사용 가능 | 선택 |
 
 placeholder 규칙: `--stage-2` 배경 + 중앙 mono 캡션 `PHOTO · <장면 설명>` + 12px `--on-stage-soft`. 회색 박스 금지.
