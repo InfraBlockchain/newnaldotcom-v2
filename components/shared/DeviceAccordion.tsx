@@ -42,7 +42,6 @@ export function DeviceAccordion() {
               onClick={() => setActive(index)}
             />
             <span className={styles.panelLabel} aria-hidden="true">{slide.name}</span>
-            {isActive && <div key={slide.id} className={styles.progress} aria-hidden="true" />}
             {isActive && slide.href && <Link className={styles.exploreLink} href={slide.href}>Explore YALI</Link>}
           </section>
         );

@@ -7,14 +7,11 @@
 .panelButton:focus-visible { outline:2px solid #fff; outline-offset:-6px; }
 .panelLabel { bottom:28px; color:#fff; font-family:var(--font-body),sans-serif; font-size:clamp(.9rem,1.2vw,1.25rem); font-weight:500; left:50%; letter-spacing:-.04em; position:absolute; text-shadow:0 1px 12px rgba(0,0,0,.45); transform:translateX(-50%); white-space:nowrap; z-index:3; }
 .active .panelLabel { left:32px; transform:none; }
-.progress { animation:device-progress 6s linear forwards; background:#fff; bottom:0; height:3px; left:0; position:absolute; transform-origin:left; width:100%; z-index:4; }
 .exploreLink { background:#fff; bottom:72px; color:#111; font-family:var(--font-mono),monospace; font-size:.7rem; font-weight:600; left:32px; letter-spacing:.1em; opacity:0; padding:12px 16px; position:absolute; text-transform:uppercase; transition:opacity var(--dur-micro); z-index:5; }
 .active:hover .exploreLink, .exploreLink:focus-visible { opacity:1; }
 .upcoming { align-items:center; background:#4d4d4f; display:flex; justify-content:center; }
 .upcoming .panelLabel { bottom:28px; left:50%; }
 .comingSoon { color:rgba(255,255,255,.52); font-family:var(--font-mono),monospace; font-size:.54rem; letter-spacing:.12em; transform:rotate(-90deg); white-space:nowrap; }
-
-@keyframes device-progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
 
 @media(max-width:767px){
   .slideshow{display:block;height:auto;min-height:0}
@@ -23,7 +20,4 @@
   .panel.upcoming{display:none}
   .panelLabel,.active .panelLabel{bottom:24px;left:20px;transform:none}
   .exploreLink{bottom:60px;left:auto;opacity:1;right:20px}
-  .progress{height:2px}
 }
-
-@media(prefers-reduced-motion:reduce){.progress{animation:none;transform:scaleX(1)}}
