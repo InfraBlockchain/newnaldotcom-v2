@@ -1,27 +1,32 @@
-import { Footer } from "@/components/site/footer";
-import { Header } from "@/components/site/header";
-import { ClosingSection } from "@/components/home/closing-section";
-import { Hero } from "@/components/home/hero";
-import { PhilosophySection } from "@/components/home/philosophy-section";
-import { PrinciplesSection } from "@/components/home/principles-section";
-import { RoadmapSection } from "@/components/home/roadmap-section";
-import { SystemSection } from "@/components/home/system-section";
-import { homepageContent } from "@/content/homepage";
+import Link from "next/link";
+import { Reveal } from "@/components/shared/Reveal";
+import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.pageShell}>
-      <Header brand={homepageContent.brand} navigation={homepageContent.navigation} />
-      <main className={styles.main}>
-        <Hero content={homepageContent.hero} />
-        <PhilosophySection content={homepageContent.philosophy} />
-        <PrinciplesSection content={homepageContent.principles} />
-        <SystemSection content={homepageContent.system} />
-        <RoadmapSection content={homepageContent.roadmap} />
-        <ClosingSection content={homepageContent.closing} />
-      </main>
-      <Footer brand={homepageContent.brand} footerNote={homepageContent.footerNote} />
-    </div>
+    <main id="main-content">
+      <section className={styles.hero} aria-labelledby="home-title">
+        {/* TODO(asset): Replace the brand key visual placeholder when the approved image is provided. */}
+        <div className={styles.heroVisual} role="img" aria-label="Placeholder for Newnal brand key visual">
+          <span>PHOTO · brand key visual</span>
+        </div>
+        <div className={styles.overlay} />
+        <Reveal className={styles.heroCopy}>
+          <h1 id="home-title">{homeContent.hero.title}</h1>
+          <Link href="/aios">{homeContent.hero.cta}</Link>
+        </Reveal>
+      </section>
+      <section className={styles.paths} aria-label="Explore Newnal products">
+        {homeContent.paths.map((path, index) => (
+          <Reveal key={path.href} delay={index * 80} className={styles.pathReveal}>
+            <Link className={`${styles.card} ${styles[path.tone]}`} href={path.href}>
+              <div><h2>{path.title}</h2><p>{path.description}</p></div>
+              <span className={styles.arrow} aria-hidden="true">→</span>
+            </Link>
+          </Reveal>
+        ))}
+      </section>
+    </main>
   );
 }

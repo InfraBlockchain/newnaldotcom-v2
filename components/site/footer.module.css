@@ -1,39 +1,15 @@
-.footer {
-  border-top: 1px solid var(--color-hairline);
-  padding: 48px 0;
-}
-
-.inner {
-  width: min(var(--max-width), calc(100% - 32px));
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: center;
-}
-
-.brand {
-  font-size: 0.875rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.note {
-  margin: 0;
-  color: var(--color-body-mid);
-  max-width: 40rem;
-  text-align: right;
-  font-size: 0.875rem;
-  line-height: 1.45;
-}
-
-@media (max-width: 720px) {
-  .inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .note {
-    text-align: left;
-  }
-}
+.footer { background: var(--stage); color: var(--on-stage); padding: 80px max(48px, calc((100vw - 1280px) / 2)); }
+.grid { display: grid; gap: 64px; grid-template-columns: 2fr 1fr 1fr; }
+.logo { font-family: var(--font-display), Georgia, serif; font-size: 2rem; }
+.grid p, .grid span, .grid a { color: var(--on-stage-soft); font-size: .9rem; }
+.grid nav { display: flex; flex-direction: column; gap: 10px; }
+.grid strong { font-family: var(--font-mono), monospace; font-size: .72rem; letter-spacing: .16em; margin-bottom: 10px; text-transform: uppercase; }
+.grid a:hover { color: var(--on-stage); }
+.bottom { border-top: 1px solid rgba(229,223,240,.15); color: var(--on-stage-soft); display: flex; font-size: .75rem; justify-content: space-between; margin-top: 72px; padding-top: 24px; }
+:global(body:has([data-theme="private"])) .footer { background: #0a0e16; border-top: 1px solid #1e2836; color: #e8edf5; }
+:global(body:has([data-theme="private"])) .footer p,
+:global(body:has([data-theme="private"])) .footer span,
+:global(body:has([data-theme="private"])) .footer a { color: #8b99ad; }
+:global(body:has([data-theme="private"])) .bottom { border-color: #1e2836; }
+@media (max-width: 900px) { .footer { padding-inline: 32px; } .grid { grid-template-columns: 1fr 1fr; } .grid > :first-child { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .footer { padding: 64px 20px; } .grid { grid-template-columns: 1fr; gap: 42px; } .grid > :first-child { grid-column: auto; } .bottom { align-items: flex-start; flex-direction: column; gap: 8px; } }

@@ -1,11 +1,26 @@
-.pageShell {
-  min-height: 100vh;
-  background: var(--color-canvas);
-  color: var(--color-text);
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+.hero { color: var(--on-stage); height: min(860px, 90vh); min-height: 620px; overflow: hidden; position: relative; }
+.heroVisual { align-items: center; background: radial-gradient(circle at 70% 35%, rgba(201,182,255,.18), transparent 28%), linear-gradient(135deg, var(--stage-2), var(--stage)); display: flex; inset: 0; justify-content: center; position: absolute; }
+.heroVisual::before, .heroVisual::after { border: 1px solid rgba(201,182,255,.14); border-radius: 50%; content: ""; height: min(65vw, 850px); position: absolute; width: min(65vw, 850px); }
+.heroVisual::after { height: min(46vw, 620px); width: min(46vw, 620px); }
+.heroVisual > span { color: var(--on-stage-soft); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.overlay { background: linear-gradient(180deg, transparent 28%, rgba(10,6,17,.82)); inset: 0; position: absolute; }
+.heroCopy { bottom: clamp(56px, 8vw, 108px); left: max(var(--side), calc((100vw - var(--container)) / 2)); max-width: 990px; position: absolute; right: var(--side); }
+.heroCopy h1 { margin-bottom: 28px; text-wrap: balance; }
+.heroCopy a { border-bottom: 1px solid currentColor; display: inline-block; font-weight: 600; padding-bottom: 4px; }
+.paths { background: var(--line); display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); }
+.pathReveal { min-width: 0; }
+.card { display: flex; flex-direction: column; height: min(41.67vw, 600px); justify-content: space-between; min-height: 480px; padding: clamp(36px, 4vw, 64px); transition: background var(--dur-micro); }
+.card h2 { font-size: var(--type-display-m); margin-bottom: 18px; }
+.card p { color: var(--ink-soft); font-size: var(--type-body-l); max-width: 370px; }
+.light { background: var(--surface); }
+.light:hover { background: #fbfaff; }
+.dark { background: var(--stage); color: var(--on-stage); }
+.dark p { color: var(--on-stage-soft); }
+.dark:hover { background: #1b112c; }
+.violet { background: #eee9fb; }
+.violet:hover { background: #e8e1f9; }
+.arrow { align-self: flex-end; font-size: 2rem; transition: transform var(--dur-micro) var(--ease-soft); }
+.card:hover .arrow { transform: translateX(8px); }
+.card:focus-visible { outline-offset: -4px; }
+@media (max-width: 900px) { .paths { grid-template-columns: 1fr; } .card { height: auto; min-height: 420px; } }
+@media (max-width: 767px) { .hero { height: min(760px, calc(100svh - 72px)); min-height: 590px; } .heroCopy h1 { font-size: clamp(2.1rem, 9vw, 3rem); } .heroVisual::before { height: 100vw; width: 100vw; } .card { min-height: 380px; padding: 36px 20px; } }

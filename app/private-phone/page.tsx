@@ -1,0 +1,44 @@
+import type { Metadata } from "next";
+import { Reveal } from "@/components/shared/Reveal";
+import { privatePhoneContent as c } from "@/content/privatePhone";
+import styles from "./page.module.css";
+
+export const metadata: Metadata = { title: "Private Phone", description: c.hero.sub };
+
+function ChapterHead({ eyebrow, title, lead }: { eyebrow: string; title: string; lead: string }) {
+  return <Reveal className={styles.chapterHead}><p className={styles.eyebrow}>{eyebrow}</p><h2>{title}</h2><p>{lead}</p></Reveal>;
+}
+
+function PhoneSilhouette({ children, label }: { children?: React.ReactNode; label?: string }) {
+  return <div className={styles.phone}>{label && <span className={styles.phoneLabel}>{label}</span>}<div className={styles.speaker} />{children}</div>;
+}
+
+function NumberChip({ children = "N-4712" }: { children?: React.ReactNode }) { return <span className={styles.numberChip}>{children}</span>; }
+
+export default function PrivatePhonePage() {
+  const wires = [["689-RWN-4948", "Family"], ["812-VTW-7304", "Client"], ["733-HXR-5706", "Doctor"], ["659-NWH-5096", "Friend"], ["252-ZHE-6967", "Coworker"]];
+  return <main id="main-content" className={styles.page} data-theme="private">
+    <section className={styles.hero}>
+      <div className={styles.grid} />
+      <div className={styles.heroDevice}><div className={styles.orbitA} /><div className={styles.orbitB} /><PhoneSilhouette /></div>
+      {c.numbers.map((number, i) => <span key={number} className={`${styles.floatChip} ${styles[`chip${i + 1}`]}`}>{number}</span>)}
+      <Reveal className={styles.heroCopy}><p className={styles.eyebrow}>{c.hero.eyebrow}</p><h1>{c.hero.title}</h1><p className={styles.heroSub}>{c.hero.sub}</p><p>{c.hero.audience}</p><button className={styles.disabledCta} type="button" aria-disabled="true" aria-label="See How It Works — PDF coming soon">{c.hero.cta}</button></Reveal>
+    </section>
+
+    <section className={styles.section}><div className={styles.container}><ChapterHead {...c.protects} /><div className={styles.protectList}>{c.protects.items.map(([title, text], i) => <Reveal key={title} delay={i * 80}><article><span>{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="25"/><path d="M25 37l7 7 15-17"/></svg></article></Reveal>)}</div></div></section>
+
+    <section className={`${styles.section} ${styles.panelSection}`}><div className={styles.container}><ChapterHead {...c.works} /><div className={styles.steps}>{c.works.steps.map(([title,text],i) => <Reveal key={title} delay={i*80}><article><div className={styles.stepVisual}><PhoneSilhouette />{i > 0 && <NumberChip />}</div><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></article></Reveal>)}</div><Reveal><p className={styles.displayClosing}>{c.works.closing}</p></Reveal></div></section>
+
+    <section className={styles.section}><div className={styles.container}><ChapterHead {...c.leak} /><div className={styles.leakPhones}>{[c.leak.a,c.leak.b].map((device,di) => <Reveal key={device.label} delay={di*120}><div><p className={styles.eyebrow}>{device.label}</p><PhoneSilhouette>{device.messages.map((message,mi) => <p key={message} className={`${styles.bubble} ${mi===1 ? styles.changed : ""}`}>{message}</p>)}</PhoneSilhouette><p>{device.caption}</p></div></Reveal>)}</div><Reveal><p className={styles.displayClosing}>{c.leak.closing}</p></Reveal></div></section>
+
+    <section className={`${styles.section} ${styles.panelSection}`}><div className={styles.container}><ChapterHead {...c.inbox} /><Reveal className={styles.networks}><div className={styles.hub}><p className={styles.eyebrow}>TRADITIONAL — ONE SHARED HUB</p><div className={styles.hubDiagram}><span className={styles.you}>You</span>{["Family","Ad","Spam","Unknown","Friend"].map((x,i)=><span key={x} className={i>0&&i<4?styles.unwanted:""}>{x}</span>)}</div><p>One line, everyone sits on it.</p></div><div className={styles.wires}><p className={styles.eyebrow}>NEWNAL — SEPARATE PRIVATE WIRES</p><div className={styles.wireHeader}><span>YOU</span><span>PRIVATE NUMBER</span><span>CONTACT</span></div>{wires.map(([n,name])=><div className={styles.wire} key={n}><span>You</span><NumberChip>{n}</NumberChip><span>→ {name}</span></div>)}<p>Five wires. Five numbers. Nothing shared.</p></div></Reveal></div></section>
+
+    <section className={styles.section}><div className={styles.container}><ChapterHead {...c.contacts} /><Reveal className={styles.contactFlow}><div><p className={styles.eyebrow}>PRIVATE PHONE OWNER</p><PhoneSilhouette /><span>GENERATE NUMBER</span><NumberChip /></div><div className={styles.encrypted}><p className={styles.eyebrow}>ENCRYPTED 1:1 CONNECTION</p><span className={styles.lock}>⌾</span><NumberChip /><span>↔ · · · · ↔</span></div><div><p className={styles.eyebrow}>FREE APP USER</p><PhoneSilhouette><span className={styles.appIcon}>N</span><small>ENTER NUMBER</small><NumberChip /><button type="button">Join</button></PhoneSilhouette></div></Reveal><Reveal><p className={styles.contactSummary}>{c.contacts.summary}</p></Reveal></div></section>
+
+    <section className={`${styles.section} ${styles.panelSection}`}><div className={styles.container}><ChapterHead {...c.compare} /><Reveal className={styles.tableWrap}><table><thead><tr><th>PROTECTION</th><th>NEWNAL PRIVATE PHONE</th><th>FREE CONNECTION APP</th></tr></thead><tbody>{c.compare.rows.map(([label,phone,app])=><tr key={label}><th>{label}</th><td className={styles.yes}>{phone === "yes" ? "✓" : "✗"}</td><td className={app === "yes" ? styles.yes : app === "tbd" ? styles.tbd : styles.no}>{app === "yes" ? "✓" : app === "no" ? "✗" : <span aria-label="Support status to be confirmed">TBD</span>}</td></tr>)}</tbody></table></Reveal></div></section>
+
+    <section className={styles.section}><div className={styles.container}><ChapterHead eyebrow={c.foundation.eyebrow} title={c.foundation.title} lead={c.foundation.lead} /><div className={styles.proofs}>{c.foundation.proofs.map(([num,label,sub],i)=><Reveal key={num} delay={i*80}><div><strong>{num}</strong><span>{label}</span><small>{sub}</small></div></Reveal>)}</div><Reveal className={styles.scale}><div><span className={styles.eyebrow}>PROOF OF SCALE</span><p>{c.foundation.scale}</p></div><div className={styles.coov}>COOV<small>BLOCKCHAIN CREDENTIAL</small></div></Reveal><p className={styles.credit}>{c.foundation.credit}</p>
+      <Reveal className={styles.interlude}><span>· INTERLUDE ·</span><h3>TWO DEVICES · ONE PRIVATE LINE</h3><div><PhoneSilhouette /><NumberChip /><PhoneSilhouette /></div></Reveal>
+      <Reveal><p className={styles.eyebrow}>PRICING</p><h2>Own it, then live with it.</h2></Reveal><div className={styles.pricing}>{c.foundation.prices.map(([name,type,price,desc,note],i)=><Reveal key={name} delay={i*80}><article><span className={styles.eyebrow}>{name}</span><p>{type}</p><strong>{price}</strong><p>{desc}</p><small>{note}</small></article></Reveal>)}</div><a className={styles.inquiry} href="mailto:contact@newnal.com">Enterprise inquiries → contact@newnal.com</a></div></section>
+  </main>;
+}

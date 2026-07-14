@@ -1,24 +1,40 @@
-import { NavItem } from "@/content/homepage";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./header.module.css";
 
-type HeaderProps = {
-  brand: string;
-  navigation: NavItem[];
-};
+const links = [
+  ["Newnal aios", "/aios"],
+  ["Companion Devices", "/devices"],
+  ["Private Phone", "/private-phone"],
+] as const;
 
-export function Header({ brand, navigation }: HeaderProps) {
+export function Header() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${pathname === "/devices/yali" ? styles.yaliHeader : ""}`}>
       <div className={styles.inner}>
-        <a href="#" className={styles.brand}>
-          {brand}
-        </a>
-        <nav className={styles.nav} aria-label="Primary">
-          {navigation.map((item) => (
-            <a key={item.href} href={item.href} className={styles.navLink}>
-              {item.label}
-            </a>
-          ))}
+        <Link className={styles.logo} href="/" aria-label="Newnal home">Newnal</Link>
+        <nav className={styles.desktopNav} aria-label="Main navigation">
+          {links.map(([label, href]) => <Link key={href} className={pathname === href ? styles.active : ""} href={href}>{label}</Link>)}
+        </nav>
+        <a className={`${styles.contact} button buttonPrimary`} href="mailto:contact@newnal.com">Contact</a>
+        <button className={styles.menuButton} type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
+          <span /><span />
+        </button>
+      </div>
+      <div className={`${styles.mobileMenu} ${open ? styles.open : ""}`} aria-hidden={!open}>
+        <nav aria-label="Mobile navigation">
+          {links.map(([label, href]) => <Link key={href} href={href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{label}</Link>)}
+          <a href="mailto:contact@newnal.com" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>Contact →</a>
         </nav>
       </div>
     </header>

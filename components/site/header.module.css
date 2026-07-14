@@ -1,61 +1,26 @@
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  backdrop-filter: blur(12px);
-  background: rgba(10, 10, 10, 0.9);
-  border-bottom: 1px solid var(--color-hairline);
+.header { background: var(--bg); border-bottom: 1px solid var(--line); color: var(--ink); height: 72px; position: sticky; top: 0; z-index: 100; }
+.inner { align-items: center; display: grid; grid-template-columns: 1fr auto 1fr; height: 100%; margin: 0 auto; max-width: 1376px; padding: 0 48px; }
+.logo { font-family: var(--font-display), Georgia, serif; font-size: 1.45rem; font-weight: 560; justify-self: start; letter-spacing: -.02em; }
+.desktopNav { align-items: center; display: flex; gap: 36px; }
+.desktopNav a { color: var(--ink-soft); font-size: .9rem; font-weight: 500; position: relative; }
+.desktopNav a::after { background: var(--violet); bottom: -8px; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: left; transition: transform var(--dur-micro); width: 100%; }
+.desktopNav a:hover::after, .desktopNav .active::after { transform: scaleX(1); }
+.contact { justify-self: end; min-height: 40px; padding-inline: 20px; }
+.menuButton { background: none; border: 0; color: inherit; display: none; height: 44px; padding: 10px; width: 44px; }
+.menuButton span { background: currentColor; display: block; height: 1.5px; margin: 6px 0; width: 24px; }
+.mobileMenu { background: var(--stage); color: var(--on-stage); display: none; inset: 72px 0 0; opacity: 0; pointer-events: none; position: fixed; transition: opacity var(--dur-micro); }
+.mobileMenu nav { display: flex; flex-direction: column; gap: 24px; padding: 64px 20px; }
+.mobileMenu a { font-family: var(--font-display), Georgia, serif; font-size: 2.25rem; line-height: 1.1; }
+.open { opacity: 1; pointer-events: auto; }
+.yaliHeader { position: relative; }
+:global(body:has([data-theme="private"])) .header { background: #0a0e16; border-color: #1e2836; color: #e8edf5; }
+:global(body:has([data-theme="private"])) .desktopNav a { color: #8b99ad; }
+:global(body:has([data-theme="private"])) .desktopNav a::after { background: #7da2d4; }
+:global(body:has([data-theme="private"])) .contact { background: #7da2d4; color: #0a0e16; }
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr auto auto; padding-inline: 32px; }
+  .desktopNav { display: none; }
+  .menuButton { display: block; margin-left: 12px; }
+  .mobileMenu { display: block; }
 }
-
-.inner {
-  width: min(var(--max-width), calc(100% - 32px));
-  margin: 0 auto;
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.brand {
-  font-size: 1rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--color-text);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.navLink {
-  min-height: 36px;
-  padding: 7px 14px;
-  border-radius: var(--radius-pill);
-  color: var(--color-text);
-  border: 1px solid var(--color-button-border);
-  font-size: 0.875rem;
-  transition: border-color 180ms ease;
-}
-
-.navLink:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-@media (max-width: 720px) {
-  .inner {
-    padding: 16px 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav {
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-  }
-}
+@media (max-width: 767px) { .inner { grid-template-columns: 1fr auto; padding-inline: 20px; } .header .contact { display: none; } }

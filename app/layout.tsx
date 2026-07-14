@@ -1,19 +1,42 @@
 import type { Metadata } from "next";
+import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
+import { Footer } from "@/components/site/footer";
+import { Header } from "@/components/site/header";
 import "./globals.css";
 
+const fraunces = Fraunces({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const instrumentSans = Instrument_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Newnal Draft Homepage",
-  description: "Draft philosophical homepage for the next Newnal website.",
+  title: { default: "Newnal", template: "%s · Newnal" },
+  description: "Intelligence that truly knows you. Data under your control.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${fraunces.variable} ${instrumentSans.variable} ${plexMono.variable}`}>
+      <body>
+        <a className="skipLink" href="#main-content">Skip to content</a>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
