@@ -1,11 +1,11 @@
-.footer { background: var(--stage); color: var(--on-stage); padding: 80px max(48px, calc((100vw - 1280px) / 2)); }
+.footer { background: var(--surface); color: var(--ink); padding: 80px max(48px, calc((100vw - 1280px) / 2)); }
 .grid { display: grid; gap: 64px; grid-template-columns: 2fr 1fr 1fr; }
 .logo { font-family: var(--font-display), Georgia, serif; font-size: 2rem; }
-.grid p, .grid span, .grid a { color: var(--on-stage-soft); font-size: .9rem; }
+.grid p, .grid span, .grid a { color: var(--ink-soft); font-size: .9rem; }
 .grid nav { display: flex; flex-direction: column; gap: 10px; }
 .grid strong { font-family: var(--font-mono), monospace; font-size: .72rem; letter-spacing: .16em; margin-bottom: 10px; text-transform: uppercase; }
-.grid a:hover { color: var(--on-stage); }
-.bottom { border-top: 1px solid rgba(229,223,240,.15); color: var(--on-stage-soft); display: flex; font-size: .75rem; justify-content: space-between; margin-top: 72px; padding-top: 24px; }
+.grid a:hover { color: var(--ink); }
+.bottom { border-top: 1px solid var(--line); color: var(--ink-soft); display: flex; font-size: .75rem; justify-content: space-between; margin-top: 72px; padding-top: 24px; }
 :global(body:has([data-theme="private"])) .footer { background: #0a0e16; border-top: 1px solid #1e2836; color: #e8edf5; }
 :global(body:has([data-theme="private"])) .footer p,
 :global(body:has([data-theme="private"])) .footer span,

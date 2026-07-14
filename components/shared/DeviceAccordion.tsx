@@ -1,25 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { devicesContent } from "@/content/devices";
 import styles from "./DeviceAccordion.module.css";
+
+const slides = [
+  { id: "yali", name: "YALI", src: "/images/devices/slide-yali.png", alt: "YALI AI Artist Companion slide" },
+  { id: "illi", name: "ILLI", src: "/images/devices/slide-illi.png", alt: "ILLI AI Companion slide" },
+  { id: "ufo", name: "UFO", src: "/images/devices/slide-ufo.png", alt: "UFO Real-World Adventure Device slide" },
+] as const;
 
 export function DeviceAccordion() {
   const [active, setActive] = useState(0);
-  return <div className={styles.accordion}>
-    {devicesContent.devices.map((device, index) => (
-      <article key={device.id} className={`${styles.panel} ${styles[device.id]} ${active === index ? styles.active : ""}`}>
-        <button type="button" aria-expanded={active === index} aria-controls={`device-${device.id}`} onClick={() => setActive(index)} onFocus={() => setActive(index)}>
-          <span>{device.name}</span><span className={styles.expand}>+</span>
-        </button>
-        <div id={`device-${device.id}`} className={styles.content}>
-          {device.id === "yali" ? <Image src="/images/yali-hero.png" alt="YALI AI Artist Companion in violet light" fill sizes="(max-width: 767px) 100vw, 80vw" priority /> : device.id === "illi" ? <Image src="/images/illi/accordion-key.png" alt="ILLI AI Companion supporting a family morning call" fill sizes="(max-width: 767px) 100vw, 80vw" /> : <div className={styles.placeholder} role="img" aria-label={`Placeholder for ${device.name} key visual`}><span>PHOTO · {device.name} key visual</span></div>}
-          <div className={styles.overlay} />
-          <div className={styles.copy}><h2>{device.title}</h2><p>{device.description}</p>{device.href ? <Link href={device.href}>{device.cta}</Link> : <span className={styles.disabled} aria-disabled="true">{device.cta}</span>}</div>
-        </div>
-      </article>
-    ))}
+  const slide = slides[active];
+  return <div className={styles.slideshow}>
+    <Image key={slide.id} src={slide.src} alt={slide.alt} fill priority sizes="100vw" />
+    <nav className={styles.controls} aria-label="Choose a companion device">
+      {slides.map((item, index) => <button key={item.id} type="button" aria-pressed={active === index} onClick={() => setActive(index)}>{item.name}</button>)}
+    </nav>
   </div>;
 }

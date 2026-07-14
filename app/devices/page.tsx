@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { DeviceAccordion } from "@/components/shared/DeviceAccordion";
-import { EmphasizedText } from "@/components/shared/EmphasizedText";
-import { Reveal } from "@/components/shared/Reveal";
 import { devicesContent as c } from "@/content/devices";
 import styles from "./page.module.css";
 
@@ -9,7 +8,11 @@ export const metadata: Metadata = { title: "Companion Devices", description: c.h
 
 export default function DevicesPage() {
   return <main id="main-content">
-    <section className={styles.hero}><div className="container"><Reveal><p className="eyebrow">COMPANION DEVICES</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p className={styles.lead}>{c.hero.lead}</p></Reveal><div className={styles.rhythm}>{c.hero.rhythm.map((line,i)=><Reveal key={line} delay={i*80}><p><i className={i<3?styles[`dot${i+1}`]:""}/>{line}</p></Reveal>)}</div></div></section>
+    <section className={styles.hero}>
+      <Image src="/images/devices/hero-lineup.png" alt="" fill priority sizes="100vw" />
+      <div className="srOnly"><h1>{c.hero.title}</h1><p>{c.hero.lead}</p></div>
+      <div className={styles.mobileHeroCopy}><h1>{c.hero.title}</h1><p>{c.hero.rhythm.join(" ")}</p></div>
+    </section>
     <section className={styles.devices} aria-label="Companion device lineup"><DeviceAccordion /></section>
   </main>;
 }

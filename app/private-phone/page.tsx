@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { privatePhoneContent as c } from "@/content/privatePhone";
@@ -21,7 +22,7 @@ export default function PrivatePhonePage() {
   return <main id="main-content" className={styles.page} data-theme="private">
     <section className={styles.hero}>
       <div className={styles.grid} />
-      <div className={styles.heroDevice}><div className={styles.orbitA} /><div className={styles.orbitB} /><PhoneSilhouette /></div>
+      <div className={styles.heroDevice}><div className={styles.orbitA} /><div className={styles.orbitB} /><Image className={styles.heroPhone} src="/images/private/hero-phone.png" alt="" width={443} height={725} priority /></div>
       {c.numbers.map((number, i) => <span key={number} className={`${styles.floatChip} ${styles[`chip${i + 1}`]}`}>{number}</span>)}
       <Reveal className={styles.heroCopy}><p className={styles.eyebrow}>{c.hero.eyebrow}</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p className={styles.heroSub}>{c.hero.sub}</p><p>{c.hero.audience}</p><a className={styles.brochureCta} href={c.hero.brochureHref} target="_blank" rel="noopener">{c.hero.cta}</a></Reveal>
     </section>
