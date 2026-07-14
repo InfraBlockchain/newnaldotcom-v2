@@ -66,7 +66,7 @@ export default function AiosPage() {
     </section>
 
     <section className={`${styles.ip} section`}>
-      <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2></Reveal><div className={styles.ipGrid}>{c.ip.tiles.map((tile, i) => <Reveal key={tile} delay={(i % 3) * 80}><article><h3>{tile}</h3>{[1,2,3].map((n) => <div key={n}><span>TO BE PROVIDED</span></div>)}</article></Reveal>)}</div></div>
+      <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} ↗</a>)}</div></Reveal><div className={styles.ipGrid}>{c.ip.tiles.map((tile, i) => <Reveal key={tile.title} delay={(i % 3) * 80}><article><h3>{tile.title}</h3>{tile.records.map(([title, identifier, status]) => <div key={title}><strong>{title}</strong><span>{identifier} · {status}</span></div>)}</article></Reveal>)}</div></div>
     </section>
   </main>;
 }

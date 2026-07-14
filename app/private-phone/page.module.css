@@ -7,7 +7,8 @@
 .heroDevice { height:620px; position:absolute; right:6%; top:90px; width:520px; }.heroDevice .phone { left:50%; position:absolute; top:50%; transform:translate(-50%,-50%); }
 .orbitA,.orbitB { border:1px solid rgba(61,90,128,.45); border-radius:50%; inset:10% -20%; position:absolute; transform:rotate(-20deg); }.orbitB { inset:25% -8%; transform:rotate(20deg); }
 .heroCopy { max-width:800px; position:relative; z-index:3; }.heroCopy h1 { max-width:800px; }.heroSub { color:var(--pp-text)!important; font-size:var(--type-body-l); max-width:650px; }.heroCopy>p:last-of-type { max-width:570px; }
-.disabledCta { background:transparent; border:1px solid var(--pp-accent); border-radius:999px; color:var(--pp-accent); cursor:not-allowed; margin-top:28px; min-height:48px; opacity:.65; padding:0 24px; }
+.brochureCta { align-items:center; background:transparent; border:1px solid var(--pp-accent); border-radius:999px; color:var(--pp-accent); display:inline-flex; margin-top:28px; min-height:48px; padding:0 24px; }
+.brochureCta:hover { background:var(--pp-accent); color:var(--pp-bg); }
 .floatChip,.numberChip { background:var(--pp-panel); border:1px solid var(--pp-line); border-radius:999px; color:var(--pp-accent); font-family:var(--font-mono),monospace; font-size:.72rem; letter-spacing:.07em; padding:8px 12px; white-space:nowrap; }
 .floatChip { animation:float 11s ease-in-out infinite; position:absolute; z-index:2; }.chip1{right:7%;top:16%}.chip2{right:35%;top:23%;animation-delay:-2s}.chip3{right:3%;top:40%;animation-delay:-4s}.chip4{right:39%;top:50%;animation-delay:-6s}.chip5{right:9%;top:65%;animation-delay:-8s}.chip6{right:31%;top:75%;animation-delay:-3s}.chip7{right:2%;top:82%;animation-delay:-5s}
 @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)} }

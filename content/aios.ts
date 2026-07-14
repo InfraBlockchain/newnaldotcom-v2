@@ -45,6 +45,38 @@ export const aiosContent = {
     closing: "We call this ecosystem Agent Place. In the future, specialized AI agents will work for you — only with your permission.",
     callout: "Data is more vulnerable the harder you try to protect it; counterintuitively, it is protected the more you open it.",
   },
-  // TODO(content): Replace placeholder rows when patent and whitepaper records are provided.
-  ip: { title: "Intellectual Property Portfolio", tiles: ["Technical Whitepapers", "Utility Patents", "Core Patents", "Trademarks", "Design"] },
+  ip: {
+    title: "Intellectual Property Portfolio",
+    documents: [
+      { label: "Download EN portfolio", href: "/docs/ip-rights-en.pdf" },
+      { label: "Download KR portfolio", href: "/docs/ip-rights-kr.pdf" },
+    ],
+    tiles: [
+      { title: "Technical Whitepapers", records: [
+        ["Newnal Web3 ai Technical Whitepaper", "My own ai", "Published"],
+        ["Newnal Web3 ai OS Technical Whitepaper", "Appless OS", "Published"],
+        ["Newnal ai Agent Place Technical Whitepaper", "Agent Place", "Published"],
+      ] },
+      { title: "Utility Patents", records: [
+        ["Personal Data for Personalized AI", "US-63/763955", "Pending"],
+        ["Self-Evolving Personal AI Agent", "KIPO 10-2026-0012833", "Pending"],
+        ["Blockchain-Based Home Node Device", "KIPO 10-2026-0013613", "Pending"],
+      ] },
+      { title: "Core Patents", records: [
+        ["Proof-of-Transaction Consensus", "US-11636450-B2", "Registered"],
+        ["Secret Messenger via Blockchain DID", "WO/2024/048838", "Published"],
+        ["Personalized AI Action Graph", "US-18/779899", "Pending"],
+      ] },
+      { title: "Trademarks", records: [
+        ["Newnal", "US 98/180961", "Application"],
+        ["Metacircle", "US 99/290317", "Application"],
+        ["COOV", "KIPO 40-2021-0065186", "Application"],
+      ] },
+      { title: "Design", records: [
+        ["Newnal Phone V1", "KIPO 30-2025-0015837", "Application"],
+        ["Newnal Phone Light", "KIPO 30-2025-0029489", "Application"],
+        ["Newnal Metacircle UI", "KIPO 30-2025-28631", "Application"],
+      ] },
+    ],
+  },
 } as const;

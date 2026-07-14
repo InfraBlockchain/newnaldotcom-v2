@@ -1,13 +1,13 @@
 export const privatePhoneContent = {
   numbers: ["482-KRN-3917", "731-BXQ-5204", "156-GHT-8463", "629-MLP-7051", "347-FVC-6590", "518-JNR-2746", "894-DWZ-1328"],
   hero: {
-    // TODO(link): Replace the disabled CTA state when the How It Works PDF URL is provided.
     eyebrow: "CHAPTER 01 — OVERTURE",
     title: "Privacy that holds— even when trust breaks.",
     emphasis: "trust breaks",
     sub: "Most secure phones defend against hackers. Newnal defends against the person on the other side.",
     audience: "Built for leaders, creators, executives, and anyone whose reputation is an asset.",
     cta: "See How It Works →",
+    brochureHref: "/docs/private-phone-brochure.pdf",
   },
   protects: {
     eyebrow: "CHAPTER 02 — WHAT NEWNAL PROTECTS", title: "Privacy that survives the leak.",
