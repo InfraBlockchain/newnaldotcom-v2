@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./DeviceAccordion.module.css";
 
 const slides = [
@@ -26,6 +26,15 @@ export function DeviceAccordion() {
     setActive((current) => (current + 1) % slides.length);
   }, []);
 
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const timer = window.setTimeout(advanceSlide, 6000);
+    return () => window.clearTimeout(timer);
+  }, [active, advanceSlide]);
+
   return (
     <div className={styles.slideshow}>
       <Image key={slide.id} src={slide.src} alt={slide.alt} fill priority sizes="100vw" />
@@ -34,9 +43,6 @@ export function DeviceAccordion() {
           Explore YALI
         </Link>
       )}
-      <div className={styles.progressTrack} aria-hidden="true">
-        <div key={slide.id} className={styles.progress} onAnimationEnd={advanceSlide} />
-      </div>
       <nav className={controlsClassName} aria-label="Choose a companion device">
         {slides.map((item, index) => (
           <button
