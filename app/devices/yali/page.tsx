@@ -16,7 +16,7 @@ export default function YaliPage(){
   return <main id="main-content" className={styles.page} data-theme="yali">
     <YaliSubnav />
     <section className={styles.hero}>
-      <div className="container"><Reveal className={styles.heroHead}><p className={styles.productEyebrow}><i/>{c.hero.eyebrow}</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p></Reveal>
+      <div className="container"><Reveal className={styles.heroHead}><p className={styles.productEyebrow}><i/>{c.hero.eyebrow}</p><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p><p>{c.hero.leadDetail}</p></Reveal>
         <div className={styles.heroMedia}><div className={styles.negatives}>{c.hero.negatives.map((x,i)=><Reveal key={x} delay={i*80}><p>{x}</p></Reveal>)}<Reveal delay={240}><strong>{c.hero.closing}</strong></Reveal></div><Reveal className={styles.videoWrap}>{/* TODO(asset): Encode the supplied hero footage with an H.264-capable tool and generate its poster. */}<div className={styles.video}><Image src="/images/yali/figma-hero-card.png" alt="YALI AI Artist Companion device" fill priority sizes="(max-width: 767px) 84vw, 30vw"/></div></Reveal></div>
       </div>
       <Reveal className={styles.heroFilm}><Image src="/images/yali/figma-hero-wide.png" alt="YALI device in an artist companion film" fill sizes="(max-width: 767px) 100vw, 96vw" /></Reveal>
