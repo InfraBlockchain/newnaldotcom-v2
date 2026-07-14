@@ -7,16 +7,22 @@
 ## 읽는 순서
 
 1. `00-foundation.md` — 사이트 IA, 기술 스택, 공용 디자인 시스템(토큰·타이포·그리드·모션·접근성)
-2. `01-yali.md` — YALI 제품 페이지 전체 스펙 (현재 유일한 구현 대상 페이지)
+2. `02-home.md` — 홈
+3. `03-aios.md` — Newnal aios
+4. `04-private-phone.md` — Private Phone
+5. `05-devices-hub.md` — Companion Devices 허브
+6. `01-yali.md` — YALI 제품 페이지
 
-## 현재 스코프
+## 현재 스코프 — 사이트 전체를 구현한다. 디바이스 상세만 YALI 우선.
 
 | 페이지 | 상태 |
 |---|---|
+| 홈 (`/`) | **지금 구현** — `02-home.md` |
+| Newnal aios (`/aios`) | **지금 구현** — `03-aios.md` |
+| Private Phone (`/private-phone`) | **지금 구현** — `04-private-phone.md` |
+| Companion Devices 허브 (`/devices`) | **지금 구현** — `05-devices-hub.md` |
 | YALI (`/devices/yali`) | **지금 구현** — `01-yali.md` |
-| Private Phone | 보류 (스펙 미작성) |
-| ILLI / UFO | 보류 (스펙 미작성) |
-| 홈 / aios | 보류 — YALI 페이지가 단독으로 완결되도록 GNB 링크는 placeholder 허용 |
+| ILLI / UFO 상세 | 보류 (스펙 미작성) — 허브에서 소개만 하고 상세 링크는 비활성 |
 
 ## 원본 자료
 
