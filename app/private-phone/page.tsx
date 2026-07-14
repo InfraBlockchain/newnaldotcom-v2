@@ -17,6 +17,19 @@ function PhoneSilhouette({ children, label }: { children?: React.ReactNode; labe
 
 function NumberChip({ children = "N-4712" }: { children?: React.ReactNode }) { return <span className={styles.numberChip}>{children}</span>; }
 
+function StepDiagram({ step }: { step: number }) {
+  return (
+    <div className={styles.stepVisual} aria-hidden="true">
+      <span className={styles.stepNumber}>{String(step + 1).padStart(2, "0")}</span>
+      <div className={styles.stepDiagram}>
+        {step === 0 && <><i className={styles.diagramPhone} /><i className={styles.diagramArrow}>→</i><span className={styles.diagramNumber}>Newnal<br />Number</span><span className={styles.diagramDots}>· · ·</span></>}
+        {step === 1 && <><i className={styles.diagramPhone} /><span className={styles.diagramNumber}>Newnal<br />Number</span><i className={styles.diagramArrow}>→</i><i className={styles.diagramPhone} /></>}
+        {step === 2 && <><i className={styles.diagramPhone} /><i className={styles.diagramLine} /><i className={styles.diagramLock}>⌑</i><i className={styles.diagramLine} /><i className={styles.diagramPhone} /></>}
+      </div>
+    </div>
+  );
+}
+
 export default function PrivatePhonePage() {
   const wires = [["689-RWN-4948", "Family"], ["812-VTW-7304", "Client"], ["733-HXR-5706", "Doctor"], ["659-NWH-5096", "Friend"], ["252-ZHE-6967", "Coworker"]];
   return <main id="main-content" className={styles.page} data-theme="private">
@@ -29,7 +42,7 @@ export default function PrivatePhonePage() {
 
     <section className={styles.section}><div className={styles.container}><ChapterHead {...c.protects} /><div className={styles.protectList}>{c.protects.items.map(([title, text], i) => <Reveal key={title} delay={i * 80}><article><span>{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="25"/><path d="M25 37l7 7 15-17"/></svg></article></Reveal>)}</div></div></section>
 
-    <section className={`${styles.section} ${styles.panelSection}`}><div className={styles.container}><ChapterHead {...c.works} /><div className={styles.steps}>{c.works.steps.map(([title,text],i) => <Reveal key={title} delay={i*80}><article><div className={styles.stepVisual}><PhoneSilhouette />{i > 0 && <NumberChip />}</div><span>{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></article></Reveal>)}</div><Reveal><p className={styles.displayClosing}>{c.works.closing}</p></Reveal></div></section>
+    <section className={`${styles.section} ${styles.panelSection}`}><div className={styles.container}><div className={styles.worksHead}><ChapterHead {...c.works} /></div><div className={styles.steps}>{c.works.steps.map(([title,text],i) => <Reveal key={title} delay={i*80}><article><StepDiagram step={i} /><h3>{title}</h3><p>{text}</p></article></Reveal>)}</div><Reveal><p className={styles.displayClosing}>{c.works.closing}</p></Reveal></div></section>
 
     <section className={styles.section}><div className={styles.container}><ChapterHead {...c.leak} /><div className={styles.leakPhones}>{[c.leak.a,c.leak.b].map((device,di) => <Reveal key={device.label} delay={di*120}><div><p className={styles.eyebrow}>{device.label}</p><PhoneSilhouette>{device.messages.map((message,mi) => <p key={message} className={`${styles.bubble} ${mi===1 ? styles.changed : ""}`}>{message}</p>)}</PhoneSilhouette><p>{device.caption}</p></div></Reveal>)}</div><Reveal><p className={styles.displayClosing}>{c.leak.closing}</p></Reveal></div></section>
 
