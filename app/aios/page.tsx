@@ -18,7 +18,7 @@ function EraTimeline() {
   const eras = [["1995", "Windows 95", "Personal Computing Era"], ["2007", "iOS", "Mobile Computing Era"], ["NOW", "Newnal AIOS", "AI Computing Era"]];
   return <div className={styles.timeline} role="img" aria-label="Operating system timeline from Windows 95 to iOS to Newnal AIOS">
     <div className={styles.timelineLine} />
-    {eras.map(([year, os, era], i) => <Reveal key={os} delay={i * 120} className={`${styles.eraPoint} ${i === 2 ? styles.current : ""}`}><i /><span>{year}</span><strong>{os}</strong><small>{era}</small></Reveal>)}
+    {eras.map(([year, os, era], i) => <Reveal key={os} delay={i * 120} className={`${styles.eraPoint} ${i === 2 ? styles.current : ""}`}><div className={styles.eraNode}><span>{year}</span><strong>{os}</strong></div><small>{era}</small></Reveal>)}
   </div>;
 }
 
