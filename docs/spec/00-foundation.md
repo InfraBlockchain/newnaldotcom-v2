@@ -11,12 +11,18 @@
 ```
 /                      홈 (보류 — 현재는 /devices/yali로 리다이렉트해도 무방)
 /aios                  Newnal aios 소개 (보류)
-/private-phone         Private Phone (보류)
-/devices               Devices Run By Newnal aios 허브 (보류)
+/private-phone         Private Phone (보류 — 세부 기획안에 Free App 섹션 2종·$0 요금 항목 추가됨)
+/devices               Devices 허브 (보류)
 /devices/yali          ★ 지금 구현
 /devices/illi          보류
 /devices/ufo           보류
+/patents               특허 페이지 (보류 — 세부 기획안: 5분할 타일. 상단 Core Patents 30% + Whitepapers 30%, 하단 Periphery Patents 20% + Trademarks 10% + Design 10%)
 ```
+
+`/devices` 허브 대문 카피 (세부 기획안 확정, 구현 시 verbatim 사용):
+- H1: `AI companions for the lives we actually live.`
+- Lead: `Powered by Newnal AIOS, our devices are built for the relationships, routines, and moments that make life personal.`
+- Sub: `For the artist you love. / For the family you care for. / For the world waiting outside. / All centered around you.`
 
 - GNB 메뉴 라벨: `Newnal aios` · `Private Phone` · `Devices` (+ CTA)
 - 보류 페이지 링크는 `href="#"` 대신 **라우트는 실제 경로로 걸되 페이지는 미구현 상태로 두지 말고**, GNB에서 해당 항목을 비활성(회색, `aria-disabled`) 처리한다. 죽은 링크를 배포하지 않는 것이 원칙.
