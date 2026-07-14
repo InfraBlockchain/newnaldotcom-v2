@@ -5,7 +5,6 @@
 .desktopNav a { color: var(--ink-soft); font-size: .8rem; font-weight: 400; position: relative; }
 .desktopNav a::after { background: var(--ink); bottom: -8px; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: left; transition: transform var(--dur-micro); width: 100%; }
 .desktopNav a:hover::after, .desktopNav .active::after { transform: scaleX(1); }
-.contact { border: 1px solid currentColor; border-radius: 999px; color: var(--ink-soft); font-size: .8rem; justify-self: end; padding: 7px 14px; }
 .menuButton { background: none; border: 0; color: inherit; display: none; height: 44px; padding: 10px; width: 44px; }
 .menuButton span { background: currentColor; display: block; height: 1.5px; margin: 6px 0; width: 24px; }
 .mobileMenu { background: var(--stage); color: var(--on-stage); display: none; inset: 64px 0 0; opacity: 0; pointer-events: none; position: fixed; transition: opacity var(--dur-micro); }
@@ -16,11 +15,10 @@
 :global(body:has([data-theme="private"])) .header { background: #0a0e16; border-color: #1e2836; color: #e8edf5; }
 :global(body:has([data-theme="private"])) .desktopNav a { color: #8b99ad; }
 :global(body:has([data-theme="private"])) .desktopNav a::after { background: #7da2d4; }
-:global(body:has([data-theme="private"])) .contact { border-color: #7da2d4; color: #7da2d4; }
 @media (max-width: 900px) {
   .inner { grid-template-columns: 1fr auto auto; padding-inline: 32px; }
   .desktopNav { display: none; }
   .menuButton { display: block; margin-left: 12px; }
   .mobileMenu { display: block; }
 }
-@media (max-width: 767px) { .inner { grid-template-columns: 1fr auto; padding-inline: 20px; } .header .contact { display: none; } }
+@media (max-width: 767px) { .inner { grid-template-columns: 1fr auto; padding-inline: 20px; } }

@@ -8,6 +8,7 @@ import styles from "./header.module.css";
 const links = [
   ["Newnal aios", "/aios"],
   ["Companion Devices", "/devices"],
+  ["Private Phone", "/private-phone"],
 ] as const;
 
 export function Header() {
@@ -25,7 +26,6 @@ export function Header() {
         <nav className={styles.desktopNav} aria-label="Main navigation">
           {links.map(([label, href]) => <Link key={href} className={pathname === href ? styles.active : ""} href={href}>{label}</Link>)}
         </nav>
-        <Link className={styles.contact} href="/private-phone">Private Phone</Link>
         <button className={styles.menuButton} type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
           <span /><span />
         </button>
@@ -33,7 +33,6 @@ export function Header() {
       <div className={`${styles.mobileMenu} ${open ? styles.open : ""}`} aria-hidden={!open}>
         <nav aria-label="Mobile navigation">
           {links.map(([label, href]) => <Link key={href} href={href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{label}</Link>)}
-          <Link href="/private-phone" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>Private Phone →</Link>
         </nav>
       </div>
     </header>
