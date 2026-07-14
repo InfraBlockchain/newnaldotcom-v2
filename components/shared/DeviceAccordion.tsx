@@ -14,6 +14,9 @@ const slides = [
 export function DeviceAccordion() {
   const [active, setActive] = useState(0);
   const slide = slides[active];
+  const controlsClassName = `${styles.controls} ${
+    slide.id === "yali" ? styles.controlsYali : slide.id === "illi" ? styles.controlsIlli : styles.controlsUfo
+  }`;
 
   const selectSlide = useCallback((index: number) => {
     setActive(index);
@@ -34,7 +37,7 @@ export function DeviceAccordion() {
       <div className={styles.progressTrack} aria-hidden="true">
         <div key={slide.id} className={styles.progress} onAnimationEnd={advanceSlide} />
       </div>
-      <nav className={styles.controls} aria-label="Choose a companion device">
+      <nav className={controlsClassName} aria-label="Choose a companion device">
         {slides.map((item, index) => (
           <button
             key={item.id}
@@ -44,6 +47,7 @@ export function DeviceAccordion() {
             onClick={() => selectSlide(index)}
           />
         ))}
+        <span aria-hidden="true" />
       </nav>
     </div>
   );
