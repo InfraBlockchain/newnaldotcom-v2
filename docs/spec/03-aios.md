@@ -32,7 +32,7 @@ S7  IP              Intellectual Property Portfolio
 - H1: `ONE ARCHITECTURE. COMPLETE DATA SOVEREIGNTY`
 - Sub: `Intelligence that truly knows you. Data under your control.`
 
-**레이아웃·비주얼**: 860px 높이, 중앙 정렬. H1은 Fraunces display-xl, 두 문장을 2행으로 분리. 배경 `--bg` + 좌우 대각에서 만나는 옅은 라벤더 글로우 2개(1과 0의 양극 암시). 상시 모션 없음
+**레이아웃·비주얼**: 860px 높이, 중앙 정렬. H1은 Instrument Serif display-xl, 두 문장을 2행으로 분리. 배경 `--bg` + 좌우 대각에서 만나는 옅은 라벤더 글로우 2개(1과 0의 양극 암시). 상시 모션 없음
 
 ### S2 — Sovereignty (From 100% open to absolute zero)
 
@@ -77,7 +77,7 @@ S7  IP              Intellectual Property Portfolio
 - 도입: `AI is intelligent.`
 - 강조 콜아웃(상단 3px 라인 박스): `But AI relies on you to manually define all context and intent through input. You're asked to repeatedly re-enter intentions, context, data etc. every time to achieve optimal results.`
 - 결론: `AI has learned the world. But it has not learned you. So we changed the question. Not, "How do we make AI smarter?" But, "How do we build AI that understands me?"`
-  — 마지막 두 물음은 행을 분리하고 `"How do we build AI that understands me?"`만 Fraunces display-m으로 승격 (페이지의 전환점)
+  — 마지막 두 물음은 행을 분리하고 `"How do we build AI that understands me?"`만 Instrument Serif display-m으로 승격 (페이지의 전환점)
 
 ### S5 — My AI (AI Built From You)
 
@@ -91,7 +91,7 @@ S7  IP              Intellectual Property Portfolio
   3. `You can see exactly what data was used, when, and how`
 - 결론: `From this foundation, My AI is created. You are no longer just a user of AI. You become the creator of your own AI.` — 마지막 문장 `--ink` 강조
 
-**레이아웃**: H2 → 도입(`Where is my data?`는 이탤릭 Fraunces로 분리) → 3카드 가로(모바일 세로) → 결론
+**레이아웃**: H2 → 도입(`Where is my data?`는 이탤릭 Instrument Serif로 분리) → 3카드 가로(모바일 세로) → 결론
 
 ### S6 — Agent Place (Services Connect Without Apps)
 

@@ -82,7 +82,7 @@ S6  Spec + Closing    라이트   스펙 테이블 + 최종 CTA
 ┌──────────────────────────────────────────────┐
 │              ● YALI · AI ARTIST COMPANION     │
 │      Your artist should live in your          │   H1 중앙, max-width 1140
-│        life, not just your feed.              │   Fraunces display-xl
+│        life, not just your feed.              │   Instrument Serif display-xl
 │                 (lead, 2줄)                    │
 │                                              │
 │  Not another fan app.      ┌──────────────┐  │   좌: 부정 카피 3행 스택
@@ -110,7 +110,7 @@ S6  Spec + Closing    라이트   스펙 테이블 + 최종 CTA
 - Eyebrow: `01 · PERSONALIZED FANDOM`
 - H2: `Fandom, personalized around you.`
 - Lead: `Most fan platforms send the same content to everyone. YALI is different. It learns your favorite songs, moments, memories, routines, and preferences — then connects them to the artist's voice, world, and official content. The result is fandom that feels less like following, and more like being known.`
-- Proof 3종 (숫자는 Fraunces display-m, 라벨은 mono):
+- Proof 3종 (숫자는 Instrument Serif display-m, 라벨은 mono):
   1. `340` `moments/wk` — `Learns as you live.` — `YALI observes your listens, saves, replays, and skipped notifications to build your fan profile.`
   2. `1` `true voice` — `The artist's actual world.` — `Every message, song pick, and clip is drawn from the artist's approved universe — nothing generated in-between.`
   3. `0` `broadcasts` — `Nothing sent to everyone.` — `If it doesn't fit your schedule, mood, or fan history — it doesn't reach you.`
@@ -282,6 +282,6 @@ placeholder 규칙: `--stage-2` 배경 + 중앙 mono 캡션 `PHOTO · <장면 �
 - [ ] S4 타일 4종·S5 카드 3종 전부 렌더, S4 레일 채움 스크롤 동기화
 - [ ] S3 벤다이어그램 모바일 체인 degrade (카드 3장 아님)
 - [ ] 다크 섹션에서 `--lavender`/`--on-stage` 계열만 사용
-- [ ] Fraunces는 H1/H2/display-m 및 S2 proof 숫자에만 등장
+- [ ] Instrument Serif는 H1/H2/display-m 및 S2 proof 숫자에만 등장
 - [ ] `prefers-reduced-motion`에서 Aura Ring 정지 + 리빌 즉시 표시
 - [ ] 390px 폭에서 H1 3–4줄 이내, 가로 스크롤 없음

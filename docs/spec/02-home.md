@@ -46,7 +46,7 @@ S2  Three Paths   3분기 카드 (aios / Private Phone / Devices)
 
 **레이아웃·비주얼**
 - 3등분 풀폭 카드(각 480×600 비율 유지, 모바일 세로 스택). 카드 사이 구분은 1px `--line`
-- 각 카드: 상단에 제목(Fraunces display-m)+설명(body), 하단 우측에 화살표(→, Figma의 Vector 1 위치 재현). 배경은 목적지 톤 예고 — 카드1 `--surface`, 카드2 `--stage`(다크, 텍스트 `--on-stage`), 카드3 `--violet` 8% 틴트
+- 각 카드: 상단에 제목(Instrument Serif display-m)+설명(body), 하단 우측에 화살표(→, Figma의 Vector 1 위치 재현). 배경은 목적지 톤 예고 — 카드1 `--surface`, 카드2 `--stage`(다크, 텍스트 `--on-stage`), 카드3 `--violet` 8% 틴트
 - hover: 배경 톤 2% 심화 + 화살표 8px 우측 이동(`--dur-micro`). 카드 전체가 링크(`<a>` 블록)
 
 ## 3. 수용 기준

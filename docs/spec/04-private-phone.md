@@ -82,7 +82,7 @@ CH06  Foundation & Pricing  Built on infrastructure… + 가격 3종
   1. `01` **Generate** — `Your Newnal device mints a fresh number reserved for one specific person.`
   2. `02` **Share** — `Hand it off directly—by voice, gesture, or one-time code. No address book leaves your phone.`
   3. `03` **Connect** — `The other person enters the number once. From then on, you share a closed, encrypted line.`
-- 클로징(풀폭, Fraunces display-m): `One person. One number. One private connection.`
+- 클로징(풀폭, Instrument Serif display-m): `One person. One number. One private connection.`
 
 **비주얼**: 각 스텝 상단에 소형 라인 일러스트(폰→`N-4712` 칩→화살표 등, 초안 구성 참고, 전부 SVG). 넘버 칩은 시그니처 스타일 재사용
 
@@ -160,7 +160,7 @@ CH06  Foundation & Pricing  Built on infrastructure… + 가격 3종
   3. `FREE CONNECTION APP` / `For your contacts` / **$0** / `For contacts on the other side.` / `* No number generation, no voice modulation.`
 - 마무리: `Enterprise inquiries → contact@newnal.com` (mailto 링크)
 
-**레이아웃**: proof 3종은 1px 세로 디바이더로 3등분(숫자 Fraunces display-l, `--pp-accent`). 가격 카드 3장은 동일 크기 — $0 카드도 동급으로 취급(초안 그대로). 카드 보더 `--pp-line`, 금액만 `--pp-text` 대형
+**레이아웃**: proof 3종은 1px 세로 디바이더로 3등분(숫자 Instrument Serif display-l, `--pp-accent`). 가격 카드 3장은 동일 크기 — $0 카드도 동급으로 취급(초안 그대로). 카드 보더 `--pp-line`, 금액만 `--pp-text` 대형
 
 ### Footer (이 페이지 전용 오버라이드)
 
