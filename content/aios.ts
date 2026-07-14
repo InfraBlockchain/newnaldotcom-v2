@@ -52,30 +52,54 @@ export const aiosContent = {
       { label: "Download KR portfolio", href: "/docs/ip-rights-kr.pdf" },
     ],
     tiles: [
-      { title: "Technical Whitepapers", records: [
-        ["Newnal Web3 ai Technical Whitepaper", "My own ai", "Published"],
-        ["Newnal Web3 ai OS Technical Whitepaper", "Appless OS", "Published"],
-        ["Newnal ai Agent Place Technical Whitepaper", "Agent Place", "Published"],
+      { title: "Core Patents", groups: [
+        { title: "Core Patent Families", records: [
+          ["Core Blockchain Technology (InfraBlockchain)", "US-11636450-B2", "Registered"],
+          ["Blockchain-based Secure Communication & Messaging", "WO/2024/048838", "Published"],
+          ["Personal Data Ownership & Web3 Data Infrastructure", "US-20250055712-A1", "Published"],
+          ["Personalized AI Model & AI Agent", "US-18/779899", "Pending"],
+          ["Personal AI Operating System & Devices", "US-19/059568", "Pending"],
+          ["Decentralized Identity (DID) & Verifiable Credentials", "US-18/709142", "Pending"],
+        ] },
       ] },
-      { title: "Utility Patents", records: [
-        ["Personal Data for Personalized AI", "US-63/763955", "Pending"],
-        ["Self-Evolving Personal AI Agent", "KIPO 10-2026-0012833", "Pending"],
-        ["Blockchain-Based Home Node Device", "KIPO 10-2026-0013613", "Pending"],
+      { title: "Periphery Patents", groups: [
+        { title: "Periphery Patents", records: [
+          ["Personal Data Collection for Personalized AI", "US-63/763955", "Pending"],
+          ["Self-Evolving Personal AI Agent", "KIPO 10-2026-0012833", "Pending"],
+          ["Blockchain-Based Home Node Device", "KIPO 10-2026-0013613", "Pending"],
+          ["Adaptive Facial Region Blending in Video Synthesis", "US-63/763302", "Pending"],
+          ["Credit Transaction Using Blockchain Network", "KIPO 10-2249864", "Registered"],
+          ["High-Performance Consensus Algorithm Simulator", "KIPO 10-2023-0165942", "Pending"],
+          ["NFT Distribution History Management", "KIPO 10-2700653", "Registered"],
+          ["Blockchain-Based Trading System", "KIPO 10-2022-0130057", "Pending"],
+        ] },
       ] },
-      { title: "Core Patents", records: [
-        ["Proof-of-Transaction Consensus", "US-11636450-B2", "Registered"],
-        ["Secret Messenger via Blockchain DID", "WO/2024/048838", "Published"],
-        ["Personalized AI Action Graph", "US-18/779899", "Pending"],
+      { title: "Trademarks", groups: [
+        { title: "Trademarks", records: [
+          ["Newnal", "US 98/180961 · EP 18943637", "Application"],
+          ["Metacircle", "US 99/290317 · EP 19219923", "Application"],
+          ["COOV", "KIPO 40-2021-0065186", "Registered"],
+          ["InfraBlockchain", "KIPO 40-2023-0122739", "Application"],
+          ["BlockChat", "WIPO 1710775", "Registered"],
+          ["BLOCKCHAIN CHIP", "KIPO 40-2023-0100452", "Application"],
+        ] },
       ] },
-      { title: "Trademarks", records: [
-        ["Newnal", "US 98/180961", "Application"],
-        ["Metacircle", "US 99/290317", "Application"],
-        ["COOV", "KIPO 40-2021-0065186", "Application"],
+      { title: "Design Patents", groups: [
+        { title: "Device & Interface Design", records: [
+          ["Devices with a Rollable Display", "KIPO 30-2024-0004156", "Application"],
+          ["Newnal Phone V1", "KIPO 30-2025-0015837", "Application"],
+          ["Newnal Phone Light", "KIPO 30-2025-0029489", "Application"],
+          ["Newnal Metacircle UI — Homescreen, Lockscreen", "KIPO 30-2025-28631", "Application"],
+        ] },
       ] },
-      { title: "Design", records: [
-        ["Newnal Phone V1", "KIPO 30-2025-0015837", "Application"],
-        ["Newnal Phone Light", "KIPO 30-2025-0029489", "Application"],
-        ["Newnal Metacircle UI", "KIPO 30-2025-28631", "Application"],
+      { title: "Technical Whitepapers", groups: [
+        { title: "Technical Whitepapers", records: [
+          ["Newnal Web3 ai Technical Whitepaper", "My own ai", "Published"],
+          ["Newnal Web3 ai OS Technical Whitepaper", "Appless OS", "Published"],
+          ["Newnal Web3 Telecom Technical Whitepaper", "AI-involved calls", "Published"],
+          ["Newnal ai Agent Place Technical Whitepaper", "Agent Place", "Published"],
+          ["Newnal InfraBlockchain Technical Whitepaper", "Federated blockchain", "Published"],
+        ] },
       ] },
     ],
   },

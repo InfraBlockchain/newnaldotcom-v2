@@ -10,7 +10,9 @@ export const metadata: Metadata = { title: "Newnal aios", description: c.hero.su
 const whitepaperLinks: Record<string, string> = {
   "Newnal Web3 ai Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-1-Web3-ai.pdf",
   "Newnal Web3 ai OS Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-2-Web3-ai-OS.pdf",
+  "Newnal Web3 Telecom Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-3-Web3-Telecom.pdf",
   "Newnal ai Agent Place Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-4-Newnal-ai-Agent-Place.pdf",
+  "Newnal InfraBlockchain Technical Whitepaper": "https://infrablockchain.net/documents/web3ai-newnal/Web3ai-Newnal-Tech-5-InfraBlockchain.pdf",
 };
 
 function Spectrum() {
