@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
-import { Placeholder } from "@/components/shared/Placeholder";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
 import { YaliSubnav } from "@/components/shared/YaliSubnav";
@@ -29,7 +28,7 @@ export default function YaliPage(){
       {c.philosophy.circles.map(([title,text],i)=><div key={title} className={styles[`vennText${i+1}`]}><span aria-hidden="true">○</span><h3>{title}</h3><p>{text}</p></div>)}<strong>NEWNAL YALI</strong>
     </Reveal></div></section>
 
-    <section id="chapter-2" className={`${styles.everyday} section`}><div className="container"><div className={styles.everydayHead}><ChapterHead eyebrow={c.everyday.eyebrow} title={c.everyday.title} lead=""/><Reveal><blockquote>{c.everyday.quote}</blockquote><p>{c.everyday.support}</p></Reveal></div><ScrollRail className={styles.timeline}>{c.everyday.tiles.map((tile,i)=><Reveal key={tile.title} className={`${styles.moment} ${i%2?styles.reverse:""}`}><div className={styles.momentCopy}><span>{tile.time}</span><h3>{tile.title}</h3><p>{tile.description}</p></div><div className={styles.momentImage}>{tile.image?<Image src={tile.image} alt={tile.scene} fill sizes="(max-width: 767px) 100vw, 50vw"/>:<Placeholder label={tile.scene}/>}</div></Reveal>)}</ScrollRail></div></section>
+    <section id="chapter-2" className={`${styles.everyday} section`}><div className="container"><div className={styles.everydayHead}><ChapterHead eyebrow={c.everyday.eyebrow} title={c.everyday.title} lead=""/><Reveal><blockquote>{c.everyday.quote}</blockquote><p>{c.everyday.support}</p></Reveal></div><ScrollRail className={styles.timeline}>{c.everyday.tiles.map((tile,i)=><Reveal key={tile.title} className={`${styles.moment} ${i%2?styles.reverse:""}`}><div className={styles.momentCopy}><span>{tile.time}</span><h3>{tile.title}</h3><p>{tile.description}</p></div><div className={styles.momentImage}><Image src={tile.image} alt={tile.scene} fill sizes="(max-width: 767px) 100vw, 50vw"/></div></Reveal>)}</ScrollRail></div></section>
 
     <section id="chapter-3" className={styles.moments}><div className={styles.concert}><Image src="/images/yali-concert.png" alt="Crowd with raised hands in blue-purple stadium light" fill sizes="100vw"/><div className={styles.concertShade}/><div className={styles.lights}>{Array.from({length:18}).map((_,i)=><i key={i}/>)}</div><ChapterHead eyebrow={c.moments.eyebrow} title={c.moments.title} lead={c.moments.lead} center/></div><div className={styles.darkCards}><div className="container"><div className={styles.momentCards}>{c.moments.cards.map((card,i)=><Reveal key={card.title} delay={i*80}><article><div className={styles.cardImage}><Image src={card.image} alt={card.scene} fill sizes="(max-width: 767px) 100vw, 33vw"/></div><div><h3>{card.title}</h3><p>{card.description}</p></div></article></Reveal>)}</div></div></div></section>
 
