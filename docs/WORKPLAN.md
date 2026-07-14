@@ -54,6 +54,17 @@
 
 ---
 
+## 1.5단계 — 컬러 스코프 재조정 (보라 격리 · 2026-07-15 추가)
+
+근거: `docs/spec/00-foundation.md` §3 개정. **보라는 YALI에만, Private Phone은 다크&블루 유지, 나머지(홈·aios·허브·GNB/푸터)는 모노톤.**
+
+- `app/globals.css`: `:root` 토큰을 개정된 §3 값(중립 모노톤)으로 교체하고, 보라 계열(`--violet`, `--violet-deep`, `--lavender`)과 라벤더 캐스트 값(`--bg #F7F5FB`, `--stage #160E24` 등)은 `[data-theme="yali"]` 블록으로 이동
+- `app/devices/yali/page.tsx`: 페이지 루트 요소에 `data-theme="yali"` 부여 (YALI sub-nav 포함)
+- 홈·aios·devices 허브·헤더/푸터에서 보라 사용처 전부 제거: 프라이머리 버튼·포커스 링·hover 액센트·다이어그램 액티브 → `--ink` 기반 (스펙 02/03 문서의 개정 톤 노트 참조)
+- devices 허브의 디바이스 식별 점 3색(보라/앰버/그린)은 소면적 유지 허용
+- Private Phone은 변경 없음 (`--pp-*` 유지)
+- 검증: YALI 외 페이지 CSS에서 `#6C4BD8`·`#C9B6FF`·`violet`·`lavender` grep 결과 0건
+
 ## 2단계 — YALI 에셋 통합
 
 ### 2-1. 이미지 복사·리네임 (원본은 건드리지 않음)

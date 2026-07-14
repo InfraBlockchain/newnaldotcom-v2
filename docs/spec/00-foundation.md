@@ -45,37 +45,46 @@ content/
   yali.ts  # 페이지 카피를 전부 데이터로 분리 (JSX 안에 하드코딩 금지)
 ```
 
-## 3. 컬러 토큰 — "보라톤" 시스템
+## 3. 컬러 토큰 — 모노톤 전역 + 제품별 테마 스코프 (2026-07-15 개정)
 
-Figma 초안의 무채색+보라 혼용을 정리해, **모든 중립색에 보라 기운이 도는** 단일 램프로 통일한다.
-(아래 hex는 초안에서 추출한 값이 아니라 이번에 새로 확정한 값이다. 이 값이 최종.)
+**원칙: 보라는 YALI 전용이다.** 전역(홈·aios·devices 허브·GNB/푸터)은 **무채 모노톤**, Private Phone은 다크&블루(`--pp-*`), YALI만 보라 테마. 제품 컬러는 해당 페이지의 `[data-theme]` 스코프 안에서만 존재한다.
 
 ```css
 :root {
-  /* 라이트 표면 */
-  --bg:        #F7F5FB;  /* 페이지 기본 배경 — 라벤더가 스민 아이보리 */
-  --surface:   #FFFFFF;  /* 카드/패널 */
-  --line:      #E5DFF0;  /* 헤어라인, 디바이더 */
-
-  /* 잉크 */
-  --ink:       #16101F;  /* 헤드라인·본문 강조 — 보라 캐스트 니어블랙 */
-  --ink-soft:  #554D63;  /* 보조 본문 */
-  --ink-faint: #8B8399;  /* 캡션, 비활성 */
-
-  /* 스테이지(다크 섹션) */
-  --stage:     #160E24;  /* 다크 섹션 배경 */
-  --stage-2:   #221338;  /* 다크 섹션 내 패널/그라디언트 상단 */
-  --on-stage:  #F3EFFB;  /* 다크 위 본문 */
-  --on-stage-soft: #A99BC4;
-
-  /* 액센트 */
-  --violet:    #6C4BD8;  /* 프라이머리 — CTA, 링크, 액티브 */
-  --violet-deep: #4B2FA6; /* hover/pressed */
-  --lavender:  #C9B6FF;  /* 다크 위 글로우·하이라이트 전용. 라이트 배경 위 텍스트 금지(대비 부족) */
+  /* 전역 — 모노톤 (aios·홈·허브·GNB/푸터) */
+  --bg:        #F7F7F8;  /* 라이트 배경, 중립 */
+  --surface:   #FFFFFF;
+  --line:      #E4E4E7;
+  --ink:       #131316;  /* 텍스트·프라이머리 버튼·포커스까지 전부 잉크로 */
+  --ink-soft:  #55555C;
+  --ink-faint: #8E8E96;
+  --stage:     #131316;  /* 전역 다크 표면(푸터, 홈 PP카드) — 중립 니어블랙 */
+  --stage-2:   #1E1E23;
+  --on-stage:  #F2F2F4;
+  --on-stage-soft: #A5A5AE;
 }
+
+[data-theme="yali"] {   /* YALI 페이지 전용 — 보라 */
+  --bg:        #F7F5FB;  /* 라벤더 스민 아이보리 */
+  --line:      #E5DFF0;
+  --ink:       #16101F;
+  --ink-soft:  #554D63;
+  --ink-faint: #8B8399;
+  --stage:     #160E24;  /* 보라 다크 섹션 */
+  --stage-2:   #221338;
+  --on-stage:  #F3EFFB;
+  --on-stage-soft: #A99BC4;
+  --violet:    #6C4BD8;  /* CTA·링크·액티브 — YALI 스코프 밖 사용 금지 */
+  --violet-deep: #4B2FA6;
+  --lavender:  #C9B6FF;  /* 다크 위 글로우 전용 */
+}
+/* Private Phone은 기존 [data-theme="private"] --pp-* 유지 (04 스펙 참조) */
 ```
 
-대비 규칙: 라이트 배경 위 텍스트는 `--ink`/`--ink-soft`만. `--violet`은 라이트 위에서 버튼 배경·대형 텍스트·아이콘까지만(소형 본문 금지). `--lavender`는 `--stage` 위 전용.
+대비·사용 규칙:
+- 전역 프라이머리 버튼 = `--ink` 배경/백색 텍스트. 포커스 아웃라인도 `--ink`(다크 위 백색). 전역에서 유채색 액센트 금지
+- `--violet`/`--lavender`는 `[data-theme="yali"]` 내부에서만. 규칙은 기존과 동일(라이트 위 소형 본문 금지, lavender는 stage 위 전용)
+- devices 허브의 디바이스 식별색(YALI 보라 점·ILLI 앰버 점·UFO 그린 점)은 "제품의 이름표"로서 소면적 점·보더에만 허용 — 페이지 UI 자체는 모노톤
 
 ## 4. 타이포그래피
 
@@ -126,9 +135,10 @@ Instrument Serif는 400 단일 웨이트 — 크기와 이탤릭으로만 위계
 - `--stage` 배경. 로고 + 제품 링크 컬럼 + copyright + 법적 링크. 장식 최소
 
 ### 버튼
-- Primary: `--violet` 배경 / 백색 텍스트 / pill / hover `--violet-deep` + translateY(-1px)
+- Primary(전역): `--ink` 배경 / 백색 텍스트 / pill / hover 톤 10% 밝게 + translateY(-1px)
 - Secondary: 투명 배경 + 1.5px `currentColor` 보더 / pill
-- 다크 위 Primary: `--lavender` 배경 + `--ink` 텍스트
+- YALI 스코프 내 Primary: `--violet` 배경(hover `--violet-deep`), 다크 위엔 `--lavender` 배경 + `--ink` 텍스트
+- PP 스코프 내 Primary: `--pp-accent` 배경 + `--pp-bg` 텍스트
 
 ### Reveal (스크롤 리빌)
 - 공용 훅/컴포넌트 1개: `opacity 0→1` + `translateY(24px→0)`, 600ms, `cubic-bezier(.22,1,.36,1)`, 1회만
@@ -148,7 +158,7 @@ Instrument Serif는 400 단일 웨이트 — 크기와 이탤릭으로만 위계
 
 ## 8. 접근성 / 품질 플로어
 
-- 포커스: `outline: 2px solid var(--violet); outline-offset: 3px` (다크 위에선 `--lavender`)
+- 포커스: `outline: 2px solid var(--ink); outline-offset: 3px` (다크 위에선 백색, YALI 스코프에선 `--violet`/`--lavender`)
 - 본문 대비 WCAG AA 이상 (토큰 조합 규칙을 따르면 자동 충족)
 - 이미지 전부 의미 있는 `alt`, 장식 이미지는 `alt=""`
 - 헤딩 계층 준수, 랜드마크(`header/main/footer/nav`) 사용
