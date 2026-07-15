@@ -85,11 +85,11 @@
 /* Physical space before the first / after the last slide so both can
    reach a centered resting position and peek evenly, Samsung.com-style. */
 .slide:first-child {
-  margin-left: 6%;
+  margin-left: max(6%, calc((100% - 1123px) / 2));
 }
 
 .slide:last-child {
-  margin-right: 6%;
+  margin-right: max(6%, calc((100% - 1123px) / 2));
 }
 
 .card {
