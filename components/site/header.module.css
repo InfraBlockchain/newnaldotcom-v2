@@ -76,7 +76,8 @@
 }
 
 :global(body:has([data-theme="private"])) .nav .active {
-  border-color: #7da2d4;
+  border-color: #0a84ff;
+  color: #0a84ff;
 }
 
 @media (max-width: 1199px) {

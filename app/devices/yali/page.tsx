@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
+import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
 import { yaliContent as c } from "@/content/yali";
@@ -30,7 +31,7 @@ export default function YaliPage(){
       <div className="container"><Reveal className={styles.heroHead}><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p><p>{c.hero.leadDetail}</p></Reveal>
         <Reveal className={styles.heroStatement}><div className={styles.negatives}><div className={styles.negativeLines}>{c.hero.negatives.map((line) => <p key={line}>{line}</p>)}</div></div><p className={styles.heroClosing}>{c.hero.closing}</p></Reveal>
       </div>
-      <Reveal className={styles.heroFilm}><video className={styles.heroFilmVideo} autoPlay loop muted playsInline poster="/images/yali/figma-hero-wide.png" preload="metadata" aria-label="YALI artist companion film"><source src="/images/yali/hero-film.mp4" type="video/mp4" /></video></Reveal>
+      <Reveal className={styles.heroFilm}><AutoPauseVideo className={styles.heroFilmVideo} src="/images/yali/hero-film.mp4" poster="/images/yali/figma-hero-wide.png" ariaLabel="YALI artist companion film" /></Reveal>
     </section>
 
     <section id="chapter-1" className={`${styles.dark} ${styles.personalized}`}><div className="container"><ChapterHead title={c.personalized.title} lead={c.personalized.lead} center/><div className={styles.personalizedGrid}><div className={styles.proofs}>{c.personalized.proofs.map(([num,unit,title,text],i)=><Reveal key={num} delay={i*80}><article><div><strong>{num}</strong><span>{unit}</span></div><h3>{title}</h3><p>{text}</p></article></Reveal>)}</div><Reveal className={styles.deviceVignette}><div className={styles.screen}><p className={styles.vignetteTime}>{c.personalized.vignette.time}</p><p className={styles.message}>{c.personalized.vignette.message}</p><div className={styles.wave}>{Array.from({length:30}).map((_,i)=><i key={i}/>)}</div><span>{c.personalized.vignette.playing}</span><strong>{c.personalized.vignette.track}</strong></div></Reveal></div></div></section>
