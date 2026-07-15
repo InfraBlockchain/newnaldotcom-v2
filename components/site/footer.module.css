@@ -1,7 +1,10 @@
 .footer {
-  align-items: center;
   background: #fff;
   color: var(--fg-ink);
+}
+
+.inner {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin-inline: auto;
@@ -31,13 +34,13 @@
 }
 
 @media (max-width: 1199px) {
-  .footer {
+  .inner {
     padding-inline: 40px;
   }
 }
 
 @media (max-width: 767px) {
-  .footer {
+  .inner {
     gap: 24px;
     padding: 30px 20px;
   }
