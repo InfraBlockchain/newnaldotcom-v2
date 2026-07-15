@@ -33,7 +33,7 @@
 
 .introHeading {
   color: var(--fg-text, #19191c);
-  font-family: var(--devices-font-syne), sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: clamp(1.75rem, 3.3vw, 2.9375rem);
   font-weight: 500;
   line-height: 1.2;
@@ -42,7 +42,7 @@
 
 .introBody {
   color: var(--fg-muted, #6b6b70);
-  font-family: var(--devices-font-inter), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   font-size: 1.09375rem;
   font-weight: 400;
   line-height: 1.5;
@@ -52,7 +52,7 @@
 
 .introTagline {
   color: var(--fg-accent, #4d9fff);
-  font-family: var(--devices-font-inter), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   font-size: 0.9375rem;
   font-weight: 500;
   margin: 0;
