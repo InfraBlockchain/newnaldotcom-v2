@@ -72,10 +72,24 @@
   display: none;
 }
 
+.trackWrap {
+  position: relative;
+}
+
 .slide {
   flex: 0 0 88%;
   max-width: 1123px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+}
+
+/* Physical space before the first / after the last slide so both can
+   reach a centered resting position and peek evenly, Samsung.com-style. */
+.slide:first-child {
+  margin-left: 6%;
+}
+
+.slide:last-child {
+  margin-right: 6%;
 }
 
 .card {
@@ -129,7 +143,7 @@
 }
 
 .dotActive {
-  background: var(--fg-ink, #0a0a0b);
+  background: var(--fg-dot, #9a9a9a);
   width: 31px;
 }
 
@@ -137,6 +151,44 @@
   .dot {
     transition: none;
   }
+}
+
+.navButton {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--fg-card-border, #e5e5eb);
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 150ms ease;
+  width: 44px;
+  z-index: 2;
+}
+
+.navButton:hover:not(:disabled) {
+  background: var(--fg-panel-bg, #f6f6f8);
+}
+
+.navButton:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.navButton svg {
+  display: block;
+}
+
+.navPrev {
+  left: 24px;
+}
+
+.navNext {
+  right: 24px;
 }
 
 @media (max-width: 1023px) {
@@ -148,10 +200,6 @@
 }
 
 @media (max-width: 767px) {
-  .slide {
-    flex-basis: 88vw;
-  }
-
   .introHeading {
     margin-bottom: 16px;
   }
@@ -164,5 +212,9 @@
     bottom: 20px;
     font-size: 1.5rem;
     left: 20px;
+  }
+
+  .navButton {
+    display: none;
   }
 }

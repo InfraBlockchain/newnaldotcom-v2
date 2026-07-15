@@ -18,6 +18,8 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const dragRef = useRef({ dragging: false, startX: 0, startScrollLeft: 0, moved: false });
+  const rafRef = useRef<number | null>(null);
+  const pendingDeltaRef = useRef<number | null>(null);
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -40,12 +42,19 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
     return () => observer.disconnect();
   }, [slides.length]);
 
+  // Cancel any in-flight rAF-batched scroll update on unmount.
+  useEffect(() => {
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
   const scrollToIndex = useCallback((index: number) => {
     const node = slideRefs.current[index];
     if (!node) return;
     node.scrollIntoView({
       behavior: prefersReducedMotion() ? "auto" : "smooth",
-      inline: "start",
+      inline: "center",
       block: "nearest",
     });
   }, []);
@@ -71,7 +80,19 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
         // Some environments (e.g. synthetic pointer events) may reject capture; dragging still works without it.
       }
     }
-    if (drag.moved) track.scrollLeft = drag.startScrollLeft - delta;
+    if (!drag.moved) return;
+
+    // Batch scrollLeft writes to one per animation frame for smoother dragging.
+    pendingDeltaRef.current = delta;
+    if (rafRef.current === null) {
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const currentTrack = trackRef.current;
+        if (currentTrack && pendingDeltaRef.current !== null) {
+          currentTrack.scrollLeft = dragRef.current.startScrollLeft - pendingDeltaRef.current;
+        }
+      });
+    }
   }, []);
 
   const endDrag = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
@@ -91,6 +112,8 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
   }, []);
 
   const activeSlide = slides[active];
+  const isFirst = active === 0;
+  const isLast = active === slides.length - 1;
 
   return (
     <div className={styles.wrap}>
@@ -102,51 +125,77 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
         </div>
       </div>
 
-      <div
-        className={styles.track}
-        ref={trackRef}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={endDrag}
-        onPointerLeave={endDrag}
-        onPointerCancel={endDrag}
-        onDragStart={(event) => event.preventDefault()}
-        aria-label="Companion devices"
-      >
-        {slides.map((slide, index) => {
-          const content = (
-            <>
-              <Image
-                src={slide.image}
-                alt={slide.name}
-                fill
-                priority={index === 0}
-                draggable={false}
-                sizes="(max-width: 767px) 88vw, 1123px"
-                className={styles.cardImage}
-              />
-              <span className={styles.cardLabel}>{slide.name}</span>
-            </>
-          );
+      <div className={styles.trackWrap}>
+        <button
+          type="button"
+          className={`${styles.navButton} ${styles.navPrev}`}
+          aria-label="Previous slide"
+          disabled={isFirst}
+          onClick={() => scrollToIndex(active - 1)}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M12.5 4.5 6.5 10l6 5.5" stroke="var(--fg-text, #19191c)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
 
-          return (
-            <div
-              key={slide.id}
-              ref={(node) => {
-                slideRefs.current[index] = node;
-              }}
-              className={styles.slide}
-            >
-              {slide.href ? (
-                <Link href={slide.href} className={styles.card} onClick={handleCardClick}>
-                  {content}
-                </Link>
-              ) : (
-                <div className={styles.card}>{content}</div>
-              )}
-            </div>
-          );
-        })}
+        <div
+          className={styles.track}
+          ref={trackRef}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={endDrag}
+          onPointerLeave={endDrag}
+          onPointerCancel={endDrag}
+          onDragStart={(event) => event.preventDefault()}
+          aria-label="Companion devices"
+        >
+          {slides.map((slide, index) => {
+            const content = (
+              <>
+                <Image
+                  src={slide.image}
+                  alt={slide.name}
+                  fill
+                  priority={index === 0}
+                  draggable={false}
+                  sizes="(max-width: 767px) 88vw, 1123px"
+                  className={styles.cardImage}
+                />
+                <span className={styles.cardLabel}>{slide.name}</span>
+              </>
+            );
+
+            return (
+              <div
+                key={slide.id}
+                ref={(node) => {
+                  slideRefs.current[index] = node;
+                }}
+                className={styles.slide}
+              >
+                {slide.href ? (
+                  <Link href={slide.href} className={styles.card} onClick={handleCardClick}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div className={styles.card}>{content}</div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <button
+          type="button"
+          className={`${styles.navButton} ${styles.navNext}`}
+          aria-label="Next slide"
+          disabled={isLast}
+          onClick={() => scrollToIndex(active + 1)}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M7.5 4.5 13.5 10l-6 5.5" stroke="var(--fg-text, #19191c)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
 
       <div className={styles.dots}>
