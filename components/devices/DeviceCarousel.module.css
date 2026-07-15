@@ -51,7 +51,7 @@
 }
 
 .introTagline {
-  color: var(--fg-accent, #4d9fff);
+  color: var(--fg-accent, #0a84ff);
   font-family: var(--font-inter), sans-serif;
   font-size: 0.9375rem;
   font-weight: 500;

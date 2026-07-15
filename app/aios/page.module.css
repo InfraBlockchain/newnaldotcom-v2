@@ -366,7 +366,7 @@
 .current .eraNode {
   background: var(--fg-accent-soft);
   border: 2px solid var(--fg-accent);
-  filter: drop-shadow(0 0 2px #4d9fff);
+  filter: drop-shadow(0 0 2px #0a84ff);
 }
 
 .current .eraNode span,
