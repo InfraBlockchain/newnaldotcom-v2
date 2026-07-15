@@ -162,9 +162,7 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
                   className={styles.cardImage}
                 />
                 <span className={styles.cardLabel}>{slide.name}<small className={styles.cardLabelSub}>Powered by Newnal aios</small></span>
-              {slide.href ? (
-                <span className={styles.cardCta}>Learn More <span aria-hidden>{"\u2192"}</span></span>
-              ) : null}
+              <span className={`${styles.cardCta} ${slide.href ? "" : styles.cardCtaDisabled}`} aria-disabled={!slide.href}>Learn More</span>
               </>
             );
 
