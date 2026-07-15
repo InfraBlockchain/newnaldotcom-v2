@@ -121,6 +121,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   left: 40px;
+  line-height: 1.05;
   position: absolute;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
 }
@@ -222,11 +223,12 @@
 
 .cardLabelSub {
   display: block;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
   font-family: var(--font-inter), sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: -0.01em;
-  margin-top: 4px;
+  margin-top: 6px;
   opacity: 0.92;
 }
 

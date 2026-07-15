@@ -91,11 +91,12 @@ export default function PrivatePhonePage() {
         <ChapterHead {...c.leak} />
         <div className={styles.leakPhones}>
           {[
-            { label: "ORIGINAL PRESERVED", src: "/images/private/original-chat-record.png", alt: "Original private conversation preserved" },
-            { label: "LATER EDITED", src: "/images/private/edited-chat-record.png", alt: "Private conversation with an edited record" },
+            { label: "01 \u2014 TAP EDIT", src: "/images/private/edit-flow-1.png", alt: "Long-press menu with Edit on a sent message" },
+            { label: "02 \u2014 REWRITE", src: "/images/private/edit-flow-2.png", alt: "Edit dialog rewriting the sent message" },
+            { label: "03 \u2014 RECORD CHANGED", src: "/images/private/edit-flow-3.png", alt: "Conversation now showing the rewritten message" },
           ].map((device, di) => (
             <Reveal key={device.label} delay={di * 120}>
-              <div className={`${styles.leakDevice} ${di === 1 ? styles.editedDevice : styles.originalDevice}`}>
+              <div className={styles.leakDevice}>
                 <p className={styles.eyebrow}>{device.label}</p>
                 <div className={styles.chatMockupFrame}>
                   <Image
