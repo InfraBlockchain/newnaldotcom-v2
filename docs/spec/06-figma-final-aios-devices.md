@@ -127,7 +127,9 @@
 - 멘트 타이포(영문 카피 확정에 따라 한글용 Pretendard 슬롯을 대체): 헤딩 **Syne 500, `clamp(28px, 3.3vw, 47px)`, lh 1.2, 중앙** / 본문 Inter 400 17.5px lh 1.5 `--fg-muted`, 최대 폭 760px / 태그라인 Inter 500 15px `--fg-accent`. 피그마가 새 카피로 갱신돼 있으면 해당 노드(`602:91`·`602:93`) 스타일을 재조회해 우선 적용.
 - 카드 3장 **YALI / ILLI / UFO** — 각 콘텐츠 폭의 ~88%(1123×476 @1440), radius 20px, gap 20px, 이미지 cover, 좌하단 패딩 40px에 흰 라벨(Pretendard 700 40px).
 - 이미지: `public/images/figma/devices-card-{yali,illi,ufo}.png` (커밋됨; 1x 해상도 — §6-①).
+- **정렬: 활성 카드 중앙 정렬** (사용자 확정 2026-07-15, 삼성닷컴 캐러셀 방식) — `scroll-snap-align: center`, 이전/다음 카드가 좌우에 **균등하게** 살짝 보인다. 첫/마지막 슬라이드도 중앙에 오도록 트랙 양끝에 `(뷰포트 폭 − 카드 폭) / 2` 인라인 패딩. 뷰포트가 카드보다 좁으면(모바일) 자연히 좌우 균등 peek.
 - 동작: **CSS scroll-snap 가로 캐러셀**(`x mandatory`) + 스와이프/드래그, dot·멘트 동기화만 JS(IntersectionObserver). 자동재생 없음.
+- **좌우 Navigator 버튼** (사용자 확정 2026-07-15): 카드 영역에 수직 중앙 오버레이로 prev/next 원형 버튼(≈44px, 흰 배경 + `--fg-card-border` 보더 + 화살표 아이콘 인라인 SVG, hover 시 배경 `--fg-panel-bg`). 첫 슬라이드에서 prev, 마지막에서 next는 `disabled`(반투명). 클릭 시 해당 인덱스로 스크롤(reduced-motion이면 즉시). `aria-label="Previous slide"/"Next slide"`, 키보드 포커스 가능. 모바일(767px 이하)에서는 숨기고 스와이프만.
 - **dot 3개**(슬라이드당 1개 — 카피 확정으로 3개로 확정): active = 31×8px pill, 나머지 8px 원, `--fg-dot`. 각 dot `aria-label="슬라이드 N: {헤딩}"` 버튼.
 - YALI 카드 클릭 → `/devices/yali` (기존 상세 유지). ILLI/UFO는 비링크.
 
