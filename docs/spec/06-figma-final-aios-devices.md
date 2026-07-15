@@ -146,6 +146,11 @@
 
 ## 5. 구현 순서 · 완료 기준 · 배포
 
+> **병렬 분업 (2026-07-15)**: 이 스펙은 두 에이전트가 동시 작업하도록 분할되어 있다 —
+> **TASK A**(`docs/spec/tasks/TASK-A-aios-global.md`, Codex): §1 전역 + §2 `/aios` ·
+> **TASK B**(`docs/spec/tasks/TASK-B-devices.md`, Copilot): §3 `/devices` + §4(devices분).
+> 파일 소유권이 서로 배타적이므로 각 태스크 문서의 허용/금지 목록을 우선한다. 아래 순서는 단일 에이전트 작업 시의 기준.
+
 1. 폰트·토큰(§1-3~1-5) → Header/Footer 교체(§1-1~1-2) → `/aios` S1~S6 재스킨 + S7 유지 → `/devices` 교체 → 반응형.
 2. 완료 기준: 기존 DoD(README) + **1440px에서 `docs/figma-refs/*.png`와 섹션별 시각 대조 일치**. `/`·`/private-phone`·`/devices/yali` 회귀 없음(헤더/푸터 교체 영향 확인).
 3. 배포: main push 후 Vercel 프로덕션 반영 확인 (안 되면 `vc-work` 확인 후 `vercel deploy --prod`). 배포 후 5개 라우트 + `/docs/ip-rights-en.pdf` 200 확인.
