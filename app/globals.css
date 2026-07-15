@@ -65,6 +65,9 @@ body {
   font-size: var(--type-body);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
 }
 body:has([data-theme="private"]) { background: #0a0e16; }
 button, input, textarea, select { font: inherit; }
@@ -125,3 +128,5 @@ h3 { font-size: var(--type-h3); line-height: 1.25; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+body > main { flex: 1 0 auto; }
