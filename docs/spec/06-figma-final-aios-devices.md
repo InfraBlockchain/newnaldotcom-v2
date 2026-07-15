@@ -47,7 +47,7 @@
 |------|------|------|
 | 새 디스플레이(헤드라인·로고) | **Syne** 400·500 | `next/font/google`, `--font-syne` |
 | 새 본문 | **Inter** 400·500·700 | `next/font/google`, `--font-inter` |
-| 한글 (devices D2) | **Pretendard** 400·700 | self-host (npm `pretendard` woff2 → `next/font/local`), `--font-pretendard` |
+| devices 카드 라벨(YALI/ILLI/UFO) | **Pretendard** 700 | self-host (npm `pretendard` woff2 → `next/font/local`), `--font-pretendard` |
 | IP Portfolio 섹션 | Instrument Serif / Instrument Sans / IBM Plex Mono | **기존 그대로 유지** |
 
 > 피그마 devices 본문의 "Google Sans Flex"는 웹 라이선스가 없어 **Inter로 대체**(자간 -0.04em 유지). 한글 문단의 "SamsungOneKorean"도 무시하고 Pretendard.
@@ -112,16 +112,26 @@
 
 **D1. Hero — `602:18`**: 높이 522px, 패딩 80, **배경 이미지** `public/images/figma/devices-hero-bg.png`(디바이스 패밀리샷, `next/image` fill·cover·priority). 좌정렬 스택(gap 40): H1 3줄 `AI companions` / `for the lives` / `we actually live.` → 서브 3줄 `For the artist you love.` / `For the family you care for.` / `For the world waiting outside.` (Inter 16px lh 1.6) → `All centered around you.` (Inter 20px).
 
-**D2. 프라이버시 디스플레이 섹션 — `602:89`**: 상하 패딩 64, gap 24. 한글 H2 중앙 2줄 `필요한 순간,` / `나만을 위한 프라이버시 디스플레이` + 한글 문단 4줄 중앙(피그마 원문 그대로: `갤럭시 S26 울트라에서만 만나볼 수 있는 내장형 사생활 보호 디스플레이…`).
-🚨 **이 카피는 삼성 갤럭시 S26 홍보문이 placeholder로 남은 것.** "그대로" 지시에 따라 일단 구현하되 `content/devices.ts`에 분리해 한 줄 교체 가능하게. **§6-① 최우선 미결 — 카피 확정 전 대외 홍보 보류 권장.**
+**D2. 제품 인트로 + 디바이스 캐러셀 — `602:89` + `602:99`** (하나의 연동 섹션): 상하 패딩 64, gap 24.
 
-**D3. 디바이스 캐러셀 — `602:99`**: 카드 3장 **YALI / ILLI / UFO** — 각 콘텐츠 폭의 ~88%(1123×476 @1440), radius 20px, gap 20px, 이미지 cover, 좌하단 패딩 40px에 흰 라벨(Pretendard 700 40px).
-- 이미지: `public/images/figma/devices-card-{yali,illi,ufo}.png` (커밋됨; 1x 해상도 — §6-②).
-- 동작: **CSS scroll-snap 가로 캐러셀**(`x mandatory`) + 스와이프/드래그, dot 동기화만 JS(IntersectionObserver). 자동재생 없음.
-- **dot 3개**(카드당 1개; 피그마엔 2개뿐이나 카드 3장 — §6-③): active = 31×8px pill, 나머지 8px 원, `--fg-dot`. 각 dot `aria-label="슬라이드 N: {디바이스명}"` 버튼.
+구조: 상단 **인트로 멘트 블록**(헤딩 + 본문 + 태그라인, 중앙 정렬) + 하단 **카드 캐러셀** + dot. 피그마의 dot 라벨("슬라이드N 선택: {헤딩}")이 말해주듯 **인트로 멘트는 활성 슬라이드에 따라 바뀐다** — 슬라이드 전환 시 멘트 블록을 부드럽게 페이드 교체(reduced-motion에서는 즉시 교체), 멘트 영역에 `aria-live="polite"`.
+
+원래 피그마의 한글 멘트(삼성 갤럭시 홍보문)는 placeholder였고, **아래가 사용자 확정 카피다 (2026-07-15, verbatim — 임의 윤문 금지)**. `content/devices.ts`에 슬라이드 배열로 정의:
+
+| 슬라이드 | 헤딩 | 본문 | 태그라인 |
+|---|---|---|---|
+| 1 · YALI | K-POP Artist AI Companion, YALI | It brings the artist you love into your everyday moments through personalized greetings, recommendations, memories, and experiences. | A daily companion built around the artist you love |
+| 2 · ILLI | AI Companion for the Golden Generation, ILLI | It helps older adults stay independent, supported, and intimately connected with their loved ones throughout the day. | A companion that understands the lives of the Golden Generation and their families |
+| 3 · UFO | Real-World Treasure Hunt, UFO | UFO is a wearable adventure device that transforms the everyday into the extraordinary. It turns real places into treasure zones, missions, and collectible moments. | A companion device for the adventurous! For the real-world, beyond the screen! |
+
+- 멘트 타이포(영문 카피 확정에 따라 한글용 Pretendard 슬롯을 대체): 헤딩 **Syne 500, `clamp(28px, 3.3vw, 47px)`, lh 1.2, 중앙** / 본문 Inter 400 17.5px lh 1.5 `--fg-muted`, 최대 폭 760px / 태그라인 Inter 500 15px `--fg-accent`. 피그마가 새 카피로 갱신돼 있으면 해당 노드(`602:91`·`602:93`) 스타일을 재조회해 우선 적용.
+- 카드 3장 **YALI / ILLI / UFO** — 각 콘텐츠 폭의 ~88%(1123×476 @1440), radius 20px, gap 20px, 이미지 cover, 좌하단 패딩 40px에 흰 라벨(Pretendard 700 40px).
+- 이미지: `public/images/figma/devices-card-{yali,illi,ufo}.png` (커밋됨; 1x 해상도 — §6-①).
+- 동작: **CSS scroll-snap 가로 캐러셀**(`x mandatory`) + 스와이프/드래그, dot·멘트 동기화만 JS(IntersectionObserver). 자동재생 없음.
+- **dot 3개**(슬라이드당 1개 — 카피 확정으로 3개로 확정): active = 31×8px pill, 나머지 8px 원, `--fg-dot`. 각 dot `aria-label="슬라이드 N: {헤딩}"` 버튼.
 - YALI 카드 클릭 → `/devices/yali` (기존 상세 유지). ILLI/UFO는 비링크.
 
-**D4. Footer.**
+**D3. Footer.**
 
 ---
 
@@ -144,9 +154,9 @@
 
 ## 6. 미결 사항 (블로킹 아님 — 기본값으로 진행)
 
-1. 🚨 **D2 한글 카피 = 삼성 placeholder** — 교체 카피 사용자 확정 필요. 기본값: 원문 그대로 게시(콘텐츠 파일 분리).
-2. **디바이스 이미지 해상도 1x** — 고해상 원본(iCloud `img_YALI`/`img_ILLI` 폴더 참조) 확보 시 교체.
-3. **캐러셀 dot 2 vs 3** — 기본값 3(카드당 1개).
-4. **푸터 미니멀화** — 피그마형(기본값) vs 현행 리치형. 리치형 유지 결정 시 §1-2 무시.
-5. **Private Phone 다크 헤더 변형** — 새 pill 헤더의 다크 대응 여부. 기본값: 라이트 헤더 그대로 사용.
-6. **홈(`/`)·YALI의 구 디자인과의 시각 불일치** — 이번 스코프에선 감수. 추후 피그마 확정안 나오면 06 문서 방식으로 확장.
+1. **디바이스 이미지 해상도 1x** — 고해상 원본(iCloud `img_YALI`/`img_ILLI` 폴더 참조) 확보 시 교체.
+2. **푸터 미니멀화** — 피그마형(기본값) vs 현행 리치형. 리치형 유지 결정 시 §1-2 무시.
+3. **Private Phone 다크 헤더 변형** — 새 pill 헤더의 다크 대응 여부. 기본값: 라이트 헤더 그대로 사용.
+4. **홈(`/`)·YALI의 구 디자인과의 시각 불일치** — 이번 스코프에선 감수. 추후 피그마 확정안 나오면 06 문서 방식으로 확장.
+
+> ~~D2 삼성 placeholder 카피~~ — 2026-07-15 사용자 확정 카피로 해소(§3 D2 표). ~~dot 2 vs 3~~ — 3으로 확정.
