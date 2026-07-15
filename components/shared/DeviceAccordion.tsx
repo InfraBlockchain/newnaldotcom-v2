@@ -2,57 +2,55 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./DeviceAccordion.module.css";
 
-const slides = [
-  { id: "yali", name: "YALI", src: "/images/devices/hero-yali.png", alt: "YALI AI Artist Companion", href: "/devices/yali", cta: "Explore YALI" },
-  { id: "illi", name: "ILLI", src: "/images/devices/hero-illi.png", alt: "ILLI AI Companion", href: undefined, cta: "Coming soon" },
-  { id: "ufo", name: "UFO", src: "/images/devices/hero-ufo.png", alt: "UFO Real-World Adventure Device", href: undefined, cta: "Coming soon" },
+const devices = [
+  { id: "yali", name: "YALI", src: "/images/figma/devices-card-yali.png", alt: "YALI artist companion device", href: "/devices/yali" },
+  { id: "illi", name: "ILLI", src: "/images/figma/devices-card-illi.png", alt: "ILLI companion device in a family home", href: undefined },
+  { id: "ufo", name: "UFO", src: "/images/figma/devices-card-ufo.png", alt: "UFO adventure device used with a treasure card", href: undefined },
 ] as const;
 
 export function DeviceAccordion() {
   const [active, setActive] = useState(0);
-
-  const advanceSlide = useCallback(() => {
-    setActive((current) => (current + 1) % slides.length);
-  }, []);
+  const [paused, setPaused] = useState(false);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
+    const cards = cardsRef.current;
+    const card = cards?.children[active] as HTMLElement | undefined;
+    if (cards && card) cards.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+  }, [active]);
 
-    const timer = window.setTimeout(advanceSlide, 6000);
-    return () => window.clearTimeout(timer);
-  }, [active, advanceSlide]);
+  useEffect(() => {
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % devices.length), 5000);
+    return () => window.clearInterval(timer);
+  }, [paused]);
 
   return (
-    <div className={styles.slideshow}>
-      {slides.map((slide, index) => {
-        const isActive = active === index;
-        return (
-          <section key={slide.id} className={`${styles.panel} ${isActive ? styles.active : ""}`}>
-            <Image src={slide.src} alt={isActive ? slide.alt : ""} fill priority={index === 0} sizes="(max-width: 767px) 100vw, 85vw" />
-            <button
-              className={styles.panelButton}
-              type="button"
-              aria-pressed={isActive}
-              aria-label={`Show ${slide.name}`}
-              onClick={() => setActive(index)}
-            />
-            <span className={styles.panelLabel} aria-hidden="true">{slide.name}</span>
-            {isActive && <div key={slide.id} className={styles.progress} aria-hidden="true" />}
-            {isActive && (slide.href
-              ? <Link className={styles.exploreLink} href={slide.href}>{slide.cta}</Link>
-              : <span className={`${styles.exploreLink} ${styles.comingSoonCta}`}>{slide.cta}</span>)}
-          </section>
-        );
-      })}
-      <section className={`${styles.panel} ${styles.upcoming}`} aria-label="ONNI, coming soon">
-        <span className={styles.panelLabel}>ONNI</span>
-        <span className={styles.comingSoon}>COMING SOON</span>
-      </section>
+    <div className={styles.showcase}>
+      <div className={styles.intro}>
+        <h2>K-POP Artist AI Companion, YALI</h2>
+        <p>It brings the artist you love into your everyday moments through personalized greetings, recommendations, memories, and experiences.</p>
+        <p>A daily companion built around the artist you love.</p>
+      </div>
+      <div ref={cardsRef} className={styles.cards} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+        {devices.map((device) => {
+          const card = (
+            <>
+            <Image src={device.src} alt={device.alt} fill sizes="(max-width: 767px) 84vw, 33vw" />
+            <span>{device.name}</span>
+            </>
+          );
+          return device.href
+            ? <Link key={device.id} className={styles.card} href={device.href} aria-label={`Explore ${device.name}`}>{card}</Link>
+            : <article key={device.id} className={styles.card}>{card}</article>;
+        })}
+      </div>
+      <div className={styles.pager}>
+        {devices.map((device, index) => <button key={device.id} className={active === index ? styles.activeDot : ""} type="button" aria-label={`Show ${device.name}`} aria-current={active === index} onClick={() => setActive(index)} />)}
+      </div>
     </div>
   );
 }

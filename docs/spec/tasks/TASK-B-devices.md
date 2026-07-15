@@ -49,6 +49,7 @@ package.json / package-lock.json  (pretendard 추가만)
 - [ ] 1440px에서 `docs/figma-refs/companion-devices-full.png`와 시각 대조 일치 (헤더/푸터 제외 — A 소유)
 - [ ] 카피가 스펙 §3 D2 표와 글자 단위로 동일 (임의 윤문 금지)
 - [ ] 캐러셀: 드래그/스와이프·dot 클릭 동작, dot·멘트 동기화, 자동재생 없음, `prefers-reduced-motion`에서 페이드 즉시 교체
+- [ ] 캐러셀 **활성 카드 중앙 정렬**(첫/마지막 슬라이드 포함, 양옆 균등 peek) + **좌우 Navigator 버튼**(첫/끝에서 disabled, 모바일 숨김) — 스펙 §3 D2 (2026-07-15 추가)
 - [ ] `/devices/yali` 정상 접근 (YALI 카드 클릭 경로 포함)
 - [ ] 390/768/1024/1440에서 파손 없음, 가로 스크롤은 캐러셀 내부에만 존재
 

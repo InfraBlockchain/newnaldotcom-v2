@@ -32,17 +32,26 @@ export const privatePhoneContent = {
     eyebrow: "CHAPTER 04 — WHEN A CONVERSATION IS EXPOSED", title: "A screenshot is no longer proof.", lead: "Each device retains its own version of the conversation. When one side rewrites a message, the other side still holds the original—so no single capture can settle the truth.",
     a: { label: "DEVICE A · LATER EDITED", messages: ["Where are we tomorrow?", "Cancel it.", "Understood."], caption: "Record on this device was changed after the conversation." },
     b: { label: "DEVICE B · ORIGINAL PRESERVED", messages: ["Where are we tomorrow?", "8pm, same place.", "See you."], caption: "The other device holds the original record, untouched." },
-    closing: "The conversation may be exposed. Your identity and words remain unverified.",
+    closing: ["The conversation may be exposed.", "Your identity and words remain unverified."],
   },
   inbox: { eyebrow: "CHAPTER 05 — AN INBOX ONLY YOU FILL", title: "Freedom From Ads and Spam", lead: "Traditional networks give one number away to everyone. Newnal issues a dedicated number for every person you trust—so no one else can reach you." },
-  contacts: { eyebrow: "CHAPTER 07 — CONTACTS ON THE OTHER SIDE", title: "Your contacts can join for free.", lead: "Newnal Private Phone is built so your protection does not depend on the other person buying the same device. Generate a unique Newnal number, share it, and they join your encrypted channel via the free app.", summary: "No Private Phone required on their side. · No phone number exchange." },
+  contacts: { eyebrow: "CHAPTER 07 — CONTACTS ON THE OTHER SIDE", title: "Your contacts can join for free.", lead: "Newnal Private Phone is built so your protection does not depend on the other person buying the same device. Generate a unique Newnal number, share it, and they join your encrypted channel via the free app.", summary: ["No Private Phone required on their side.", "No phone number exchange."] },
   compare: {
-    eyebrow: "CHAPTER 08 — WHERE PROTECTION LIVES", title: "Private Phone vs Free App", lead: "The free connection app allows your contacts to communicate with you securely. But the deeper protection comes from the Newnal Private Phone itself.",
-    rows: [
-      ["Voice modulation", "yes", "no"], ["Identity separation", "yes", "no"], ["Unique number generation", "yes", "no"], ["Device-level private environment", "yes", "no"], ["Encrypted 1:1 messaging", "yes", "yes"],
-      // TODO(product): Confirm whether Independent message history is supported by the Free Connection App.
-      ["Independent message history", "yes", "tbd"],
+    eyebrow: "CHAPTER 08 — WHERE PROTECTION LIVES", title: "Private Phone vs Free App",
+    subheads: [
+      "The free connection app allows your contacts to communicate with you securely.",
+      "But the deeper protection comes from the Newnal Private Phone itself.",
+      "Your Private Phone is where your voice is transformed, your identity is separated, your unique connection numbers are created, and your device-level private environment is protected.",
     ],
+    rows: [
+      { feature: "Unique Identifier Generation", detail: "Connection identifier / ownership", phone: { available: true, note: "Host Control" }, app: { available: false, note: null } },
+      { feature: "Real-Time Voice Transformation", detail: "Voice privacy", phone: { available: true, note: null }, app: { available: false, note: null } },
+      { feature: "Device-Level Security", detail: "Blockchain OS, forensic resistance", phone: { available: true, note: "Purpose-built hardware" }, app: { available: false, note: "Limited to standard smartphone security" } },
+      { feature: "Private Data Mode", detail: null, phone: { available: true, note: null }, app: { available: false, note: null } },
+      { feature: "Encrypted Messaging + Asynchronous Sync", detail: null, phone: { available: true, note: null }, app: { available: true, note: null } },
+      { feature: "Encrypted Calls", detail: null, phone: { available: true, note: null }, app: { available: true, note: null } },
+    ],
+    closing: "The app carries the message. The Phone carries the protection.",
   },
   foundation: {
     eyebrow: "CHAPTER 06 — TRUSTED FOUNDATION", title: "Built on infrastructure that has already served millions.", lead: "Newnal and Blockchain Labs bring more than a decade of engineering: InfraBlockchain public infrastructure, and the technology behind COOV—the blockchain-based COVID-19 credential trusted by Korea and 120 countries.",
