@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Private Phone", description: c.hero.sub };
 
-function ChapterHead({ eyebrow, title, lead }: { eyebrow: string; title: string; lead: string }) {
-  return <Reveal className={styles.chapterHead}><p className={styles.eyebrow}>{eyebrow}</p><h2>{title}</h2><p>{lead}</p></Reveal>;
+function ChapterHead({ title, lead }: { title: string; lead: string }) {
+  return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{lead}</p></Reveal>;
 }
 
 function NumberChip({ children = "123-ABC-5678" }: { children?: React.ReactNode }) { return <span className={styles.numberChip}>{children}</span>; }
@@ -65,7 +65,6 @@ export default function PrivatePhonePage() {
   return <main id="main-content" className={styles.page} data-theme="private">
     <section className={styles.hero}>
       <Reveal className={styles.heroCopy}>
-        <p className={styles.eyebrow}>{c.hero.eyebrow}</p>
         <h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1>
         <p className={styles.heroSub}>{c.hero.sub}</p>
         <p className={styles.heroAudience}>{c.hero.audience}</p>
@@ -212,7 +211,6 @@ export default function PrivatePhonePage() {
     <section className={`${styles.section} ${styles.compareSection}`}>
       <div className={styles.container}>
         <Reveal className={styles.compareHead}>
-          <p className={styles.eyebrow}>{c.compare.eyebrow}</p>
           <h2>{c.compare.title}</h2>
           <div className={styles.compareSubheads}>
             {c.compare.subheads.map((subhead, index) => <p key={subhead} className={index === 2 ? styles.compareDetail : ""}>{subhead}</p>)}
@@ -249,7 +247,7 @@ export default function PrivatePhonePage() {
 
     <section className={`${styles.section} ${styles.foundationSection}`}>
       <div className={styles.container}>
-        <ChapterHead eyebrow={c.foundation.eyebrow} title={c.foundation.title} lead={c.foundation.lead} />
+        <ChapterHead title={c.foundation.title} lead={c.foundation.lead} />
         <div className={styles.proofs}>
           {c.foundation.proofs.map(([num, label, sub], i) => (
             <Reveal key={num} delay={i * 80}><div><strong>{num}</strong><span>{label}</span><small>{sub}</small></div></Reveal>
