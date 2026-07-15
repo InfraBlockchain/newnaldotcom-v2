@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./DeviceAccordion.module.css";
 
 const devices = [
-  { id: "yali", name: "YALI", src: "/images/figma/devices-card-yali.png", alt: "YALI artist companion device" },
-  { id: "illi", name: "ILLI", src: "/images/figma/devices-card-illi.png", alt: "ILLI companion device in a family home" },
-  { id: "ufo", name: "UFO", src: "/images/figma/devices-card-ufo.png", alt: "UFO adventure device used with a treasure card" },
+  { id: "yali", name: "YALI", src: "/images/figma/devices-card-yali.png", alt: "YALI artist companion device", href: "/devices/yali" },
+  { id: "illi", name: "ILLI", src: "/images/figma/devices-card-illi.png", alt: "ILLI companion device in a family home", href: undefined },
+  { id: "ufo", name: "UFO", src: "/images/figma/devices-card-ufo.png", alt: "UFO adventure device used with a treasure card", href: undefined },
 ] as const;
 
 export function DeviceAccordion() {
@@ -35,12 +36,17 @@ export function DeviceAccordion() {
         <p>A daily companion built around the artist you love.</p>
       </div>
       <div ref={cardsRef} className={styles.cards} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-        {devices.map((device) => (
-          <article key={device.id} className={styles.card}>
+        {devices.map((device) => {
+          const card = (
+            <>
             <Image src={device.src} alt={device.alt} fill sizes="(max-width: 767px) 84vw, 33vw" />
             <span>{device.name}</span>
-          </article>
-        ))}
+            </>
+          );
+          return device.href
+            ? <Link key={device.id} className={styles.card} href={device.href} aria-label={`Explore ${device.name}`}>{card}</Link>
+            : <article key={device.id} className={styles.card}>{card}</article>;
+        })}
       </div>
       <div className={styles.pager}>
         {devices.map((device, index) => <button key={device.id} className={active === index ? styles.activeDot : ""} type="button" aria-label={`Show ${device.name}`} aria-current={active === index} onClick={() => setActive(index)} />)}
