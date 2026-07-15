@@ -37,8 +37,8 @@ export default function YaliPage(){
 
     <section className="section"><div className="container"><ChapterHead title={c.philosophy.title} lead={c.philosophy.lead} center/><Reveal className={styles.venn}>
       <svg viewBox="0 0 900 700" role="img" aria-label="Venn diagram of Personal Companion, Artist Universe, and Fan Memory forming Newnal YALI"><circle cx="290" cy="250" r="225"/><circle cx="610" cy="250" r="225"/><circle cx="450" cy="480" r="225"/></svg>
-      {c.philosophy.circles.map(([title,items],i)=><div key={title} className={styles[`vennText${i+1}`]}><PhilosophyIcon index={i}/><h3>{title}</h3><ul>{items.map((item) => <li key={item}>{item}</li>)}</ul></div>)}<strong>NEWNAL<br />YALI</strong>
-    </Reveal></div></section>
+      {c.philosophy.circles.map(([title,items],i)=><div key={title} className={styles[`vennText${i+1}`]}><PhilosophyIcon index={i}/><h3>{title}</h3><ul>{items.map((item) => <li key={item}>{item}</li>)}</ul></div>)}<strong>YALI</strong>
+    </Reveal><p className={styles.vennCaption}>Powered by Newnal</p></div></section>
 
     <section id="chapter-2" className={`${styles.everyday} section`}><div className="container"><div className={styles.everydayHead}><ChapterHead title={c.everyday.title} lead=""/><Reveal><blockquote>{c.everyday.quote}</blockquote><p>{c.everyday.support.map((line) => <span key={line}>{line}</span>)}</p></Reveal></div><ScrollRail className={styles.timeline}>{c.everyday.tiles.map((tile,i)=><Reveal key={tile.title} className={`${styles.moment} ${i%2?styles.reverse:""}`}><div className={styles.momentCopy}><span>{tile.time}</span><h3>{tile.title}</h3><p>{tile.description}</p></div><div className={styles.momentImage}><Image src={tile.image} alt={tile.scene} fill sizes="(max-width: 767px) 100vw, 50vw"/></div></Reveal>)}</ScrollRail></div></section>
 
