@@ -1,17 +1,26 @@
 export const yaliContent = {
   hero: {
-    eyebrow: "YALI · AI ARTIST COMPANION", title: "Your artist should live in your life, not just your feed.", emphasis: "in your life",
+    eyebrow: "YALI · AI ARTIST COMPANION", title: "Your artist living in your life.", emphasis: "living in your life.",
     lead: "YALI is your AI Artist Companion, powered by Newnal AIOS.",
     leadDetail: "It brings the artist you love into your everyday moments through personalized greetings, conversations, recommendations, memories, and experiences.",
     negatives: ["Not another fan app.", "Not another notification.", "Not a chatbot."], closing: "A daily companion built around the artist you love.",
   },
   personalized: {
-    eyebrow:"01 · PERSONALIZED FANDOM",title:"Fandom, personalized around you.",lead:"Most fan platforms send the same content to everyone. YALI is different. It learns your favorite songs, moments, memories, routines, and preferences — then connects them to the artist's voice, world, and official content. The result is fandom that feels less like following, and more like being known.",
+    eyebrow:"01 · PERSONALIZED FANDOM",title:"Fandom, personalized around you.",lead:["Most fan platforms send the same content to everyone.", "YALI is different. It learns your favorite songs, moments, memories, routines, and preferences — then connects them to the artist's voice, world, and official content.", "The result is fandom that feels less like following, and more like being known."],
     proofs:[["340","moments/wk","Learns as you live.","YALI observes your listens, saves, replays, and skipped notifications to build your fan profile."],["1","true voice","The artist's actual world.","Every message, song pick, and clip is drawn from the artist's approved universe — nothing generated in-between."],["0","broadcasts","Nothing sent to everyone.","If it doesn't fit your schedule, mood, or fan history — it doesn't reach you."]],
     vignette:{time:"FROM YOUR ARTIST · 8:24 AM",message:"Good morning. I put together a playlist for your commute — you had a long day yesterday.",playing:"NOW PLAYING",track:"Cadence — B-side Live"},
   },
-  philosophy:{eyebrow:"· FOR FANS, NOT FOLLOWERS ·",title:"Made for fans, not followers.",lead:"A companion you keep close, not an app you forget to open. Carry the artist's world with you.",circles:[["Personal Companion","A dedicated companion experience powered by Newnal AIOS."],["Artist Universe","Built around the artist's approved voice, content, style, and creative identity."],["Fan Memory","A relationship that grows with your journey as a fan."]]},
-  everyday:{eyebrow:"02 · EVERYDAY MOMENTS",title:"Start the day with the artist you love",quote:"\"YALI is there for the small moments — the ones that make fandom feel alive.\"",support:"A morning greeting before school or work. A song recommendation on the way home. A message before an exam, interview, concert, or difficult day. It brings the artist's presence into your real life, not just your feed.",tiles:[
+  philosophy:{
+    eyebrow:"· FOR FANS, NOT FOLLOWERS ·",
+    title:"Made for fans, not followers.",
+    lead:"A companion you keep close, not an app you forget to open. Carry the artist's world with you.",
+    circles:[
+      ["Personal Companion",["daily moments","mood","routine","preferences"]],
+      ["Artist Universe",["voice","content","style","world"]],
+      ["Fan Memory",["journey","moments","milestones"]],
+    ],
+  },
+  everyday:{eyebrow:"02 · EVERYDAY MOMENTS",title:"Start the day with\nthe artist you love",quote:"\"YALI is there for the small moments — the ones that make fandom feel alive.\"",support:["A morning greeting before school or work.", "A song recommendation on the way home.", "A message before an exam, interview, concert, or difficult day.", "It brings the artist's presence into your real life, not just your feed."],tiles:[
     {time:"MORNING",title:"Morning Message",description:"Wake up to a greeting shaped around your schedule, mood, and fan history.",image:"/images/yali/everyday-morning.png",scene:"Morning greeting from YALI"},
     {time:"ANY MOMENT",title:"Mood-Based Music",description:"Get songs, performances, or clips selected for how you feel right now.",image:"/images/yali/everyday-music.png",scene:"YALI device for listening to music with an artist"},
     {time:"ANY MOMENT",title:"Daily Encouragement",description:"Receive words that match your moment — whether you need energy, comfort, focus, or celebration.",image:"/images/yali/everyday-encouragement.png",scene:"YALI artist message for a special occasion"},

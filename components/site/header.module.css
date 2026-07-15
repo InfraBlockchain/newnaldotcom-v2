@@ -15,6 +15,14 @@
 :global(body:has([data-theme="private"])) .header { background: #0a0e16; border-color: #1e2836; color: #e8edf5; }
 :global(body:has([data-theme="private"])) .desktopNav a { color: #8b99ad; }
 :global(body:has([data-theme="private"])) .desktopNav a::after { background: #7da2d4; }
+:global(body:has([data-theme="yali"])) .header { background: #0a0811; border-color: rgba(201, 182, 255, .16); color: #f2edff; }
+:global(body:has([data-theme="yali"])) .desktopNav a { color: #b9aece; }
+:global(body:has([data-theme="yali"])) .desktopNav a::after { background: #c9b6ff; }
+:global(body:has([data-theme="yali"])) .header { background: #fbfafe; border-color: #e8e1ef; color: #1c1723; }
+:global(body:has([data-theme="yali"])) .desktopNav a { color: #6b6375; }
+:global(body:has([data-theme="yali"])) .desktopNav a::after { background: #6c4bd8; }
+:global(body:has([data-theme="devices"])) .desktopNav .active { border: 1px solid #bababc; border-radius: 999px; color: #19191c; margin: -6px -12px; padding: 6px 12px; }
+:global(body:has([data-theme="devices"])) .desktopNav .active::after { display: none; }
 @media (max-width: 900px) {
   .inner { grid-template-columns: 1fr auto auto; padding-inline: 32px; }
   .desktopNav { display: none; }

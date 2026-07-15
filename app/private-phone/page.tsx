@@ -139,7 +139,7 @@ export default function PrivatePhonePage() {
       </article>
       <article className={`${styles.comparisonCard} ${styles.wires}`}>
         <div className={styles.cardHeading}>
-          <p className={styles.eyebrow}>NEWNAL — SEPARATE PRIVATE WIRES</p>
+          <p className={styles.eyebrow}>NEWNAL — SEPARATE PRIVATE LINES</p>
         </div>
         <div className={styles.sharedLineGraphic}>
           <div className={`${styles.receiverPhone} ${styles.safePhone}`}>
@@ -158,7 +158,7 @@ export default function PrivatePhonePage() {
             {wires.map(([, name]) => <span key={name} className={styles.wireContact}>{name}</span>)}
           </div>
         </div>
-        <p>Five wires. Five numbers. Nothing shared.</p>
+        <p>Five lines. Five numbers. Nothing shared.</p>
       </article>
     </Reveal></div></section>
 
