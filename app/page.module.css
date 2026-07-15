@@ -1,4 +1,4 @@
-.home { background: #fff; color: #070708; }
+.home { background: #fff; color: #070708; display: flex; flex-direction: column; min-height: calc(100svh - 64px); }
 
 .hero {
   align-items: center;
@@ -7,8 +7,9 @@
     radial-gradient(circle at 15% 118%, rgba(238, 220, 247, .42), transparent 48%),
     linear-gradient(135deg, #fdfdfe 0%, #f6f8fc 100%);
   display: flex;
+  flex: 1;
   justify-content: center;
-  min-height: calc(100svh - 64px);
+  min-height: 480px;
   overflow: hidden;
   padding: 80px var(--side);
 }
@@ -50,6 +51,7 @@
 
 .paths {
   border-top: 1px solid #efeff0;
+  flex: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -176,7 +178,7 @@
 
 @media (max-width: 900px) {
   .hero {
-    min-height: calc(100svh - 64px);
+    min-height: 500px;
   }
 
   .heroCopy {
@@ -204,7 +206,7 @@
   .heroCopy { padding: 62px 20px 52px; }
   .heroCopy h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-bottom: 26px; }
   .heroCopy p { font-size: 1.25rem; margin-bottom: 30px; }
-  .hero { min-height: calc(100svh - 64px); padding: 56px 20px; }
+  .hero { min-height: 480px; padding: 56px 20px; }
   .card { height: 380px; padding: 36px 20px; }
   .card h2 { font-size: 2rem; }
 }
