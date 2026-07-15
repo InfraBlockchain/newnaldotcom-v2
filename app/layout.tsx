@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { IBM_Plex_Mono, Instrument_Sans, Instrument_Serif, Inter, Syne } from "next/font/google";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import "./globals.css";
@@ -25,6 +25,20 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: { default: "Newnal", template: "%s · Newnal" },
   description: "Intelligence that truly knows you. Data under your control.",
@@ -32,7 +46,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${instrumentSans.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${instrumentSerif.variable} ${instrumentSans.variable} ${plexMono.variable} ${syne.variable} ${inter.variable}`}>
       <body>
         <a className="skipLink" href="#main-content">Skip to content</a>
         <Header />
