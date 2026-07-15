@@ -1,0 +1,168 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.intro {
+  margin: 0 auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+.introInner {
+  animation: devices-intro-fade 420ms ease both;
+}
+
+@keyframes devices-intro-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .introInner {
+    animation: none;
+  }
+}
+
+.introHeading {
+  color: var(--fg-text, #19191c);
+  font-family: var(--devices-font-syne), sans-serif;
+  font-size: clamp(1.75rem, 3.3vw, 2.9375rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.introBody {
+  color: var(--fg-muted, #6b6b70);
+  font-family: var(--devices-font-inter), sans-serif;
+  font-size: 1.09375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 auto 16px;
+  max-width: 760px;
+}
+
+.introTagline {
+  color: var(--fg-accent, #4d9fff);
+  font-family: var(--devices-font-inter), sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 88%;
+  max-width: 1123px;
+  scroll-snap-align: start;
+}
+
+.card {
+  aspect-ratio: 1123 / 476;
+  background: var(--fg-card-bg, #f9f9fa);
+  border-radius: 20px;
+  cursor: grab;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.cardImage {
+  object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.cardLabel {
+  bottom: 40px;
+  color: #fff;
+  font-family: var(--devices-font-pretendard), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  left: 40px;
+  position: absolute;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.dots {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dot {
+  background: var(--fg-dot, #9a9a9a);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 8px;
+  padding: 0;
+  transition: width 200ms ease, background 200ms ease;
+  width: 8px;
+}
+
+.dotActive {
+  background: var(--fg-ink, #0a0a0b);
+  width: 31px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cardLabel {
+    bottom: 28px;
+    font-size: 2rem;
+    left: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slide {
+    flex-basis: 88vw;
+  }
+
+  .introHeading {
+    margin-bottom: 16px;
+  }
+
+  .introBody {
+    font-size: 1rem;
+  }
+
+  .cardLabel {
+    bottom: 20px;
+    font-size: 1.5rem;
+    left: 20px;
+  }
+}
