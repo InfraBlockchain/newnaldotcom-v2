@@ -161,7 +161,7 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
                   sizes="(max-width: 767px) 88vw, 1123px"
                   className={styles.cardImage}
                 />
-                <span className={styles.cardLabel}>{slide.name}</span>
+                <span className={styles.cardLabel}>{slide.name}<small className={styles.cardLabelSub}>Powered by Newnal aios</small></span>
               </>
             );
 
