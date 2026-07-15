@@ -74,7 +74,7 @@ export default function PrivatePhonePage() {
         <div className={styles.glow} />
         <div className={styles.orbitA} />
         <div className={styles.orbitB} />
-        <Image className={styles.heroPhone} src="/images/private/free-app-number-entry.png" alt="" width={846} height={1704} priority />
+        <Image className={styles.heroPhone} src="/images/private/hero-number-naming.png" alt="" width={846} height={1704} priority />
         {c.numbers.map((number, i) => <span key={number} className={`${styles.floatChip} ${styles[`chip${i + 1}`]}`}>{number}</span>)}
       </div>
       <Reveal className={styles.heroCtaWrap}>
@@ -171,7 +171,7 @@ export default function PrivatePhonePage() {
             <div className={styles.ownerMockup}>
               <Image
                 className={styles.ownerScreen}
-                src="/images/private/private-phone-number-generation.png"
+                src="/images/private/number-generation-keypad.png"
                 alt="Private Phone number generation screen"
                 width={846}
                 height={1704}
@@ -194,7 +194,7 @@ export default function PrivatePhonePage() {
             <div className={styles.freeAppMockup}>
               <Image
                 className={styles.freeAppScreen}
-                src="/images/private/free-app-number-entry.png"
+                src="/images/private/number-naming-done.png"
                 alt="Free Connection App New Contact screen for entering a private number"
                 width={846}
                 height={1704}
