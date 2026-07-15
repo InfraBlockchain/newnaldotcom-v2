@@ -8,7 +8,7 @@
     linear-gradient(135deg, #fdfdfe 0%, #f6f8fc 100%);
   display: flex;
   justify-content: center;
-  min-height: min(480px, calc(100svh - 64px));
+  min-height: calc(100svh - 64px);
   overflow: hidden;
   padding: 80px var(--side);
 }
@@ -175,23 +175,35 @@
 
 @media (max-width: 900px) {
   .hero {
-    min-height: 500px;
+    min-height: calc(100svh - 64px);
   }
 
   .heroCopy {
     padding: 0;
   }
 
-  .paths { grid-template-columns: 1fr; }
-  .pathReveal + .pathReveal { border-left: 0; border-top: 1px solid #efeff0; }
-  .card { height: 420px; }
+  /* horizontal carousel banner on small viewports */
+  .paths {
+    -webkit-overflow-scrolling: touch;
+    border-top: 0;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 8px 20px 28px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .paths::-webkit-scrollbar { display: none; }
+  .pathReveal { flex: 0 0 86%; scroll-snap-align: center; }
+  .pathReveal + .pathReveal { border-left: 0; border-top: 0; }
+  .card { border-radius: 18px; height: 420px; overflow: hidden; }
 }
 
 @media (max-width: 767px) {
   .heroCopy { padding: 62px 20px 52px; }
   .heroCopy h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-bottom: 26px; }
   .heroCopy p { font-size: 1.25rem; margin-bottom: 30px; }
-  .hero { min-height: 480px; padding: 56px 20px; }
+  .hero { min-height: calc(100svh - 64px); padding: 56px 20px; }
   .card { height: 380px; padding: 36px 20px; }
   .card h2 { font-size: 2rem; }
 }
