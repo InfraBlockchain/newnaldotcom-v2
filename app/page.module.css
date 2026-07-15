@@ -142,6 +142,7 @@
 .companionDevice {
   bottom: -8%;
   filter: drop-shadow(0 22px 20px rgba(86, 101, 130, .2));
+  height: auto;
   max-width: none;
   position: absolute;
   right: -24%;
