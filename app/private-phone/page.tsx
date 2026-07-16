@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Private Phone", description: c.hero.sub };
 
-function ChapterHead({ title, lead }: { title: string; lead: string }) {
-  return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{lead}</p></Reveal>;
+function ChapterHead({ title, lead }: { title: string; lead: string | string[] }) {
+  return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{Array.isArray(lead) ? lead.map((line, i) => <span key={i}>{i > 0 && <br />}{line}</span>) : lead}</p></Reveal>;
 }
 
 function NumberChip({ children = "123-ABC-5678" }: { children?: React.ReactNode }) { return <span className={styles.numberChip}>{children}</span>; }
@@ -66,7 +66,7 @@ export default function PrivatePhonePage() {
     <section className={styles.hero}>
       <Reveal className={styles.heroCopy}>
         <h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1>
-        <p className={styles.heroSub}>{c.hero.sub}</p>
+        <p className={styles.heroSub}>{Array.isArray(c.hero.sub) ? c.hero.sub.map((line, i) => <span key={i}>{i > 0 && <br />}{line}</span>) : c.hero.sub}</p>
         <p className={styles.heroAudience}>{c.hero.audience}</p>
       </Reveal>
       <div className={styles.heroDevice}>
@@ -259,7 +259,7 @@ export default function PrivatePhonePage() {
           <Image className={styles.coovLogo} src="/images/private/coov-logo.png" alt="COOV" width={1000} height={263} />
         </Reveal>
         <p className={styles.credit}>{c.foundation.credit}</p>
-        <Reveal className={styles.pricingHead}><p className={styles.eyebrow}>PRICING</p><h2>Own it, then live with it.</h2></Reveal>
+        <Reveal className={styles.pricingHead}><p className={styles.eyebrow}>PRICING</p><h2>Own your privacy</h2></Reveal>
         <div className={styles.pricing}>
           {c.foundation.prices.map(([name, type, price, desc, note], i) => (
             <Reveal key={name} delay={i * 80}>
