@@ -27,7 +27,7 @@ export const devicesContent = {
       body: "It helps older adults stay independent, supported, and intimately connected with their loved ones throughout the day.",
       tagline: "A companion that understands the lives of the Golden Generation and their families",
       image: "/images/figma/devices-card-illi.png",
-      href: null,
+      href: "/devices/illi",
     },
     {
       id: "ufo",
