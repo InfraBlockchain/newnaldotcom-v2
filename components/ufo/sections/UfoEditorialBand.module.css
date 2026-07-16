@@ -1,0 +1,8 @@
+.stub {
+  align-items: center;
+  background: var(--bg, #ffffff);
+  color: var(--ink-soft, #6b6b70);
+  display: flex;
+  justify-content: center;
+  min-height: 320px;
+}
