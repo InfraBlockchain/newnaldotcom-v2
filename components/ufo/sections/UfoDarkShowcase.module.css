@@ -63,6 +63,7 @@
   display: grid;
   gap: 80px;
   grid-template-columns: 340px 520px;
+  justify-content: center;
   margin-top: 160px;
 }
 
