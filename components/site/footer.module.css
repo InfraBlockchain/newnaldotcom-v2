@@ -29,8 +29,8 @@
 }
 
 :global(body:has([data-theme="private"])) .footer {
-  background: #0a0e16;
-  color: #e8edf5;
+  background: #f8f9fb;
+  color: #0a0e16;
 }
 
 @media (max-width: 1199px) {
