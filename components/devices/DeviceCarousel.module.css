@@ -1,0 +1,275 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.intro {
+  margin: 0 auto;
+  max-width: none;
+  text-align: center;
+}
+
+.introInner {
+  animation: devices-intro-fade 420ms ease both;
+}
+
+@keyframes devices-intro-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .introInner {
+    animation: none;
+  }
+}
+
+.introHeading {
+  color: var(--fg-text, #19191c);
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(1.75rem, 3.3vw, 2.9375rem);
+  white-space: nowrap;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.introBody {
+  color: var(--fg-muted, #6b6b70);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.09375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 auto 16px;
+  max-width: 760px;
+}
+
+.introTagline {
+  color: var(--fg-accent, #0a84ff);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.trackWrap {
+  position: relative;
+}
+
+.slide {
+  flex: 0 0 88%;
+  max-width: 1123px;
+  scroll-snap-align: center;
+}
+
+/* Physical space before the first / after the last slide so both can
+   reach a centered resting position and peek evenly, Samsung.com-style. */
+.slide:first-child {
+  margin-left: max(6%, calc((100% - 1123px) / 2));
+}
+
+.slide:last-child {
+  margin-right: max(6%, calc((100% - 1123px) / 2));
+}
+
+.card {
+  aspect-ratio: 1123 / 476;
+  background: var(--fg-card-bg, #f9f9fa);
+  border-radius: 20px;
+  cursor: grab;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.cardImage {
+  object-fit: cover;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.cardLabel {
+  bottom: 40px;
+  color: #fff;
+  font-family: var(--devices-font-pretendard), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  left: 40px;
+  line-height: 1.05;
+  position: absolute;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.dots {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dot {
+  background: var(--fg-dot, #9a9a9a);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 8px;
+  padding: 0;
+  transition: width 200ms ease, background 200ms ease;
+  width: 8px;
+}
+
+.dotActive {
+  background: var(--fg-dot, #9a9a9a);
+  width: 31px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    transition: none;
+  }
+}
+
+.navButton {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--fg-card-border, #e5e5eb);
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 150ms ease;
+  width: 44px;
+  z-index: 2;
+}
+
+.navButton:hover:not(:disabled) {
+  background: var(--fg-panel-bg, #f6f6f8);
+}
+
+.navButton:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.navButton svg {
+  display: block;
+}
+
+.navPrev {
+  left: 24px;
+}
+
+.navNext {
+  right: 24px;
+}
+
+@media (max-width: 1023px) {
+  .cardLabel {
+    bottom: 28px;
+    font-size: 2rem;
+    left: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .introHeading {
+    margin-bottom: 16px;
+  }
+
+  .introBody {
+    font-size: 1rem;
+  }
+
+  .cardLabel {
+    bottom: 20px;
+    font-size: 1.5rem;
+    left: 20px;
+  }
+
+  .navButton {
+    display: none;
+  }
+}
+
+.cardLabelSub {
+  display: block;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-top: 6px;
+  opacity: 0.92;
+}
+
+@media (max-width: 767px) {
+  .introHeading {
+    white-space: normal;
+  }
+
+  .cardLabelSub {
+    font-size: 0.75rem;
+  }
+}
+
+.cardCta {
+  align-items: center;
+  background: #fff;
+  border-radius: 999px;
+  bottom: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  color: var(--fg-text, #19191c);
+  display: inline-flex;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  gap: 8px;
+  padding: 10px 18px;
+  position: absolute;
+  right: 40px;
+}
+
+@media (max-width: 767px) {
+  .cardCta {
+    bottom: 20px;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    right: 20px;
+  }
+}
+
+.cardCtaDisabled {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+  color: rgba(25, 25, 28, 0.45);
+}

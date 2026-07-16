@@ -1,24 +1,112 @@
-.header { background: var(--bg); border-bottom: 1px solid var(--line); color: var(--ink); height: 64px; position: sticky; top: 0; z-index: 100; }
-.inner { align-items: center; display: grid; grid-template-columns: 1fr auto 1fr; height: 100%; margin: 0 auto; max-width: 1376px; padding: 0 80px; }
-.logo { font-family: var(--font-body), sans-serif; font-size: 1rem; font-weight: 600; justify-self: start; letter-spacing: -.04em; }
-.desktopNav { align-items: center; display: flex; gap: 32px; }
-.desktopNav a { color: var(--ink-soft); font-size: .8rem; font-weight: 400; position: relative; }
-.desktopNav a::after { background: var(--ink); bottom: -8px; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: left; transition: transform var(--dur-micro); width: 100%; }
-.desktopNav a:hover::after, .desktopNav .active::after { transform: scaleX(1); }
-.menuButton { background: none; border: 0; color: inherit; display: none; height: 44px; padding: 10px; width: 44px; }
-.menuButton span { background: currentColor; display: block; height: 1.5px; margin: 6px 0; width: 24px; }
-.mobileMenu { background: var(--stage); color: var(--on-stage); display: none; inset: 64px 0 0; opacity: 0; pointer-events: none; position: fixed; transition: opacity var(--dur-micro); }
-.mobileMenu nav { display: flex; flex-direction: column; gap: 24px; padding: 64px 20px; }
-.mobileMenu a { font-family: var(--font-display), Georgia, serif; font-size: 2.25rem; line-height: 1.1; }
-.open { opacity: 1; pointer-events: auto; }
-.yaliHeader { position: relative; }
-:global(body:has([data-theme="private"])) .header { background: #0a0e16; border-color: #1e2836; color: #e8edf5; }
-:global(body:has([data-theme="private"])) .desktopNav a { color: #8b99ad; }
-:global(body:has([data-theme="private"])) .desktopNav a::after { background: #7da2d4; }
-@media (max-width: 900px) {
-  .inner { grid-template-columns: 1fr auto auto; padding-inline: 32px; }
-  .desktopNav { display: none; }
-  .menuButton { display: block; margin-left: 12px; }
-  .mobileMenu { display: block; }
+.header {
+  background: #fff;
+  color: var(--fg-ink);
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-@media (max-width: 767px) { .inner { grid-template-columns: 1fr auto; padding-inline: 20px; } }
+
+.inner {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  height: 100%;
+  margin-inline: auto;
+  max-width: 1440px;
+  padding-inline: 80px;
+}
+
+.logo {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  justify-self: start;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  justify-self: center;
+  min-width: 0;
+}
+
+.nav a {
+  border: 1px solid transparent;
+  border-radius: 30px;
+  color: rgba(10, 10, 10, .5);
+  flex: 0 0 auto;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 6px 12px;
+  transition: border-color var(--dur-micro), color var(--dur-micro);
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: var(--fg-ink);
+}
+
+.nav .active {
+  border-color: #848484;
+  color: var(--fg-ink);
+}
+
+.yaliHeader {
+  position: relative;
+}
+
+:global(body:has([data-theme="private"])) .header {
+  background: #0a0e16;
+  color: #e8edf5;
+}
+
+:global(body:has([data-theme="private"])) .nav a {
+  color: #8b99ad;
+}
+
+:global(body:has([data-theme="private"])) .nav a:hover,
+:global(body:has([data-theme="private"])) .nav .active {
+  color: #e8edf5;
+}
+
+:global(body:has([data-theme="private"])) .nav .active {
+  border-color: #0a84ff;
+  color: #0a84ff;
+}
+
+@media (max-width: 1199px) {
+  .inner {
+    padding-inline: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner {
+    display: flex;
+    gap: 24px;
+    padding-inline: 20px;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    justify-self: auto;
+    margin-right: -20px;
+    overflow-x: auto;
+    padding-right: 20px;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+}

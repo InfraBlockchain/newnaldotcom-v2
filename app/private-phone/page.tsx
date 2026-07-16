@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Private Phone", description: c.hero.sub };
 
-function ChapterHead({ eyebrow, title, lead }: { eyebrow: string; title: string; lead: string }) {
-  return <Reveal className={styles.chapterHead}><p className={styles.eyebrow}>{eyebrow}</p><h2>{title}</h2><p>{lead}</p></Reveal>;
+function ChapterHead({ title, lead }: { title: string; lead: string }) {
+  return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{lead}</p></Reveal>;
 }
 
 function NumberChip({ children = "123-ABC-5678" }: { children?: React.ReactNode }) { return <span className={styles.numberChip}>{children}</span>; }
@@ -65,7 +65,6 @@ export default function PrivatePhonePage() {
   return <main id="main-content" className={styles.page} data-theme="private">
     <section className={styles.hero}>
       <Reveal className={styles.heroCopy}>
-        <p className={styles.eyebrow}>{c.hero.eyebrow}</p>
         <h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1>
         <p className={styles.heroSub}>{c.hero.sub}</p>
         <p className={styles.heroAudience}>{c.hero.audience}</p>
@@ -75,7 +74,7 @@ export default function PrivatePhonePage() {
         <div className={styles.glow} />
         <div className={styles.orbitA} />
         <div className={styles.orbitB} />
-        <Image className={styles.heroPhone} src="/images/private/free-app-number-entry.png" alt="" width={846} height={1704} priority />
+        <Image className={styles.heroPhone} src="/images/private/hero-number-naming.png" alt="" width={846} height={1704} priority />
         {c.numbers.map((number, i) => <span key={number} className={`${styles.floatChip} ${styles[`chip${i + 1}`]}`}>{number}</span>)}
       </div>
       <Reveal className={styles.heroCtaWrap}>
@@ -92,11 +91,12 @@ export default function PrivatePhonePage() {
         <ChapterHead {...c.leak} />
         <div className={styles.leakPhones}>
           {[
-            { label: "ORIGINAL PRESERVED", src: "/images/private/original-chat-record.png", alt: "Original private conversation preserved" },
-            { label: "LATER EDITED", src: "/images/private/edited-chat-record.png", alt: "Private conversation with an edited record" },
+            { label: "01 \u2014 TAP EDIT", src: "/images/private/edit-flow-1.png", alt: "Long-press menu with Edit on a sent message" },
+            { label: "02 \u2014 REWRITE", src: "/images/private/edit-flow-2.png", alt: "Edit dialog rewriting the sent message" },
+            { label: "03 \u2014 RECORD CHANGED", src: "/images/private/edit-flow-3.png", alt: "Conversation now showing the rewritten message" },
           ].map((device, di) => (
             <Reveal key={device.label} delay={di * 120}>
-              <div className={`${styles.leakDevice} ${di === 1 ? styles.editedDevice : styles.originalDevice}`}>
+              <div className={styles.leakDevice}>
                 <p className={styles.eyebrow}>{device.label}</p>
                 <div className={styles.chatMockupFrame}>
                   <Image
@@ -140,7 +140,7 @@ export default function PrivatePhonePage() {
       </article>
       <article className={`${styles.comparisonCard} ${styles.wires}`}>
         <div className={styles.cardHeading}>
-          <p className={styles.eyebrow}>NEWNAL — SEPARATE PRIVATE WIRES</p>
+          <p className={styles.eyebrow}>NEWNAL — SEPARATE PRIVATE LINES</p>
         </div>
         <div className={styles.sharedLineGraphic}>
           <div className={`${styles.receiverPhone} ${styles.safePhone}`}>
@@ -159,7 +159,7 @@ export default function PrivatePhonePage() {
             {wires.map(([, name]) => <span key={name} className={styles.wireContact}>{name}</span>)}
           </div>
         </div>
-        <p>Five wires. Five numbers. Nothing shared.</p>
+        <p>Five lines. Five numbers. Nothing shared.</p>
       </article>
     </Reveal></div></section>
 
@@ -172,7 +172,7 @@ export default function PrivatePhonePage() {
             <div className={styles.ownerMockup}>
               <Image
                 className={styles.ownerScreen}
-                src="/images/private/private-phone-number-generation.png"
+                src="/images/private/number-generation-keypad.png"
                 alt="Private Phone number generation screen"
                 width={846}
                 height={1704}
@@ -195,7 +195,7 @@ export default function PrivatePhonePage() {
             <div className={styles.freeAppMockup}>
               <Image
                 className={styles.freeAppScreen}
-                src="/images/private/free-app-number-entry.png"
+                src="/images/private/number-naming-done.png"
                 alt="Free Connection App New Contact screen for entering a private number"
                 width={846}
                 height={1704}
@@ -212,7 +212,6 @@ export default function PrivatePhonePage() {
     <section className={`${styles.section} ${styles.compareSection}`}>
       <div className={styles.container}>
         <Reveal className={styles.compareHead}>
-          <p className={styles.eyebrow}>{c.compare.eyebrow}</p>
           <h2>{c.compare.title}</h2>
           <div className={styles.compareSubheads}>
             {c.compare.subheads.map((subhead, index) => <p key={subhead} className={index === 2 ? styles.compareDetail : ""}>{subhead}</p>)}
@@ -249,7 +248,7 @@ export default function PrivatePhonePage() {
 
     <section className={`${styles.section} ${styles.foundationSection}`}>
       <div className={styles.container}>
-        <ChapterHead eyebrow={c.foundation.eyebrow} title={c.foundation.title} lead={c.foundation.lead} />
+        <ChapterHead title={c.foundation.title} lead={c.foundation.lead} />
         <div className={styles.proofs}>
           {c.foundation.proofs.map(([num, label, sub], i) => (
             <Reveal key={num} delay={i * 80}><div><strong>{num}</strong><span>{label}</span><small>{sub}</small></div></Reveal>

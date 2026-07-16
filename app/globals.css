@@ -9,6 +9,18 @@
   --stage-2: #1e1e23;
   --on-stage: #f2f2f4;
   --on-stage-soft: #a5a5ae;
+  --fg-ink: #0a0a0b;
+  --fg-text: #19191c;
+  --fg-muted: #6b6b70;
+  --fg-accent: #0a84ff;
+  --fg-accent-soft: #eaf3ff;
+  --fg-line: #b8b8bf;
+  --fg-border: #d9d9de;
+  --fg-card-border: #e5e5eb;
+  --fg-card-bg: #f9f9fa;
+  --fg-panel-bg: #f6f6f8;
+  --fg-band-bg: #f8f8f8;
+  --fg-dot: #9a9a9a;
 }
 
 [data-theme="yali"] {
@@ -53,6 +65,9 @@ body {
   font-size: var(--type-body);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
 }
 body:has([data-theme="private"]) { background: #0a0e16; }
 button, input, textarea, select { font: inherit; }
@@ -113,3 +128,5 @@ h3 { font-size: var(--type-h3); line-height: 1.25; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+body > main { flex: 1 0 auto; }

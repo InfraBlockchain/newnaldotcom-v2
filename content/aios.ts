@@ -1,5 +1,5 @@
 export const aiosContent = {
-  hero: { title: "ONE ARCHITECTURE. COMPLETE DATA SOVEREIGNTY", emphasis: "DATA SOVEREIGNTY", sub: "Intelligence that truly knows you. Data under your control." },
+  hero: { title: "ONE ARCHITECTURE.\nCOMPLETE DATA SOVEREIGNTY", emphasis: "DATA SOVEREIGNTY", sub: "Intelligence that truly knows you.\nData under your control." },
   sovereignty: {
     title: "From 100% open to absolute zero.",
     paragraphs: [
@@ -16,14 +16,14 @@ export const aiosContent = {
   era: {
     title: "In the Age of AI Computing Era",
     subhead: "Every Computing Era has its own OS",
-    body: "AI will not be unlocked by adding another app. An operating system transformation is required.",
+    body: "AI will not be unlocked by adding another app.\nAn operating system transformation is required.",
     conclusion: "Newnal is building the AI native OS.",
   },
   problem: {
     title: "Why Does AI Still Feel Inconvenient?",
     intro: "AI is intelligent.",
     callout: "But AI relies on you to manually define all context and intent through input. You're asked to repeatedly re-enter intentions, context, data etc. every time to achieve optimal results.",
-    conclusion: "AI has learned the world. But it has not learned you. So we changed the question.",
+    conclusion: "AI has learned the world.\nBut it has not learned you.\nSo we changed the question.",
     q1: "How do we make AI smarter?",
     q2: "How do we build AI that understands me?",
   },
