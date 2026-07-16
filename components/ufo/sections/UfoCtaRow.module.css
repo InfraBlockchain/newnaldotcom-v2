@@ -1,8 +1,51 @@
-.stub {
-  align-items: center;
+.section {
   background: var(--bg, #ffffff);
-  color: var(--ink-soft, #6b6b70);
+  color: var(--ink, #19191c);
+  padding: 100px 0;
+}
+
+.row {
+  align-items: center;
   display: flex;
+  gap: 12px;
   justify-content: center;
-  min-height: 160px;
+}
+
+.primary,
+.secondary {
+  border-radius: 999px;
+  font-weight: 400;
+  padding: 14px 28px;
+  text-align: center;
+}
+
+.primary {
+  background: var(--ink, #19191c);
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid var(--ink, #19191c);
+  color: var(--ink, #19191c);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
 }
