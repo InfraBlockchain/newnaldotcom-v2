@@ -19,7 +19,7 @@ export function UfoSubnav() {
         <div className={styles.actions}>
           <div className={styles.switcher} aria-label="Companion device pages">
             <Link href="/devices/yali">YALI</Link>
-            <span aria-disabled="true">ILLI</span>
+            <Link href="/devices/illi">ILLI</Link>
             <strong aria-current="page">UFO</strong>
           </div>
           <a className={styles.cta} href="mailto:contact@newnal.com?subject=Get%20UFO">

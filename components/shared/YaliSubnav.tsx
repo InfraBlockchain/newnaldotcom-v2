@@ -1,6 +1,7 @@
 "use client";
 
 import { CSSProperties, useEffect, useState } from "react";
+import Link from "next/link";
 import styles from "./YaliSubnav.module.css";
 
 const chapters = [
@@ -27,6 +28,6 @@ export function YaliSubnav() {
     return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
   }, []);
   return <nav className={styles.nav} aria-label="YALI page navigation">
-    <div className={styles.inner}><div className={styles.brand}><strong>YALI</strong><span>· AI Artist Companion</span></div><div className={styles.chapter}><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle className={styles.progress} cx="10" cy="10" r="8" style={{"--progress":progress} as CSSProperties}/></svg><span>{chapter}</span></div><div className={styles.actions}><div className={styles.switcher}><b>YALI</b><span aria-disabled="true">ILLI</span><span aria-disabled="true">UFO</span></div><a href="mailto:contact@newnal.com?subject=Get%20YALI">Get YALI</a></div></div>
+    <div className={styles.inner}><div className={styles.brand}><strong>YALI</strong><span>· AI Artist Companion</span></div><div className={styles.chapter}><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle className={styles.progress} cx="10" cy="10" r="8" style={{"--progress":progress} as CSSProperties}/></svg><span>{chapter}</span></div><div className={styles.actions}><div className={styles.switcher}><b>YALI</b><Link href="/devices/illi">ILLI</Link><Link href="/devices/ufo">UFO</Link></div><a href="mailto:contact@newnal.com?subject=Get%20YALI">Get YALI</a></div></div>
   </nav>;
 }
