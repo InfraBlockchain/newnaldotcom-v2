@@ -5,9 +5,9 @@ import { Reveal } from "@/components/shared/Reveal";
 import { privatePhoneContent as c } from "@/content/privatePhone";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = { title: "Private Phone", description: c.hero.sub };
+export const metadata: Metadata = { title: "Private Phone", description: typeof c.hero.sub === "string" ? c.hero.sub : c.hero.sub[0] };
 
-function ChapterHead({ title, lead }: { title: string; lead: string | string[] }) {
+function ChapterHead({ title, lead }: { title: string; lead: string | readonly string[] }) {
   return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{Array.isArray(lead) ? lead.map((line, i) => <span key={i}>{i > 0 && <br />}{line}</span>) : lead}</p></Reveal>;
 }
 
