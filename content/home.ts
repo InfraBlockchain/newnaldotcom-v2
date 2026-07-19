@@ -1,12 +1,48 @@
 export const homeContent = {
   hero: {
-    title: "One aios. Across four devices.",
-    emphasis: "Across four devices.",
+    title: ["One aios", "Across four devices."],
     sub: ["Intelligence that truly knows you.", "Data under your control."],
   },
   paths: [
-    { title: "Newnal aios", description: ["For the AI Computing Era"], href: "/aios", tone: "aios" },
-    { title: "AI Companion Devices Powered by Newnal", description: ["One AIOS.", "Distinct companions for different lives."], href: "/devices", tone: "devices" },
-    { title: "Newnal Private Phone", description: ["No public identity.", "No universal phone number."], href: "/private-phone", tone: "private" },
+    {
+      id: "aios",
+      statement: ["ONE ARCHITECTURE.", "COMPLETE DATA SOVEREIGNTY"],
+      cardLabel: [
+        [{ text: "Newnal " }, { text: "aios", wordmark: true }],
+      ],
+      bannerLabel: [
+        [{ text: "Newnal " }, { text: "aios", wordmark: true }],
+      ],
+      href: "/aios",
+      image: "/images/home/door/aios-ribbon.png",
+    },
+    {
+      id: "devices",
+      statement: ["One AIOS. Distinct companions for different lives."],
+      cardLabel: [
+        [{ text: "Companion Devices" }],
+        [{ text: "Powered by Newnal " }, { text: "aios", wordmark: true }],
+      ],
+      bannerLabel: [
+        [{ text: "Companion Devices" }],
+        [{ text: "Powered by Newnal " }, { text: "aios", wordmark: true }],
+      ],
+      href: "/devices",
+      image: "/images/home/door/devices-photo.png",
+    },
+    {
+      id: "private",
+      statement: ["Privacy that holds— even when trust breaks."],
+      cardLabel: [
+        [{ text: "Newnal Private Phone" }],
+      ],
+      bannerLabel: [
+        [{ text: "Newnal" }],
+        [{ text: "Private Phone" }],
+      ],
+      href: "/private-phone",
+      image: "/images/home/door/private-phone-photo.png",
+    },
   ],
+  learnMore: "Learn More",
 } as const;

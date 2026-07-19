@@ -1,0 +1,10 @@
+.label,
+.line {
+  display: block;
+}
+
+.wordmark {
+  font-size: clamp(30px, 3vw, 36px);
+  font-weight: 300;
+  letter-spacing: -.04em;
+}

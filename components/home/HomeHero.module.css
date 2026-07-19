@@ -1,0 +1,51 @@
+.hero {
+  background: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 120px 80px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.copy h1 {
+  color: #000;
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(44px, 6vw, 84px);
+  font-weight: 500;
+  letter-spacing: -.03em;
+  line-height: .95;
+  margin: 0;
+}
+
+.copy h1 span,
+.copy p span {
+  display: block;
+}
+
+.copy p {
+  color: #000;
+  font-family: var(--font-home-body), sans-serif;
+  font-size: clamp(24px, 3vw, 44px);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .hero { padding-inline: 48px; }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .copy h1 { font-size: clamp(44px, 12vw, 64px); }
+  .copy p { font-size: clamp(24px, 7vw, 32px); }
+}

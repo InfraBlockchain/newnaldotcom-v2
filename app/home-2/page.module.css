@@ -1,0 +1,159 @@
+.home {
+  background: #eaeaea;
+  color: #000;
+}
+
+.banners {
+  display: block;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 120px 80px;
+  position: relative;
+}
+
+.aios { background: #fbfafa; }
+
+.imageLayer {
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.imageLayer img {
+  object-fit: cover;
+}
+
+.aios .imageLayer {
+  height: 133.64%;
+  left: 50.54%;
+  opacity: .7;
+  top: -32.56%;
+  width: 55.68%;
+}
+
+.devices .imageLayer {
+  height: 100%;
+  left: -15.68%;
+  top: 0;
+  width: 118.4%;
+}
+
+.private .imageLayer {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 99.92%;
+}
+
+.banner::after {
+  background: transparent;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.bannerCopy,
+.learnMore {
+  position: relative;
+  z-index: 2;
+}
+
+.bannerCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.productName {
+  font-family: var(--font-home-body), sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.24;
+  margin: 0;
+}
+
+.statement,
+.statement > span {
+  display: block;
+}
+
+.statement {
+  font-family: var(--font-home-body), sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.learnMore {
+  align-items: center;
+  align-self: flex-start;
+  background: #0a0a0a;
+  border-radius: 9999px;
+  color: #fff;
+  display: inline-flex;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  min-height: 33px;
+  padding: 8px 16px;
+  transition: background var(--dur-micro);
+}
+
+.banner:hover .learnMore { background: #2a2a2e; }
+.banner:focus-visible { outline-offset: -4px; }
+
+@media (max-width: 1200px) {
+  .banner { padding-inline: 48px; }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    height: clamp(420px, 60vh, 600px);
+  }
+
+  .banner::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, .72) 0%, rgba(255, 255, 255, .45) 46%, rgba(255, 255, 255, .08) 78%);
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    padding: 64px 20px;
+  }
+
+  .productName { font-size: 30px; }
+  .statement { font-size: 18px; line-height: 1.5; max-width: 330px; }
+
+  .aios .imageLayer {
+    height: 100%;
+    left: 35%;
+    top: 0;
+    width: 100%;
+  }
+
+  .devices .imageLayer {
+    left: -68%;
+    width: 236.8%;
+  }
+
+  .private .imageLayer {
+    left: -54%;
+    width: 207.2%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learnMore { transition: none; }
+}
