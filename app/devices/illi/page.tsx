@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "ILLI", description: c.hero.lead };
 function ChapterHead({ title, lead, center = false }: {title:string | readonly string[];lead:string | readonly string[];center?:boolean}) {
   return (
     <Reveal className={`${styles.chapterHead} ${center ? styles.center : ""}`}>
-      {typeof title === "string" ? <h2>{title}</h2> : <>{title.map((line) => <h2 key={line}>{line}</h2>)}</>}
+      {typeof title === "string" ? <h2>{title}</h2> : <h2>{title.map((line, index) => <span key={line}>{index > 0 && <br />}{line}</span>)}</h2>}
       {typeof lead === "string" ? <p>{lead}</p> : <div className={styles.chapterLead}>{lead.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
     </Reveal>
   );
@@ -20,14 +20,14 @@ function ChapterHead({ title, lead, center = false }: {title:string | readonly s
 function PhilosophyIcon({ index }: { index: number }) {
   const common = { viewBox: "0 0 24 24", "aria-hidden": true as const };
   if (index === 0) return <svg {...common}><path d="M3 12l9-9 9 9v9a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2v-9z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M9 22v-8h6v8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>;
-  if (index === 1) return <svg {...common}><circle cx="8" cy="7" r="1.5" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="5.2" r="1.5" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="16" cy="7" r="1.5" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg>;
+  if (index === 1) return <svg {...common}><circle cx="7.5" cy="7.5" r="2.1" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="16.5" cy="7.5" r="2.1" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="10.5" r="1.7" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M3.5 20c0-2.9 1.8-5 4-5s4 2.1 4 5M12.5 20c0-2.9 1.8-5 4-5s4 2.1 4 5M9 20c0-2.1 1.3-3.7 3-3.7s3 1.6 3 3.7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
   return <svg {...common}><path d="M7 3.5h10v17l-5-3-5 3z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="12" cy="10" r="1.4" fill="currentColor"/></svg>;
 }
 
 export default function IlIiPage(){
   return <main id="main-content" className={styles.page} data-theme="illi">
     <section className={styles.hero}>
-      <div className="container"><Reveal className={styles.heroHead}><h1>{c.hero.title}</h1>{c.hero.subtitle && <p className={styles.subtitle}>{c.hero.subtitle}</p>}<p>{c.hero.lead}</p></Reveal>
+      <div className="container"><Reveal className={styles.heroHead}><h1>{c.hero.title}</h1>{c.hero.subtitle && <h2 className={styles.subtitle}>{c.hero.subtitle}</h2>}<p>{c.hero.lead}</p></Reveal>
         <Reveal className={styles.heroStatement}><div className={styles.negatives}><div className={styles.negativeLines}>{c.hero.negatives.map((line) => <p key={line}>{line}</p>)}</div></div><p className={styles.heroClosing}>{c.hero.closing}</p></Reveal>
       </div>
       <Reveal className={styles.heroFilm}><AutoPauseVideo className={styles.heroFilmVideo} src="/images/illi/hero-film.mp4" poster="/images/illi/figma-hero-wide.png" ariaLabel="ILLI family care film" /></Reveal>
@@ -42,7 +42,7 @@ export default function IlIiPage(){
 
     <section id="chapter-2" className={`${styles.everyday} section`}><div className="container"><div className={styles.everydayHead}><ChapterHead title={c.everyday.title} lead=""/><Reveal><blockquote>{c.everyday.quote}</blockquote><p>{c.everyday.support.map((line) => <span key={line}>{line}</span>)}</p></Reveal></div><ScrollRail className={styles.timeline}>{c.everyday.tiles.map((tile,i)=><Reveal key={tile.title} className={`${styles.moment} ${i%2?styles.reverse:""}`}><div className={styles.momentCopy}><span>{tile.time}</span><h3>{tile.title}</h3><p>{tile.description}</p></div><div className={styles.momentImage}><Image src={tile.image} alt={tile.scene} fill sizes="(max-width: 767px) 100vw, 50vw"/></div></Reveal>)}</ScrollRail></div></section>
 
-    <section id="chapter-3" className={styles.moments}><div className={styles.concert}><Image src="/images/illi-concert.png" alt="Warm care moment in brown and orange tones" fill sizes="100vw"/><div className={styles.concertShade}/><div className={styles.lights}>{Array.from({length:18}).map((_,i)=><i key={i}/>)}</div><ChapterHead title={c.moments.title} lead={c.moments.lead} center/></div><div className={styles.darkCards}><div className="container"><div className={styles.momentCards}>{c.moments.cards.map((card,i)=><Reveal key={card.title} delay={i*80}><article><div className={styles.cardImage}><Image src={card.image} alt={card.scene} fill sizes="(max-width: 767px) 100vw, 33vw"/></div><div><h3>{card.title}</h3><p>{card.description}</p></div></article></Reveal>)}</div></div></div></section>
+    <section id="chapter-3" className={styles.moments}><div className={styles.concert}><Image src="/images/illi-hero.png" alt="ILLI connecting an older adult with family" fill sizes="100vw"/><div className={styles.concertShade}/><div className={styles.lights}>{Array.from({length:18}).map((_,i)=><i key={i}/>)}</div><ChapterHead title={c.moments.title} lead={c.moments.lead} center/></div><div className={styles.darkCards}><div className="container"><div className={styles.momentCards}>{c.moments.cards.map((card,i)=><Reveal key={card.title} delay={i*80}><article><div className={styles.cardImage}><Image src={card.image} alt={card.scene} fill sizes="(max-width: 767px) 100vw, 33vw"/></div><div><h3>{card.title}</h3><p>{card.description}</p></div></article></Reveal>)}</div></div></div></section>
 
     <section id="chapter-4" className={`${styles.spec} section`}><div className="container"><Reveal><p className="eyebrow">SPEC</p><h2>{c.spec.title}</h2></Reveal><div className={styles.specGrid}><Reveal className={styles.specTable}>{c.spec.rows.map(([label,value])=><div key={label}><span>{label}</span><p>{value}</p></div>)}</Reveal><Reveal className={styles.deviceRender}><Image src="/images/illi/spec-device.png" alt="ILLI circular companion device" fill sizes="(max-width: 767px) 100vw, 40vw"/></Reveal></div></div></section>
   </main>;

@@ -2,7 +2,7 @@ export const illiContent = {
   hero: {
     eyebrow: "ILLI · FAMILY CARE COMPANION",
     title: "AI Companion for the Golden Generation",
-    subtitle: "Care that feels like family.",
+    subtitle: "- Care that feels like family.",
     emphasis: "",
     lead: "ILLI is an AI Life Companion for the Golden Generation — helping older adults stay independent, supported, and connected with family throughout the day.",
     negatives: ["Not a smart speaker.", "Not a medical alert button.", "Not another screen for occasional video calls."],
@@ -10,7 +10,7 @@ export const illiContent = {
   },
   personalized: {
     eyebrow: "01 · SUPPORTIVE PRESENCE",
-    title: "Support that stays with the rhythm of the day.",
+    title: ["Support that stays", "with the rhythm of the day."],
     lead: [
       "Most care devices wait for something to go wrong.",
       "ILLI is present throughout everyday life — morning routines, meals, movement, reminders, family messages, shopping, and moments of rest.",
@@ -59,7 +59,7 @@ export const illiContent = {
   },
   everyday: {
     eyebrow: "02 · MOMENTS OF CARE",
-    title: "Stay close, even when you are apart",
+    title: "Stay close, even when you are apart.",
     lead: "ILLI helps families become part of everyday life again — not only through scheduled calls, but through small, warm, meaningful moments.",
     quote: "ILLI helps families become part of everyday life again — not only through scheduled calls, but through small, warm, meaningful moments.",
     support: [
@@ -101,8 +101,8 @@ export const illiContent = {
   },
   moments: {
     eyebrow: "· MORE INDEPENDENCE. MORE PEACE OF MIND ·",
-    title: ["More independence.", "More peace of mind"],
-    lead: "ILLI is designed to help older adults live confidently while giving families reassurance when it matters. From secure payments and voice-phishing prevention to SOS emergency calls, ILLI adds a layer of practical protection to everyday life.",
+    title: ["More independence.", "More peace of mind."],
+    lead: "ILLI is designed to help older adults live confidently while giving families reassurance when it matters. From secure payments and voice-phishing prevention to SOS emergency calls,\nILLI adds a layer of practical protection to everyday life.",
     cards: [
       {
         title: "Secure Payments",
