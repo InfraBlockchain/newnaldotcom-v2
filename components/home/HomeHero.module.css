@@ -18,6 +18,21 @@
   justify-content: center;
 }
 
+.optionTwo::after {
+  background: linear-gradient(90deg, rgba(251, 250, 250, 0) 12%, rgba(251, 250, 250, .72) 38%, rgba(251, 250, 250, .72) 62%, rgba(251, 250, 250, 0) 88%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.optionTwo .copy {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
 .artwork {
   inset: 0;
   opacity: .7;
@@ -80,12 +95,7 @@
   .hero { padding-inline: 40px; }
 
   .optionTwo::after {
-    background: linear-gradient(90deg, #fbfafa 0%, rgba(251, 250, 250, .92) 34%, rgba(251, 250, 250, 0) 72%);
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: 0;
+    background: linear-gradient(90deg, rgba(251, 250, 250, .18) 0%, rgba(251, 250, 250, .9) 34%, rgba(251, 250, 250, .9) 66%, rgba(251, 250, 250, .18) 100%);
   }
 
   .artwork img {
@@ -131,6 +141,6 @@
   }
 
   .optionTwo::after {
-    background: linear-gradient(90deg, #fbfafa 0%, rgba(251, 250, 250, .94) 48%, rgba(251, 250, 250, 0) 100%);
+    background: rgba(251, 250, 250, .68);
   }
 }
