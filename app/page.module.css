@@ -1,6 +1,6 @@
 .home {
   --home-surface: #fff;
-  background: #eaeaea;
+  background: #fbfafa;
   color: #000;
 }
 
@@ -13,11 +13,53 @@
 .card {
   align-items: center;
   background: var(--home-surface);
+  box-shadow:
+    0 550px 154px rgba(0, 0, 0, 0),
+    0 352px 141px rgba(0, 0, 0, .01),
+    0 198px 119px rgba(0, 0, 0, .05),
+    0 88px 88px rgba(0, 0, 0, .09),
+    0 22px 48px rgba(0, 0, 0, .1);
   display: flex;
   height: 300px;
   justify-content: space-between;
+  overflow: hidden;
   padding: 40px;
   position: relative;
+}
+
+.imageLayer {
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.imageLayer img {
+  height: 100%;
+  max-width: none;
+  width: 100%;
+}
+
+.aios .imageLayer {
+  height: 169.24%;
+  left: 57.6%;
+  opacity: .4;
+  top: -114.68%;
+  width: 50.1%;
+}
+
+.devices .imageLayer {
+  height: 100%;
+  inset: 0;
+  opacity: .5;
+  width: 100%;
+}
+
+.private .imageLayer {
+  height: 107.71%;
+  left: 53.46%;
+  opacity: .4;
+  top: 0;
+  width: 44.93%;
 }
 
 .cardCopy {
@@ -26,6 +68,8 @@
   gap: 45px;
   justify-content: center;
   max-width: 813px;
+  position: relative;
+  z-index: 1;
 }
 
 .statement,
@@ -57,8 +101,10 @@
 .chevron {
   flex: 0 0 42px;
   height: 42px;
+  position: relative;
   transition: transform var(--dur-micro) var(--ease-soft);
   width: 42px;
+  z-index: 1;
 }
 
 .chevron img {
@@ -91,6 +137,16 @@
     position: absolute;
     right: 32px;
   }
+
+  .aios .imageLayer {
+    left: 50%;
+    width: 62%;
+  }
+
+  .private .imageLayer {
+    left: 48%;
+    width: 56%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -102,6 +158,36 @@
   .cardCopy {
     gap: 32px;
     padding-right: 26px;
+  }
+
+  .card::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .82) 58%, rgba(255, 255, 255, .15) 100%);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .aios .imageLayer {
+    height: 120%;
+    left: 42%;
+    top: -34%;
+    width: 76%;
+  }
+
+  .devices .imageLayer {
+    height: 82%;
+    left: 18%;
+    top: 18%;
+    width: 145%;
+  }
+
+  .private .imageLayer {
+    height: 84%;
+    left: 32%;
+    top: 16%;
+    width: 106%;
   }
 
   .cardLabel { font-size: 22px; }

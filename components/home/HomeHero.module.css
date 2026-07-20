@@ -3,13 +3,39 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  overflow: hidden;
   padding: 120px 80px;
+  position: relative;
+}
+
+.optionOne {
+  background: #fbfafa;
+}
+
+.artwork {
+  inset: 0;
+  opacity: .7;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.artwork img {
+  height: 48.8%;
+  left: 48.29%;
+  max-width: none;
+  position: absolute;
+  top: 2.82%;
+  width: 51.71%;
 }
 
 .copy {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .copy h1 {
@@ -30,7 +56,7 @@
 .copy p {
   color: #000;
   font-family: var(--font-home-body), sans-serif;
-  font-size: clamp(24px, 3vw, 44px);
+  font-size: clamp(24px, 3.1vw, 44px);
   font-weight: 400;
   letter-spacing: -.04em;
   line-height: 1.2;
@@ -38,7 +64,13 @@
 }
 
 @media (max-width: 1200px) {
-  .hero { padding-inline: 48px; }
+  .hero { padding-inline: 40px; }
+
+  .artwork img {
+    height: auto;
+    left: 45%;
+    width: 58%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -48,4 +80,14 @@
 
   .copy h1 { font-size: clamp(44px, 12vw, 64px); }
   .copy p { font-size: clamp(24px, 7vw, 32px); }
+
+  .artwork img {
+    left: 52%;
+    top: 4%;
+    width: 88%;
+  }
+
+  .artwork {
+    opacity: .55;
+  }
 }
