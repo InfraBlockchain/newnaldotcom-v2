@@ -62,22 +62,22 @@
 }
 
 :global(body:has([data-theme="private"])) .header {
-  background: #0a0e16;
-  color: #e8edf5;
+  background: #f8f9fb;
+  color: #0a0e16;
 }
 
 :global(body:has([data-theme="private"])) .nav a {
-  color: #8b99ad;
+  color: rgba(10, 14, 22, .5);
 }
 
 :global(body:has([data-theme="private"])) .nav a:hover,
 :global(body:has([data-theme="private"])) .nav .active {
-  color: #e8edf5;
+  color: #0a0e16;
 }
 
 :global(body:has([data-theme="private"])) .nav .active {
-  border-color: #0a84ff;
-  color: #0a84ff;
+  border-color: #0052a3;
+  color: #0052a3;
 }
 
 @media (max-width: 1199px) {

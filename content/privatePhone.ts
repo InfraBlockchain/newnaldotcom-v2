@@ -4,7 +4,7 @@ export const privatePhoneContent = {
     eyebrow: "CHAPTER 01 — OVERTURE",
     title: "Privacy that holds— even when trust breaks.",
     emphasis: "trust breaks",
-    sub: "Most secure phones defend against hackers. Newnal defends against the person on the other side.",
+    sub: ["Most secure phones defend against hackers.", "Newnal defends against the person on the other side."],
     audience: "Built for leaders, creators, executives, and anyone whose reputation is an asset.",
     cta: "See How It Works →",
     brochureHref: "/docs/private-phone-brochure.pdf",
@@ -20,7 +20,7 @@ export const privatePhoneContent = {
     ],
   },
   works: {
-    eyebrow: "CHAPTER 03 — HOW IT WORKS", title: "A new number for every connection.", lead: "Newnal never syncs your address book or reuses a permanent identifier. Every relationship earns its own private line.",
+    eyebrow: "CHAPTER 03 — HOW IT WORKS", title: "A new number for every connection.", lead: ["Newnal never syncs your address book or reuses a permanent identifier.", "Every relationship earns its own private line."],
     steps: [
       ["Generate", "Your Newnal device mints a fresh number reserved for one specific person."],
       ["Share", "Hand it off directly—by voice, gesture, or one-time code. No address book leaves your phone."],

@@ -1,0 +1,155 @@
+.section {
+  background: var(--stage, #0b0b0e);
+}
+
+/* Cinema band ------------------------------------------------------------ */
+
+.cinema {
+  align-items: center;
+  background: linear-gradient(-70deg, #598c8c 0%, #1f4747 55%, #050f12 100%);
+  display: flex;
+  height: 720px;
+  justify-content: center;
+  padding-inline: 48px;
+  width: 100%;
+}
+
+.cinemaCopy {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--ufo-mint, #a8e0d6);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 1.1rem + 3.78vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.body {
+  color: var(--on-stage-faint, #bfbfc7);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+/* Strip row ---------------------------------------------------------- */
+
+.strip {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  padding-block: 32px;
+}
+
+.stripProgress {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.stripProgress span {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+}
+
+.stripSegmentActive {
+  background: #ffffff !important;
+}
+
+.stripCaption {
+  color: var(--on-stage-faint, #bfbfc7);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.stripLink {
+  align-items: center;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.8125rem;
+  gap: 10px;
+}
+
+.stripArrow {
+  height: 14px;
+  width: 14px;
+}
+
+/* Cards row ---------------------------------------------------------- */
+
+.cards {
+  display: flex;
+  gap: 40px;
+  padding-block: 40px 120px;
+}
+
+.card {
+  background: var(--stage-surface, #141419);
+  border: 1px solid var(--stage-border, #33333d);
+  border-radius: 20px;
+  flex: 1 1 0%;
+  min-width: 0;
+  padding: 40px 32px;
+}
+
+.cardNum {
+  color: var(--ufo-mint, #a8e0d6);
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.cardText {
+  color: var(--on-stage-soft, #a8a8b2);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+/* Responsive ----------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .cards { gap: 24px; }
+}
+
+@media (max-width: 768px) {
+  .cinema {
+    height: 520px;
+    padding-inline: 20px;
+  }
+
+  .cinemaCopy { gap: 20px; }
+
+  .strip { justify-content: center; text-align: center; }
+
+  .cards {
+    flex-direction: column;
+    gap: 16px;
+    padding-block: 32px 72px;
+  }
+}
