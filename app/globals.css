@@ -39,25 +39,21 @@
 }
 
 [data-theme="ufo"] {
-  /* 뉴트럴 (피그마 neutral/*) */
-  --bg: #ffffff;
-  --line: #e5e5e5;
-  --ink: #19191c;
-  --ink-soft: #6b6b70;
-  --soft-bg: #f9f9f8;          /* neutral/bg-soft — 라이트 카드 */
-  /* 다크 밴드 (피그마 dark/*) */
-  --stage: #0b0b0e;            /* dark/bg */
-  --stage-surface: #141419;    /* dark/surface — 다크 카드 */
-  --stage-border: #33333d;     /* dark/border */
-  --on-stage: #ffffff;
-  --on-stage-soft: #a8a8b2;
-  --on-stage-faint: #bfbfc7;
-  /* UFO 아이덴티티 — 틸 */
-  --ufo-deep: #346f69;         /* ufo/deep — 라이트 위 eyebrow·라벨 */
-  --ufo-accent: #6db4aa;       /* ufo/accent — 카드 넘버링 */
-  --ufo-mint: #a8e0d6;         /* 다크 위 eyebrow·넘버링 */
-  /* 후반부 섹션(6~8) 액센트 — §6 오픈 퀘스천 1 참고 */
-  --ufo-alt-accent: #4d9fff;
+  --bg: #f5f9ff;
+  --line: #dbe8f7;
+  --ink: #12233c;
+  --ink-soft: #5d6e85;
+  --soft-bg: #edf5ff;
+  --stage: #edf6ff;
+  --stage-surface: #ffffff;
+  --stage-border: #d6e6f8;
+  --on-stage: #12233c;
+  --on-stage-soft: #5d6e85;
+  --on-stage-faint: #72839a;
+  --ufo-deep: #1769c2;
+  --ufo-accent: #4f9dff;
+  --ufo-mint: #c5e2ff;
+  --ufo-alt-accent: #0f80e8;
 }
 [data-theme="ufo"] :focus-visible { outline-color: var(--ufo-deep); }
 

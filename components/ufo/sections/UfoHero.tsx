@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/shared/Reveal";
 import { PlayIcon } from "@heroicons/react/24/solid";
 import { ufoContent } from "@/content/ufo";
@@ -8,11 +9,7 @@ export function UfoHero() {
 
   return (
     <section className={styles.hero}>
-      <Reveal className={styles.intro}>
-        <p className={styles.badge}>
-          <span className={styles.dot} aria-hidden="true" />
-          {hero.badge}
-        </p>
+      <div className={styles.intro}>
         <h1 className={styles.title}>{hero.title}</h1>
         <div className={styles.leadBlock}>
           <p>{hero.lead}</p>
@@ -22,10 +19,19 @@ export function UfoHero() {
             ))}
           </p>
         </div>
-      </Reveal>
+      </div>
 
       <Reveal className={styles.cardReveal} delay={80}>
         <div className={styles.heroCard}>
+          <Image
+            className={styles.heroImage}
+            src="/images/devices/hero-ufo.png"
+            alt="UFO wearable companion resting on a treasure card"
+            fill
+            priority
+            sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - 96px, 1280px)"
+          />
+          <div className={styles.imageOverlay} aria-hidden="true" />
           <div className={styles.cardCopy}>
             <p className={styles.cardLabel}>{hero.photo.label}</p>
             <p className={styles.cardCaption}>{hero.photo.caption}</p>

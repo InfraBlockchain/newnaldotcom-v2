@@ -1,7 +1,7 @@
 .page {
   background: var(--bg, #ffffff);
   color: var(--ink, #19191c);
-  font-family: var(--ufo-font-sans), Arial, sans-serif;
+  font-family: var(--font-body), sans-serif;
   overflow: clip;
 }
 

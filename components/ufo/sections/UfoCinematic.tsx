@@ -1,5 +1,4 @@
 import { Reveal } from "@/components/shared/Reveal";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { ufoContent } from "@/content/ufo";
 import styles from "./UfoCinematic.module.css";
 
@@ -10,28 +9,14 @@ export function UfoCinematic() {
     <section className={styles.section} aria-label="UFO Cinematic">
       <div className={styles.cinema}>
         <Reveal as="div" className={styles.cinemaCopy}>
-          <p className={styles.eyebrow}>{cinematic.eyebrow}</p>
           <h2 className={styles.title}>{cinematic.title}</h2>
-          <p className={styles.body}>{cinematic.body}</p>
+          <div className={styles.body}>
+            {cinematic.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
         </Reveal>
       </div>
 
       <div className="ufo-container">
-        <div className={styles.strip}>
-          <div className={styles.stripProgress} aria-hidden="true">
-            <span className={styles.stripSegment} />
-            <span className={styles.stripSegment} />
-            <span className={styles.stripSegment} />
-            <span className={styles.stripSegmentActive} />
-            <span className={styles.stripSegment} />
-          </div>
-          <p className={styles.stripCaption}>{cinematic.strip.caption}</p>
-          <span className={styles.stripLink}>
-            {cinematic.strip.link}
-            <ArrowRightIcon className={styles.stripArrow} aria-hidden="true" />
-          </span>
-        </div>
-
         <div className={styles.cards}>
           {cinematic.cards.map((card, index) => (
             <Reveal as="article" key={card.num} delay={index * 80} className={styles.card}>

@@ -1,5 +1,5 @@
 .nav {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line, #e5e5e5);
   color: var(--ink, #19191c);
@@ -20,7 +20,8 @@
 }
 
 .brand {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   white-space: nowrap;
 }
 
@@ -79,7 +80,7 @@
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 500;
-  padding: 8px 15px;
+  padding: 9px 16px;
 }
 
 @media (max-width: 900px) {
