@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BookmarkIcon, MicrophoneIcon, UserIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
@@ -18,11 +19,11 @@ function ChapterHead({ title, lead, center = false }: {title:string;lead:string 
   );
 }
 
+const philosophyIcons = [UserIcon, MicrophoneIcon, BookmarkIcon] as const;
+
 function PhilosophyIcon({ index }: { index: number }) {
-  const common = { viewBox: "0 0 24 24", "aria-hidden": true as const };
-  if (index === 0) return <svg {...common}><circle cx="12" cy="7" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M5.5 20c.4-4 2.6-6 6.5-6s6.1 2 6.5 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
-  if (index === 1) return <svg {...common}><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M6.5 11.5a5.5 5.5 0 0 0 11 0M12 17v4M8.5 21h7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
-  return <svg {...common}><path d="M7 3.5h10v17l-5-3-5 3z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="12" cy="10" r="1.4" fill="currentColor"/></svg>;
+  const Icon = philosophyIcons[index] ?? philosophyIcons[philosophyIcons.length - 1];
+  return <Icon aria-hidden="true" />;
 }
 
 export default function YaliPage(){

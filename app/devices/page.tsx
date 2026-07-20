@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { DeviceCarousel } from "@/components/devices/DeviceCarousel";
+import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { Reveal } from "@/components/shared/Reveal";
 import { devicesContent as c } from "@/content/devices";
 import { devicesFontClassName } from "./fonts";
 import styles from "./page.module.css";
@@ -12,33 +14,63 @@ export const metadata: Metadata = {
 
 export default function DevicesPage() {
   return (
-    <main id="main-content" className={devicesFontClassName}>
-      <section className={styles.hero}>
-        <Image
-          src="/images/figma/devices-hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className={styles.heroImage}
-        />
-        <div className={styles.heroCopy}>
-          <h1 className={styles.heroHeading}>
+    <main id="main-content" className={`${styles.page} ${devicesFontClassName}`}>
+      <section className={styles.hero} aria-labelledby="devices-title">
+        <Reveal className={styles.heroCopy}>
+          <h1 id="devices-title">
             {c.hero.heading.map((line) => (
               <span key={line}>{line}</span>
             ))}
           </h1>
-          <p className={styles.heroRhythm}>
+          <p>
             {c.hero.rhythm.map((line) => (
               <span key={line}>{line}</span>
             ))}
           </p>
           <p className={styles.heroClosing}>{c.hero.closing}</p>
-        </div>
+        </Reveal>
       </section>
 
-      <section className={styles.intro} aria-label="Companion device lineup">
-        <DeviceCarousel slides={c.slides} />
+      <section className={styles.paths} aria-label="Companion device lineup">
+        {c.slides.map((slide, index) => (
+          <Reveal key={slide.id} delay={index * 80} className={styles.pathReveal}>
+            <Link className={styles.card} href={slide.href}>
+              <Image
+                className={styles.cardImage}
+                src={slide.image}
+                alt=""
+                fill
+                sizes="(max-width: 900px) 86vw, 25vw"
+                priority={index === 0}
+              />
+              <span className={styles.cardLabel}>
+                {slide.name}
+                <small className={styles.cardLabelSub}>Powered by Newnal aios</small>
+              </span>
+              <span className={styles.arrow} aria-hidden="true">
+                <ChevronRightIcon />
+              </span>
+            </Link>
+          </Reveal>
+        ))}
+
+        <Reveal delay={c.slides.length * 80} className={styles.pathReveal}>
+          <div className={`${styles.card} ${styles.cardDisabled}`} aria-disabled="true">
+            <Image
+              className={styles.cardImage}
+              src="/images/figma/devices-card-onni.png"
+              alt=""
+              fill
+              sizes="(max-width: 900px) 86vw, 25vw"
+            />
+            <span className={styles.cardDim} aria-hidden="true" />
+            <span className={styles.cardLabel}>
+              ONNI
+              <small className={styles.cardLabelSub}>Powered by Newnal aios</small>
+            </span>
+            <span className={styles.comingSoon}>Coming Soon</span>
+          </div>
+        </Reveal>
       </section>
     </main>
   );

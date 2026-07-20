@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/shared/Reveal";
+import { PlayIcon } from "@heroicons/react/24/solid";
 import { ufoContent } from "@/content/ufo";
 import styles from "./UfoHero.module.css";
 
@@ -36,9 +37,7 @@ export function UfoHero() {
             <p className={styles.cardCaption}>{hero.photo.caption}</p>
           </div>
           <div className={styles.filmChip}>
-            <svg viewBox="0 0 12 12" aria-hidden="true">
-              <path d="M3.5 2.4 9 6l-5.5 3.6V2.4Z" fill="currentColor" />
-            </svg>
+            <PlayIcon aria-hidden="true" />
             <span>{hero.photo.chip}</span>
           </div>
         </div>

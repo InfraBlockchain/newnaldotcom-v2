@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BookmarkIcon, HomeIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { Reveal } from "@/components/shared/Reveal";
@@ -17,11 +18,11 @@ function ChapterHead({ title, lead, center = false }: {title:string | readonly s
   );
 }
 
+const philosophyIcons = [HomeIcon, UserGroupIcon, BookmarkIcon] as const;
+
 function PhilosophyIcon({ index }: { index: number }) {
-  const common = { viewBox: "0 0 24 24", "aria-hidden": true as const };
-  if (index === 0) return <svg {...common}><path d="M3 12l9-9 9 9v9a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2v-9z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M9 22v-8h6v8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>;
-  if (index === 1) return <svg {...common}><circle cx="7.5" cy="7.5" r="2.1" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="16.5" cy="7.5" r="2.1" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="10.5" r="1.7" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M3.5 20c0-2.9 1.8-5 4-5s4 2.1 4 5M12.5 20c0-2.9 1.8-5 4-5s4 2.1 4 5M9 20c0-2.1 1.3-3.7 3-3.7s3 1.6 3 3.7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
-  return <svg {...common}><path d="M7 3.5h10v17l-5-3-5 3z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="12" cy="10" r="1.4" fill="currentColor"/></svg>;
+  const Icon = philosophyIcons[index] ?? philosophyIcons[philosophyIcons.length - 1];
+  return <Icon aria-hidden="true" />;
 }
 
 export default function IlIiPage(){
