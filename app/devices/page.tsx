@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { Reveal } from "@/components/shared/Reveal";
 import { devicesContent as c } from "@/content/devices";
 import { devicesFontClassName } from "./fonts";
@@ -46,13 +47,23 @@ export default function DevicesPage() {
                 {slide.name}
                 <small className={styles.cardLabelSub}>Powered by Newnal aios</small>
               </span>
-              <span className={styles.arrow} aria-hidden="true">→</span>
+              <span className={styles.arrow} aria-hidden="true">
+                <ChevronRightIcon />
+              </span>
             </Link>
           </Reveal>
         ))}
 
         <Reveal delay={c.slides.length * 80} className={styles.pathReveal}>
           <div className={`${styles.card} ${styles.cardDisabled}`} aria-disabled="true">
+            <Image
+              className={styles.cardImage}
+              src="/images/figma/devices-card-onni.png"
+              alt=""
+              fill
+              sizes="(max-width: 900px) 86vw, 25vw"
+            />
+            <span className={styles.cardDim} aria-hidden="true" />
             <span className={styles.cardLabel}>
               ONNI
               <small className={styles.cardLabelSub}>Powered by Newnal aios</small>

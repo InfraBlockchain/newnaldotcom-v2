@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/shared/Reveal";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { ufoContent } from "@/content/ufo";
 import styles from "./UfoCinematic.module.css";
 
@@ -27,9 +28,7 @@ export function UfoCinematic() {
           <p className={styles.stripCaption}>{cinematic.strip.caption}</p>
           <span className={styles.stripLink}>
             {cinematic.strip.link}
-            <svg className={styles.stripArrow} viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <ArrowRightIcon className={styles.stripArrow} aria-hidden="true" />
           </span>
         </div>
 

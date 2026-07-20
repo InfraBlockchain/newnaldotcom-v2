@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import {
+  ArrowDownTrayIcon,
+  ArrowRightEndOnRectangleIcon,
+  ArrowUpRightIcon,
+  CheckCircleIcon,
+  CreditCardIcon,
+  KeyIcon,
+} from "@heroicons/react/24/outline";
 import { IpPortfolio } from "@/components/shared/IpPortfolio";
 import { Reveal } from "@/components/shared/Reveal";
 import { aiosContent as c } from "@/content/aios";
@@ -78,14 +86,11 @@ function EraTimeline() {
   );
 }
 
-function StepIcon({ index }: { index: number }) {
-  const common = { className: styles.stepIcon, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.4 };
+const stepIcons = [ArrowDownTrayIcon, ArrowRightEndOnRectangleIcon, KeyIcon, CheckCircleIcon, CreditCardIcon] as const;
 
-  if (index === 0) return <svg {...common} aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18.5h14" /></svg>;
-  if (index === 1) return <svg {...common} aria-hidden="true"><path d="M14 5h5v14h-5M11 8l4 4-4 4m4-4H5" /></svg>;
-  if (index === 2) return <svg {...common} aria-hidden="true"><circle cx="8" cy="12" r="3" /><path d="m10.5 10.5 7-7m-2 2 2 2m-4 0 2 2" /></svg>;
-  if (index === 3) return <svg {...common} aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="m8.5 12 2.3 2.3 4.8-5" /></svg>;
-  return <svg {...common} aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5" /><path d="M3 10h18m3 5h4" /></svg>;
+function StepIcon({ index }: { index: number }) {
+  const Icon = stepIcons[index] ?? stepIcons[stepIcons.length - 1];
+  return <Icon className={styles.stepIcon} aria-hidden="true" />;
 }
 
 function Lines({ text }: { text: string }) {
@@ -219,7 +224,7 @@ export default function AiosPage() {
       </div>
 
       <section className={`${styles.ip} section`}>
-        <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} ↗</a>)}</div></Reveal><Reveal><IpPortfolio tiles={c.ip.tiles} whitepaperLinks={whitepaperLinks} /></Reveal></div>
+        <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} <ArrowUpRightIcon aria-hidden="true" /></a>)}</div></Reveal><Reveal><IpPortfolio tiles={c.ip.tiles} whitepaperLinks={whitepaperLinks} /></Reveal></div>
       </section>
     </main>
   );

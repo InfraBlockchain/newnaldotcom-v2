@@ -6,7 +6,7 @@ export const privatePhoneContent = {
     emphasis: "trust breaks",
     sub: ["Most secure phones defend against hackers.", "Newnal defends against the person on the other side."],
     audience: "Built for leaders, creators, executives, and anyone whose reputation is an asset.",
-    cta: "See How It Works →",
+    cta: "See How It Works",
     brochureHref: "/docs/private-phone-brochure.pdf",
   },
   protects: {
