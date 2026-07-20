@@ -1,64 +1,14 @@
-.section {
-  background: var(--bg, #ffffff);
-  color: var(--ink, #19191c);
-  padding: 60px 0;
-}
-
-.panel {
-  border-top: 3px solid var(--ufo-alt-accent, #4d9fff);
-  padding-top: 32px;
-}
-
-.label {
-  color: var(--ufo-alt-accent, #4d9fff);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.title {
-  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2rem);
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-  margin: 8px 0 0;
-}
-
-.rows {
-  border-bottom: 1px solid #e5e5eb;
-  margin: 38px 0 0;
-}
-
-.row {
-  align-items: baseline;
-  border-top: 1px solid #e5e5eb;
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 240px 1fr;
-  padding: 18px 0;
-}
-
-.rowLabel {
-  color: var(--ink-soft, #6b6b70);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.rowValue {
-  color: var(--ink, #19191c);
-  font-size: 1.0625rem;
-  letter-spacing: -0.003em;
-  margin: 0;
-}
-
-@media (max-width: 767px) {
-  .row {
-    gap: 8px;
-    grid-template-columns: 1fr;
-  }
-}
+.section { background: #f1f8ff; color: var(--ink); padding: clamp(88px, 11vw, 144px) 0; }
+.label { color: var(--ufo-deep); font-size: var(--type-eyebrow); font-weight: 500; letter-spacing: .14em; margin: 0; text-transform: uppercase; }
+.title { font-size: clamp(2rem, 3.5vw, 3.3rem); font-weight: 400; letter-spacing: -.045em; line-height: 1.05; margin: 14px 0 0; }
+.specGrid { align-items: start; display: grid; gap: clamp(40px, 7vw, 112px); grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); margin-top: clamp(44px, 5vw, 64px); }
+.specTable { border-top: 2px solid var(--ufo-deep); }
+.rows { border-bottom: 1px solid var(--line); margin: 0; }
+.row { align-items: baseline; border-top: 1px solid var(--line); display: grid; gap: 32px; grid-template-columns: 240px 1fr; padding: 22px 0; }
+.row:first-child { border-top: 0; }
+.rowLabel { color: var(--ufo-deep); font-size: .68rem; font-weight: 500; letter-spacing: .12em; margin: 0; text-transform: uppercase; }
+.rowValue { color: var(--ink); font-size: 1rem; letter-spacing: -.015em; line-height: 1.5; margin: 0; }
+.deviceRender { aspect-ratio: 1; background: #e6f2ff; border: 1px solid #c7ddf6; border-radius: 18px; overflow: hidden; position: relative; }
+.deviceRender img { object-fit: contain; padding: 8%; }
+@media (max-width: 900px) { .specGrid { grid-template-columns: 1fr; }.deviceRender { margin-top: 4px; max-width: 560px; } }
+@media (max-width: 767px) { .section { padding-block: 80px; }.row { gap: 7px; grid-template-columns: 1fr; padding: 17px 0; } }

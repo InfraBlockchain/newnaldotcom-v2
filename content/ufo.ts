@@ -11,7 +11,7 @@ export const ufoContent = {
   },
   showcase: {
     eyebrow: "WEARABLE ADVENTURE",
-    title: "Small enough to wear. Powerful enough to start an adventure",
+    title: "Small enough to wear.\nPowerful enough to start an adventure",
     lead: [
       "UFO is designed to move with you.",
       "Attach it to your wrist, shoelace, backpack strap, keyring, or watch band — then let the device guide you through the world around you.",
@@ -19,43 +19,53 @@ export const ufoContent = {
       "Ready for spontaneous play.",
     ],
     mounts: [
-      { num: "01", tag: "wrist", title: "Wrist close-up", text: "For quick access and active play." },
-      { num: "02", tag: "shoelace", title: "Shoelace close-up", text: "For movement-based missions and outdoor exploration." },
-      { num: "03", tag: "backpack strap", title: "Backpack strap close-up", text: "For school, travel, and group adventures." },
-      { num: "04", tag: "keyring", title: "Keyring close-up", text: "For always-ready treasure hunting." },
+      { num: "01", tag: "wrist", title: "Wrist close-up", text: "For quick access and active play.", image: "/images/ufo/wear-wrist.png" },
+      { num: "02", tag: "shoelace", title: "Shoelace close-up", text: "For movement-based missions and outdoor exploration.", image: "/images/ufo/wear-shoelace.png" },
+      { num: "03", tag: "backpack strap", title: "Backpack strap close-up", text: "For school, travel, and group adventures.", image: "/images/ufo/wear-backpack-strap.png" },
+      { num: "04", tag: "cap", title: "Cap close-up", text: "For hands-free outdoor exploration.", image: "/images/ufo/wear-cap.png" },
     ],
     panel: {
       signal: { label: "SIGNAL · UFO POWERED", sub: "Attach anywhere · light guides the rest.", text: "Wrist · shoelace · backpack · keyring — the world is your board." },
       mode: { label: "TREASURE MODE · READY", text: "The world becomes the map." },
-      today: { label: "TODAY · SNAP HUNTING", swatches: ["#6b9e94", "#8cb8ad", "#385952", "#b8d9d1"], quote: "\"Every walk turned into a hunt. My daily route feels new again.\"" },
+      today: { label: "TODAY · SNAP ROUND", swatches: ["#6b9e94", "#8cb8ad", "#385952", "#b8d9d1"], quote: "\"Every walk turned into a hunt. My daily route feels new again.\"" },
     },
   },
   editorial: {
     eyebrow: "TWO WAYS TO HUNT · 03",
     title: "Hunt treasures in two different ways",
     quote: "\"UFO gives you two ways to play in the real world. Some treasures are hidden as physical Treasure Cards. Others are hidden in the places and objects already around you.\"",
-    support: "Find the card. Or capture the world. Either way, the hunt begins outside.",
+    support: "Find the card. Or capture the world.\nEither way, the hunt begins outside.",
     cards: [
       {
         wide: true,
-        media: { badge: "WEEKS 1-3 · SNAP HUNTING", caption: "Every month begins with a three-week hunt." },
-        label: "SNAP HUNTING",
-        title: "Track down custom treasures.",
-        body: "Every month begins with a three-week hunt. Track down custom treasures to charge your Power gauge and unlock the gateway to Treasure Card Hunting.",
+        media: { badge: "WEEKS 1-3 · SNAP ROUND", caption: "Every month begins with a three-week hunt." },
+        label: "SNAP ROUND",
+        title: "Snap Round",
+        body: [
+          "Every month begins with a three-week hunt. Track down custom treasures to charge your Power gauge and unlock the gateway to Treasure Card Round.",
+          "Step into the real world. In Snap Round mode, treasures are hidden in plain sight—on murals, signs, statues, or trees. When the map guides you to the spot, find the right target, and take the shot with your camera.",
+          "Newnal aios verifies your photo and location, instantly unlocking your reward.",
+        ],
       },
       {
         wide: false,
         media: { badge: "WEEK 4 · STAKES RAISED", caption: "Week four. The stakes are raised.", editorial: "Physical real-world Treasure Cards." },
-        label: "TREASURE CARD HUNTING",
-        title: "The most valuable rewards yet.",
-        body: "Treasure Card mode is activated in Week 4 of each month. Hunters search for physical real-world Treasure Cards — featuring the most valuable rewards yet.",
+        label: "TREASURE CARD ROUND",
+        title: "Treasure Card Round",
+        body: [
+          "Week four. The stakes are raised.",
+          "Treasure Card mode is activated in Week 4 of each month. Hunters search for physical real-world Treasure Cards—featuring the most valuable rewards yet.",
+          "Follow the map: The app guides you to the edge of the treasure zone.",
+          "Let the device take over: Once you arrive, UFO guides the rest of the way.",
+          "Follow the light: As you draw closer, the device shifts its light patterns, letting you lock onto the signal without ever staring at a screen.",
+        ],
       },
       {
         wide: false,
         media: { badge: "IN THE REAL WORLD · SNAP", swatches: ["#8cb8ad", "#6b9e94", "#bfd9d1", "#477a73"] },
-        label: "SNAP HUNTING · PROCESS",
+        label: "SNAP ROUND · PROCESS",
         title: "Step into the real world.",
-        body: "In Snap Hunting mode, treasures are hidden in plain sight — on murals, signs, statues, or trees. When the map guides you to the spot, find the right target, and take the shot with your camera. Newnal aios verifies your photo and location, instantly unlocking your reward.",
+        body: "In Snap Round mode, treasures are hidden in plain sight — on murals, signs, statues, or trees. When the map guides you to the spot, find the right target, and take the shot with your camera. Newnal aios verifies your photo and location, instantly unlocking your reward.",
       },
       {
         wide: true,
@@ -69,7 +79,13 @@ export const ufoContent = {
   cinematic: {
     eyebrow: "· TREASURES MADE FOR YOU · 04",
     title: "Treasures Made for You",
-    body: "UFO rewards are powered by Newnal AIOS. With the player's permission, My Data can help personalize the reward — so the treasure you unlock feels more relevant to your life, interests, and moments. The more your AIOS understands what you like, the more personal the treasure can become. Not random prizes. Rewards that feel like they found you.",
+    body: [
+      "UFO rewards are powered by Newnal AIOS.",
+      "With the player's permission, My Data can help personalize the reward — so the treasure you unlock feels more relevant to your life, interests, and moments.",
+      "A runner may discover running gear.\nA foodie may unlock a restaurant experience.\nA player preparing for a special day may receive something that fits the occasion.",
+      "The more your AIOS understands what you like, the more personal the treasure can become.",
+      "Not random prizes.\nRewards that feel like they found you.",
+    ],
     strip: { caption: "04 · Treasures Made for You", link: "Explore" },
     cards: [
       { num: "01", title: "A runner may discover running gear.", text: "Because UFO listens to how you move — trails, pace, and rhythm become the treasure map." },
@@ -84,13 +100,14 @@ export const ufoContent = {
     cards: [
       { num: "01", title: "The more you move, the more you level up.", text: "As you move through the real world, your activity charges your Power Gauge. Fill it up to unlock hidden maps, rare treasures, and higher-level missions." },
       { num: "02", title: "The more you play together.", text: "Players can meet, team up, and play together in the real world. When hunters connect their UFO devices, they can charge Power faster and take on bigger challenges together." },
+      { num: "03", title: "Bump to power up.", text: "Power up by bumping your UFO device with the devices of runners you meet." },
     ],
   },
   creator: {
     eyebrow: "· YOU ARE THE MAP MAKER · 06",
     title: "Create a treasure only you could hide",
     body: [
-      "With Snap Hunting, players do not only find treasures.",
+      "With Snap Round, players do not only find treasures.",
       "They can create them.",
       "Choose a real-world place, object, or detail that matters to you. Upload it as a Snap Hunt, add a clue, and invite other players to discover it.",
     ],

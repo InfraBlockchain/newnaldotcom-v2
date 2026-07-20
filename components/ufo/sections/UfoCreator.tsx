@@ -9,7 +9,6 @@ export function UfoCreator() {
     <section className={styles.section} aria-label="UFO Creator">
       <div className="ufo-container">
         <Reveal className={styles.header}>
-          <p className={styles.eyebrow}>{creator.eyebrow}</p>
           <h2 className={styles.title}>{creator.title}</h2>
           <div className={styles.body}>
             {creator.body.map((line) => (
