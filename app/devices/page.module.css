@@ -124,10 +124,11 @@
 .card:hover .arrow { transform: translateX(8px); }
 .card:focus-visible { outline-offset: -4px; }
 
-/* ONNI — disabled, dimmed, Coming Soon */
+/* ONNI — disabled, dimmed, Coming Soon; always monotone (hover or not) */
 .cardDisabled {
   background: #e9e9ec;
   cursor: default;
+  filter: grayscale(1);
 }
 
 .cardDisabled .cardImage { object-position: 36% 50%; }
