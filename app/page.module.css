@@ -107,10 +107,11 @@
   z-index: 1;
 }
 
-.chevron img {
-  height: 42px;
-  transform: rotate(-135deg);
-  width: 42px;
+.chevron svg {
+  color: #070708;
+  height: 100%;
+  stroke-width: 1;
+  width: 100%;
 }
 
 .card:hover .chevron { transform: translateX(8px); }
@@ -199,10 +200,6 @@
     width: 34px;
   }
 
-  .chevron img {
-    height: 34px;
-    width: 34px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
