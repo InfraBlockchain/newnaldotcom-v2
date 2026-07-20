@@ -1,5 +1,5 @@
 .home {
-  background: #eaeaea;
+  background: #fff;
   color: #000;
 }
 
@@ -17,7 +17,9 @@
   position: relative;
 }
 
-.aios { background: #fbfafa; }
+.aios,
+.private { background: #fff; }
+.devices { background: #fdfdfd; }
 
 .imageLayer {
   pointer-events: none;
@@ -26,29 +28,32 @@
 }
 
 .imageLayer img {
-  object-fit: cover;
+  height: 100%;
+  max-width: none;
+  width: 100%;
 }
 
 .aios .imageLayer {
-  height: 133.64%;
-  left: 50.54%;
-  opacity: .7;
-  top: -32.56%;
-  width: 55.68%;
+  height: 134.37%;
+  left: 47.1%;
+  opacity: .4;
+  top: -71.57%;
+  width: 70.72%;
 }
 
 .devices .imageLayer {
   height: 100%;
-  left: -15.68%;
-  top: 0;
-  width: 118.4%;
+  inset: 0;
+  opacity: .5;
+  width: 100%;
 }
 
 .private .imageLayer {
   height: 100%;
-  left: 0;
+  left: 36.59%;
+  opacity: .4;
   top: 0;
-  width: 99.92%;
+  width: 74.16%;
 }
 
 .banner::after {
@@ -106,8 +111,8 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
-  min-height: 33px;
-  padding: 8px 16px;
+  min-height: 60px;
+  padding: 20px 40px;
   transition: background var(--dur-micro);
 }
 
@@ -115,12 +120,12 @@
 .banner:focus-visible { outline-offset: -4px; }
 
 @media (max-width: 1200px) {
-  .banner { padding-inline: 48px; }
+  .banner { padding-inline: 40px; }
 }
 
 @media (max-width: 900px) {
   .banner {
-    height: clamp(420px, 60vh, 600px);
+    height: clamp(520px, 70vh, 600px);
   }
 
   .banner::after {
@@ -138,19 +143,37 @@
 
   .aios .imageLayer {
     height: 100%;
-    left: 35%;
+    left: 24%;
     top: 0;
-    width: 100%;
+    width: 170%;
   }
 
   .devices .imageLayer {
-    left: -68%;
-    width: 236.8%;
+    height: 100%;
+    left: -55%;
+    top: 0;
+    width: 237%;
   }
 
   .private .imageLayer {
-    left: -54%;
-    width: 207.2%;
+    height: 100%;
+    left: -20%;
+    top: 0;
+    width: 237%;
+  }
+}
+
+@media (min-width: 901px) {
+  .home { margin-bottom: -80px; }
+
+  .home + :global(footer) {
+    background: transparent;
+    position: relative;
+    z-index: 3;
+  }
+
+  .home + :global(footer) > div {
+    min-height: 80px;
   }
 }
 

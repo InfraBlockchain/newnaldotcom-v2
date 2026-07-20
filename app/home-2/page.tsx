@@ -6,16 +6,22 @@ import { homeBody } from "@/components/home/fonts";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
 
+const bannerArtwork = {
+  aios: "/images/home/door/opt1-aios-card.png",
+  devices: "/images/home/door/opt2-companion-banner.png",
+  private: "/images/home/door/opt1-private-phone-card.png",
+} as const;
+
 export default function HomeOptionTwoPage() {
   return (
     <main id="main-content" className={`${styles.home} ${homeBody.variable}`}>
-      <HomeHero />
+      <HomeHero optionTwoArtwork />
       <section className={styles.banners} aria-label="Explore Newnal products">
         {homeContent.paths.map((path, index) => (
           <Link key={path.href} className={`${styles.banner} ${styles[path.id]}`} href={path.href}>
             <span className={styles.imageLayer} aria-hidden="true">
               <Image
-                src={path.image}
+                src={bannerArtwork[path.id]}
                 alt=""
                 fill
                 sizes="100vw"

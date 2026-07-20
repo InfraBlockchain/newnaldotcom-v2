@@ -7,15 +7,27 @@ import styles from "./HomeHero.module.css";
 type HomeHeroProps = {
   children?: ReactNode;
   optionOneArtwork?: boolean;
+  optionTwoArtwork?: boolean;
 };
 
-export function HomeHero({ children, optionOneArtwork = false }: HomeHeroProps) {
+export function HomeHero({
+  children,
+  optionOneArtwork = false,
+  optionTwoArtwork = false,
+}: HomeHeroProps) {
+  const hasArtwork = optionOneArtwork || optionTwoArtwork;
+  const variantClass = optionOneArtwork
+    ? styles.optionOne
+    : optionTwoArtwork
+      ? styles.optionTwo
+      : "";
+
   return (
     <section
-      className={`${styles.hero} ${optionOneArtwork ? styles.optionOne : ""}`}
+      className={`${styles.hero} ${variantClass}`}
       aria-labelledby="home-title"
     >
-      {optionOneArtwork ? (
+      {hasArtwork ? (
         <span className={styles.artwork} aria-hidden="true">
           <Image
             src="/images/home/door/aios-ribbon.png"
