@@ -1,7 +1,7 @@
 export const homeContent = {
   hero: {
-    title: ["One aios", "Across four devices."],
-    sub: ["Intelligence that truly knows you.", "Data under your control."],
+    title: ["The New AI Computing Era"],
+    sub: ["Newnal aios Leads the Way"],
   },
   paths: [
     {
