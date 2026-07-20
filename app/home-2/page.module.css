@@ -122,6 +122,10 @@
 .banner:hover .learnMore { background: #2a2a2e; }
 .banner:focus-visible { outline-offset: -4px; }
 
+/* only the hovered banner keeps its color */
+.banner { transition: filter var(--dur-micro) var(--ease-soft); }
+.banners:hover .banner:not(:hover) { filter: grayscale(1); }
+
 @media (max-width: 1200px) {
   .banner { padding-inline: 40px; }
 }
