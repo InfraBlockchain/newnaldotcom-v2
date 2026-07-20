@@ -76,7 +76,11 @@
   z-index: 0;
 }
 
+.card { transition: filter var(--dur-micro) var(--ease-soft); }
 .card:hover .cardImage { transform: scale(1.03); }
+
+/* only the hovered banner keeps its color */
+.paths:hover .card:not(:hover) { filter: grayscale(1); }
 
 .cardLabel {
   color: #fff;
@@ -102,12 +106,19 @@
 
 .arrow {
   color: #fff;
-  font-size: 2.15rem;
-  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .35));
+  flex: 0 0 36px;
+  height: 36px;
   position: relative;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, .35);
   transition: transform var(--dur-micro) var(--ease-soft);
+  width: 36px;
   z-index: 1;
+}
+
+.arrow svg {
+  height: 100%;
+  stroke-width: 1.2;
+  width: 100%;
 }
 
 .card:hover .arrow { transform: translateX(8px); }
@@ -119,8 +130,17 @@
   cursor: default;
 }
 
+.cardDisabled .cardImage { object-position: 36% 50%; }
+
+.cardDim {
+  background: rgba(250, 250, 251, .62);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
 .cardDisabled .cardLabel {
-  color: #9a9aa0;
+  color: #55555c;
   text-shadow: none;
 }
 

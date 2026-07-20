@@ -26,17 +26,17 @@ export function IpPortfolio({ tiles, whitepaperLinks }: IpPortfolioProps) {
                 <h3>{tile.title}</h3>
                 <div className={styles.tileRecords}>
                   {tile.groups.map((group) => (
-                    <section key={group.title} className={styles.group}>
-                      <h4>{group.title}</h4>
+                    <section key={group.title} className={styles.group} aria-label={group.title}>
                       <table>
                         <tbody>
                           {group.records.map(([title, identifier]) => {
                             const href = whitepaperLinks[title];
                             return (
                               <tr key={title}>
-                                <th scope="row">{title}</th>
+                                <th scope="row">
+                                  {href ? <a href={href} target="_blank" rel="noopener noreferrer">{title}</a> : title}
+                                </th>
                                 <td>{identifier}</td>
-                                <td>{href && <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} PDF`}>↗</a>}</td>
                               </tr>
                             );
                           })}

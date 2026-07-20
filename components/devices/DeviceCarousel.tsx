@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { DeviceSlide } from "@/content/devices";
@@ -133,9 +134,7 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
           disabled={isFirst}
           onClick={() => scrollToIndex(active - 1)}
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M12.5 4.5 6.5 10l6 5.5" stroke="var(--fg-text, #19191c)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <ChevronLeftIcon aria-hidden="true" />
         </button>
 
         <div
@@ -193,9 +192,7 @@ export function DeviceCarousel({ slides }: DeviceCarouselProps) {
           disabled={isLast}
           onClick={() => scrollToIndex(active + 1)}
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M7.5 4.5 13.5 10l-6 5.5" stroke="var(--fg-text, #19191c)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <ChevronRightIcon aria-hidden="true" />
         </button>
       </div>
 

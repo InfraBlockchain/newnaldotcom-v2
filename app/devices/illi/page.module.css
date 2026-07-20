@@ -46,6 +46,7 @@
 .venn>div>span{color:#d9b87c;display:block;height:2px;margin:0 auto 1px}
 .venn>div h3{font-size:.7rem;font-weight:400;margin:0 0 1px;color:#1a0f0a}
 .venn>div p{color:#6b5a50;font-size:.5rem;line-height:1.1;margin:0}
+.venn>div svg{display:block;height:34px;margin:0 auto 10px;width:34px;stroke-width:1.5}
 .vennText1{left:13%;top:22%}
 .vennText2{right:13%;top:22%}
 .vennText3{bottom:10%;left:50%;transform:translateX(-50%)}
