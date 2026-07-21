@@ -32,7 +32,7 @@
 .heroCopy h1 em { font-style: normal; }
 
 .intro {
-  font-size: clamp(1.08rem, 1.35vw, 1.4rem);
+  font-size: clamp(1.725rem, 2.6vw, 3.3rem);
   letter-spacing: -.04em;
   line-height: 1.3;
   margin: 0;
