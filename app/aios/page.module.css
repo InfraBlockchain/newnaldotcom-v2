@@ -604,7 +604,7 @@
 }
 
 .founder {
-  background: #f0f0f2;
+  background: var(--fg-accent-soft);
   font-family: var(--font-inter), sans-serif;
   padding-block: 64px;
   text-align: center;
