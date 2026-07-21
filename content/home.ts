@@ -1,17 +1,17 @@
 export const homeContent = {
   hero: {
-    title: ["The New AI Computing Era"],
-    sub: ["Newnal aios Leads the Way"],
+    title: ["One architecture. Complete data sovereignty"],
+    sub: ["Newnal aIOS"],
   },
   paths: [
     {
       id: "aios",
-      statement: ["ONE ARCHITECTURE.", "COMPLETE DATA SOVEREIGNTY"],
+      statement: ["Newnal aios"],
       cardLabel: [
-        [{ text: "Newnal " }, { text: "aios", wordmark: true }],
+        [{ text: "For the AI Computing Era" }],
       ],
       bannerLabel: [
-        [{ text: "Newnal " }, { text: "aios", wordmark: true }],
+        [{ text: "For the AI Computing Era" }],
       ],
       href: "/aios",
       image: "/images/home/door/aios-ribbon.png",
@@ -34,7 +34,7 @@ export const homeContent = {
     },
     {
       id: "private",
-      statement: ["Privacy that holds— even when trust breaks."],
+      statement: ["Privacy that holds—even when trust breaks."],
       cardLabel: [
         [{ text: "Newnal Private Phone" }],
       ],
