@@ -34,7 +34,7 @@ export default function DevicesPage() {
       <section className={styles.paths} aria-label="Companion device lineup">
         {c.slides.map((slide, index) => (
           <Reveal key={slide.id} delay={index * 80} className={styles.pathReveal}>
-            <Link className={styles.card} href={slide.href}>
+            <Link className={styles.card} href={slide.href} data-slide={slide.id}>
               <Image
                 className={styles.cardImage}
                 src={slide.image}

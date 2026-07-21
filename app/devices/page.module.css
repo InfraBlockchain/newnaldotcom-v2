@@ -132,6 +132,7 @@
 }
 
 .cardDisabled .cardImage { object-position: 36% 50%; }
+.card[data-slide="illi"] .cardImage { object-position: 65.5% 50%; }
 
 .cardDim {
   background: rgba(250, 250, 251, .62);
