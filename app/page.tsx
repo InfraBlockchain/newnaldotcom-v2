@@ -10,12 +10,7 @@ export default function HomePage() {
       <section className={styles.hero} aria-labelledby="home-title">
         <div className={styles.heroInner}>
           <Reveal className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Personal intelligence, made tangible</p>
             <h1 id="home-title"><EmphasizedText text={homeContent.hero.title} emphasis={homeContent.hero.emphasis} /></h1>
-            <p className={styles.intro}>{homeContent.hero.sub.map((line) => <span key={line}>{line}</span>)}</p>
-            <Link className={styles.heroLink} href="/devices">
-              Explore companion devices <span aria-hidden="true">↗</span>
-            </Link>
           </Reveal>
         </div>
         <div className={styles.heroFoot}>

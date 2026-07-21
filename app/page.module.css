@@ -13,23 +13,10 @@
 .heroInner {
   align-items: center;
   display: grid;
-  grid-template-columns: minmax(310px, 560px);
+  grid-template-columns: 1fr;
   margin: 0 auto;
   max-width: 1360px;
   min-height: calc(100svh - 152px);
-}
-
-.heroCopy { max-width: 560px; }
-
-.eyebrow {
-  color: #60616a;
-  font-family: var(--font-mono), monospace;
-  font-size: .69rem;
-  font-weight: 500;
-  letter-spacing: .13em;
-  line-height: 1.4;
-  margin-bottom: 28px;
-  text-transform: uppercase;
 }
 
 .heroCopy h1 {
@@ -39,31 +26,10 @@
   letter-spacing: -.075em;
   line-height: .91;
   margin-bottom: 30px;
+  white-space: nowrap;
 }
 
 .heroCopy h1 em { display: block; font-style: normal; }
-
-.intro {
-  font-size: clamp(1.08rem, 1.35vw, 1.4rem);
-  letter-spacing: -.04em;
-  line-height: 1.3;
-  margin-bottom: 36px;
-}
-
-.intro span { display: block; }
-
-.heroLink {
-  align-items: center;
-  border-bottom: 1px solid currentColor;
-  display: inline-flex;
-  font-size: .93rem;
-  gap: 20px;
-  padding-bottom: 8px;
-  transition: gap var(--dur-micro) var(--ease-soft);
-}
-
-.heroLink:hover { gap: 28px; }
-.heroLink span { font-size: 1.1rem; line-height: 1; }
 
 .heroFoot {
   align-items: center;
@@ -197,7 +163,6 @@
 @media (max-width: 900px) {
   .hero { padding-block: 28px 24px; }
   .heroInner { grid-template-columns: 1fr; min-height: auto; padding: 56px 0 72px; }
-  .heroCopy { max-width: 620px; }
   .heroFoot { margin-top: 0; }
   .card { gap: 18px; grid-template-columns: 42px minmax(240px, 1.35fr) minmax(150px, .65fr) 32px; }
 }
@@ -205,9 +170,7 @@
 @media (max-width: 767px) {
   .hero { padding-inline: 20px; }
   .heroInner { padding: 36px 0 48px; }
-  .eyebrow { margin-bottom: 22px; }
-  .heroCopy h1 { font-size: clamp(3.2rem, 13vw, 4.6rem); margin-bottom: 24px; }
-  .intro { font-size: 1.08rem; margin-bottom: 30px; }
+  .heroCopy h1 { font-size: clamp(3.2rem, 13vw, 4.6rem); margin-bottom: 24px; white-space: normal; }
   .heroFoot { font-size: .57rem; }
   .heroFoot p { max-width: 180px; }
   .paths { min-height: calc(100svh - 64px); }
