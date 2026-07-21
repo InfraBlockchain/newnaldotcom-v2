@@ -131,9 +131,11 @@
   outline-color: #fff;
 }
 
-.aios:focus-within { background: #010000; }
-.devices:focus-within { background: #000; }
-.private:focus-within { background: #4aa0f6; }
+.aios:focus-within,
+.devices:focus-within,
+.private:focus-within {
+  background: #010000;
+}
 
 .accordion:focus-within .row:not(:focus-within) {
   height: var(--row-compact-h);
@@ -164,9 +166,11 @@
     color: #fff;
   }
 
-  .aios:hover { background: #010000; }
-  .devices:hover { background: #000; }
-  .private:hover { background: #4aa0f6; }
+  .aios:hover,
+  .devices:hover,
+  .private:hover {
+    background: #010000;
+  }
 
   .accordion:hover .row:not(:hover) {
     height: var(--row-compact-h);
