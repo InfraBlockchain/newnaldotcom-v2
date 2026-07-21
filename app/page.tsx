@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { HomeHero } from "@/components/home/HomeHero";
 import { ProductLabel } from "@/components/home/ProductLabel";
 import { homeBody } from "@/components/home/fonts";
@@ -31,7 +31,7 @@ export default function HomePage() {
                 </h2>
               </span>
               <span className={styles.chevron} aria-hidden="true">
-                <ChevronRightIcon />
+                <ArrowUpRightIcon />
               </span>
             </Link>
           ))}

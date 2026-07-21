@@ -161,8 +161,6 @@
     mask-image: linear-gradient(to right, transparent 0, #000 20%);
   }
 
-  .private .imageLayer img { filter: blur(3px); }
-
   .aios:hover,
   .aios:focus-within { background: #000; }
 
