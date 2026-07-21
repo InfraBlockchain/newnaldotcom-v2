@@ -103,114 +103,53 @@
 }
 
 .spectrum {
-  align-items: center;
   background: var(--fg-panel-bg);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  height: 325px;
+  height: 300px;
   overflow: hidden;
   padding-inline: 56px;
   position: relative;
 }
 
-.spectrumFoundation {
-  align-items: center;
-  background: var(--fg-panel-bg);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 8px 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.spectrumFoundation span {
+.spectrumNumSide {
   color: var(--fg-muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1;
+  position: absolute;
+  top: 140px;
+  transform: translateY(-50%);
 }
 
-.spectrumFoundation strong {
-  color: var(--fg-text);
-  font-family: var(--font-syne), sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: -.03em;
-  line-height: 1.1;
+.spectrumNumSide[data-side="left"] {
+  left: 18px;
+}
+
+.spectrumNumSide[data-side="right"] {
+  right: 18px;
 }
 
 .spectrumEndpoint {
-  height: 150px;
-  position: relative;
-}
-
-.spectrumEndpoint::before {
-  background: var(--fg-line);
-  content: "";
-  height: 1px;
   position: absolute;
-  top: 61px;
+  top: 180px;
+  transition: opacity .25s ease;
+  width: 220px;
 }
 
-.spectrumLeft::before {
-  left: 14px;
-  right: 0;
+.spectrumLeft {
+  left: 56px;
+  text-align: left;
 }
 
-.spectrumRight::before {
-  left: 0;
-  right: 14px;
-}
-
-.spectrumNumber {
-  color: var(--fg-muted);
-  font-size: 11px;
-  line-height: 1;
-  position: absolute;
-  top: 0;
-}
-
-.spectrumLeft .spectrumNumber {
-  left: 7px;
-  transform: translateX(-50%);
-}
-
-.spectrumRight .spectrumNumber {
-  right: 7px;
-  transform: translateX(50%);
-}
-
-.spectrumEndpoint i {
-  background: #fff;
-  border: 1px solid var(--fg-line);
-  border-radius: 50%;
-  height: 14px;
-  margin: 0;
-  position: absolute;
-  top: 54px;
-  width: 14px;
-  z-index: 1;
-}
-
-.spectrumLeft i,
-.spectrumLeft strong,
-.spectrumLeft small {
-  left: 0;
-}
-
-.spectrumRight i,
-.spectrumRight strong,
-.spectrumRight small {
-  right: 0;
+.spectrumRight {
+  right: 56px;
+  text-align: right;
 }
 
 .spectrumEndpoint strong {
   color: var(--fg-text);
+  display: block;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.3;
-  position: absolute;
-  top: 86px;
 }
 
 .spectrumEndpoint small,
@@ -226,16 +165,112 @@
 }
 
 .spectrumEndpoint small {
+  display: block;
+  margin-top: 8px;
+}
+
+.trackPill {
+  background: #26262b;
+  border-radius: 16px;
+  height: 32px;
+  left: 56px;
+  overflow: hidden;
   position: absolute;
-  top: 113px;
+  right: 56px;
+  top: 124px;
 }
 
-.spectrumLeft {
-  text-align: left;
+.trackFill {
+  background: #4d9fff;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
-.spectrumRight {
-  text-align: right;
+.thumbTrack {
+  height: 56px;
+  left: 56px;
+  position: absolute;
+  right: 56px;
+  top: 112px;
+}
+
+.spectrumSlider {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: grab;
+  height: 100%;
+  inset: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.spectrumSlider:active {
+  cursor: grabbing;
+}
+
+.spectrumSlider::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 100%;
+}
+
+.spectrumSlider::-moz-range-track {
+  background: transparent;
+  height: 100%;
+}
+
+.spectrumSlider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 56px;
+  opacity: 0;
+  width: 120px;
+}
+
+.spectrumSlider::-moz-range-thumb {
+  border: none;
+  height: 56px;
+  opacity: 0;
+  width: 120px;
+}
+
+.lens {
+  align-items: center;
+  background: linear-gradient(160deg, rgba(255, 255, 255, .55), rgba(255, 255, 255, .12) 65%);
+  backdrop-filter: blur(5px) saturate(180%) brightness(1.08);
+  -webkit-backdrop-filter: blur(5px) saturate(180%) brightness(1.08);
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 28px;
+  box-shadow:
+    0 3px 8px rgba(10, 10, 15, .2),
+    inset 0 1px 1px rgba(255, 255, 255, .65),
+    inset 0 -8px 12px rgba(10, 10, 15, .1);
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform .12s ease;
+  width: 120px;
+  z-index: 1;
+}
+
+.thumbTrack:has(.spectrumSlider:active) .lens {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.lens span {
+  color: #fff;
+  font-family: var(--font-syne), sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -.01em;
 }
 
 .bridge {
@@ -687,16 +722,25 @@
   }
 
   .spectrum {
-    height: 300px;
-    padding-inline: 28px;
+    padding-inline: 24px;
   }
 
-  .spectrumFoundation {
-    padding-inline: 12px;
+  .spectrumNumSide[data-side="left"],
+  .spectrumLeft,
+  .trackPill,
+  .thumbTrack {
+    left: 24px;
   }
 
-  .spectrumFoundation strong {
-    font-size: 25px;
+  .spectrumNumSide[data-side="right"],
+  .spectrumRight,
+  .trackPill,
+  .thumbTrack {
+    right: 24px;
+  }
+
+  .spectrumEndpoint {
+    width: 150px;
   }
 
   .sovereigntyCards article,

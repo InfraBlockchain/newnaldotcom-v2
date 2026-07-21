@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { IpPortfolio } from "@/components/shared/IpPortfolio";
 import { Reveal } from "@/components/shared/Reveal";
+import { Spectrum } from "./Spectrum";
 import { aiosContent as c } from "@/content/aios";
 import styles from "./page.module.css";
 
@@ -44,29 +45,6 @@ function AccentText({ text, phrases }: { text: string; phrases: readonly string[
   return text.split(pattern).map((part, index) => phrases.includes(part)
     ? <span className={styles.accentText} key={`${part}-${index}`}>{part}</span>
     : part);
-}
-
-function Spectrum() {
-  return (
-    <div className={styles.spectrum} role="img" aria-label="Data sovereignty spectrum from one hundred, Newnal AIOS, to zero, Private Phone">
-      <div className={`${styles.spectrumEndpoint} ${styles.spectrumLeft}`}>
-        <span className={styles.spectrumNumber}>100</span>
-        <i aria-hidden="true" />
-        <strong>Newnal AIOS</strong>
-        <small>ACTIVE SOVEREIGNTY</small>
-      </div>
-      <div className={styles.spectrumFoundation}>
-        <span>(foundation)</span>
-        <strong>Newnal</strong>
-      </div>
-      <div className={`${styles.spectrumEndpoint} ${styles.spectrumRight}`}>
-        <span className={styles.spectrumNumber}>0</span>
-        <i aria-hidden="true" />
-        <strong>Private Phone</strong>
-        <small>DEFENSIVE SOVEREIGNTY</small>
-      </div>
-    </div>
-  );
 }
 
 function EraTimeline() {
