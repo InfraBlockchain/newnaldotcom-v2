@@ -58,6 +58,21 @@
   width: 58.41%;
 }
 
+.optionOne .artwork {
+  opacity: .4;
+}
+
+.optionOne .artwork img {
+  bottom: 0;
+  filter: blur(2px);
+  height: 64%;
+  left: 0;
+  object-fit: cover;
+  object-position: bottom;
+  top: auto;
+  width: 121%;
+}
+
 .copy {
   display: flex;
   flex-direction: column;
@@ -110,6 +125,12 @@
     top: 0;
     width: 72%;
   }
+
+  .optionOne .artwork img {
+    height: 56%;
+    left: -10%;
+    width: 130%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -142,5 +163,15 @@
 
   .optionTwo::after {
     background: rgba(251, 250, 250, .68);
+  }
+
+  .optionOne .artwork {
+    opacity: .3;
+  }
+
+  .optionOne .artwork img {
+    height: 46%;
+    left: -20%;
+    width: 150%;
   }
 }

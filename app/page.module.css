@@ -25,6 +25,7 @@
   overflow: hidden;
   padding: 40px;
   position: relative;
+  transition: background-color var(--dur-base, .3s) var(--ease-soft);
 }
 
 .imageLayer {
@@ -69,6 +70,7 @@
   justify-content: center;
   max-width: 813px;
   position: relative;
+  transition: color var(--dur-base, .3s) var(--ease-soft);
   z-index: 1;
 }
 
@@ -112,10 +114,93 @@
   height: 100%;
   stroke-width: 1;
   width: 100%;
+  transition: color var(--dur-base, .3s) var(--ease-soft);
 }
 
 .card:hover .chevron { transform: translateX(8px); }
 .card:focus-visible { outline-offset: -4px; }
+
+/* Desktop hover reveal (Figma "v3"): idle card is plain text, hovering swaps in an
+   accent background + edge-feathered image and dims the other two cards' copy. */
+@media (hover: hover) and (pointer: fine) {
+  .imageLayer {
+    opacity: 0;
+    transition: opacity var(--dur-base, .3s) var(--ease-soft);
+  }
+
+  .aios .imageLayer {
+    height: 100%;
+    left: auto;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    width: 42%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%);
+    mask-image: linear-gradient(to right, transparent 0, #000 14%);
+  }
+
+  .devices .imageLayer {
+    height: 100%;
+    left: auto;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    width: 49%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16%);
+    mask-image: linear-gradient(to right, transparent 0, #000 16%);
+  }
+
+  .private .imageLayer {
+    height: 165%;
+    left: 56%;
+    opacity: 0;
+    top: -32%;
+    transform: rotate(-10deg);
+    width: 34%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%);
+    mask-image: linear-gradient(to right, transparent 0, #000 20%);
+  }
+
+  .private .imageLayer img { filter: blur(3px); }
+
+  .aios:hover,
+  .aios:focus-within { background: #000; }
+
+  .aios:hover .imageLayer,
+  .aios:focus-within .imageLayer { opacity: 1; }
+
+  .aios:hover .cardCopy,
+  .aios:focus-within .cardCopy,
+  .aios:hover .chevron svg,
+  .aios:focus-within .chevron svg { color: #fff; }
+
+  .devices:hover,
+  .devices:focus-within { background: #f2dac0; }
+
+  .devices:hover .imageLayer,
+  .devices:focus-within .imageLayer {
+    mix-blend-mode: luminosity;
+    opacity: 1;
+  }
+
+  .private:hover,
+  .private:focus-within {
+    background: linear-gradient(100.64deg, #08f 18%, #2d5ee6 95%);
+  }
+
+  .private:hover .imageLayer,
+  .private:focus-within .imageLayer { opacity: 1; }
+
+  .private:hover .cardCopy,
+  .private:focus-within .cardCopy,
+  .private:hover .chevron svg,
+  .private:focus-within .chevron svg { color: #fff; }
+
+  .paths:has(.card:hover, .card:focus-within) .card:not(:hover):not(:focus-within) .cardCopy,
+  .paths:has(.card:hover, .card:focus-within) .card:not(:hover):not(:focus-within) .chevron svg {
+    color: #ddd;
+  }
+}
 
 @media (max-width: 900px) {
   .card {
@@ -203,5 +288,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .chevron { transition: none; }
+  .card,
+  .cardCopy,
+  .chevron,
+  .chevron svg,
+  .imageLayer { transition: none; }
 }

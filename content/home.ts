@@ -1,7 +1,7 @@
 export const homeContent = {
   hero: {
-    title: ["The New AI Computing Era"],
-    sub: ["Newnal aios Leads the Way"],
+    title: ["One aios", "Across four devices."],
+    sub: ["Intelligence that truly knows you.", "Data under your control."],
   },
   paths: [
     {
@@ -15,6 +15,7 @@ export const homeContent = {
       ],
       href: "/aios",
       image: "/images/home/door/aios-ribbon.png",
+      hoverImage: "/images/home/door/v3-hover-aios.png",
     },
     {
       id: "devices",
@@ -29,6 +30,7 @@ export const homeContent = {
       ],
       href: "/devices",
       image: "/images/home/door/devices-photo.png",
+      hoverImage: "/images/home/door/v3-hover-devices.png",
     },
     {
       id: "private",
@@ -42,6 +44,7 @@ export const homeContent = {
       ],
       href: "/private-phone",
       image: "/images/home/door/private-phone-photo.png",
+      hoverImage: "/images/home/door/v3-hover-private.png",
     },
   ],
   learnMore: "Learn More",

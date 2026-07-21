@@ -30,10 +30,10 @@ export function HomeHero({
       {hasArtwork ? (
         <span className={styles.artwork} aria-hidden="true">
           <Image
-            src="/images/home/door/aios-ribbon.png"
+            src={optionOneArtwork ? "/images/home/door/v3-hero-bg.png" : "/images/home/door/aios-ribbon.png"}
             alt=""
-            width={1024}
-            height={1024}
+            width={1200}
+            height={675}
             priority
           />
         </span>

@@ -7,26 +7,19 @@ import { homeBody } from "@/components/home/fonts";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
 
-const cardArtwork = {
-  aios: "/images/home/door/opt1-aios-card.png",
-  devices: "/images/home/door/opt1-companion-card.png",
-  private: "/images/home/door/opt1-private-phone-card.png",
-} as const;
-
 export default function HomePage() {
   return (
     <main id="main-content" className={`${styles.home} ${homeBody.variable}`}>
       <HomeHero optionOneArtwork>
         <div className={styles.paths} aria-label="Explore Newnal products">
-          {homeContent.paths.map((path, index) => (
+          {homeContent.paths.map((path) => (
             <Link key={path.href} className={`${styles.card} ${styles[path.id]}`} href={path.href}>
               <span className={styles.imageLayer} aria-hidden="true">
                 <Image
-                  src={cardArtwork[path.id]}
+                  src={path.hoverImage}
                   alt=""
                   fill
-                  sizes="(max-width: 767px) 100vw, calc(100vw - 160px)"
-                  priority={index === 0}
+                  sizes="(max-width: 767px) 100vw, 55vw"
                 />
               </span>
               <span className={styles.cardCopy}>
