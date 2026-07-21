@@ -1,8 +1,8 @@
 export const homeContent = {
   hero: {
-    title: "One architecture. Complete data sovereignty",
-    emphasis: "Complete data sovereignty",
-    sub: ["Newnal aIOS"],
+    title: "The New AI Computing Era",
+    emphasis: "AI Computing Era",
+    sub: ["Newnal aios Leads the Way"],
   },
   paths: [
     { title: "Newnal aios", description: ["For the AI Computing Era"], href: "/aios", tone: "aios" },
