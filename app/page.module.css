@@ -4,6 +4,7 @@
 }
 
 .accordion {
+  contain: layout;
   display: flex;
   flex: 1 1 0;
   flex-direction: column;
@@ -15,12 +16,10 @@
   align-items: flex-start;
   background: #fff;
   box-shadow:
-    0 550px 154px rgba(0, 0, 0, 0),
-    0 352px 141px rgba(0, 0, 0, .01),
-    0 198px 119px rgba(0, 0, 0, .05),
     0 88px 88px rgba(0, 0, 0, .09),
     0 22px 48px rgba(0, 0, 0, .1);
   color: #1f1f1f;
+  contain: layout;
   display: flex;
   gap: 20px;
   height: 300px;
