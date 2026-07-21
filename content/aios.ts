@@ -46,7 +46,8 @@ export const aiosContent = {
     callout: "Data is more vulnerable the harder you try to protect it; counterintuitively, it is protected the more you open it.",
   },
   founder: {
-    title: "From the founder",
+    title: "Newnal's Founder Invites You to Become Vision Partners",
+    subtitle: "Newnal's core principles, values, and goals can be seen on Newnal's Keynote Video, and can be read on the Founder's Columns.",
     links: [
       { label: "Keynote", href: "https://keynote.newnal.com/v/4sGbG7ZxfBJRnfJbBPa8P?_b=1" },
       { label: "Founder Columns", href: "https://column.newnal.com/" },
