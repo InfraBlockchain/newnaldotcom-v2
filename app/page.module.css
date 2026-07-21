@@ -4,13 +4,6 @@
   color: #000;
 }
 
-.scrollRoot {
-  height: calc(100vh - 64px);
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-}
-
 .pathsSection {
   align-items: center;
   background: var(--home-surface);
@@ -22,10 +15,6 @@
 }
 
 @media (max-width: 767px) {
-  .scrollRoot {
-    height: calc(100svh - 64px);
-  }
-
   .pathsSection {
     min-height: calc(100svh - 64px);
     padding: 40px 20px;
