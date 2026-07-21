@@ -604,7 +604,8 @@
 }
 
 .founder {
-  background: var(--fg-accent-soft);
+  background: #fff;
+  border-top: 1px solid var(--fg-card-border);
   font-family: var(--font-inter), sans-serif;
   padding-block: 64px;
   text-align: center;
