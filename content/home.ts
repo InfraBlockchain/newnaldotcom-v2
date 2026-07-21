@@ -17,6 +17,11 @@ export const homeContent = {
       href: "/devices",
       tone: "devices",
     },
-    { title: "Privacy that holds—even when trust breaks.", description: ["Newnal Private Phone"], href: "/private-phone", tone: "private" },
+    {
+      title: "Newnal Private Phone",
+      description: ["Privacy that holds— even when trust breaks."],
+      href: "/private-phone",
+      tone: "private",
+    },
   ],
 } as const;
