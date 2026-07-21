@@ -1,11 +1,21 @@
 .hero {
   background: #eaeaea;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  justify-content: center;
+  min-height: calc(100vh - 64px);
   overflow: hidden;
   padding: 120px 80px;
   position: relative;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: calc(100svh - 64px);
+  }
 }
 
 .optionOne,

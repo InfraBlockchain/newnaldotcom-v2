@@ -6,12 +6,14 @@ import styles from "./HomeHero.module.css";
 
 type HomeHeroProps = {
   children?: ReactNode;
+  id?: string;
   optionOneArtwork?: boolean;
   optionTwoArtwork?: boolean;
 };
 
 export function HomeHero({
   children,
+  id,
   optionOneArtwork = false,
   optionTwoArtwork = false,
 }: HomeHeroProps) {
@@ -24,6 +26,7 @@ export function HomeHero({
 
   return (
     <section
+      id={id}
       className={`${styles.hero} ${variantClass}`}
       aria-labelledby="home-title"
     >
