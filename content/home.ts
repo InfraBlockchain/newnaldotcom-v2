@@ -45,4 +45,31 @@ export const homeContent = {
     },
   ],
   learnMore: "Learn More",
+  heroV3: {
+    title: ["One aios", "Across four devices."],
+    sub: ["Intelligence that truly knows you.", "Data under your control."],
+  },
+  accordionPaths: [
+    {
+      id: "aios",
+      href: "/aios",
+      title: ["Newnal aios"],
+      subtitle: ["One Architecture.", "Complete Data Sovereignty."],
+      image: "/images/home/door/v32-hover-aios.png",
+    },
+    {
+      id: "devices",
+      href: "/devices",
+      title: ["Companion Devices", "Powered by Newnal aios"],
+      subtitle: ["One aios.", "Distinct companions for different lives."],
+      image: "/images/home/door/v32-hover-devices.png",
+    },
+    {
+      id: "private",
+      href: "/private-phone",
+      title: ["Newnal Private Phone"],
+      subtitle: ["Privacy that holds— even when trust breaks."],
+      image: "/images/home/door/v32-hover-private.png",
+    },
+  ],
 } as const;

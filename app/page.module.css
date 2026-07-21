@@ -1,207 +1,199 @@
 .home {
-  --home-surface: #fff;
-  background: #fbfafa;
-  color: #000;
+  background: #fff;
+  color: #1f1f1f;
 }
 
-.paths {
+.accordion {
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
 }
 
-.card {
-  align-items: center;
-  background: var(--home-surface);
+.row {
+  align-items: flex-start;
+  background: #fff;
   box-shadow:
     0 550px 154px rgba(0, 0, 0, 0),
     0 352px 141px rgba(0, 0, 0, .01),
     0 198px 119px rgba(0, 0, 0, .05),
     0 88px 88px rgba(0, 0, 0, .09),
     0 22px 48px rgba(0, 0, 0, .1);
+  color: #1f1f1f;
   display: flex;
+  gap: 20px;
   height: 300px;
   justify-content: space-between;
   overflow: hidden;
-  padding: 40px;
+  padding: 64px 40px;
   position: relative;
+  transition: height 260ms var(--ease-soft), background-color 260ms var(--ease-soft), color 200ms var(--ease-soft);
 }
 
-.imageLayer {
+.aios { --row-compact-h: 176px; }
+.devices { --row-compact-h: 224px; }
+.private { --row-compact-h: 172px; }
+
+.rowImage {
+  inset: 0;
+  opacity: 0;
   pointer-events: none;
   position: absolute;
+  transition: opacity 220ms var(--ease-soft);
   z-index: 0;
 }
 
-.imageLayer img {
-  height: 100%;
-  max-width: none;
-  width: 100%;
+.rowImage img { object-fit: cover; }
+
+.aios .rowImage {
+  border-radius: 12px;
+  bottom: 10px;
+  height: 236px;
+  inset: auto;
+  right: 20px;
+  width: 420px;
 }
 
-.aios .imageLayer {
-  height: 169.24%;
-  left: 57.6%;
-  opacity: .4;
-  top: -114.68%;
-  width: 50.1%;
+.private .rowImage {
+  border-radius: 16px;
+  bottom: -24px;
+  height: 320px;
+  inset: auto;
+  right: -40px;
+  transform: rotate(-10deg);
+  width: 250px;
 }
 
-.devices .imageLayer {
-  height: 100%;
-  inset: 0;
-  opacity: .5;
-  width: 100%;
-}
-
-.private .imageLayer {
-  height: 107.71%;
-  left: 53.46%;
-  opacity: .4;
-  top: 0;
-  width: 44.93%;
-}
-
-.cardCopy {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  justify-content: center;
-  max-width: 813px;
+.rowCopy,
+.rowArrow {
   position: relative;
   z-index: 1;
 }
 
-.statement,
-.statement > span {
-  display: block;
+.rowCopy {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  font-family: var(--font-syne), sans-serif;
+  gap: 10px;
+  min-width: 0;
 }
 
-.statement {
-  font-family: var(--font-home-body), sans-serif;
+.rowTitle {
   font-size: 40px;
   font-weight: 400;
   letter-spacing: -.04em;
   line-height: 1.2;
 }
 
-.private .statement {
-  font-size: 36px;
-}
+.rowTitle span,
+.rowSubtitle span { display: block; }
 
-.cardLabel {
-  font-family: var(--font-home-body), sans-serif;
-  font-size: 28px;
-  font-weight: 400;
+.private .rowTitle { font-size: 36px; }
+
+.rowSubtitle {
+  display: grid;
+  font-size: 20px;
+  grid-template-rows: 1fr;
   letter-spacing: -.04em;
-  line-height: 1.24;
-  margin: 0;
+  line-height: 1.2;
+  opacity: 1;
+  transition: grid-template-rows 220ms var(--ease-soft), opacity 160ms var(--ease-soft);
 }
 
-.chevron {
-  flex: 0 0 42px;
-  height: 42px;
-  position: relative;
+.rowSubtitle > span { min-height: 0; overflow: hidden; }
+
+.rowArrow {
+  flex: 0 0 40px;
+  height: 40px;
   transition: transform var(--dur-micro) var(--ease-soft);
-  width: 42px;
-  z-index: 1;
+  width: 40px;
 }
 
-.chevron svg {
-  color: #070708;
-  height: 100%;
-  stroke-width: 1;
-  width: 100%;
+.rowArrow svg { height: 100%; stroke-width: 1; width: 100%; }
+
+.row:hover .rowArrow,
+.row:focus-visible .rowArrow { transform: translate(4px, -4px); }
+.row:focus-visible { outline-offset: -4px; }
+
+/* keyboard focus always expands the row, regardless of pointer type */
+.row:focus-within {
+  height: 400px;
 }
 
-.card:hover .chevron { transform: translateX(8px); }
-.card:focus-visible { outline-offset: -4px; }
+.row:focus-within .rowImage { opacity: 1; }
+.row:focus-within .rowTitle { font-weight: 500; }
+
+.aios:focus-within,
+.devices:focus-within,
+.private:focus-within {
+  color: #fff;
+  outline-color: #fff;
+}
+
+.aios:focus-within { background: #010000; }
+.devices:focus-within { background: #000; }
+.private:focus-within { background: #4aa0f6; }
+
+.accordion:focus-within .row:not(:focus-within) {
+  height: var(--row-compact-h);
+}
+
+.accordion:focus-within .row:not(:focus-within) .rowSubtitle {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+/* mouse hover mirrors the same behavior, but only on pointers that can actually hover */
+@media (hover: hover) and (pointer: fine) {
+  .row:hover {
+    height: 400px;
+  }
+
+  .row:hover .rowImage {
+    opacity: 1;
+  }
+
+  .row:hover .rowTitle {
+    font-weight: 500;
+  }
+
+  .aios:hover,
+  .devices:hover,
+  .private:hover {
+    color: #fff;
+  }
+
+  .aios:hover { background: #010000; }
+  .devices:hover { background: #000; }
+  .private:hover { background: #4aa0f6; }
+
+  .accordion:hover .row:not(:hover) {
+    height: var(--row-compact-h);
+  }
+
+  .accordion:hover .row:not(:hover) .rowSubtitle {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+}
 
 @media (max-width: 900px) {
-  .card {
-    align-items: flex-start;
+  .row {
     height: auto;
-    min-height: 240px;
-    padding: 32px;
+    padding: 40px 32px;
   }
 
-  .cardCopy {
-    gap: 36px;
-    padding-right: 42px;
-  }
+  .rowTitle { font-size: clamp(28px, 4.5vw, 40px); }
+  .private .rowTitle { font-size: clamp(26px, 4vw, 36px); }
 
-  .statement { font-size: clamp(24px, 4.5vw, 40px); }
-  .private .statement { font-size: clamp(22px, 4vw, 36px); }
-
-  .chevron {
-    bottom: 32px;
-    position: absolute;
-    right: 32px;
-  }
-
-  .aios .imageLayer {
-    left: 50%;
-    width: 62%;
-  }
-
-  .private .imageLayer {
-    left: 48%;
-    width: 56%;
+  .aios .rowImage,
+  .private .rowImage {
+    display: none;
   }
 }
 
 @media (max-width: 767px) {
-  .card {
-    min-height: 260px;
-    padding: 28px 24px;
-  }
-
-  .cardCopy {
-    gap: 32px;
-    padding-right: 26px;
-  }
-
-  .card::after {
-    background: linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .82) 58%, rgba(255, 255, 255, .15) 100%);
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: 0;
-  }
-
-  .aios .imageLayer {
-    height: 120%;
-    left: 42%;
-    top: -34%;
-    width: 76%;
-  }
-
-  .devices .imageLayer {
-    height: 82%;
-    left: 18%;
-    top: 18%;
-    width: 145%;
-  }
-
-  .private .imageLayer {
-    height: 84%;
-    left: 32%;
-    top: 16%;
-    width: 106%;
-  }
-
-  .cardLabel { font-size: 22px; }
-
-  .chevron {
-    bottom: 24px;
-    height: 34px;
-    right: 24px;
-    width: 34px;
-  }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .chevron { transition: none; }
+  .row { padding: 32px 24px; }
 }

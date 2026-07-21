@@ -8,19 +8,27 @@ type HomeHeroProps = {
   children?: ReactNode;
   optionOneArtwork?: boolean;
   optionTwoArtwork?: boolean;
+  splitLayout?: boolean;
+  titleLines?: readonly string[];
+  subLines?: readonly string[];
 };
 
 export function HomeHero({
   children,
   optionOneArtwork = false,
   optionTwoArtwork = false,
+  splitLayout = false,
+  titleLines = homeContent.hero.title,
+  subLines = homeContent.hero.sub,
 }: HomeHeroProps) {
   const hasArtwork = optionOneArtwork || optionTwoArtwork;
   const variantClass = optionOneArtwork
     ? styles.optionOne
     : optionTwoArtwork
       ? styles.optionTwo
-      : "";
+      : splitLayout
+        ? styles.split
+        : "";
 
   return (
     <section
@@ -38,12 +46,24 @@ export function HomeHero({
           />
         </span>
       ) : null}
+      {splitLayout ? (
+        <span className={styles.splitArtwork} aria-hidden="true">
+          <Image
+            src="/images/home/door/aios-ribbon.png"
+            alt=""
+            fill
+            sizes="1280px"
+            style={{ objectFit: "cover", objectPosition: "center bottom" }}
+            priority
+          />
+        </span>
+      ) : null}
       <Reveal className={styles.copy}>
         <h1 id="home-title">
-          {homeContent.hero.title.map((line) => <span key={line}>{line}</span>)}
+          {titleLines.map((line) => <span key={line}>{line}</span>)}
         </h1>
         <p>
-          {homeContent.hero.sub.map((line) => <span key={line}>{line}</span>)}
+          {subLines.map((line) => <span key={line}>{line}</span>)}
         </p>
       </Reveal>
       {children}
