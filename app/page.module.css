@@ -31,6 +31,13 @@
 
 .heroCopy h1 em { font-style: normal; }
 
+.intro {
+  font-size: clamp(1.08rem, 1.35vw, 1.4rem);
+  letter-spacing: -.04em;
+  line-height: 1.3;
+  margin: 0;
+}
+
 .heroFoot {
   align-items: center;
   border-top: 1px solid rgba(16, 16, 19, .14);
