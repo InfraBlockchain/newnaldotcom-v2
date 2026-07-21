@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { homeContent } from "@/content/home";
@@ -17,18 +16,6 @@ export default function HomePage() {
             <Link className={styles.heroLink} href="/devices">
               Explore companion devices <span aria-hidden="true">↗</span>
             </Link>
-          </Reveal>
-          <Reveal className={styles.heroVisual} delay={120}>
-            <div className={styles.visualFrame}>
-              <Image
-                src="/images/devices/hero-companions.png"
-                alt="Newnal AI companion devices"
-                fill
-                priority
-                sizes="(max-width: 900px) 100vw, 56vw"
-              />
-            </div>
-            <p className={styles.visualCaption}><span>01</span> Newnal ecosystem</p>
           </Reveal>
         </div>
         <div className={styles.heroFoot}>

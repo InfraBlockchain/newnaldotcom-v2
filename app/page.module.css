@@ -13,8 +13,7 @@
 .heroInner {
   align-items: center;
   display: grid;
-  gap: clamp(36px, 6vw, 112px);
-  grid-template-columns: minmax(310px, .82fr) minmax(440px, 1.18fr);
+  grid-template-columns: minmax(310px, 560px);
   margin: 0 auto;
   max-width: 1360px;
   min-height: calc(100svh - 152px);
@@ -65,40 +64,6 @@
 
 .heroLink:hover { gap: 28px; }
 .heroLink span { font-size: 1.1rem; line-height: 1; }
-
-.heroVisual { min-width: 0; }
-
-.visualFrame {
-  aspect-ratio: 1.38 / 1;
-  border-radius: clamp(20px, 2vw, 32px);
-  box-shadow: 0 32px 64px rgba(77, 57, 53, .13);
-  overflow: hidden;
-  position: relative;
-}
-
-.visualFrame::after {
-  background: linear-gradient(135deg, rgba(255,255,255,.16), transparent 45%);
-  content: "";
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-}
-
-.visualFrame img { object-fit: cover; }
-
-.visualCaption {
-  align-items: center;
-  color: #717179;
-  display: flex;
-  font-family: var(--font-mono), monospace;
-  font-size: .65rem;
-  gap: 12px;
-  letter-spacing: .1em;
-  margin: 14px 4px 0;
-  text-transform: uppercase;
-}
-
-.visualCaption span { color: #17171b; }
 
 .heroFoot {
   align-items: center;
@@ -231,9 +196,8 @@
 
 @media (max-width: 900px) {
   .hero { padding-block: 28px 24px; }
-  .heroInner { gap: 44px; grid-template-columns: 1fr; min-height: auto; padding: 56px 0 72px; }
+  .heroInner { grid-template-columns: 1fr; min-height: auto; padding: 56px 0 72px; }
   .heroCopy { max-width: 620px; }
-  .heroVisual { max-width: 760px; width: 100%; }
   .heroFoot { margin-top: 0; }
   .card { gap: 18px; grid-template-columns: 42px minmax(240px, 1.35fr) minmax(150px, .65fr) 32px; }
 }
@@ -244,8 +208,6 @@
   .eyebrow { margin-bottom: 22px; }
   .heroCopy h1 { font-size: clamp(3.2rem, 13vw, 4.6rem); margin-bottom: 24px; }
   .intro { font-size: 1.08rem; margin-bottom: 30px; }
-  .visualFrame { aspect-ratio: 1.15 / 1; border-radius: 18px; }
-  .visualFrame img { object-position: 52% center; }
   .heroFoot { font-size: .57rem; }
   .heroFoot p { max-width: 180px; }
   .paths { min-height: calc(100svh - 64px); }
