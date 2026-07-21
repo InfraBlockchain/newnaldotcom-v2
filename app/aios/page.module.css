@@ -110,6 +110,18 @@
   position: relative;
 }
 
+.spectrumHeading {
+  color: var(--fg-text);
+  font-size: 20px;
+  font-weight: 700;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 40px;
+}
+
 .spectrumNumSide {
   color: var(--fg-muted);
   font-size: 13px;

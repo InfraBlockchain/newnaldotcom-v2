@@ -33,6 +33,8 @@ export function Spectrum() {
 
   return (
     <div className={styles.spectrum} role="group" aria-label="Data sovereignty spectrum from Private Phone at 0 to Newnal aios at 100">
+      <p className={styles.spectrumHeading}>Data Sovereignty</p>
+
       <span className={styles.spectrumNumSide} data-side="left">0</span>
       <span className={styles.spectrumNumSide} data-side="right">100</span>
 
