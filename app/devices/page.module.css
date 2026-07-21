@@ -79,6 +79,21 @@
 .card { transition: filter var(--dur-micro) var(--ease-soft); }
 .card:hover .cardImage { transform: scale(1.03); }
 
+/* UFO's source photo is an extreme macro crop; pull the product back a little
+   and use a blurred copy of the same photo to fill the reveal edges so there's
+   no visible seam/letterbox. */
+.cardImageBackdrop {
+  filter: blur(32px) brightness(.82);
+  object-fit: cover;
+  transform: scale(1.15);
+}
+
+.card[data-slide="ufo"] .cardImage {
+  transform: scale(.85);
+}
+
+.card[data-slide="ufo"]:hover .cardImage { transform: scale(.875); }
+
 /* only the hovered banner keeps its color */
 .paths:hover .card:not(:hover) { filter: grayscale(1); }
 
