@@ -35,16 +35,6 @@ export default function DevicesPage() {
         {c.slides.map((slide, index) => (
           <Reveal key={slide.id} delay={index * 80} className={styles.pathReveal}>
             <Link className={styles.card} href={slide.href} data-slide={slide.id}>
-              {slide.id === "ufo" ? (
-                <Image
-                  className={styles.cardImageBackdrop}
-                  src={slide.image}
-                  alt=""
-                  fill
-                  aria-hidden="true"
-                  sizes="(max-width: 900px) 86vw, 25vw"
-                />
-              ) : null}
               <Image
                 className={styles.cardImage}
                 src={slide.image}
