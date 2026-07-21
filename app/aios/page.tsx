@@ -201,6 +201,10 @@ export default function AiosPage() {
         </section>
       </div>
 
+      <section className={`${styles.founder} section`}>
+        <div className="container"><Reveal className={styles.founderInner}><h2>{c.founder.title}</h2><div className={`${styles.ipDownloads} ${styles.founderLinks}`}>{c.founder.links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noopener">{link.label} <ArrowUpRightIcon aria-hidden="true" /></a>)}</div></Reveal></div>
+      </section>
+
       <section className={`${styles.ip} section`}>
         <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} <ArrowUpRightIcon aria-hidden="true" /></a>)}</div></Reveal><Reveal><IpPortfolio tiles={c.ip.tiles} whitepaperLinks={whitepaperLinks} /></Reveal></div>
       </section>

@@ -603,6 +603,34 @@
   margin-bottom: 32px;
 }
 
+.founder {
+  background: #fff;
+  font-family: var(--font-inter), sans-serif;
+  padding-block: 64px;
+  text-align: center;
+}
+
+.founderInner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.founder h2 {
+  color: var(--fg-text);
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin: 0;
+}
+
+.founderLinks {
+  justify-content: center;
+  margin-top: 28px;
+}
+
 .ip {
   background: #f0f0f2;
   font-family: var(--font-inter), sans-serif;
