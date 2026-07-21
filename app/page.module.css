@@ -179,37 +179,42 @@
   }
 
   .aios:hover,
-  .aios:focus-within { background: #000; }
+  .aios:focus-within,
+  .devices:hover,
+  .devices:focus-within,
+  .private:hover,
+  .private:focus-within {
+    background: #010000;
+  }
 
   .aios:hover .imageLayer,
-  .aios:focus-within .imageLayer { opacity: 1; }
+  .aios:focus-within .imageLayer,
+  .devices:hover .imageLayer,
+  .devices:focus-within .imageLayer,
+  .private:hover .imageLayer,
+  .private:focus-within .imageLayer {
+    opacity: 1;
+  }
+
+  .devices:hover .imageLayer,
+  .devices:focus-within .imageLayer {
+    filter: grayscale(1);
+  }
 
   .aios:hover .cardCopy,
   .aios:focus-within .cardCopy,
   .aios:hover .chevron svg,
-  .aios:focus-within .chevron svg { color: #fff; }
-
-  .devices:hover,
-  .devices:focus-within { background: #f2dac0; }
-
-  .devices:hover .imageLayer,
-  .devices:focus-within .imageLayer {
-    mix-blend-mode: luminosity;
-    opacity: 1;
-  }
-
-  .private:hover,
-  .private:focus-within {
-    background: linear-gradient(100.64deg, #08f 18%, #2d5ee6 95%);
-  }
-
-  .private:hover .imageLayer,
-  .private:focus-within .imageLayer { opacity: 1; }
-
+  .aios:focus-within .chevron svg,
+  .devices:hover .cardCopy,
+  .devices:focus-within .cardCopy,
+  .devices:hover .chevron svg,
+  .devices:focus-within .chevron svg,
   .private:hover .cardCopy,
   .private:focus-within .cardCopy,
   .private:hover .chevron svg,
-  .private:focus-within .chevron svg { color: #fff; }
+  .private:focus-within .chevron svg {
+    color: #fff;
+  }
 
   .paths:has(.card:hover, .card:focus-within) .card:not(:hover):not(:focus-within) .cardCopy,
   .paths:has(.card:hover, .card:focus-within) .card:not(:hover):not(:focus-within) .chevron svg {
