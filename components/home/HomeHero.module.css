@@ -68,6 +68,7 @@
 
 .split {
   align-items: stretch;
+  background: #fff;
   flex-direction: row;
 }
 
@@ -79,19 +80,6 @@
 
 .split .copy p {
   font-family: var(--font-syne), sans-serif;
-}
-
-.splitArtwork {
-  bottom: 0;
-  height: 978px;
-  opacity: .4;
-  overflow: hidden;
-  filter: blur(2px);
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  width: 1280px;
-  z-index: 0;
 }
 
 .copy h1 {
@@ -138,11 +126,6 @@
     top: 0;
     width: 72%;
   }
-
-  .splitArtwork {
-    height: 70%;
-    width: 90%;
-  }
 }
 
 @media (max-width: 900px) {
@@ -185,11 +168,5 @@
 
   .optionTwo::after {
     background: rgba(251, 250, 250, .68);
-  }
-
-  .splitArtwork {
-    height: 55%;
-    opacity: .3;
-    width: 100%;
   }
 }

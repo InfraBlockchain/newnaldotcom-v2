@@ -46,18 +46,6 @@ export function HomeHero({
           />
         </span>
       ) : null}
-      {splitLayout ? (
-        <span className={styles.splitArtwork} aria-hidden="true">
-          <Image
-            src="/images/home/door/aios-ribbon.png"
-            alt=""
-            fill
-            sizes="1280px"
-            style={{ objectFit: "cover", objectPosition: "center bottom" }}
-            priority
-          />
-        </span>
-      ) : null}
       <Reveal className={styles.copy}>
         <h1 id="home-title">
           {titleLines.map((line) => <span key={line}>{line}</span>)}
