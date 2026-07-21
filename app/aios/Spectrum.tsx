@@ -9,8 +9,12 @@ export function Spectrum() {
   const [value, setValue] = useState(50);
   const [trackWidth, setTrackWidth] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
-  const activeOpacity = 0.55 + (value / 100) * 0.45;
-  const defensiveOpacity = 0.55 + ((100 - value) / 100) * 0.45;
+  const activeStrength = value / 100;
+  const defensiveStrength = (100 - value) / 100;
+  const activeOpacity = 0.55 + activeStrength * 0.45;
+  const defensiveOpacity = 0.55 + defensiveStrength * 0.45;
+  const activeFontSize = 15 + activeStrength * 8;
+  const defensiveFontSize = 15 + defensiveStrength * 8;
 
   useEffect(() => {
     const el = trackRef.current;
@@ -28,12 +32,12 @@ export function Spectrum() {
   const handlePx = THUMB_WIDTH / 2 + (value / 100) * usableWidth;
 
   return (
-    <div className={styles.spectrum} role="group" aria-label="Data sovereignty spectrum from Private Phone at 0 to Newnal AIOS at 100">
+    <div className={styles.spectrum} role="group" aria-label="Data sovereignty spectrum from Private Phone at 0 to Newnal aios at 100">
       <span className={styles.spectrumNumSide} data-side="left">0</span>
       <span className={styles.spectrumNumSide} data-side="right">100</span>
 
       <div className={`${styles.spectrumEndpoint} ${styles.spectrumLeft}`} style={{ opacity: defensiveOpacity }}>
-        <strong>Private Phone</strong>
+        <strong style={{ fontSize: `${defensiveFontSize}px` }}>Private Phone</strong>
         <small>DEFENSIVE SOVEREIGNTY</small>
       </div>
 
@@ -50,7 +54,7 @@ export function Spectrum() {
           step={1}
           value={value}
           onChange={(event) => setValue(Number(event.target.value))}
-          aria-label="Data utilization from 0 (Private Phone) to 100 (Newnal AIOS)"
+          aria-label="Data utilization from 0 (Private Phone) to 100 (Newnal aios)"
         />
         <div className={styles.lens} style={{ left: `${handlePx}px` }}>
           <span>Newnal</span>
@@ -58,7 +62,7 @@ export function Spectrum() {
       </div>
 
       <div className={`${styles.spectrumEndpoint} ${styles.spectrumRight}`} style={{ opacity: activeOpacity }}>
-        <strong>Newnal AIOS</strong>
+        <strong style={{ fontSize: `${activeFontSize}px` }}>Newnal aios</strong>
         <small>ACTIVE SOVEREIGNTY</small>
       </div>
     </div>
