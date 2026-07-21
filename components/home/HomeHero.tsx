@@ -43,10 +43,10 @@ export function HomeHero({
       ) : null}
       <Reveal className={styles.copy}>
         <h1 id="home-title">
-          {homeContent.hero.title.map((line) => <span key={line}>{line}</span>)}
+          {[homeContent.hero.title].map((line) => <span key={line}>{line}</span>)}
         </h1>
         <p>
-          {homeContent.hero.sub.map((line) => <span key={line}>{line}</span>)}
+          {[homeContent.hero.sub].map((line) => <span key={line}>{line}</span>)}
         </p>
       </Reveal>
       {children}
