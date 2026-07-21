@@ -16,7 +16,7 @@ const SECTIONS = [
 export default function HomePage() {
   return (
     <main id="main-content" className={`${styles.home} ${homeBody.variable}`}>
-      <HomeHero optionOneArtwork id="home-hero" />
+      <HomeHero id="home-hero" />
       <section id="home-paths" className={styles.pathsSection} aria-label="Explore Newnal products">
         <div className={styles.paths}>
           {homeContent.paths.map((path) => (
