@@ -1,316 +1,188 @@
-.home {
-  --home-surface: #fff;
-  background: #fbfafa;
-  color: #000;
-}
+.home { background: #fff; color: #09090b; }
 
-.pathsSection {
-  align-items: center;
-  background: var(--home-surface);
-  box-sizing: border-box;
-  display: flex;
-  min-height: calc(100vh - 64px);
-  padding: 64px 80px;
-  scroll-snap-align: start;
-}
-
-@media (max-width: 767px) {
-  .pathsSection {
-    min-height: calc(100svh - 64px);
-    padding: 40px 20px;
-  }
-}
-
-.paths {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-inline: auto;
-  max-width: 1280px;
-  width: 100%;
-}
-
-.card {
-  align-items: center;
-  background: var(--home-surface);
-  box-shadow:
-    0 88px 88px rgba(0, 0, 0, .09),
-    0 22px 48px rgba(0, 0, 0, .1);
-  display: flex;
-  height: 270px;
-  justify-content: space-between;
+.hero {
+  background:
+    radial-gradient(circle at 72% 4%, rgba(215, 227, 250, .65), transparent 28%),
+    radial-gradient(circle at 8% 96%, rgba(247, 220, 226, .5), transparent 30%),
+    #fbfbfc;
+  min-height: calc(100svh - 64px);
   overflow: hidden;
-  padding: 40px;
-  position: relative;
-  transition: background-color var(--dur-base, .3s) var(--ease-soft);
+  padding: 32px var(--side) 28px;
 }
 
-.imageLayer {
-  pointer-events: none;
-  position: absolute;
-  z-index: 0;
+.heroInner {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  max-width: 1360px;
+  min-height: calc(100svh - 152px);
 }
 
-.imageLayer img {
-  height: 100%;
-  max-width: none;
-  width: 100%;
-}
-
-.aios .imageLayer {
-  height: 169.24%;
-  left: 57.6%;
-  opacity: .4;
-  top: -114.68%;
-  width: 50.1%;
-}
-
-.devices .imageLayer {
-  height: 100%;
-  inset: 0;
-  opacity: .5;
-  width: 100%;
-}
-
-.private .imageLayer {
-  height: 107.71%;
-  left: 53.46%;
-  opacity: .4;
-  top: 0;
-  width: 44.93%;
-}
-
-.cardCopy {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  justify-content: center;
-  max-width: 813px;
-  position: relative;
-  transition: color var(--dur-base, .3s) var(--ease-soft);
-  z-index: 1;
-}
-
-.statement,
-.statement > span {
-  display: block;
-}
-
-.statement {
-  font-family: var(--font-home-body), sans-serif;
-  font-size: 40px;
+.heroCopy h1 {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(3.45rem, 5.2vw, 6.6rem);
   font-weight: 400;
-  letter-spacing: -.04em;
-  line-height: 1.2;
+  letter-spacing: -.075em;
+  line-height: .91;
+  margin-bottom: 30px;
+  white-space: nowrap;
 }
 
-.private .statement {
-  font-size: 36px;
-}
+.heroCopy h1 em { font-style: normal; }
 
-.cardLabel {
-  font-family: var(--font-home-body), sans-serif;
-  font-size: 28px;
-  font-weight: 400;
+.intro {
+  font-size: clamp(1.725rem, 2.6vw, 3.3rem);
   letter-spacing: -.04em;
-  line-height: 1.24;
+  line-height: 1.3;
   margin: 0;
 }
 
-.chevron {
-  flex: 0 0 42px;
-  height: 42px;
-  position: relative;
-  transition: transform var(--dur-micro) var(--ease-soft);
-  width: 42px;
-  z-index: 1;
+.heroFoot {
+  align-items: center;
+  border-top: 1px solid rgba(16, 16, 19, .14);
+  display: flex;
+  font-family: var(--font-mono), monospace;
+  font-size: .66rem;
+  justify-content: space-between;
+  letter-spacing: .08em;
+  margin: 0 auto;
+  max-width: 1360px;
+  padding-top: 16px;
+  text-transform: uppercase;
 }
 
-.chevron svg {
-  color: #070708;
-  height: 100%;
-  stroke-width: 1;
+.heroFoot p { margin: 0; }
+.heroFoot a { align-items: center; display: inline-flex; gap: 10px; }
+.heroFoot a span { font-size: .95rem; }
+
+.paths {
+  background:
+    linear-gradient(rgba(255, 255, 255, .62), rgba(255, 255, 255, .62)),
+    repeating-linear-gradient(135deg, transparent 0 9px, rgba(109, 145, 184, .08) 9px 11px);
+  min-height: calc(100svh - 64px);
+  padding: 0;
+}
+
+.pathGrid {
   width: 100%;
-  transition: color var(--dur-base, .3s) var(--ease-soft);
 }
 
-.card:hover .chevron { transform: translateX(8px); }
+.pathReveal { min-width: 0; }
+.pathReveal + .pathReveal { border-top: 1px solid rgba(12, 12, 15, .25); }
+
+.card {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 52px minmax(300px, 1.35fr) minmax(180px, .65fr) 40px;
+  min-height: calc((100svh - 64px) / 3);
+  padding: 20px var(--side);
+  position: relative;
+  transition: background var(--dur-micro), color var(--dur-micro);
+}
+
+.card > *,
+.arrow { position: relative; z-index: 1; }
+
+.card h3 {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(2.5rem, 5.1vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -.065em;
+  line-height: .92;
+  margin: 0;
+  max-width: 700px;
+}
+
+.card p {
+  align-self: center;
+  color: #4f535b;
+  font-size: clamp(.88rem, 1vw, 1.02rem);
+  letter-spacing: -.025em;
+  line-height: 1.42;
+  margin: 0;
+  max-width: 220px;
+}
+
+.card p span { display: block; }
+
+.index {
+  align-self: start;
+  font-family: var(--font-mono), monospace;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  padding-top: 9px;
+}
+
+.aios { background: rgba(253, 246, 248, .7); }
+.aios::before,
+.aios::after {
+  border-radius: 50%;
+  content: "";
+  filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 500ms var(--ease-soft);
+}
+
+.aios::before {
+  background: radial-gradient(ellipse at 35% 38%, rgba(244, 177, 197, .78), rgba(245, 209, 221, .45) 44%, transparent 70%);
+  bottom: -34%;
+  height: 95%;
+  left: -37%;
+  transform: rotate(-24deg);
+  width: 115%;
+}
+
+.aios::after {
+  background: linear-gradient(145deg, rgba(255,255,255,.86), rgba(239,172,193,.38));
+  bottom: -26%;
+  height: 76%;
+  left: -21%;
+  transform: rotate(28deg);
+  width: 52%;
+}
+
+.private { background: rgba(243, 246, 253, .64); }
+
+.private p { color: #3f4c61; }
+
+.devices { background: rgba(240, 249, 246, .68); }
+
+.card:hover { background: rgba(255, 255, 255, .94); }
+.card:hover .arrow { transform: translateX(8px); }
+.aios:hover::before,
+.aios:hover::after { opacity: 1; }
+.private:hover { background: #f0f4fd; }
+.devices:hover { background: #eff9f5; }
+
+.arrow {
+  align-self: flex-end;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform var(--dur-micro) var(--ease-soft);
+}
+
 .card:focus-visible { outline-offset: -4px; }
 
-/* Desktop hover reveal (Figma "v3"): idle card is plain text, hovering swaps in an
-   accent background + edge-feathered image and dims the other two cards' copy. */
-@media (hover: hover) and (pointer: fine) {
-  .imageLayer {
-    opacity: 0;
-    transition: opacity var(--dur-base, .3s) var(--ease-soft);
-  }
-
-  .aios .imageLayer {
-    height: 100%;
-    left: auto;
-    opacity: 0;
-    right: 0;
-    top: 0;
-    width: 42%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%);
-    mask-image: linear-gradient(to right, transparent 0, #000 14%);
-  }
-
-  .devices .imageLayer {
-    height: 100%;
-    left: auto;
-    opacity: 0;
-    right: 0;
-    top: 0;
-    width: 49%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16%);
-    mask-image: linear-gradient(to right, transparent 0, #000 16%);
-  }
-
-  .private .imageLayer {
-    height: 165%;
-    left: 56%;
-    opacity: 0;
-    top: -32%;
-    transform: rotate(-10deg);
-    width: 34%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%);
-    mask-image: linear-gradient(to right, transparent 0, #000 20%);
-  }
-
-  .aios:hover,
-  .aios:focus-within,
-  .devices:hover,
-  .devices:focus-within,
-  .private:hover,
-  .private:focus-within {
-    background: #010000;
-  }
-
-  .aios:hover .imageLayer,
-  .aios:focus-within .imageLayer,
-  .devices:hover .imageLayer,
-  .devices:focus-within .imageLayer,
-  .private:hover .imageLayer,
-  .private:focus-within .imageLayer {
-    opacity: 1;
-  }
-
-  .devices:hover .imageLayer,
-  .devices:focus-within .imageLayer {
-    filter: grayscale(1);
-  }
-
-  .aios:hover .cardCopy,
-  .aios:focus-within .cardCopy,
-  .aios:hover .chevron svg,
-  .aios:focus-within .chevron svg,
-  .devices:hover .cardCopy,
-  .devices:focus-within .cardCopy,
-  .devices:hover .chevron svg,
-  .devices:focus-within .chevron svg,
-  .private:hover .cardCopy,
-  .private:focus-within .cardCopy,
-  .private:hover .chevron svg,
-  .private:focus-within .chevron svg {
-    color: #fff;
-  }
-
-  .paths:has(.card:hover, .card:focus-within) .card:not(:hover):not(:focus-within) .cardCopy,
-  .paths:has(.card:hover, .card:focus-within) .card:not(:hover):not(:focus-within) .chevron svg {
-    color: #ddd;
-  }
-}
-
 @media (max-width: 900px) {
-  .card {
-    align-items: flex-start;
-    height: auto;
-    min-height: 240px;
-    padding: 32px;
-  }
-
-  .cardCopy {
-    gap: 36px;
-    padding-right: 42px;
-  }
-
-  .statement { font-size: clamp(24px, 4.5vw, 40px); }
-  .private .statement { font-size: clamp(22px, 4vw, 36px); }
-
-  .chevron {
-    bottom: 32px;
-    position: absolute;
-    right: 32px;
-  }
-
-  .aios .imageLayer {
-    left: 50%;
-    width: 62%;
-  }
-
-  .private .imageLayer {
-    left: 48%;
-    width: 56%;
-  }
+  .hero { padding-block: 28px 24px; }
+  .heroInner { grid-template-columns: 1fr; min-height: auto; padding: 56px 0 72px; }
+  .heroFoot { margin-top: 0; }
+  .card { gap: 18px; grid-template-columns: 42px minmax(240px, 1.35fr) minmax(150px, .65fr) 32px; }
 }
 
 @media (max-width: 767px) {
-  .card {
-    min-height: 260px;
-    padding: 28px 24px;
-  }
-
-  .cardCopy {
-    gap: 32px;
-    padding-right: 26px;
-  }
-
-  .card::after {
-    background: linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .82) 58%, rgba(255, 255, 255, .15) 100%);
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: 0;
-  }
-
-  .aios .imageLayer {
-    height: 120%;
-    left: 42%;
-    top: -34%;
-    width: 76%;
-  }
-
-  .devices .imageLayer {
-    height: 82%;
-    left: 18%;
-    top: 18%;
-    width: 145%;
-  }
-
-  .private .imageLayer {
-    height: 84%;
-    left: 32%;
-    top: 16%;
-    width: 106%;
-  }
-
-  .cardLabel { font-size: 22px; }
-
-  .chevron {
-    bottom: 24px;
-    height: 34px;
-    right: 24px;
-    width: 34px;
-  }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card,
-  .cardCopy,
-  .chevron,
-  .chevron svg,
-  .imageLayer { transition: none; }
+  .hero { padding-inline: 20px; }
+  .heroInner { padding: 36px 0 48px; }
+  .heroCopy h1 { font-size: clamp(3.2rem, 13vw, 4.6rem); margin-bottom: 24px; white-space: normal; }
+  .heroFoot { font-size: .57rem; }
+  .heroFoot p { max-width: 180px; }
+  .paths { min-height: calc(100svh - 64px); }
+  .card { gap: 12px; grid-template-columns: 32px 1fr 28px; min-height: calc((100svh - 64px) / 3); padding-inline: var(--side); }
+  .card h3 { font-size: clamp(2.1rem, 11vw, 3.4rem); }
+  .card p { display: none; }
+  .index { font-size: .57rem; }
 }
