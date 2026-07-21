@@ -83,7 +83,7 @@
 
 .split .copy {
   flex: 1 1 0;
-  justify-content: center;
+  justify-content: flex-start;
   min-width: 0;
 }
 
