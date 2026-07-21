@@ -1,0 +1,129 @@
+.hero {
+  align-items: center;
+  background: radial-gradient(circle at 50% 0%, #ffffff 0, #edf6ff 46%, var(--bg) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 72px);
+  padding: clamp(80px, 10vw, 140px) 48px 48px;
+}
+
+.intro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 900px;
+  text-align: center;
+}
+
+.badge,
+.cardLabel {
+  align-items: center;
+  color: var(--ufo-deep);
+  display: flex;
+  font-size: var(--type-eyebrow);
+  font-weight: 500;
+  gap: 9px;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.dot {
+  background: var(--ufo-accent);
+  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+}
+
+.title {
+  color: var(--ink);
+  font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .98;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.leadBlock {
+  color: var(--ink-soft);
+  font-size: clamp(1rem, .8rem + .5vw, 1.15rem);
+  line-height: 1.65;
+  max-width: 690px;
+}
+
+.leadBlock p { margin: 0; }
+
+.leadLines {
+  color: var(--ink);
+  font-size: clamp(1.3rem, 1rem + 1vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1.3;
+  margin-top: 28px !important;
+}
+
+.leadLines span { display: block; }
+.cardReveal { width: min(100%, 1280px); }
+
+.heroCard {
+  align-items: flex-end;
+  aspect-ratio: 16 / 8;
+  background: #d8e9fb;
+  border: 1px solid rgba(23, 105, 194, .12);
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(20, 82, 145, .13);
+  display: flex;
+  isolation: isolate;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 40px);
+  position: relative;
+}
+
+.heroImage { object-fit: cover; object-position: center; z-index: -2; }
+
+.imageOverlay {
+  background: linear-gradient(90deg, rgba(11, 53, 94, .72), rgba(11, 53, 94, .08) 68%),
+    linear-gradient(0deg, rgba(11, 53, 94, .5), transparent 48%);
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.cardCopy { max-width: 390px; }
+.cardLabel { color: rgba(255, 255, 255, .78); font-size: .68rem; }
+
+.cardCaption {
+  color: #fff;
+  font-size: clamp(1.15rem, 1rem + .7vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: -.02em;
+  line-height: 1.25;
+  margin: 10px 0 0;
+}
+
+.filmChip {
+  align-items: center;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: .75rem;
+  gap: 7px;
+  padding: 11px 15px;
+}
+
+.filmChip svg { height: 12px; width: 12px; }
+
+@media (max-width: 767px) {
+  .hero { gap: 36px; padding: 72px 20px 32px; }
+  .intro { gap: 22px; }
+  .heroCard { aspect-ratio: 4 / 5; border-radius: 16px; }
+  .heroImage { object-position: 59% center; }
+  .imageOverlay { background: linear-gradient(0deg, rgba(11, 53, 94, .82), rgba(11, 53, 94, .05) 75%); }
+  .filmChip { align-self: flex-start; }
+}

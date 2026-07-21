@@ -1,0 +1,32 @@
+.page {
+  background: var(--bg, #ffffff);
+  color: var(--ink, #19191c);
+  font-family: var(--font-body), sans-serif;
+  overflow: clip;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page p {
+  font-family: inherit;
+}
+
+.page :global(.ufo-container) {
+  margin-inline: auto;
+  max-width: 1280px;
+  padding-inline: 48px;
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .page :global(.ufo-container) {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page :global(.ufo-container) {
+    padding-inline: 20px;
+  }
+}

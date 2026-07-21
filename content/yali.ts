@@ -21,9 +21,9 @@ export const yaliContent = {
     ],
   },
   everyday:{eyebrow:"02 · EVERYDAY MOMENTS",title:"Start the day with\nthe artist you love",quote:"\"YALI is there for the small moments — the ones that make fandom feel alive.\"",support:["A morning greeting before school or work.", "A song recommendation on the way home.", "A message before an exam, interview, concert, or difficult day.", "It brings the artist's presence into your real life, not just your feed."],tiles:[
-    {time:"MORNING",title:"Morning Message",description:"Wake up to a greeting shaped around your schedule, mood, and fan history.",image:"/images/yali/everyday-morning.png",scene:"Morning greeting from YALI"},
-    {time:"ANY MOMENT",title:"Mood-Based Music",description:"Get songs, performances, or clips selected for how you feel right now.",image:"/images/yali/everyday-music.png",scene:"YALI device for listening to music with an artist"},
-    {time:"ANY MOMENT",title:"Daily Encouragement",description:"Receive words that match your moment — whether you need energy, comfort, focus, or celebration.",image:"/images/yali/everyday-encouragement.png",scene:"YALI artist message for a special occasion"},
+    {time:"MORNING",title:"Morning Message",description:"Wake up to a greeting shaped around your schedule, mood, and fan history.",image:"/images/yali/everyday-morning.jpg",scene:"Morning greeting from YALI"},
+    {time:"ANY MOMENT",title:"Mood-Based Music",description:"Get songs, performances, or clips selected for how you feel right now.",image:"/images/yali/everyday-music.jpg",scene:"YALI device for listening to music with an artist"},
+    {time:"ANY MOMENT",title:"Daily Encouragement",description:"Receive words that match your moment — whether you need energy, comfort, focus, or celebration.",image:"/images/yali/everyday-encouragement.jpg",scene:"YALI artist message for a special occasion"},
     {time:"NIGHT",title:"Night Recap",description:"End the day with a memory, message, or song connected to you and the artist.",image:"/images/yali/everyday-night.png",scene:"Nighttime recap with YALI"},
   ]},
   moments:{eyebrow:"· MOMENTS THAT MATTER ·",title:"Be there when it matters.",lead:"YALI helps you stay connected to the moments that matter most — releases, livestreams, concerts, tickets, and memories from the artist's journey. Instead of sending every fan the same alert, YALI understands what is relevant to you.",cards:[

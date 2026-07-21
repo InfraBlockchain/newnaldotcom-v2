@@ -79,7 +79,7 @@
 @media(min-width:901px){.heroStatement{left:50%;max-width:none;position:relative;transform:translateX(-50%);width:min(1400px,calc(100vw - 96px))}.heroStatement .negatives{width:100%}}
 @media(min-width:901px){.heroStatement .negatives>div:last-child{display:block!important;text-align:center;width:100%}.heroStatement .negatives>div:last-child strong{display:inline-block;margin:0!important;text-align:center;transform:translateX(-14%)}}
 @media(min-width:901px){.heroHead,.heroHead>p,.heroStatement,.heroStatement .negatives,.heroStatement .negatives>div,.heroStatement .negativeLines,.heroStatement .negativeLines p{text-align:center!important}.heroStatement .negatives>div:last-child strong{transform:none}}
-.heroStatement{align-items:center;display:flex;flex-direction:column}.heroStatement .negatives>div:first-child{margin-top:0}.heroClosing{color:#2d2437;font-family:var(--font-body),sans-serif;font-size:clamp(1.5rem,2.2vw,2.25rem);font-style:italic;font-weight:400;letter-spacing:-.05em;line-height:1.22;margin:56px auto 0;max-width:none;text-align:center!important;width:100%}
+.heroStatement{align-items:center;display:flex;flex-direction:column;left:auto;position:static;transform:none;width:100%}.heroStatement .negatives,.heroStatement .negativeLines{width:100%}.heroStatement .negatives>div:first-child{margin-top:0}.heroClosing{color:#2d2437;font-family:var(--font-body),sans-serif;font-size:clamp(1.5rem,2.2vw,2.25rem);font-style:italic;font-weight:400;letter-spacing:-.05em;line-height:1.22;margin:56px auto 0;max-width:none;text-align:center!important;width:100%}
 @media(min-width:901px){.heroClosing{white-space:nowrap}}
 .vennText1 h3{font-size:clamp(1.05rem,1.35vw,1.3rem);white-space:nowrap}
 

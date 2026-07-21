@@ -1,0 +1,4 @@
+.section { background: #fff; color: var(--ink); padding: clamp(72px, 9vw, 120px) 0 clamp(96px, 12vw, 160px); }
+.row { align-items: center; display: flex; gap: 12px; justify-content: center; }
+.primary, .secondary { border: 1px solid transparent; border-radius: 999px; font-size: .9rem; font-weight: 500; min-width: 142px; padding: 14px 24px; text-align: center; transition: background var(--dur-micro), border-color var(--dur-micro), color var(--dur-micro), transform var(--dur-micro); }.primary { background: var(--ufo-deep); color: #fff; }.primary:hover { background: #1258a6; transform: translateY(-1px); }.secondary { border-color: #c9ddf2; color: var(--ufo-deep); }.secondary:hover { background: #f1f8ff; border-color: var(--ufo-accent); }
+@media (max-width: 767px) { .row { align-items: stretch; flex-direction: column; }.primary, .secondary { width: 100%; } }

@@ -1,47 +1,46 @@
 import type { Metadata } from "next";
+import { ArrowRightIcon, DocumentDuplicateIcon, IdentificationIcon, LockClosedIcon, SparklesIcon, SpeakerWaveIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { privatePhoneContent as c } from "@/content/privatePhone";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = { title: "Private Phone", description: c.hero.sub };
+export const metadata: Metadata = { title: "Private Phone", description: typeof c.hero.sub === "string" ? c.hero.sub : c.hero.sub[0] };
 
-function ChapterHead({ title, lead }: { title: string; lead: string }) {
-  return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{lead}</p></Reveal>;
+function ChapterHead({ title, lead }: { title: string; lead: string | readonly string[] }) {
+  return <Reveal className={styles.chapterHead}><h2>{title}</h2><p>{Array.isArray(lead) ? lead.map((line, i) => <span key={i}>{i > 0 && <br />}{line}</span>) : lead}</p></Reveal>;
 }
 
 function NumberChip({ children = "123-ABC-5678" }: { children?: React.ReactNode }) { return <span className={styles.numberChip}>{children}</span>; }
 
+const protectIcons = [IdentificationIcon, DocumentDuplicateIcon, SpeakerWaveIcon, LockClosedIcon] as const;
+
 function ProtectIcon({ index }: { index: number }) {
-  const common = { viewBox: "0 0 72 72", "aria-hidden": true as const };
-  if (index === 0) return <svg {...common}><rect x="12" y="20" width="48" height="32" rx="4"/><circle cx="24" cy="34" r="4"/><line x1="36" y1="30" x2="52" y2="30"/><line x1="36" y1="36" x2="48" y2="36"/><line x1="18" y1="44" x2="52" y2="44"/></svg>;
-  if (index === 1) return <svg {...common}><line x1="18" y1="36" x2="54" y2="36"/><circle cx="18" cy="36" r="3.5"/><circle cx="36" cy="36" r="3.5"/><circle cx="54" cy="36" r="3.5"/></svg>;
-  if (index === 2) return <svg {...common}><line x1="20" y1="30" x2="20" y2="42"/><line x1="26" y1="22" x2="26" y2="50"/><line x1="32" y1="28" x2="32" y2="44"/><line x1="38" y1="18" x2="38" y2="54"/><line x1="44" y1="24" x2="44" y2="48"/><line x1="50" y1="30" x2="50" y2="42"/></svg>;
-  return <svg {...common}><rect x="22" y="34" width="28" height="22" rx="3"/><path d="M27 34 v-6 a9 9 0 0 1 18 0 v6"/><circle cx="36" cy="45" r="1.8"/></svg>;
+  const Icon = protectIcons[index] ?? protectIcons[protectIcons.length - 1];
+  return <Icon aria-hidden="true" />;
 }
 
 function StepDiagram({ step }: { step: number }) {
-  const iconProps = { viewBox: "0 0 24 24", "aria-hidden": true as const, className: styles.diagramIcon };
   return (
     <div className={styles.stepVisual} aria-hidden="true">
       <span className={styles.stepNumber}>{String(step + 1).padStart(2, "0")}</span>
       <div className={styles.stepDiagram}>
         {step === 0 && <>
           <i className={styles.diagramPhone} />
-          <svg {...iconProps}><path d="M12 4l1.4 4.6L18 10l-4.6 1.4L12 16l-1.4-4.6L6 10l4.6-1.4z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="19" cy="5" r="1" fill="currentColor"/><circle cx="5" cy="18" r="1" fill="currentColor"/><circle cx="19" cy="18" r="1" fill="currentColor"/></svg>
+          <SparklesIcon className={styles.diagramIcon} aria-hidden="true" />
           <span className={styles.diagramNumber}>Newnal<br />Number</span>
         </>}
         {step === 1 && <>
           <i className={styles.diagramPhone} />
           <span className={styles.diagramNumber}>Newnal<br />Number</span>
-          <svg {...iconProps}><line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><polyline points="15 7 20 12 15 17" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <ArrowRightIcon className={styles.diagramIcon} aria-hidden="true" />
           <i className={styles.diagramPhone} />
         </>}
         {step === 2 && <>
           <i className={styles.diagramPhone} />
           <i className={styles.diagramLine} />
-          <svg {...iconProps}><rect x="6" y="11" width="12" height="9" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="15.2" r=".9" fill="currentColor"/></svg>
+          <LockClosedIcon className={styles.diagramIcon} aria-hidden="true" />
           <i className={styles.diagramLine} />
           <i className={styles.diagramPhone} />
         </>}
@@ -66,7 +65,7 @@ export default function PrivatePhonePage() {
     <section className={styles.hero}>
       <Reveal className={styles.heroCopy}>
         <h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1>
-        <p className={styles.heroSub}>{c.hero.sub}</p>
+        <p className={styles.heroSub}>{Array.isArray(c.hero.sub) ? c.hero.sub.map((line, i) => <span key={i}>{i > 0 && <br />}{line}</span>) : c.hero.sub}</p>
         <p className={styles.heroAudience}>{c.hero.audience}</p>
       </Reveal>
       <div className={styles.heroDevice}>
@@ -78,7 +77,7 @@ export default function PrivatePhonePage() {
         {c.numbers.map((number, i) => <span key={number} className={`${styles.floatChip} ${styles[`chip${i + 1}`]}`}>{number}</span>)}
       </div>
       <Reveal className={styles.heroCtaWrap}>
-        <a className={styles.brochureCta} href={c.hero.brochureHref} target="_blank" rel="noopener">{c.hero.cta}</a>
+        <a className={styles.brochureCta} href={c.hero.brochureHref} target="_blank" rel="noopener">{c.hero.cta} <ArrowRightIcon aria-hidden="true" /></a>
       </Reveal>
     </section>
 
@@ -259,7 +258,7 @@ export default function PrivatePhonePage() {
           <Image className={styles.coovLogo} src="/images/private/coov-logo.png" alt="COOV" width={1000} height={263} />
         </Reveal>
         <p className={styles.credit}>{c.foundation.credit}</p>
-        <Reveal className={styles.pricingHead}><p className={styles.eyebrow}>PRICING</p><h2>Own it, then live with it.</h2></Reveal>
+        <Reveal className={styles.pricingHead}><p className={styles.eyebrow}>PRICING</p><h2>Own your privacy</h2></Reveal>
         <div className={styles.pricing}>
           {c.foundation.prices.map(([name, type, price, desc, note], i) => (
             <Reveal key={name} delay={i * 80}>

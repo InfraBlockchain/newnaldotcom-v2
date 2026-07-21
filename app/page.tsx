@@ -1,39 +1,50 @@
+import Image from "next/image";
 import Link from "next/link";
-import { EmphasizedText } from "@/components/shared/EmphasizedText";
-import { Reveal } from "@/components/shared/Reveal";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { HomeHero } from "@/components/home/HomeHero";
+import { ProductLabel } from "@/components/home/ProductLabel";
+import { ScrollIndicator } from "@/components/home/ScrollIndicator";
+import { homeBody } from "@/components/home/fonts";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
 
+const SECTIONS = [
+  { id: "home-hero", label: "Intro" },
+  { id: "home-paths", label: "Products" },
+];
+
 export default function HomePage() {
   return (
-    <main id="main-content" className={styles.home}>
-      <section className={styles.hero} aria-labelledby="home-title">
-        <div className={styles.heroInner}>
-          <Reveal className={styles.heroCopy}>
-            <h1 id="home-title"><EmphasizedText text={homeContent.hero.title} emphasis={homeContent.hero.emphasis} /></h1>
-            <p className={styles.intro}>{homeContent.hero.sub}</p>
-          </Reveal>
-        </div>
-        <div className={styles.heroFoot}>
-          <p>One intelligence, seamlessly present.</p>
-          <a href="#products">Discover Newnal <span aria-hidden="true">↓</span></a>
-        </div>
-      </section>
-      <section id="products" className={styles.paths} aria-labelledby="products-title">
-        <h2 id="products-title" className="srOnly">Explore Newnal products</h2>
-        <div className={styles.pathGrid}>
-          {homeContent.paths.map((path, index) => (
-            <Reveal key={path.href} delay={index * 80} className={styles.pathReveal}>
-              <Link className={`${styles.card} ${styles[path.tone]}`} href={path.href}>
-                <span className={styles.index}>0{index + 1}</span>
-                <h3>{path.title}</h3>
-                <p>{path.description.map((line) => <span key={line}>{line}</span>)}</p>
-                <span className={styles.arrow} aria-hidden="true">→</span>
-              </Link>
-            </Reveal>
+    <main id="main-content" className={`${styles.home} ${homeBody.variable}`}>
+      <HomeHero id="home-hero" />
+      <section id="home-paths" className={styles.pathsSection} aria-label="Explore Newnal products">
+        <div className={styles.paths}>
+          {homeContent.paths.map((path) => (
+            <Link key={path.href} className={`${styles.card} ${styles[path.id]}`} href={path.href}>
+              <span className={styles.imageLayer} aria-hidden="true">
+                <Image
+                  src={path.hoverImage}
+                  alt=""
+                  fill
+                  sizes="(max-width: 767px) 100vw, 55vw"
+                />
+              </span>
+              <span className={styles.cardCopy}>
+                <span className={styles.statement}>
+                  {path.statement.map((line) => <span key={line}>{line}</span>)}
+                </span>
+                <h2 className={styles.cardLabel}>
+                  <ProductLabel label={path.cardLabel} wordmark />
+                </h2>
+              </span>
+              <span className={styles.chevron} aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
+      <ScrollIndicator sections={SECTIONS} />
     </main>
   );
 }

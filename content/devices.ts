@@ -36,7 +36,7 @@ export const devicesContent = {
       body: "UFO is a wearable adventure device that transforms the everyday into the extraordinary. It turns real places into treasure zones, missions, and collectible moments.",
       tagline: "A companion device for the adventurous! For the real-world, beyond the screen!",
       image: "/images/figma/devices-card-ufo.png",
-      href: null,
+      href: "/devices/ufo",
     },
   ],
 } as const;

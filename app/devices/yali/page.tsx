@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BookmarkIcon, MicrophoneIcon, UserIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
@@ -18,11 +19,11 @@ function ChapterHead({ title, lead, center = false }: {title:string;lead:string 
   );
 }
 
+const philosophyIcons = [UserIcon, MicrophoneIcon, BookmarkIcon] as const;
+
 function PhilosophyIcon({ index }: { index: number }) {
-  const common = { viewBox: "0 0 24 24", "aria-hidden": true as const };
-  if (index === 0) return <svg {...common}><circle cx="12" cy="7" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M5.5 20c.4-4 2.6-6 6.5-6s6.1 2 6.5 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
-  if (index === 1) return <svg {...common}><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" strokeWidth="1.5"/><path d="M6.5 11.5a5.5 5.5 0 0 0 11 0M12 17v4M8.5 21h7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
-  return <svg {...common}><path d="M7 3.5h10v17l-5-3-5 3z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><circle cx="12" cy="10" r="1.4" fill="currentColor"/></svg>;
+  const Icon = philosophyIcons[index] ?? philosophyIcons[philosophyIcons.length - 1];
+  return <Icon aria-hidden="true" />;
 }
 
 export default function YaliPage(){
@@ -31,7 +32,7 @@ export default function YaliPage(){
       <div className="container"><Reveal className={styles.heroHead}><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p><p>{c.hero.leadDetail}</p></Reveal>
         <Reveal className={styles.heroStatement}><div className={styles.negatives}><div className={styles.negativeLines}>{c.hero.negatives.map((line) => <p key={line}>{line}</p>)}</div></div><p className={styles.heroClosing}>{c.hero.closing}</p></Reveal>
       </div>
-      <Reveal className={styles.heroFilm}><AutoPauseVideo className={styles.heroFilmVideo} src="/images/yali/hero-film.mp4" poster="/images/yali/figma-hero-wide.png" ariaLabel="YALI artist companion film" /></Reveal>
+      <Reveal className={styles.heroFilm}><AutoPauseVideo className={styles.heroFilmVideo} src="/images/yali/hero-film-20260720.mp4" poster="/images/yali/figma-hero-wide.png" ariaLabel="YALI artist companion film" /></Reveal>
     </section>
 
     <section id="chapter-1" className={`${styles.dark} ${styles.personalized}`}><div className="container"><ChapterHead title={c.personalized.title} lead={c.personalized.lead} center/><div className={styles.personalizedGrid}><div className={styles.proofs}>{c.personalized.proofs.map(([num,unit,title,text],i)=><Reveal key={num} delay={i*80}><article><div><strong>{num}</strong><span>{unit}</span></div><h3>{title}</h3><p>{text}</p></article></Reveal>)}</div><Reveal className={styles.deviceVignette}><div className={styles.screen}><p className={styles.vignetteTime}>{c.personalized.vignette.time}</p><p className={styles.message}>{c.personalized.vignette.message}</p><div className={styles.wave}>{Array.from({length:30}).map((_,i)=><i key={i}/>)}</div><span>{c.personalized.vignette.playing}</span><strong>{c.personalized.vignette.track}</strong></div></Reveal></div></div></section>
