@@ -29,7 +29,7 @@
   white-space: nowrap;
 }
 
-.heroCopy h1 em { display: block; font-style: normal; }
+.heroCopy h1 em { font-style: normal; }
 
 .heroFoot {
   align-items: center;
