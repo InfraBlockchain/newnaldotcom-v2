@@ -219,8 +219,9 @@
 }
 
 /* Narrow / mid / touch (everything below the desktop hover breakpoint):
-   the hover-reveal doesn't translate and the fixed-size images overlapped
-   the copy. Drop the images entirely and show clean, legible text cards.
+   the hover-reveal doesn't translate, so present a static card instead —
+   copy on the left, product image on the right faded into the white card
+   on its left edge so the (black) text stays fully legible.
    Also stop vertically centering the row — it left a gap above the cards. */
 @media (max-width: 1200px) {
   .pathsSection {
@@ -230,17 +231,30 @@
   }
 
   .card {
-    align-items: flex-start;
+    align-items: stretch;
     height: auto;
     min-height: 240px;
     padding: 32px;
   }
 
-  .imageLayer { display: none; }
+  .aios .imageLayer,
+  .devices .imageLayer,
+  .private .imageLayer {
+    bottom: 0;
+    height: 100%;
+    left: auto;
+    opacity: 1;
+    right: 0;
+    top: auto;
+    width: 44%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 46%);
+    mask-image: linear-gradient(to right, transparent 0, #000 46%);
+  }
 
   .cardCopy {
-    gap: 36px;
-    padding-right: 56px;
+    gap: 32px;
+    justify-content: center;
+    padding-right: 46%;
   }
 
   .statement { font-size: clamp(24px, 4.5vw, 40px); }
@@ -251,26 +265,39 @@
     position: absolute;
     right: 32px;
   }
+
+  /* the arrow sits over the image; a soft white glow keeps the dark
+     glyph legible on both dark (keynote/phone) and light photos */
+  .chevron svg {
+    color: #070708;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, .9)) drop-shadow(0 0 2px rgba(255, 255, 255, .9));
+  }
 }
 
 @media (max-width: 767px) {
   .card {
-    min-height: 220px;
+    min-height: 200px;
     padding: 28px 24px;
   }
 
-  .cardCopy {
-    gap: 28px;
-    padding-right: 44px;
+  .aios .imageLayer,
+  .devices .imageLayer,
+  .private .imageLayer {
+    width: 42%;
   }
 
-  .cardLabel { font-size: 22px; }
+  .cardCopy {
+    gap: 24px;
+    padding-right: 44%;
+  }
+
+  .cardLabel { font-size: 20px; }
 
   .chevron {
     bottom: 24px;
-    height: 34px;
+    height: 32px;
     right: 24px;
-    width: 34px;
+    width: 32px;
   }
 }
 
