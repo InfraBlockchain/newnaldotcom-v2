@@ -171,7 +171,7 @@
   .private .imageLayer {
     height: 123%;
     opacity: 0;
-    right: 0;
+    right: -40px;
     top: -1.5%;
     width: 34%;
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%);
