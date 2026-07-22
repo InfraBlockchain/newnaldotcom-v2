@@ -47,10 +47,10 @@
 
 .aios .rowImage {
   border-radius: 12px;
-  bottom: 10px;
+  bottom: -5px;
   height: 236px;
   inset: auto;
-  right: 20px;
+  right: 5px;
   width: 420px;
 }
 
@@ -59,7 +59,7 @@
   bottom: -24px;
   height: 320px;
   inset: auto;
-  right: -40px;
+  right: 10px;
   transform: rotate(-10deg);
   width: 250px;
 }
