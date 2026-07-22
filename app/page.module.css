@@ -47,19 +47,15 @@
 
 .aios .rowImage {
   border-radius: 12px;
-  bottom: -5px;
+  inset: auto 0 -5px auto;
   height: 236px;
-  inset: auto;
-  right: 0;
   width: 420px;
 }
 
 .private .rowImage {
   border-radius: 16px;
-  bottom: 0;
+  inset: auto 0 0 auto;
   height: 250px;
-  inset: auto;
-  right: 0;
   width: 286px;
 }
 
