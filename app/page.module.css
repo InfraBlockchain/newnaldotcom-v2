@@ -170,8 +170,8 @@
 
   .private .imageLayer {
     height: 128%;
-    left: 56%;
     opacity: 0;
+    right: 0;
     top: 0%;
     transform: rotate(-10deg);
     width: 34%;
