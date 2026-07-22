@@ -56,12 +56,11 @@
 
 .private .rowImage {
   border-radius: 16px;
-  bottom: -24px;
-  height: 320px;
+  bottom: 0;
+  height: 300px;
   inset: auto;
   right: 0;
-  transform: rotate(-10deg);
-  width: 250px;
+  width: 344px;
 }
 
 .rowCopy,
