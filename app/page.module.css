@@ -54,6 +54,7 @@
 .imageLayer img {
   height: 100%;
   max-width: none;
+  object-fit: cover;
   width: 100%;
 }
 

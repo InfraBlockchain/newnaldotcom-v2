@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: calc(100vh - 64px);
   overflow: hidden;
   padding: 120px 80px;
@@ -112,8 +112,10 @@
 .copy {
   align-items: center;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: 40px;
+  justify-content: center;
   position: relative;
   text-align: center;
   width: 100%;
