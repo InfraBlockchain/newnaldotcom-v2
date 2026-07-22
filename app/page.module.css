@@ -16,7 +16,6 @@
 
 @media (max-width: 767px) {
   .pathsSection {
-    min-height: calc(100svh - 64px);
     padding: 40px 20px;
   }
 }
@@ -139,8 +138,10 @@
 .card:focus-visible { outline-offset: -4px; }
 
 /* Desktop hover reveal (Figma "v3"): idle card is plain text, hovering swaps in an
-   accent background + edge-feathered image and dims the other two cards' copy. */
-@media (hover: hover) and (pointer: fine) {
+   accent background + edge-feathered image and dims the other two cards' copy.
+   Only at >=1201px — the fixed-size images and long headlines overlap the copy
+   at narrower widths, so below this we fall back to clean text cards. */
+@media (hover: hover) and (pointer: fine) and (min-width: 1201px) {
   .imageLayer {
     opacity: 0;
     transition: opacity var(--dur-base, .3s) var(--ease-soft);
@@ -217,10 +218,17 @@
   }
 }
 
-/* Narrow / touch: the desktop hover-reveal doesn't translate, and the
-   decorative images bled over the copy. Drop the images and the hover
-   flip here — show clean, legible text cards instead. */
-@media (max-width: 900px) {
+/* Narrow / mid / touch (everything below the desktop hover breakpoint):
+   the hover-reveal doesn't translate and the fixed-size images overlapped
+   the copy. Drop the images entirely and show clean, legible text cards.
+   Also stop vertically centering the row — it left a gap above the cards. */
+@media (max-width: 1200px) {
+  .pathsSection {
+    align-items: flex-start;
+    min-height: auto;
+    padding: 48px 40px;
+  }
+
   .card {
     align-items: flex-start;
     height: auto;
