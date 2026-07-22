@@ -168,10 +168,10 @@
   }
 
   .private .imageLayer {
-    height: 165%;
+    height: 128%;
     left: 56%;
     opacity: 0;
-    top: -32%;
+    top: 0%;
     transform: rotate(-10deg);
     width: 34%;
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%);
