@@ -11,24 +11,23 @@
 }
 
 .dot {
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, .3);
-  border-radius: 50%;
+  background: rgba(0, 0, 0, .25);
+  border: none;
+  border-radius: 2px;
   cursor: pointer;
-  height: 8px;
+  height: 3px;
   padding: 0;
-  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
-  width: 8px;
+  transition: background-color .2s ease, width .2s ease;
+  width: 16px;
 }
 
 .dot:hover {
-  border-color: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .5);
 }
 
 .dot.active {
   background: #000;
-  border-color: #000;
-  transform: scale(1.4);
+  width: 20px;
 }
 
 @media (max-width: 900px) {
