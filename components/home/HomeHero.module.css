@@ -83,10 +83,13 @@
 }
 
 .copy {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 40px;
   position: relative;
+  text-align: center;
+  width: 100%;
   z-index: 1;
 }
 
