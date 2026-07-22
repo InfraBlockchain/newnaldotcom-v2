@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  justify-content: center;
+  justify-content: space-between;
   min-height: calc(100vh - 64px);
   overflow: hidden;
   padding: 120px 80px;
@@ -21,11 +21,11 @@
 .optionOne,
 .optionTwo {
   background: #fbfafa;
+  justify-content: center;
 }
 
 .optionTwo {
   height: 700px;
-  justify-content: center;
 }
 
 .optionTwo::after {
@@ -88,6 +88,34 @@
   gap: 40px;
   position: relative;
   z-index: 1;
+}
+
+.scrollRow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.scrollHint {
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  color: #8a8a8a;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 10px;
+  height: 96px;
+  justify-content: center;
+  letter-spacing: .02em;
+  width: 56px;
+}
+
+.scrollHint svg {
+  height: 14px;
+  width: 14px;
 }
 
 .copy h1 {
