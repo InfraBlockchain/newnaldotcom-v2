@@ -137,11 +137,12 @@
 .card:hover .chevron { transform: translateX(8px); }
 .card:focus-visible { outline-offset: -4px; }
 
-/* Desktop hover reveal (Figma "v3"): idle card is plain text, hovering swaps in an
-   accent background + edge-feathered image and dims the other two cards' copy.
-   Only at >=1201px — the fixed-size images and long headlines overlap the copy
-   at narrower widths, so below this we fall back to clean text cards. */
-@media (hover: hover) and (pointer: fine) and (min-width: 1201px) {
+/* Hover reveal (Figma "v3"): idle card is plain text on white, hovering swaps in
+   a black background + edge-feathered image on the right and white copy, and dims
+   the other two cards. Runs on any hover-capable pointer at any width — the images
+   are sized in % so they never overlap the headline. Touch devices (no hover) get
+   the static image-right treatment further down. */
+@media (hover: hover) and (pointer: fine) {
   .imageLayer {
     opacity: 0;
     transition: opacity var(--dur-base, .3s) var(--ease-soft);
@@ -154,29 +155,30 @@
     right: 0;
     top: 0;
     width: 42%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%);
-    mask-image: linear-gradient(to right, transparent 0, #000 14%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16%);
+    mask-image: linear-gradient(to right, transparent 0, #000 16%);
   }
 
   .devices .imageLayer {
-    height: 360px;
+    height: 100%;
     left: auto;
     opacity: 0;
     right: 0;
-    top: -30px;
-    width: 640px;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 11.4%, #000 88.6%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 11.4%, #000 88.6%, transparent 100%);
+    top: 0;
+    width: 52%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%);
+    mask-image: linear-gradient(to right, transparent 0, #000 20%);
   }
 
   .private .imageLayer {
-    height: 123%;
+    height: 100%;
+    left: auto;
     opacity: 0;
-    right: -40px;
-    top: -1.5%;
-    width: 34%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%);
-    mask-image: linear-gradient(to right, transparent 0, #000 20%);
+    right: 0;
+    top: 0;
+    width: 40%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%);
+    mask-image: linear-gradient(to right, transparent 0, #000 22%);
   }
 
   .aios:hover,
@@ -218,11 +220,10 @@
   }
 }
 
-/* Narrow / mid / touch (everything below the desktop hover breakpoint):
-   the hover-reveal doesn't translate, so present a static card instead —
-   copy on the left, product image on the right faded into the white card
-   on its left edge so the (black) text stays fully legible.
-   Also stop vertically centering the row — it left a gap above the cards. */
+/* Narrow / mid widths: keep the same idle-text + hover-reveal behavior as
+   desktop (handled by the hover block above), just adjust layout — no forced
+   viewport-height centering (it left a gap above the cards), auto height, and
+   reserve the right zone so the revealed image never overlaps the copy. */
 @media (max-width: 1200px) {
   .pathsSection {
     align-items: flex-start;
@@ -231,12 +232,29 @@
   }
 
   .card {
-    align-items: stretch;
     height: auto;
     min-height: 240px;
     padding: 32px;
   }
 
+  .cardCopy {
+    gap: 32px;
+    padding-right: 46%;
+  }
+
+  .statement { font-size: clamp(24px, 4.5vw, 40px); }
+  .private .statement { font-size: clamp(22px, 4vw, 36px); }
+
+  .chevron {
+    bottom: 32px;
+    position: absolute;
+    right: 32px;
+  }
+}
+
+/* Touch devices (no hover): can't trigger the reveal, so show the image
+   statically on the right, faded into the white card, with black copy left. */
+@media (hover: none) {
   .aios .imageLayer,
   .devices .imageLayer,
   .private .imageLayer {
@@ -251,23 +269,7 @@
     mask-image: linear-gradient(to right, transparent 0, #000 46%);
   }
 
-  .cardCopy {
-    gap: 32px;
-    justify-content: center;
-    padding-right: 46%;
-  }
-
-  .statement { font-size: clamp(24px, 4.5vw, 40px); }
-  .private .statement { font-size: clamp(22px, 4vw, 36px); }
-
-  .chevron {
-    bottom: 32px;
-    position: absolute;
-    right: 32px;
-  }
-
-  /* the arrow sits over the image; a soft white glow keeps the dark
-     glyph legible on both dark (keynote/phone) and light photos */
+  /* soft white glow keeps the dark arrow legible over any photo */
   .chevron svg {
     color: #070708;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, .9)) drop-shadow(0 0 2px rgba(255, 255, 255, .9));
@@ -278,12 +280,6 @@
   .card {
     min-height: 200px;
     padding: 28px 24px;
-  }
-
-  .aios .imageLayer,
-  .devices .imageLayer,
-  .private .imageLayer {
-    width: 42%;
   }
 
   .cardCopy {
