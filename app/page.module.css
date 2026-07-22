@@ -50,7 +50,7 @@
   bottom: -5px;
   height: 236px;
   inset: auto;
-  right: 5px;
+  right: 0;
   width: 420px;
 }
 
@@ -59,7 +59,7 @@
   bottom: -24px;
   height: 320px;
   inset: auto;
-  right: 10px;
+  right: 0;
   transform: rotate(-10deg);
   width: 250px;
 }
