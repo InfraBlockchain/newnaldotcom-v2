@@ -243,11 +243,6 @@
     left: 50%;
     width: 62%;
   }
-
-  .private .imageLayer {
-    left: 48%;
-    width: 56%;
-  }
 }
 
 @media (max-width: 767px) {
