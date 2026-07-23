@@ -33,12 +33,19 @@
   white-space: nowrap;
 }
 
+.titleLine:first-child {
+  font-size: .75em;
+}
+
 .titleLine + .titleLine {
+  font-size: 1.12em;
   margin-top: .5em;
 }
 
 .titleLine .accent {
   color: #0a84ff;
+  font-size: 1.08em;
+  font-weight: 500;
 }
 
 .heroFoot {
