@@ -21,7 +21,7 @@
 
 .heroCopy h1 {
   font-family: var(--font-body), sans-serif;
-  font-size: clamp(3.45rem, 5.2vw, 6.6rem);
+  font-size: clamp(3.25rem, 5vw, 6.3rem);
   font-weight: 400;
   letter-spacing: -.075em;
   line-height: .91;
@@ -182,7 +182,7 @@
 @media (max-width: 767px) {
   .hero { padding-inline: 20px; }
   .heroInner { padding: 36px 0 48px; }
-  .heroCopy h1 { font-size: clamp(3.2rem, 13vw, 4.6rem); margin-bottom: 24px; white-space: normal; }
+  .heroCopy h1 { font-size: clamp(3rem, 12.5vw, 4.4rem); margin-bottom: 24px; white-space: normal; }
   .heroFoot { font-size: .57rem; }
   .heroFoot p { max-width: 180px; }
   .paths { min-height: calc(100svh - 64px); }
