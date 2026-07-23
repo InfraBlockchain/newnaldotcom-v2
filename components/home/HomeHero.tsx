@@ -44,11 +44,19 @@ export function HomeHero({
       ) : null}
       <Reveal className={styles.copy}>
         <h1 id="home-title">
-          {homeContent.hero.title.map((line) => <span key={line}>{line}</span>)}
+          {homeContent.hero.title.map((line, lineIndex) => (
+            <span key={lineIndex} className={styles.titleLine}>
+              {line.map((segment) => (
+                <span
+                  key={segment.text}
+                  className={"accent" in segment ? styles.accent : undefined}
+                >
+                  {segment.text}
+                </span>
+              ))}
+            </span>
+          ))}
         </h1>
-        <p>
-          {homeContent.hero.sub.map((line) => <span key={line}>{line}</span>)}
-        </p>
       </Reveal>
       {!hasArtwork ? (
         <div className={styles.scrollRow}>
