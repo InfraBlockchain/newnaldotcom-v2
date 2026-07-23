@@ -23,7 +23,7 @@
   font-family: var(--font-body), sans-serif;
   font-size: clamp(2.75rem, 5vw, 6.3rem);
   font-weight: 400;
-  letter-spacing: -.075em;
+  letter-spacing: -.045em;
   line-height: .91;
   margin: 0;
 }
@@ -34,16 +34,16 @@
 }
 
 .titleLine:first-child {
-  font-size: .75em;
+  font-size: .82em;
 }
 
 .titleLine + .titleLine {
-  font-size: 1.12em;
-  margin-top: .5em;
+  font-size: 1.05em;
+  margin-top: .28em;
 }
 
 .titleLine .accent {
-  font-size: 1.08em;
+  font-size: 1.04em;
   font-weight: 500;
 }
 
@@ -52,7 +52,7 @@
   font-size: clamp(1.25rem, 1.6vw, 1.75rem);
   letter-spacing: -.025em;
   line-height: 1.45;
-  margin: clamp(32px, 3.4vw, 52px) 0 0;
+  margin: clamp(24px, 2vw, 34px) 0 0;
   max-width: 100%;
 }
 
