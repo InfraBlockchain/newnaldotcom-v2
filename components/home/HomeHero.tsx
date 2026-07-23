@@ -64,6 +64,15 @@ export function HomeHero({
             </span>
           ))}
         </h1>
+        <p className={styles.intro}>
+          {homeContent.hero.intro.map((segment) => (
+            "bold" in segment ? (
+              <strong key={segment.text}>{segment.text}</strong>
+            ) : (
+              <span key={segment.text}>{segment.text}</span>
+            )
+          ))}
+        </p>
       </Reveal>
       {children}
     </section>
