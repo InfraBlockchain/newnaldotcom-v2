@@ -3,6 +3,7 @@ export const homeContent = {
     title: "The New AI Computing Era",
     emphasis: "AI Computing Era",
     sub: "Newnal aios Leads the Way",
+    subEmphasis: "Newnal aios",
   },
   paths: [
     {

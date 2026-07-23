@@ -11,7 +11,7 @@ export default function HomePage() {
         <div className={styles.heroInner}>
           <Reveal className={styles.heroCopy}>
             <h1 id="home-title"><EmphasizedText text={homeContent.hero.title} emphasis={homeContent.hero.emphasis} /></h1>
-            <p className={styles.intro}>{homeContent.hero.sub}</p>
+            <p className={styles.intro}><EmphasizedText text={homeContent.hero.sub} emphasis={homeContent.hero.subEmphasis} /></p>
           </Reveal>
         </div>
         <div className={styles.heroFoot}>
