@@ -33,6 +33,10 @@
   white-space: nowrap;
 }
 
+.titleLine + .titleLine {
+  margin-top: .5em;
+}
+
 .titleLine .accent {
   color: #0a84ff;
 }
