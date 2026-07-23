@@ -7,7 +7,10 @@ export const homeContent = {
         { text: " Leads the Way" },
       ],
     ],
-    description: "Newnal aios is built on a new principle: you own your data, and your intelligence belongs to you. A user-centered OS architecture that connects your data and AI across multiple devices",
+    description: [
+      "Newnal aios is built on a new principle:",
+      "you own your data, and your intelligence belongs to you. A user-centered OS architecture that connects your data and AI across multiple devices",
+    ],
   },
   paths: [
     {

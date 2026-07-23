@@ -23,7 +23,9 @@ export default function HomePage() {
                 </span>
               ))}
             </h1>
-            <p className={styles.heroDescription}>{homeContent.hero.description}</p>
+            <p className={styles.heroDescription}>
+              {homeContent.hero.description.map((line) => <span key={line}>{line}</span>)}
+            </p>
           </Reveal>
         </div>
         <div className={styles.heroFoot}>
