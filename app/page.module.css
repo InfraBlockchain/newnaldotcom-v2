@@ -49,7 +49,7 @@
 
 .heroDescription {
   color: #4f535b;
-  font-size: clamp(1rem, 1.1vw, 1.25rem);
+  font-size: clamp(1.25rem, 1.6vw, 1.75rem);
   letter-spacing: -.025em;
   line-height: 1.45;
   margin: clamp(32px, 3.4vw, 52px) 0 0;
