@@ -4,13 +4,17 @@ import { Reveal } from "@/components/shared/Reveal";
 import { homeContent } from "@/content/home";
 import styles from "./HomeHero.module.css";
 
+type TitleLine = readonly {
+  text: string;
+  accent?: boolean;
+}[];
+
 type HomeHeroProps = {
   children?: ReactNode;
   optionOneArtwork?: boolean;
   optionTwoArtwork?: boolean;
   splitLayout?: boolean;
-  titleLines?: readonly string[];
-  subLines?: readonly string[];
+  titleLines?: readonly TitleLine[];
 };
 
 export function HomeHero({
@@ -19,7 +23,6 @@ export function HomeHero({
   optionTwoArtwork = false,
   splitLayout = false,
   titleLines = homeContent.hero.title,
-  subLines = homeContent.hero.sub,
 }: HomeHeroProps) {
   const hasArtwork = optionOneArtwork || optionTwoArtwork;
   const variantClass = optionOneArtwork
@@ -48,11 +51,19 @@ export function HomeHero({
       ) : null}
       <Reveal className={styles.copy}>
         <h1 id="home-title">
-          {titleLines.map((line) => <span key={line}>{line}</span>)}
+          {titleLines.map((line, lineIndex) => (
+            <span key={lineIndex} className={styles.titleLine}>
+              {line.map((segment) => (
+                <span
+                  key={segment.text}
+                  className={segment.accent ? styles.accent : undefined}
+                >
+                  {segment.text}
+                </span>
+              ))}
+            </span>
+          ))}
         </h1>
-        <p>
-          {subLines.map((line) => <span key={line}>{line}</span>)}
-        </p>
       </Reveal>
       {children}
     </section>

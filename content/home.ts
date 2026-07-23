@@ -1,7 +1,12 @@
 export const homeContent = {
   hero: {
-    title: ["The New AI Computing Era"],
-    sub: ["Newnal aios Leads the Way"],
+    title: [
+      [{ text: "The New AI Computing Era" }],
+      [
+        { text: "Newnal aios", accent: true },
+        { text: " Leads the Way" },
+      ],
+    ],
   },
   paths: [
     {
@@ -46,8 +51,13 @@ export const homeContent = {
   ],
   learnMore: "Learn More",
   heroV3: {
-    title: ["The New AI Computing Era"],
-    sub: ["Newnal aios Leads the Way"],
+    title: [
+      [{ text: "The New AI Computing Era" }],
+      [
+        { text: "Newnal aios", accent: true },
+        { text: " Leads the Way" },
+      ],
+    ],
   },
   accordionPaths: [
     {

@@ -11,7 +11,6 @@ export default function HomePage() {
       <HomeHero
         splitLayout
         titleLines={homeContent.heroV3.title}
-        subLines={homeContent.heroV3.sub}
       >
         <div className={styles.accordion} aria-label="Explore Newnal products">
           {homeContent.accordionPaths.map((path, index) => (
