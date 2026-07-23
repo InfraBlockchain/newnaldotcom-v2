@@ -169,6 +169,21 @@
   color: #0a84ff;
 }
 
+.intro {
+  color: #000;
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 960px;
+}
+
+.intro strong {
+  font-weight: 700;
+}
+
 @media (max-width: 1200px) {
   .hero { padding-inline: 40px; }
 
@@ -206,6 +221,7 @@
   }
 
   .copy h1 { font-size: clamp(20px, 7vw, 32px); }
+  .intro { font-size: clamp(18px, 4.8vw, 24px); }
 
   .artwork img {
     left: 52%;
