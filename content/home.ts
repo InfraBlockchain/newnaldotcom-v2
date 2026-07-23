@@ -4,7 +4,7 @@ export const homeContent = {
       [{ text: "The New AI Computing Era" }],
       [
         { text: "Newnal aios", accent: true },
-        { text: " Leads the Way" },
+        { text: " Leads the Way", secondary: true },
       ],
     ],
     description: [

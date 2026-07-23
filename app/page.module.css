@@ -47,6 +47,10 @@
   font-weight: 500;
 }
 
+.titleLine .secondary {
+  font-size: .781em;
+}
+
 .heroDescription {
   color: #4f535b;
   font-size: clamp(1.25rem, 1.6vw, 1.75rem);

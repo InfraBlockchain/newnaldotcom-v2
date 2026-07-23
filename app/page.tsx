@@ -15,7 +15,13 @@ export default function HomePage() {
                   {line.map((segment) => (
                     <span
                       key={segment.text}
-                      className={"accent" in segment ? styles.accent : undefined}
+                      className={
+                        "accent" in segment
+                          ? styles.accent
+                          : "secondary" in segment
+                            ? styles.secondary
+                            : undefined
+                      }
                     >
                       {segment.text}
                     </span>
