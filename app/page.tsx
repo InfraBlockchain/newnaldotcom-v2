@@ -40,7 +40,7 @@ export default function HomePage() {
             <Reveal key={path.href} delay={index * 80} className={styles.pathReveal}>
               <Link className={`${styles.card} ${styles[path.tone]}`} href={path.href}>
                 <span className={styles.index}>0{index + 1}</span>
-                <h3>{path.title}</h3>
+                <h3>{path.title.map((line) => <span key={line}>{line}</span>)}</h3>
                 <p>{path.description.map((line) => <span key={line}>{line}</span>)}</p>
                 <span className={styles.arrow} aria-hidden="true">→</span>
               </Link>

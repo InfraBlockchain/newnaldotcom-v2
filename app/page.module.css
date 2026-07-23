@@ -117,6 +117,21 @@
   max-width: 700px;
 }
 
+.card h3 span {
+  display: block;
+}
+
+@media (min-width: 901px) {
+  .devices h3,
+  .private h3 {
+    max-width: none;
+  }
+
+  .private h3 {
+    white-space: nowrap;
+  }
+}
+
 .card p {
   align-self: center;
   color: #4f535b;
