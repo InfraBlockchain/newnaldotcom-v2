@@ -23,6 +23,7 @@ export default function HomePage() {
                 </span>
               ))}
             </h1>
+            <p className={styles.heroDescription}>{homeContent.hero.description}</p>
           </Reveal>
         </div>
         <div className={styles.heroFoot}>

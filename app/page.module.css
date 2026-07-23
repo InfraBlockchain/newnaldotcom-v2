@@ -47,6 +47,15 @@
   font-weight: 500;
 }
 
+.heroDescription {
+  color: #4f535b;
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
+  letter-spacing: -.025em;
+  line-height: 1.45;
+  margin: clamp(32px, 3.4vw, 52px) 0 0;
+  max-width: 620px;
+}
+
 .heroFoot {
   align-items: center;
   border-top: 1px solid rgba(16, 16, 19, .14);
