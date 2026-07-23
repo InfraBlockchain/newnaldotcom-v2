@@ -1,9 +1,12 @@
 export const homeContent = {
   hero: {
-    title: "The New AI Computing Era",
-    emphasis: "AI Computing Era",
-    sub: "Newnal aios Leads the Way",
-    subEmphasis: "Newnal aios",
+    title: [
+      [{ text: "The New AI Computing Era" }],
+      [
+        { text: "Newnal aios", accent: true },
+        { text: " Leads the Way" },
+      ],
+    ],
   },
   paths: [
     {

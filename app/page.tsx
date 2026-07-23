@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
@@ -10,8 +9,20 @@ export default function HomePage() {
       <section className={styles.hero} aria-labelledby="home-title">
         <div className={styles.heroInner}>
           <Reveal className={styles.heroCopy}>
-            <h1 id="home-title"><EmphasizedText text={homeContent.hero.title} emphasis={homeContent.hero.emphasis} /></h1>
-            <p className={styles.intro}><EmphasizedText text={homeContent.hero.sub} emphasis={homeContent.hero.subEmphasis} /></p>
+            <h1 id="home-title">
+              {homeContent.hero.title.map((line, lineIndex) => (
+                <span key={lineIndex} className={styles.titleLine}>
+                  {line.map((segment) => (
+                    <span
+                      key={segment.text}
+                      className={"accent" in segment ? styles.accent : undefined}
+                    >
+                      {segment.text}
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </h1>
           </Reveal>
         </div>
         <div className={styles.heroFoot}>
