@@ -54,10 +54,10 @@ export default function OnniPage() {
         </Reveal>
       </section>
 
-      <section id="chapter-1" className={`${styles.dark} ${styles.personalized}`}>
+      <section id="chapter-1" className={`${styles.dark} ${styles.personalized} ${onniStyles.personalized}`}>
         <div className="container">
           <ChapterHead title={c.personalized.title} lead={c.personalized.lead} center />
-          <div className={styles.personalizedGrid}>
+          <div className={`${styles.personalizedGrid} ${onniStyles.personalizedGrid}`}>
             <div className={styles.proofs}>
               {c.personalized.proofs.map(([num, unit, title, text], index) => (
                 <Reveal key={num} delay={index * 80}>
