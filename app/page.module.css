@@ -4,6 +4,10 @@
 }
 
 .homeSection {
+  background:
+    radial-gradient(ellipse 88% 68% at 8% 108%, rgba(10, 132, 255, .34) 0%, rgba(104, 190, 255, .18) 39%, transparent 72%),
+    radial-gradient(ellipse 78% 56% at 93% -10%, rgba(255, 114, 228, .32) 0%, rgba(255, 172, 241, .18) 42%, transparent 74%),
+    linear-gradient(135deg, #fff 0%, #f7fbff 48%, #fff9fd 100%);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -51,8 +55,8 @@
 
 .card {
   align-items: center;
-  background: #f7f7f7;
-  border: 1px solid #e5e5e5;
+  background: rgba(255, 255, 255, .78);
+  border: 1px solid rgba(229, 229, 229, .85);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
