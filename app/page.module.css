@@ -108,7 +108,7 @@
 
 .cardSubtitle {
   color: #585860;
-  font-size: clamp(.88rem, 1vw, 1.05rem) !important;
+  font-size: clamp(1.05rem, 1.3vw, 1.35rem) !important;
   letter-spacing: -.025em !important;
   margin-top: .5em !important;
   white-space: nowrap;
