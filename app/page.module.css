@@ -326,3 +326,42 @@
   color: #09090b;
   transform: none;
 }
+
+.card {
+  border-top: 3px solid #09090b;
+  justify-content: space-between;
+}
+
+.cardCopy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 58%;
+}
+
+.cardStatement {
+  border-top: 1px solid rgba(9, 9, 11, .18);
+  color: #56565b;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(.68rem, .75vw, .82rem) !important;
+  letter-spacing: .04em;
+  line-height: 1.35 !important;
+  margin-top: auto !important;
+  padding-top: 14px;
+  text-transform: uppercase;
+}
+
+.cardStatement span {
+  display: block;
+}
+
+.card:hover .cardStatement,
+.card:focus-visible .cardStatement {
+  border-color: rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, .72);
+}
+
+:global(body:has([data-page="home"])) footer {
+  display: none;
+}
