@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BookmarkIcon, MicrophoneIcon, UserIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
@@ -44,7 +45,12 @@ export default function OnniPage() {
           </Reveal>
         </div>
         <Reveal className={styles.heroFilm}>
-          <Image src="/images/figma/devices-card-onni.png" alt="ONNI family AI companion in a child's room" fill priority sizes="100vw" />
+          <AutoPauseVideo
+            className={styles.heroFilmVideo}
+            src="/images/onni/hero-film.mp4"
+            poster="/images/figma/devices-card-onni.png"
+            ariaLabel="ONNI family AI companion film"
+          />
         </Reveal>
       </section>
 
