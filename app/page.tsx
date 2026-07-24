@@ -21,15 +21,6 @@ export default function HomePage() {
               </span>
             ))}
           </h1>
-          <p className={styles.intro}>
-            {homeContent.hero.intro.map((segment) => (
-              "bold" in segment ? (
-                <strong key={segment.text}>{segment.text}</strong>
-              ) : (
-                <span key={segment.text}>{segment.text}</span>
-              )
-            ))}
-          </p>
         </div>
         <nav className={styles.productGrid} aria-label="Explore Newnal products">
           {homeContent.paths.map((path) => (
