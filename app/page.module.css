@@ -364,3 +364,24 @@
 :global(body:has([data-page="home"])) footer {
   display: none;
 }
+
+.heading {
+  margin-top: clamp(16px, 2.8vh, 36px);
+}
+
+.productGrid {
+  flex: 0 0 clamp(250px, 39vh, 350px);
+  height: clamp(250px, 39vh, 350px);
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .heading {
+    margin-top: 12px;
+  }
+
+  .productGrid {
+    flex-basis: min(38svh, 260px);
+    height: min(38svh, 260px);
+  }
+}
