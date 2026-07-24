@@ -38,6 +38,15 @@ export const devicesContent = {
       image: "/images/figma/devices-card-ufo.png",
       href: "/devices/ufo",
     },
+    {
+      id: "onni",
+      name: "ONNI",
+      heading: "Family AI Companion, ONNI",
+      body: "ONNI is a warm, playful AI companion for young children and the families who care for them.",
+      tagline: "A companion designed to grow with your family",
+      image: "/images/figma/devices-card-onni.png",
+      href: "/devices/onni",
+    },
   ],
 } as const;
 
