@@ -23,10 +23,15 @@ export default function HomePage() {
           </h1>
         </div>
         <nav className={styles.productGrid} aria-label="Explore Newnal products">
-          {homeContent.paths.map((path) => (
+          {homeContent.paths.map((path, index) => (
             <Link key={path.href} className={`${styles.card} ${styles[path.id]}`} href={path.href}>
-              <h2>{path.title}</h2>
-              {"subtitle" in path ? <p>{path.subtitle}</p> : null}
+              <span className={styles.cardNumber}>0{index + 1}</span>
+              <span className={styles.cardGlow} aria-hidden="true" />
+              <div className={styles.cardCopy}>
+                <h2>{path.title}</h2>
+                {"subtitle" in path ? <p>{path.subtitle}</p> : null}
+              </div>
+              <span className={styles.cardArrow} aria-hidden="true">↗</span>
             </Link>
           ))}
         </nav>
