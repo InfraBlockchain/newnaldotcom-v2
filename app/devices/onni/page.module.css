@@ -262,3 +262,26 @@
 .page > section:nth-of-type(2):global([class*="personalized"]) {
   background: transparent !important;
 }
+
+.page > section:nth-of-type(4) :global([class*="momentImage"]) img {
+  filter: brightness(1.12) saturate(1.06);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentImage"])::after {
+  background: linear-gradient(180deg, rgba(29, 15, 8, 0) 32%, rgba(29, 15, 8, .52)) !important;
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span {
+  color: #ffd5b4 !important;
+  text-shadow: 0 1px 8px rgba(29, 15, 8, .55);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) h3 {
+  color: #fffaf5 !important;
+  text-shadow: 0 2px 12px rgba(29, 15, 8, .65);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) p {
+  color: rgba(255, 250, 245, .9) !important;
+  text-shadow: 0 1px 8px rgba(29, 15, 8, .65);
+}
