@@ -17,6 +17,7 @@ export const homeContent = {
   paths: [
     {
       id: "aios",
+      title: "Newnal aios",
       statement: ["ONE ARCHITECTURE.", "COMPLETE DATA SOVEREIGNTY"],
       cardLabel: [
         [{ text: "Newnal " }, { text: "aios", wordmark: true }],
@@ -30,6 +31,8 @@ export const homeContent = {
     },
     {
       id: "devices",
+      title: "Companion Devices",
+      subtitle: "Powered by Newnal",
       statement: ["One AIOS. Distinct companions for different lives."],
       cardLabel: [
         [{ text: "Companion Devices" }],
@@ -45,6 +48,7 @@ export const homeContent = {
     },
     {
       id: "private",
+      title: "Private Phone",
       statement: ["Privacy that holds— even when trust breaks."],
       cardLabel: [
         [{ text: "Newnal Private Phone" }],

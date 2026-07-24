@@ -1,50 +1,45 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import { HomeHero } from "@/components/home/HomeHero";
-import { ProductLabel } from "@/components/home/ProductLabel";
-import { ScrollIndicator } from "@/components/home/ScrollIndicator";
-import { homeBody } from "@/components/home/fonts";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
 
-const SECTIONS = [
-  { id: "home-hero", label: "Intro" },
-  { id: "home-paths", label: "Products" },
-];
-
 export default function HomePage() {
   return (
-    <main id="main-content" className={`${styles.home} ${homeBody.variable}`}>
-      <HomeHero id="home-hero" />
-      <section id="home-paths" className={styles.pathsSection} aria-label="Explore Newnal products">
-        <div className={styles.paths}>
+    <main id="main-content" className={styles.home}>
+      <section className={styles.homeSection} aria-labelledby="home-title">
+        <div className={styles.heading}>
+          <h1 id="home-title">
+            {homeContent.hero.title.map((line, lineIndex) => (
+              <span key={lineIndex} className={styles.titleLine}>
+                {line.map((segment) => (
+                  <span
+                    key={segment.text}
+                    className={"accent" in segment ? styles.accent : undefined}
+                  >
+                    {segment.text}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </h1>
+          <p className={styles.intro}>
+            {homeContent.hero.intro.map((segment) => (
+              "bold" in segment ? (
+                <strong key={segment.text}>{segment.text}</strong>
+              ) : (
+                <span key={segment.text}>{segment.text}</span>
+              )
+            ))}
+          </p>
+        </div>
+        <nav className={styles.productGrid} aria-label="Explore Newnal products">
           {homeContent.paths.map((path) => (
             <Link key={path.href} className={`${styles.card} ${styles[path.id]}`} href={path.href}>
-              <span className={styles.imageLayer} aria-hidden="true">
-                <Image
-                  src={path.hoverImage}
-                  alt=""
-                  fill
-                  sizes="(max-width: 767px) 100vw, 55vw"
-                />
-              </span>
-              <span className={styles.cardCopy}>
-                <span className={styles.statement}>
-                  {path.statement.map((line) => <span key={line}>{line}</span>)}
-                </span>
-                <h2 className={styles.cardLabel}>
-                  <ProductLabel label={path.cardLabel} wordmark />
-                </h2>
-              </span>
-              <span className={styles.chevron} aria-hidden="true">
-                <ArrowUpRightIcon />
-              </span>
+              <h2>{path.title}</h2>
+              {"subtitle" in path ? <p>{path.subtitle}</p> : null}
             </Link>
           ))}
-        </div>
+        </nav>
       </section>
-      <ScrollIndicator sections={SECTIONS} />
     </main>
   );
 }
