@@ -37,6 +37,27 @@ export const onniContent = {
       ["Made to grow", "ONNI adapts with a child's changing interests, routines, and imagination."],
     ],
   },
+  everyday: {
+    eyebrow: "03 · EVERYDAY MOMENTS",
+    title: "A rhythm that feels\nlike your own.",
+    quote: "“A little more confidence for children. A little more connection for families.”",
+    lead: "ONNI brings a thoughtful presence to the moments that shape a child's day, without taking over the moments that matter most.",
+    cards: [
+      ["MORNING", "Start with curiosity", "A gentle prompt, a story, or a small plan for the day ahead."],
+      ["AFTERNOON", "Make room to explore", "Playful questions and ideas that follow a child's interests."],
+      ["EVENING", "Wind down together", "A calmer way to reflect, reconnect, and settle into the evening."],
+    ],
+  },
+  moments: {
+    eyebrow: "04 · MOMENTS THAT MATTER",
+    title: "Built for the whole family.",
+    lead: "ONNI is not another screen competing for attention. It is a shared companion that can bring children and caregivers into the same moment.",
+    cards: [
+      ["Family updates", "Parents can stay close to the moments that matter, on their terms."],
+      ["Shared stories", "Turn questions, discoveries, and daily rituals into memories you can revisit together."],
+      ["Growing independence", "Give children room to explore with guidance that remains connected to family care."],
+    ],
+  },
   spec: {
     eyebrow: "03 · ONNI AT A GLANCE",
     title: "Designed to belong at home.",
