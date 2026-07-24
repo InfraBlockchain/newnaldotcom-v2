@@ -124,43 +124,7 @@
 .card:hover .arrow { transform: translateX(8px); }
 .card:focus-visible { outline-offset: -4px; }
 
-/* ONNI — disabled, dimmed, Coming Soon; always monotone (hover or not) */
-.cardDisabled {
-  background: #e9e9ec;
-  cursor: default;
-  filter: grayscale(1);
-}
-
-.cardDisabled .cardImage { object-position: 36% 50%; }
 .card[data-slide="illi"] .cardImage { object-position: 65.5% 50%; }
-
-.cardDim {
-  background: rgba(250, 250, 251, .62);
-  inset: 0;
-  position: absolute;
-  z-index: 1;
-}
-
-.cardDisabled .cardLabel {
-  color: #55555c;
-  text-shadow: none;
-}
-
-.cardDisabled .cardLabelSub { text-shadow: none; }
-
-.comingSoon {
-  align-items: center;
-  color: #6b6b70;
-  display: flex;
-  font-family: var(--font-inter), sans-serif;
-  font-size: clamp(1.1rem, 1.4vw, 1.5rem);
-  font-weight: 500;
-  inset: 0;
-  justify-content: center;
-  letter-spacing: -.02em;
-  position: absolute;
-  z-index: 1;
-}
 
 @media (max-width: 900px) {
   .hero { min-height: 500px; }
