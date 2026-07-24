@@ -54,7 +54,7 @@ export default function OnniPage() {
         </div>
       </section>
 
-      <section className={styles.family}>
+      <section id="chapter-1" className={styles.family}>
         <div className={`container ${styles.familyGrid}`}>
           <Reveal className={styles.familyCopy}>
             <p className={styles.eyebrow}>{c.family.eyebrow}</p>
@@ -74,7 +74,54 @@ export default function OnniPage() {
         </div>
       </section>
 
-      <section className={styles.spec}>
+      <section id="chapter-2" className={styles.everyday}>
+        <div className="container">
+          <div className={styles.everydayHead}>
+            <Reveal className={styles.sectionHead}>
+              <p className={styles.eyebrow}>{c.everyday.eyebrow}</p>
+              <h2>{c.everyday.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h2>
+            </Reveal>
+            <Reveal className={styles.everydayCopy}>
+              <blockquote>{c.everyday.quote}</blockquote>
+              <p>{c.everyday.lead}</p>
+            </Reveal>
+          </div>
+          <div className={styles.routineGrid}>
+            {c.everyday.cards.map(([time, title, text], index) => (
+              <Reveal key={time} delay={index * 80}>
+                <article className={styles.routineCard}>
+                  <span>{time}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="chapter-3" className={styles.moments}>
+        <div className="container">
+          <Reveal className={styles.momentsHead}>
+            <p className={styles.eyebrow}>{c.moments.eyebrow}</p>
+            <h2>{c.moments.title}</h2>
+            <p>{c.moments.lead}</p>
+          </Reveal>
+          <div className={styles.momentGrid}>
+            {c.moments.cards.map(([title, text], index) => (
+              <Reveal key={title} delay={index * 80}>
+                <article className={styles.momentCard}>
+                  <span>0{index + 1}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="chapter-4" className={styles.spec}>
         <div className={`container ${styles.specGrid}`}>
           <Reveal className={styles.specHead}>
             <p className={styles.eyebrow}>{c.spec.eyebrow}</p>
