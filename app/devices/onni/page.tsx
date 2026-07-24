@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BookmarkIcon, MicrophoneIcon, UserIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, CpuChipIcon, MicrophoneIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
@@ -11,16 +11,18 @@ import onniStyles from "./page.module.css";
 
 export const metadata: Metadata = { title: "ONNI", description: c.hero.lead };
 
-function ChapterHead({ title, lead, center = false }: { title: string; lead: string | readonly string[]; center?: boolean }) {
+function ChapterHead({ title, lead, center = false, noWrapLines = false }: { title: string; lead: string | readonly string[]; center?: boolean; noWrapLines?: boolean }) {
   return (
     <Reveal className={`${styles.chapterHead} ${center ? styles.center : ""}`}>
-      <h2>{title}</h2>
+      <h2 className={noWrapLines ? onniStyles.noWrapTitle : undefined}>
+        {title.split("\n").map((line) => <span key={line}>{line}</span>)}
+      </h2>
       {typeof lead === "string" ? <p>{lead}</p> : <div className={styles.chapterLead}>{lead.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
     </Reveal>
   );
 }
 
-const philosophyIcons = [UserIcon, MicrophoneIcon, BookmarkIcon] as const;
+const philosophyIcons = [ClockIcon, MicrophoneIcon, CpuChipIcon] as const;
 
 function PhilosophyIcon({ index }: { index: number }) {
   const Icon = philosophyIcons[index] ?? philosophyIcons[philosophyIcons.length - 1];
@@ -34,8 +36,10 @@ export default function OnniPage() {
         <div className="container">
           <Reveal className={styles.heroHead}>
             <h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1>
-            <p>{c.hero.lead}</p>
-            <p>{c.hero.leadDetail}</p>
+            <p className={onniStyles.heroTagline}>{c.hero.lead}</p>
+            <p className={onniStyles.heroDetail}>
+              {c.hero.leadDetail.split("\n").map((line) => <span key={line}>{line}</span>)}
+            </p>
           </Reveal>
           <Reveal className={styles.heroStatement}>
             <div className={styles.negatives}>
@@ -49,7 +53,7 @@ export default function OnniPage() {
             className={styles.heroFilmVideo}
             src="/images/onni/hero-film.mp4"
             poster="/images/figma/devices-card-onni.png"
-            ariaLabel="ONNI family AI companion film"
+            ariaLabel="ONNI AI care companion film"
           />
         </Reveal>
       </section>
@@ -99,7 +103,7 @@ export default function OnniPage() {
       <section id="chapter-2" className={`${styles.everyday} section`}>
         <div className="container">
           <div className={styles.everydayHead}>
-            <ChapterHead title={c.everyday.title} lead="" />
+            <ChapterHead title={c.everyday.title} lead="" noWrapLines />
             <Reveal><blockquote>{c.everyday.quote}</blockquote><p>{c.everyday.support.map((line) => <span key={line}>{line}</span>)}</p></Reveal>
           </div>
           <ScrollRail className={styles.timeline}>
@@ -135,7 +139,7 @@ export default function OnniPage() {
 
       <section id="chapter-4" className={`${styles.spec} section`}>
         <div className="container">
-          <Reveal><p className="eyebrow">SPEC</p><h2>{c.spec.title}</h2></Reveal>
+          <Reveal><p className="eyebrow">SPEC</p><h2>{c.spec.title}</h2><p>{c.spec.lead}</p></Reveal>
           <div className={styles.specGrid}>
             <Reveal className={styles.specTable}>{c.spec.rows.map(([label, value]) => <div key={label}><span>{label}</span><p>{value}</p></div>)}</Reveal>
             <Reveal className={styles.deviceRender}><Image src="/images/onni/spec-device.png" alt="ONNI family AI companion" fill sizes="(max-width: 767px) 100vw, 40vw" /></Reveal>

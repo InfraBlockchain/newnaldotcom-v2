@@ -47,6 +47,47 @@
   box-shadow: 0 0 14px rgba(239, 177, 125, .7);
 }
 
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroTagline {
+  color: #a94e29 !important;
+  font-size: clamp(1.25rem, 1.8vw, 1.8rem) !important;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.15 !important;
+  margin-top: 28px !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroTagline + p.heroDetail {
+  margin-top: 12px !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail {
+  color: #a94e29 !important;
+  font-size: clamp(1rem, 1.2vw, 1.35rem) !important;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.2 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail span {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail span {
+    white-space: nowrap;
+  }
+}
+
+.noWrapTitle span {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .noWrapTitle span {
+    white-space: nowrap;
+  }
+}
+
 .page > section:nth-of-type(1) :global([class*="negatives"]) p {
   color: #fff4ea !important;
   text-decoration-color: #e98752;
@@ -104,6 +145,13 @@
 .page > section:nth-of-type(3) :global([class*="venn"]) circle {
   fill: rgba(232, 135, 82, .12);
   stroke: #c7663e;
+}
+
+@media (min-width: 768px) {
+  .page > section:nth-of-type(3) :global([class*="vennText1"]),
+  .page > section:nth-of-type(3) :global([class*="vennText2"]) {
+    top: 18%;
+  }
 }
 
 .page > section:nth-of-type(3) :global([class*="venn"]) > div > span,
@@ -552,4 +600,24 @@
 
 .page > section:nth-of-type(2) .personalizedGrid {
   background: transparent !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="concert"]) :global([class*="chapterHead"]) h2 {
+  color: #fffdf2 !important;
+  text-shadow: 0 2px 16px rgba(38, 28, 0, .72);
+}
+
+.page > section:nth-of-type(5) :global([class*="concert"]) :global([class*="chapterHead"]) p {
+  color: rgba(255, 253, 242, .94) !important;
+  text-shadow: 0 1px 10px rgba(38, 28, 0, .7);
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 220, 70, .2), transparent 48%);
+  border-color: rgba(211, 164, 0, .24);
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) circle {
+  fill: rgba(255, 218, 64, .16);
+  stroke: #d3a400;
 }
