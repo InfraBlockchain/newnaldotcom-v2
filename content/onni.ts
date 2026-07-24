@@ -1,5 +1,3 @@
-const onniImage = "/images/figma/devices-card-onni.png";
-
 export const onniContent = {
   hero: {
     eyebrow: "ONNI · FAMILY AI COMPANION",
@@ -48,19 +46,19 @@ export const onniContent = {
       "A calmer moment to wind down together.",
     ],
     tiles: [
-      { time: "MORNING", title: "Start with Curiosity", description: "A story, question, or small plan to help a child begin the day with confidence.", image: onniImage, scene: "ONNI companion for a child's morning routine" },
-      { time: "AFTERNOON", title: "Make Room to Explore", description: "Prompts and play that follow a child's interests without taking over their attention.", image: onniImage, scene: "ONNI companion for afternoon exploration" },
-      { time: "ANY MOMENT", title: "A Familiar Presence", description: "A thoughtful companion for transitions, questions, and the small moments in between.", image: onniImage, scene: "ONNI companion in a family home" },
-      { time: "EVENING", title: "Wind Down Together", description: "A calmer way to reflect on the day, share a story, and settle into the evening.", image: onniImage, scene: "ONNI companion for an evening family routine" },
+      { time: "MORNING", title: "Start with Curiosity", description: "A story, question, or small plan to help a child begin the day with confidence.", image: "/images/onni/everyday-morning.png", scene: "Child starting the day with ONNI" },
+      { time: "AFTERNOON", title: "Make Room to Explore", description: "Prompts and play that follow a child's interests without taking over their attention.", image: "/images/onni/everyday-play.png", scene: "Child playing with ONNI" },
+      { time: "ANY MOMENT", title: "A Familiar Presence", description: "A thoughtful companion for transitions, questions, and the small moments in between.", image: "/images/onni/everyday-music.png", scene: "Child enjoying music and play with ONNI" },
+      { time: "EVENING", title: "Wind Down Together", description: "A calmer way to reflect on the day, share a story, and settle into the evening.", image: "/images/onni/everyday-evening.png", scene: "Child settling down with ONNI at bedtime" },
     ],
   },
   moments: {
     title: "Built for the whole family.",
     lead: "ONNI is not another screen competing for attention. It is a shared companion that can bring children and caregivers into the same moment.",
     cards: [
-      { title: "Family Updates", description: "Stay close to the moments that matter, with the family setting the boundaries and pace.", image: onniImage, scene: "ONNI family update experience" },
-      { title: "Shared Stories", description: "Turn questions, discoveries, and daily rituals into memories you can revisit together.", image: onniImage, scene: "ONNI shared story experience" },
-      { title: "Growing Independence", description: "Give children room to explore with guidance that remains connected to family care.", image: onniImage, scene: "ONNI supporting a child's independence" },
+      { title: "Family Updates", description: "Stay close to the moments that matter, with the family setting the boundaries and pace.", image: "/images/onni/family-updates.png", scene: "Parent checking in with ONNI" },
+      { title: "Shared Stories", description: "Turn questions, discoveries, and daily rituals into memories you can revisit together.", image: "/images/onni/family-stories.png", scene: "Child sharing a story with ONNI" },
+      { title: "Growing Independence", description: "Give children room to explore with guidance that remains connected to family care.", image: "/images/onni/family-independence.png", scene: "Child exploring independently with ONNI nearby" },
     ],
   },
   spec: {
