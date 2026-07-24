@@ -21,7 +21,6 @@ export default function HomePage() {
               </span>
             ))}
           </h1>
-          <p className={styles.gatewayPrompt}>Choose a path to enter.</p>
         </div>
         <nav className={styles.productGrid} aria-label="Explore Newnal products">
           {homeContent.paths.map((path, index) => (
