@@ -399,3 +399,124 @@
     radial-gradient(circle at 50% 40%, #fff3a9, #e2b917 72%);
   border-color: rgba(185, 143, 0, .32);
 }
+
+/* White foundation with yellow light as an accent, not a surface color. */
+.page {
+  --violet: #d3a400;
+  --violet-deep: #8a6a00;
+  --lavender: #f1ce4c;
+  --stage: #fff;
+  --stage-2: #fff;
+  --on-stage: #16130a;
+  --on-stage-soft: #625a35;
+  --bg: #fff;
+  --ink: #16130a;
+  --ink-soft: #625a35;
+  --line: rgba(22, 19, 10, .16);
+  background: #fff;
+  color: #16130a;
+}
+
+.page > section:nth-of-type(1),
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(5),
+.page > section:nth-of-type(6) {
+  background: #fff !important;
+  color: #16130a !important;
+}
+
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 224, 68, .32), transparent 28%),
+    radial-gradient(circle at 18% 88%, rgba(255, 239, 143, .22), transparent 34%),
+    #fff !important;
+}
+
+.page > section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255, 228, 82, .2), transparent 30%),
+    #fff !important;
+}
+
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(255, 229, 92, .18), transparent 30%),
+    #fff !important;
+}
+
+.page > section:nth-of-type(5) {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(255, 222, 57, .22), transparent 32%),
+    #fff !important;
+}
+
+.page > section:nth-of-type(5) > div:first-child,
+.page > section:nth-of-type(5) > div:last-child {
+  background: transparent !important;
+}
+
+.page > section:nth-of-type(1) h1,
+.page > section:nth-of-type(1) h2,
+.page > section:nth-of-type(1) h3,
+.page > section:nth-of-type(2) h2,
+.page > section:nth-of-type(2) h3,
+.page > section:nth-of-type(2) strong,
+.page > section:nth-of-type(3) h2,
+.page > section:nth-of-type(3) h3,
+.page > section:nth-of-type(4) h2,
+.page > section:nth-of-type(4) h3,
+.page > section:nth-of-type(5) h2,
+.page > section:nth-of-type(5) h3,
+.page > section:nth-of-type(6) h2,
+.page > section:nth-of-type(6) h3 {
+  color: #16130a !important;
+}
+
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(3) p,
+.page > section:nth-of-type(4) p,
+.page > section:nth-of-type(5) p,
+.page > section:nth-of-type(6) p {
+  color: #625a35 !important;
+}
+
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #fffef4, #fff0a1 72%) !important;
+  border-color: rgba(211, 164, 0, .28);
+  box-shadow: 0 0 80px rgba(242, 203, 55, .2);
+}
+
+.page > section:nth-of-type(5) :global([class*="concertShade"]) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(80, 62, 0, .18));
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #fff;
+  border-color: rgba(211, 164, 0, .22);
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 235, 117, .72), rgba(255, 255, 255, 0) 70%),
+    #fff;
+  border-color: rgba(211, 164, 0, .24);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span {
+  color: #fff3b0 !important;
+  text-shadow: 0 1px 8px rgba(30, 24, 0, .55);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) h3 {
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(30, 24, 0, .65);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) p {
+  color: rgba(255, 255, 255, .9) !important;
+  text-shadow: 0 1px 8px rgba(30, 24, 0, .65);
+}
