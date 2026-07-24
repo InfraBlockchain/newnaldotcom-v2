@@ -115,7 +115,7 @@ export default function OnniPage() {
 
       <section id="chapter-3" className={styles.moments}>
         <div className={styles.concert}>
-          <Image src="/images/figma/devices-card-onni.png" alt="ONNI companion in a family home" fill sizes="100vw" />
+          <Image src="/images/onni/family-hero.png" alt="Parent staying connected to ONNI at home" fill sizes="100vw" />
           <div className={styles.concertShade} />
           <div className={styles.lights}>{Array.from({ length: 18 }).map((_, index) => <i key={index} />)}</div>
           <ChapterHead title={c.moments.title} lead={c.moments.lead} center />
