@@ -526,3 +526,21 @@
   border: 0 !important;
   box-shadow: none !important;
 }
+
+.page > section:nth-of-type(3) {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 226, 88, .1), transparent 34%),
+    #fffef8 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 12% 82%, rgba(255, 226, 88, .12), transparent 36%),
+    #fffef8 !important;
+}
+
+.page > section:nth-of-type(6) {
+  background:
+    radial-gradient(circle at 80% 28%, rgba(255, 226, 88, .14), transparent 38%),
+    #fffef8 !important;
+}
