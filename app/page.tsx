@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 
 export default function HomePage() {
   return (
-    <main id="main-content" className={styles.home}>
+    <main id="main-content" className={styles.home} data-page="home">
       <section className={styles.homeSection} aria-labelledby="home-title">
         <div className={styles.heading}>
           <h1 id="home-title">
@@ -30,6 +30,9 @@ export default function HomePage() {
               <div className={styles.cardCopy}>
                 <h2>{path.title}</h2>
                 {"subtitle" in path ? <p>{path.subtitle}</p> : null}
+                <p className={styles.cardStatement}>
+                  {path.statement.map((line) => <span key={line}>{line}</span>)}
+                </p>
               </div>
               <span className={styles.cardArrow} aria-hidden="true">↗</span>
             </Link>
