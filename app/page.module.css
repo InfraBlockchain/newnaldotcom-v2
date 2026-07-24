@@ -277,3 +277,52 @@
     display: none;
   }
 }
+
+/* Minimal monochrome home treatment. */
+.homeSection {
+  background: #fafafa;
+}
+
+.accent {
+  color: #09090b;
+}
+
+.card,
+.aios,
+.devices,
+.private {
+  background: #fff;
+  border-color: #dedede;
+}
+
+.card::before,
+.card::after,
+.cardGlow {
+  display: none;
+}
+
+.cardNumber {
+  color: #777;
+}
+
+.card:hover,
+.card:focus-visible {
+  background: #09090b;
+  border-color: #09090b;
+  box-shadow: none;
+  color: #fff;
+  transform: none;
+}
+
+.card:hover .cardNumber,
+.card:focus-visible .cardNumber {
+  color: rgba(255, 255, 255, .58);
+}
+
+.card:hover .cardArrow,
+.card:focus-visible .cardArrow {
+  background: #fff;
+  border-color: #fff;
+  color: #09090b;
+  transform: none;
+}
