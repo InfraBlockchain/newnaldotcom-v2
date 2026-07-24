@@ -31,7 +31,7 @@ export const homeContent = {
     },
     {
       id: "devices",
-      title: "Companion Devices",
+      title: "Devices powered by Newnal",
       subtitle: "Powered by Newnal",
       statement: ["One AIOS. Distinct companions for different lives."],
       cardLabel: [
