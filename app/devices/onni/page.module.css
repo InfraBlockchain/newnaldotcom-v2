@@ -298,3 +298,104 @@
 .page > section:nth-of-type(4) {
   background: #fff6d5 !important;
 }
+
+/* ONNI's unified sunny-yellow palette. */
+.page {
+  --violet: #c99b00;
+  --violet-deep: #8c6b00;
+  --lavender: #f2cd45;
+  --stage: #fff9d8;
+  --stage-2: #fff0a4;
+  --on-stage: #453700;
+  --on-stage-soft: #746118;
+  --bg: #fff9d8;
+  --ink: #453700;
+  --ink-soft: #746118;
+  --line: rgba(105, 80, 0, .2);
+  background: #fff9d8;
+  color: #453700;
+}
+
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 220, 77, .46), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(255, 240, 153, .5), transparent 34%),
+    #fff9d8 !important;
+}
+
+.page > section:nth-of-type(1),
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(5),
+.page > section:nth-of-type(6) {
+  color: #453700 !important;
+}
+
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(5) p {
+  color: #746118 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]),
+.page > section:nth-of-type(2) :global([class*="proofs"]) strong,
+.page > section:nth-of-type(2) :global([class*="proofs"]) span,
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span,
+.page > section:nth-of-type(6) :global([class*="specTable"]) span {
+  color: #9a7800 !important;
+}
+
+.page > section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(255, 225, 92, .36), transparent 30%),
+    #fff4b8 !important;
+}
+
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #fff6be, #e7bd2e 72%) !important;
+  border-color: rgba(201, 155, 0, .38);
+  box-shadow: 0 0 80px rgba(224, 184, 34, .22);
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(6) {
+  background: #fff9d8 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 230, 105, .36), transparent 30%),
+    #fff5bf !important;
+}
+
+.page > section:nth-of-type(5) {
+  background: #fff2a7 !important;
+}
+
+.page > section:nth-of-type(5) > div:first-child {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 216, 62, .42), transparent 46%),
+    #ffed91 !important;
+}
+
+.page > section:nth-of-type(5) > div:last-child {
+  background: #fff2a7 !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #fffbe6;
+  border-color: rgba(185, 143, 0, .28);
+}
+
+.page > section:nth-of-type(6) {
+  background: #fff0a7 !important;
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) {
+  background:
+    radial-gradient(circle at 50% 40%, #fff3a9, #e2b917 72%);
+  border-color: rgba(185, 143, 0, .32);
+}
