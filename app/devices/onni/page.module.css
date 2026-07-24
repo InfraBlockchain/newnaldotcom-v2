@@ -160,3 +160,101 @@
   object-fit: contain;
   padding: 24px;
 }
+
+/* Keep ONNI warm but bright: every stage uses a light surface and dark type. */
+.page {
+  --stage: #fff8f1;
+  --stage-2: #f7dfca;
+  --on-stage: #382217;
+  --on-stage-soft: #775b4c;
+  background: #fff8f1;
+  color: #382217;
+}
+
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 174, 112, .36), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(255, 210, 170, .34), transparent 34%),
+    #fff8f1 !important;
+}
+
+.page > section:nth-of-type(1),
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(5),
+.page > section:nth-of-type(6) {
+  color: #382217 !important;
+}
+
+.page > section:nth-of-type(1) h1,
+.page > section:nth-of-type(1) h2,
+.page > section:nth-of-type(1) h3,
+.page > section:nth-of-type(2) h2,
+.page > section:nth-of-type(2) h3,
+.page > section:nth-of-type(2) strong,
+.page > section:nth-of-type(5) h2,
+.page > section:nth-of-type(5) h3,
+.page > section:nth-of-type(5) strong {
+  color: #382217 !important;
+}
+
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(5) p {
+  color: #775b4c !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]),
+.page > section:nth-of-type(2) :global([class*="proofs"]) strong,
+.page > section:nth-of-type(2) :global([class*="proofs"]) span,
+.page > section:nth-of-type(5) :global([class*="momentCard"]) > span {
+  color: #a94e29 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="negatives"]) p {
+  color: #382217 !important;
+}
+
+.page > section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(255, 190, 135, .28), transparent 30%),
+    #fff1e4 !important;
+}
+
+.page > section:nth-of-type(2) :global([class*="personalized"]),
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #ffe3c4, #f2c59e 72%) !important;
+  border-color: rgba(199, 102, 62, .34);
+  box-shadow: 0 0 80px rgba(222, 112, 61, .14);
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(6) {
+  background: #fff8f1 !important;
+}
+
+.page > section:nth-of-type(5) {
+  background: #fff0e1 !important;
+}
+
+.page > section:nth-of-type(5) > div:first-child {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 179, 119, .36), transparent 46%),
+    #f7dfca !important;
+}
+
+.page > section:nth-of-type(5) > div:last-child {
+  background: #fff0e1 !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="concertShade"]) {
+  background: linear-gradient(180deg, rgba(255, 248, 241, .16), rgba(96, 45, 23, .22));
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #fff8f1;
+  border-color: rgba(199, 102, 62, .24);
+}
