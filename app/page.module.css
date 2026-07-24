@@ -106,6 +106,14 @@
   margin: .65em 0 0;
 }
 
+.cardSubtitle {
+  color: #585860;
+  font-size: clamp(.88rem, 1vw, 1.05rem) !important;
+  letter-spacing: -.025em !important;
+  margin-top: .5em !important;
+  white-space: nowrap;
+}
+
 .cardStatement {
   color: #6c6c74;
   font-family: var(--font-mono), monospace !important;
@@ -143,6 +151,11 @@
 
 .card:hover .cardNumber,
 .card:focus-visible .cardNumber {
+  color: #09090b;
+}
+
+.card:hover .cardSubtitle,
+.card:focus-visible .cardSubtitle {
   color: #09090b;
 }
 
