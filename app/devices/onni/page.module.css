@@ -544,3 +544,8 @@
     radial-gradient(circle at 80% 28%, rgba(255, 226, 88, .14), transparent 38%),
     #fffef8 !important;
 }
+
+.personalized,
+.personalizedGrid {
+  background: transparent !important;
+}
