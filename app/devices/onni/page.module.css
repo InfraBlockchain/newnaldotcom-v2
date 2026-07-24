@@ -285,3 +285,16 @@
   color: rgba(255, 250, 245, .9) !important;
   text-shadow: 0 1px 8px rgba(29, 15, 8, .65);
 }
+
+.page {
+  background: #fff9e6;
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(6) {
+  background: #fff9e6 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background: #fff6d5 !important;
+}
