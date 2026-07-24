@@ -7,7 +7,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: clamp(28px, 5vh, 56px);
+  gap: 80px;
   min-height: calc(100svh - 64px);
   padding: clamp(44px, 7vh, 96px) clamp(24px, 5.6vw, 80px);
 }
