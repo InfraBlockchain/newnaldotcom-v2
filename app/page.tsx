@@ -29,10 +29,6 @@ export default function HomePage() {
               <span className={styles.cardGlow} aria-hidden="true" />
               <div className={styles.cardCopy}>
                 <h2>{path.title}</h2>
-                {"subtitle" in path ? <p>{path.subtitle}</p> : null}
-                <p className={styles.cardStatement}>
-                  {path.statement.map((line) => <span key={line}>{line}</span>)}
-                </p>
               </div>
               <span className={styles.cardArrow} aria-hidden="true">↗</span>
             </Link>
