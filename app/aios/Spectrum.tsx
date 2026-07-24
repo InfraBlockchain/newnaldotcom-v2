@@ -30,6 +30,7 @@ export function Spectrum() {
   // the decorative capsule has to follow the same math or it drifts from the real hit target near 0/100.
   const usableWidth = Math.max(trackWidth - THUMB_WIDTH, 0);
   const handlePx = THUMB_WIDTH / 2 + (value / 100) * usableWidth;
+  const fillWidth = value === 100 ? trackWidth : handlePx;
 
   return (
     <div className={styles.spectrum} role="group" aria-label="Data sovereignty spectrum from Private Phone at 0 to Newnal aios at 100">
@@ -44,7 +45,7 @@ export function Spectrum() {
       </div>
 
       <div className={styles.trackPill}>
-        <div className={styles.trackFill} style={{ width: `${handlePx}px` }} />
+        <div className={styles.trackFill} style={{ width: `${fillWidth}px` }} />
       </div>
 
       <div className={styles.thumbTrack} ref={trackRef}>
