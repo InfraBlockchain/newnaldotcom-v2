@@ -1,0 +1,155 @@
+.page {
+  --violet: #c7663e;
+  --violet-deep: #914125;
+  --lavender: #efb17d;
+  --stage: #241611;
+  --stage-2: #3d2117;
+  --on-stage: #fff4ea;
+  --on-stage-soft: #dec4b3;
+  --bg: #fff7ef;
+  --ink: #321d15;
+  --ink-soft: #775c4d;
+  --line: rgba(70, 35, 22, .18);
+  background: #241611;
+  color: #fff4ea;
+}
+
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(222, 112, 61, .35), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(239, 177, 125, .2), transparent 34%),
+    #241611 !important;
+}
+
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(5) p {
+  color: #dec4b3 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p:first-of-type,
+.page > section:nth-of-type(2) strong,
+.page > section:nth-of-type(2) :global([class*="chapterHead"]) > p:last-child {
+  color: #fff4ea !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]),
+.page > section:nth-of-type(2) :global([class*="chapterHead"]) :global(.eyebrow),
+.page > section:nth-of-type(5) :global([class*="chapterHead"]) :global(.eyebrow),
+.page > section:nth-of-type(6) :global(.eyebrow),
+.page > section:nth-of-type(2) :global([class*="proofs"]) strong,
+.page > section:nth-of-type(2) :global([class*="proofs"]) span {
+  color: #efb17d !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]) i {
+  background: #efb17d;
+  box-shadow: 0 0 14px rgba(239, 177, 125, .7);
+}
+
+.page > section:nth-of-type(1) :global([class*="negatives"]) p {
+  color: #fff4ea !important;
+  text-decoration-color: #e98752;
+}
+
+.page > section:nth-of-type(1) :global([class*="negatives"]) strong span {
+  border-color: #e98752;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroFilm"]) {
+  border-color: rgba(239, 177, 125, .28);
+}
+
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(5) {
+  background: #2a1812 !important;
+  color: #fff4ea;
+}
+
+.page > section:nth-of-type(2) :global([class*="personalized"]),
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #60341f, #1b0f0b 72%) !important;
+  border-color: rgba(239, 177, 125, .34);
+  box-shadow: 0 0 80px rgba(222, 112, 61, .2);
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(6) {
+  background: #fff7ef !important;
+  color: #321d15 !important;
+}
+
+.page > section:nth-of-type(3) h2,
+.page > section:nth-of-type(3) h3,
+.page > section:nth-of-type(4) h2,
+.page > section:nth-of-type(4) h3,
+.page > section:nth-of-type(6) h2,
+.page > section:nth-of-type(6) h3 {
+  color: #321d15 !important;
+}
+
+.page > section:nth-of-type(3) p,
+.page > section:nth-of-type(4) p,
+.page > section:nth-of-type(6) p {
+  color: #775c4d !important;
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) {
+  background: radial-gradient(circle at 50% 50%, rgba(222, 112, 61, .18), transparent 46%);
+  border-color: rgba(199, 102, 62, .22);
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) circle {
+  fill: rgba(232, 135, 82, .12);
+  stroke: #c7663e;
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) > div > span,
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span,
+.page > section:nth-of-type(6) :global([class*="specTable"]) span {
+  color: #914125 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(239, 177, 125, .2), transparent 30%),
+    #fff7ef !important;
+}
+
+.page > section:nth-of-type(4) :global([class*="moment"]) {
+  border-color: rgba(199, 102, 62, .2);
+}
+
+.page > section:nth-of-type(5) > div:first-child {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(222, 112, 61, .34), transparent 46%),
+    #321a12 !important;
+}
+
+.page > section:nth-of-type(5) > div:last-child {
+  background: #241611 !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #3a2117;
+  border-color: rgba(239, 177, 125, .2);
+}
+
+.page > section:nth-of-type(6) {
+  background: #f7e6d7 !important;
+}
+
+.page > section:nth-of-type(6) :global([class*="specTable"]) {
+  border-color: #c7663e;
+}
+
+.page > section:nth-of-type(6) :global([class*="specTable"]) > div {
+  border-color: rgba(70, 35, 22, .18);
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) {
+  background: #e7cbb5;
+  border-color: rgba(199, 102, 62, .28);
+}
