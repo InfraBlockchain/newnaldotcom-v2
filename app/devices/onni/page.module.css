@@ -150,6 +150,13 @@
 }
 
 .page > section:nth-of-type(6) :global([class*="deviceRender"]) {
-  background: #e7cbb5;
+  background:
+    radial-gradient(circle at 50% 40%, #f4c99e, #d78252 72%);
   border-color: rgba(199, 102, 62, .28);
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) img {
+  filter: none;
+  object-fit: contain;
+  padding: 24px;
 }

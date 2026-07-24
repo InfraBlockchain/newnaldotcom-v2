@@ -132,7 +132,7 @@ export default function OnniPage() {
           <Reveal><p className="eyebrow">SPEC</p><h2>{c.spec.title}</h2></Reveal>
           <div className={styles.specGrid}>
             <Reveal className={styles.specTable}>{c.spec.rows.map(([label, value]) => <div key={label}><span>{label}</span><p>{value}</p></div>)}</Reveal>
-            <Reveal className={styles.deviceRender}><Image src="/images/figma/devices-card-onni.png" alt="ONNI family AI companion" fill sizes="(max-width: 767px) 100vw, 40vw" /></Reveal>
+            <Reveal className={styles.deviceRender}><Image src="/images/onni/spec-device.png" alt="ONNI family AI companion" fill sizes="(max-width: 767px) 100vw, 40vw" /></Reveal>
           </div>
         </div>
       </section>
