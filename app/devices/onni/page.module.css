@@ -549,3 +549,7 @@
 .personalizedGrid {
   background: transparent !important;
 }
+
+.page > section:nth-of-type(2) .personalizedGrid {
+  background: transparent !important;
+}
