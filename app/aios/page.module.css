@@ -1197,7 +1197,25 @@
   }
 
   .stepCards {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-padding-inline: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .stepCards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stepCards > div {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+
+  .stepCards article {
+    min-height: 190px;
   }
 
   .reverseLead {
