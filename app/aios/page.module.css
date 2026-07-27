@@ -736,7 +736,7 @@
 }
 
 .vennLeft span {
-  transform: translate(-30px, 22px);
+  transform: translate(-44px, 22px);
 }
 
 .vennRight {
@@ -746,7 +746,7 @@
 }
 
 .vennRight span {
-  transform: translate(30px, 22px);
+  transform: translate(44px, 22px);
 }
 
 .pillarList {
