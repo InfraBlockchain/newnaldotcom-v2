@@ -725,16 +725,28 @@
   top: 0;
 }
 
+.vennTop span {
+  transform: translateY(-38px);
+}
+
 .vennLeft {
   background: var(--fg-accent-soft);
   left: 0;
   top: 130px;
 }
 
+.vennLeft span {
+  transform: translate(-44px, 22px);
+}
+
 .vennRight {
   background: var(--fg-accent-soft);
   left: 130px;
   top: 130px;
+}
+
+.vennRight span {
+  transform: translate(44px, 22px);
 }
 
 .pillarList {
