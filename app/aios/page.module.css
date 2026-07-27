@@ -571,6 +571,25 @@
   text-align: center;
 }
 
+.carouselDots {
+  display: none;
+}
+
+.carouselDot {
+  background: var(--fg-border);
+  border: 0;
+  border-radius: 50%;
+  height: 8px;
+  padding: 0;
+  transition: background-color var(--dur-micro), transform var(--dur-micro);
+  width: 8px;
+}
+
+.carouselDotActive {
+  background: var(--fg-accent);
+  transform: scale(1.25);
+}
+
 .stepIcon {
   color: var(--fg-text);
   height: 24px;
@@ -1216,6 +1235,13 @@
 
   .stepCards article {
     min-height: 190px;
+  }
+
+  .carouselDots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
   }
 
   .reverseLead {

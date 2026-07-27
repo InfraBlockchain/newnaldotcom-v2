@@ -15,6 +15,7 @@ import {
 import { IpPortfolio } from "@/components/shared/IpPortfolio";
 import { Reveal } from "@/components/shared/Reveal";
 import { Spectrum } from "./Spectrum";
+import { StepCarousel } from "./StepCarousel";
 import { aiosContent as c } from "@/content/aios";
 import styles from "./page.module.css";
 
@@ -243,7 +244,7 @@ export default function AiosPage() {
               <SectionTitle>{c.agentPlace.headline2}</SectionTitle>
               <p>{c.agentPlace.beforeLabel}</p>
             </Reveal>
-            <div className={styles.stepCards}>
+            <StepCarousel count={c.agentPlace.before.length}>
               {c.agentPlace.before.map((step, index) => (
                 <Reveal key={step} delay={index * 60}>
                   <article>
@@ -253,7 +254,7 @@ export default function AiosPage() {
                   </article>
                 </Reveal>
               ))}
-            </div>
+            </StepCarousel>
             <Reveal><p className={styles.reverseLead}>{c.agentPlace.afterLabel}</p></Reveal>
             <div className={styles.reverseCards}>
               {c.agentPlace.after.map((step, index) => (
