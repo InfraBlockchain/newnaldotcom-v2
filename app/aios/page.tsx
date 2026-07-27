@@ -14,6 +14,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { IpPortfolio } from "@/components/shared/IpPortfolio";
 import { Reveal } from "@/components/shared/Reveal";
+import { CoovDiagram } from "./CoovDiagram";
 import { Spectrum } from "./Spectrum";
 import { StepCarousel } from "./StepCarousel";
 import { aiosContent as c } from "@/content/aios";
@@ -321,11 +322,7 @@ export default function AiosPage() {
               <SectionTitle>{c.coov.title}</SectionTitle>
               <Paragraphs items={c.coov.paragraphs} />
             </Reveal>
-            <Reveal delay={60}>
-              <div className={styles.imagePlaceholder} aria-label="COOV diagram — coming soon">
-                <span>Diagram coming soon</span>
-              </div>
-            </Reveal>
+            <Reveal delay={60}><CoovDiagram /></Reveal>
           </div>
         </section>
       </div>

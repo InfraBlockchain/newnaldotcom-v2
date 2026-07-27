@@ -694,10 +694,10 @@
 }
 
 .venn {
-  height: 320px;
+  height: 350px;
   margin: 48px auto 0;
   position: relative;
-  width: 320px;
+  width: 350px;
 }
 
 .vennCircle {
@@ -706,34 +706,35 @@
   display: flex;
   font-size: 13px;
   font-weight: 600;
-  height: 200px;
+  height: 220px;
   justify-content: center;
   mix-blend-mode: multiply;
   position: absolute;
   text-align: center;
-  width: 200px;
+  width: 220px;
 }
 
 .vennCircle span {
-  padding: 0 20px;
+  max-width: 130px;
+  padding: 0 12px;
 }
 
 .vennTop {
   background: var(--fg-accent-soft);
-  left: 60px;
+  left: 65px;
   top: 0;
 }
 
 .vennLeft {
   background: var(--fg-accent-soft);
   left: 0;
-  top: 120px;
+  top: 130px;
 }
 
 .vennRight {
   background: var(--fg-accent-soft);
-  left: 120px;
-  top: 120px;
+  left: 130px;
+  top: 130px;
 }
 
 .pillarList {
@@ -859,6 +860,7 @@
 }
 
 .comparisonColumnAccent {
+  background: var(--fg-accent-soft);
   border-color: var(--fg-accent);
 }
 
@@ -906,10 +908,146 @@
   justify-content: center;
 }
 
-.architecture .imagePlaceholder,
-.coov .imagePlaceholder {
+.architecture .imagePlaceholder {
   height: 320px;
   margin-top: 48px;
+}
+
+.coovDiagram {
+  margin-top: 48px;
+}
+
+.coovWordmark {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.coovWordmark span {
+  color: var(--fg-text);
+  font-family: var(--font-syne), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.coovWordmark svg {
+  color: var(--fg-accent);
+  height: 24px;
+  width: 24px;
+}
+
+.coovPanel {
+  background: var(--fg-panel-bg);
+  border: 1px solid var(--fg-border);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.coovBadge {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.coovBadge svg {
+  color: var(--fg-accent);
+  height: 20px;
+  width: 20px;
+}
+
+.coovBadge span {
+  color: var(--fg-text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.coovBadgeCaption {
+  color: var(--fg-muted);
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.coovFlowLabels {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 32px;
+}
+
+.coovFlowLabel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.coovFlowLabel svg {
+  color: var(--fg-accent);
+  height: 16px;
+  margin-bottom: 8px;
+  width: 16px;
+}
+
+.coovFlowLabel span {
+  background: var(--surface);
+  border: 1px solid var(--fg-border);
+  border-radius: 20px;
+  color: var(--fg-text);
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+.coovRoles {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.coovRoleGroup {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  justify-content: center;
+}
+
+.coovRole {
+  background: var(--fg-accent-soft);
+  border-radius: 24px;
+  color: var(--fg-accent);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.coovRoleArrow {
+  color: var(--fg-muted);
+  flex-shrink: 0;
+  height: 16px;
+  width: 16px;
+}
+
+.coovCaptions {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.coovCaptions span {
+  color: var(--fg-muted);
+  font-size: 12px;
+  text-align: center;
 }
 
 .deviceGrid {
@@ -1242,6 +1380,27 @@
     gap: 8px;
     justify-content: center;
     margin-top: 16px;
+  }
+
+  .coovPanel {
+    padding: 28px 20px;
+  }
+
+  .coovFlowLabels,
+  .coovCaptions {
+    grid-template-columns: 1fr;
+  }
+
+  .coovRoles {
+    flex-direction: column;
+  }
+
+  .coovRoleGroup {
+    flex-direction: column;
+  }
+
+  .coovRoleArrow {
+    transform: rotate(90deg);
   }
 
   .reverseLead {
