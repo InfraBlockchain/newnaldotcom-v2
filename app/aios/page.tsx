@@ -5,12 +5,18 @@ import {
   ArrowRightEndOnRectangleIcon,
   ArrowUpRightIcon,
   CheckCircleIcon,
+  CircleStackIcon,
   CreditCardIcon,
   KeyIcon,
+  PencilSquareIcon,
+  Squares2X2Icon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { IpPortfolio } from "@/components/shared/IpPortfolio";
 import { Reveal } from "@/components/shared/Reveal";
+import { CoovDiagram } from "./CoovDiagram";
 import { Spectrum } from "./Spectrum";
+import { StepCarousel } from "./StepCarousel";
 import { aiosContent as c } from "@/content/aios";
 import styles from "./page.module.css";
 
@@ -36,15 +42,6 @@ function SovereigntyText({ text }: { text: string }) {
     if (part === "Newnal AIOS" || part === "Newnal Private Phone") return <span key={`${part}-${index}`}>{part}</span>;
     return part;
   });
-}
-
-function AccentText({ text, phrases }: { text: string; phrases: readonly string[] }) {
-  const escaped = phrases.map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  const pattern = new RegExp(`(${escaped.join("|")})`, "g");
-
-  return text.split(pattern).map((part, index) => phrases.includes(part)
-    ? <span className={styles.accentText} key={`${part}-${index}`}>{part}</span>
-    : part);
 }
 
 function EraTimeline() {
@@ -75,8 +72,23 @@ function Lines({ text }: { text: string }) {
   return text.split("\n").map((line, index) => <span key={`${line}-${index}`}>{line}</span>);
 }
 
+function Paragraphs({ items }: { items: readonly string[] }) {
+  return items.map((paragraph, index) => <p key={`${index}-${paragraph}`}><Lines text={paragraph} /></p>);
+}
+
 function SectionTitle({ children }: { children: ReactNode }) {
   return <h2 className={styles.lowerTitle}>{children}</h2>;
+}
+
+function PillarEyebrow({ children }: { children: ReactNode }) {
+  return <p className={styles.pillarEyebrow}>{children}</p>;
+}
+
+const problemIcons = { silos: Squares2X2Icon, layer: CircleStackIcon, input: PencilSquareIcon, agent: UserGroupIcon } as const;
+
+function ProblemIcon({ icon }: { icon: keyof typeof problemIcons }) {
+  const Icon = problemIcons[icon];
+  return <Icon className={styles.problemCardIcon} aria-hidden="true" />;
 }
 
 export default function AiosPage() {
@@ -118,7 +130,7 @@ export default function AiosPage() {
           <div className={styles.eraGrid}>
             <Reveal className={styles.eraCopy}>
               <p>{c.era.subhead}</p>
-              <p><Lines text={c.era.body} /></p>
+              <Paragraphs items={c.era.paragraphs} />
               <p>{c.era.conclusion}</p>
             </Reveal>
             <Reveal delay={80}><EraTimeline /></Reveal>
@@ -130,49 +142,111 @@ export default function AiosPage() {
         <section className={styles.problem}>
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
-              <SectionTitle>{c.problem.title}</SectionTitle>
-              <p className={styles.shortLead}>{c.problem.intro}</p>
-              <blockquote>{c.problem.callout}</blockquote>
-              <p className={styles.problemConclusion}><Lines text={c.problem.conclusion} /></p>
-              <p>Not, &quot;{c.problem.q1}&quot;</p>
-              <p>But, <span className={styles.accentText}>&quot;{c.problem.q2}&quot;</span></p>
+              <SectionTitle>{c.structuralProblem.title}</SectionTitle>
+              <Paragraphs items={c.structuralProblem.paragraphs} />
             </Reveal>
+            <div className={styles.problemGrid}>
+              {c.structuralProblem.cards.map((card, index) => (
+                <Reveal key={card.title} delay={index * 70}>
+                  <article>
+                    <span className={styles.standardBadge}>{card.number}</span>
+                    <ProblemIcon icon={card.icon} />
+                    <h3>{card.title}</h3>
+                    <p>{card.text}</p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.pillars}>
+          <div className={styles.aiosContainer}>
+            <Reveal className={styles.centeredSection}>
+              <SectionTitle>{c.pillars.title}</SectionTitle>
+              <Paragraphs items={c.pillars.paragraphs} />
+            </Reveal>
+            <Reveal delay={80}>
+              <div className={styles.venn}>
+                <div className={`${styles.vennCircle} ${styles.vennTop}`}><span>{c.pillars.items[0].name}</span></div>
+                <div className={`${styles.vennCircle} ${styles.vennLeft}`}><span>{c.pillars.items[1].name}</span></div>
+                <div className={`${styles.vennCircle} ${styles.vennRight}`}><span>{c.pillars.items[2].name}</span></div>
+              </div>
+            </Reveal>
+            <div className={styles.pillarList}>
+              {c.pillars.items.map((item, index) => (
+                <Reveal key={item.name} delay={index * 70}>
+                  <article>
+                    <h3>{item.name}</h3>
+                    <Paragraphs items={item.paragraphs} />
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className={styles.centeredSection}><p className={styles.problemConclusion}>{c.pillars.closing}</p></Reveal>
           </div>
         </section>
 
         <section className={styles.myAi}>
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
-              <SectionTitle>{c.myAi.title}</SectionTitle>
-              <p>{c.myAi.intro}</p>
-              <p className={styles.accentText}>{c.myAi.question}</p>
-              <p>{c.myAi.bridge}</p>
+              <PillarEyebrow>{c.myData.headline1}</PillarEyebrow>
+              <SectionTitle>{c.myData.headline2}</SectionTitle>
+              <Paragraphs items={c.myData.paragraphs} />
             </Reveal>
-            <div className={styles.principles}>
-              {c.myAi.principles.map((principle, index) => (
-                <Reveal key={principle} delay={index * 80}>
+            <Reveal delay={60}>
+              <div className={styles.formula}>
+                <span className={styles.formulaBlock}>{c.myData.formula.left}</span>
+                <span className={styles.formulaOp}>+</span>
+                <span className={styles.formulaBlock}>{c.myData.formula.plus}</span>
+                <span className={styles.formulaOp}>→</span>
+                <span className={`${styles.formulaBlock} ${styles.formulaResult}`}>{c.myData.formula.result}</span>
+              </div>
+            </Reveal>
+            <Reveal><p className={styles.reverseLead}>{c.myData.standardsLabel}</p></Reveal>
+            <div className={styles.standardsRow}>
+              {c.myData.standards.map((standard, index) => (
+                <Reveal key={standard.name} delay={index * 70}>
                   <article>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <h3>{principle}</h3>
+                    <span className={styles.standardBadge}>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{standard.name}</h3>
+                    <p>{standard.text}</p>
                   </article>
                 </Reveal>
               ))}
             </div>
-            <Reveal className={styles.myAiClosing}>
-              <p><AccentText text={c.myAi.conclusion} phrases={["My AI"]} /></p>
-              <p><AccentText text={c.myAi.final} phrases={["your own AI"]} /></p>
+          </div>
+        </section>
+
+        <section className={styles.aiInterface}>
+          <div className={styles.aiosContainer}>
+            <Reveal className={styles.centeredSection}>
+              <PillarEyebrow>{c.aiInterface.headline1}</PillarEyebrow>
+              <SectionTitle>{c.aiInterface.headline2}</SectionTitle>
+              <Paragraphs items={c.aiInterface.paragraphs} />
             </Reveal>
+            <div className={styles.comparisonGrid}>
+              <div className={styles.comparisonColumn}>
+                <h3>{c.aiInterface.before.label}</h3>
+                <ul>{c.aiInterface.before.items.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+              <div className={`${styles.comparisonColumn} ${styles.comparisonColumnAccent}`}>
+                <h3>{c.aiInterface.after.label}</h3>
+                <ul>{c.aiInterface.after.items.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className={styles.agent}>
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
-              <SectionTitle>{c.agent.title}</SectionTitle>
-              <p>{c.agent.beforeLabel}</p>
+              <PillarEyebrow>{c.agentPlace.headline1}</PillarEyebrow>
+              <SectionTitle>{c.agentPlace.headline2}</SectionTitle>
+              <p>{c.agentPlace.beforeLabel}</p>
             </Reveal>
-            <div className={styles.stepCards}>
-              {c.agent.before.map((step, index) => (
+            <StepCarousel count={c.agentPlace.before.length}>
+              {c.agentPlace.before.map((step, index) => (
                 <Reveal key={step} delay={index * 60}>
                   <article>
                     <span>{String(index + 1).padStart(2, "0")}</span>
@@ -181,31 +255,98 @@ export default function AiosPage() {
                   </article>
                 </Reveal>
               ))}
-            </div>
-            <Reveal><p className={styles.reverseLead}><AccentText text={c.agent.afterLabel} phrases={["Reverse Login"]} /></p></Reveal>
+            </StepCarousel>
+            <Reveal><p className={styles.reverseLead}>{c.agentPlace.afterLabel}</p></Reveal>
             <div className={styles.reverseCards}>
-              {c.agent.after.map((step, index) => (
+              {c.agentPlace.after.map((step, index) => (
                 <Reveal key={step} delay={index * 80}>
                   <article>
                     <span>{String(index + 1).padStart(2, "0")}</span>
-                    <p>{step}</p>
+                    <p><Lines text={step} /></p>
                   </article>
                 </Reveal>
               ))}
             </div>
             <Reveal className={styles.agentClosing}>
-              <p><AccentText text={c.agent.closing} phrases={["Agent Place"]} /></p>
-              <blockquote>{c.agent.callout}</blockquote>
+              <div className={styles.comparisonGrid}>
+                <div className={styles.comparisonColumn}>
+                  <h3>{c.agentPlace.comparison.before.label}</h3>
+                  <ul>{c.agentPlace.comparison.before.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+                <div className={`${styles.comparisonColumn} ${styles.comparisonColumnAccent}`}>
+                  <h3>{c.agentPlace.comparison.after.label}</h3>
+                  <ul>{c.agentPlace.comparison.after.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+              </div>
             </Reveal>
+          </div>
+        </section>
+
+        <section className={styles.architecture}>
+          <div className={styles.aiosContainer}>
+            <Reveal className={styles.centeredSection}>
+              <SectionTitle>{c.architecture.title}</SectionTitle>
+              <Paragraphs items={c.architecture.paragraphs} />
+            </Reveal>
+            <Reveal delay={60}>
+              <div className={styles.imagePlaceholder} aria-label="Agent Place Architecture diagram — coming soon">
+                <span>Diagram coming soon</span>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className={styles.multiDevice}>
+          <div className={styles.aiosContainer}>
+            <Reveal className={styles.centeredSection}>
+              <SectionTitle>{c.multiDevice.title}</SectionTitle>
+              <Paragraphs items={c.multiDevice.paragraphs} />
+            </Reveal>
+            <div className={styles.deviceGrid}>
+              {c.multiDevice.devices.map((device, index) => (
+                <Reveal key={device.name} delay={index * 50}>
+                  <article>
+                    <div className={styles.imagePlaceholder} aria-label={`${device.name} image — coming soon`} />
+                    <h3>{device.name}</h3>
+                    <p>{device.text}</p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.coov}>
+          <div className={styles.aiosContainer}>
+            <Reveal className={styles.centeredSection}>
+              <SectionTitle>{c.coov.title}</SectionTitle>
+              <Paragraphs items={c.coov.paragraphs} />
+            </Reveal>
+            <Reveal delay={60}><CoovDiagram /></Reveal>
           </div>
         </section>
       </div>
 
       <section className={`${styles.founder} section`}>
-        <div className="container"><Reveal className={styles.founderInner}><h2>{c.founder.title}</h2><p className={styles.founderSubtitle}>{c.founder.subtitle}</p><div className={`${styles.ipDownloads} ${styles.founderLinks}`}>{c.founder.links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noopener">{link.label} <ArrowUpRightIcon aria-hidden="true" /></a>)}</div></Reveal></div>
+        <div className="container">
+          <Reveal className={styles.founderInner}>
+            <h2>{c.founder.title}</h2>
+            <div className={styles.founderSubtitle}><Paragraphs items={c.founder.paragraphs} /></div>
+            <div className={`${styles.ipDownloads} ${styles.founderLinks}`}>
+              {c.founder.links.map((link) => {
+                const isAnchor = link.href.startsWith("#");
+                return (
+                  <a key={link.href} href={link.href} {...(!isAnchor && { target: "_blank", rel: "noopener" })}>
+                    {link.label} <ArrowUpRightIcon aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      <section className={`${styles.ip} section`}>
+      <section className={`${styles.ip} section`} id="ip-whitepapers">
         <div className="container"><Reveal><p className="eyebrow">EVIDENCE</p><h2>{c.ip.title}</h2><div className={styles.ipDownloads}>{c.ip.documents.map((document) => <a key={document.href} href={document.href} target="_blank" rel="noopener">{document.label} <ArrowUpRightIcon aria-hidden="true" /></a>)}</div></Reveal><Reveal><IpPortfolio tiles={c.ip.tiles} whitepaperLinks={whitepaperLinks} /></Reveal></div>
       </section>
     </main>

@@ -12,8 +12,13 @@
 .sovereignty,
 .era,
 .problem,
+.pillars,
 .myAi,
-.agent {
+.aiInterface,
+.agent,
+.architecture,
+.multiDevice,
+.coov {
   color: var(--fg-text);
   font-family: var(--font-inter), sans-serif;
 }
@@ -48,7 +53,12 @@
 .hero h1 span,
 .hero p span,
 .eraCopy p span,
-.problemConclusion span {
+.problemConclusion span,
+.centeredSection p span,
+.stepCards p span,
+.reverseCards p span,
+.pillarList p span,
+.founderSubtitle p span {
   display: block;
 }
 
@@ -431,12 +441,17 @@
   padding-top: 104px;
 }
 
+.pillars,
 .myAi,
-.agent {
+.aiInterface,
+.agent,
+.architecture,
+.multiDevice,
+.coov {
   padding-top: 96px;
 }
 
-.agent {
+.coov {
   padding-bottom: 120px;
 }
 
@@ -452,7 +467,7 @@
 }
 
 .centeredSection p + p {
-  margin-top: 2px;
+  margin-top: 20px;
 }
 
 .lowerTitle {
@@ -533,7 +548,7 @@
 .stepCards {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 40px;
 }
 
@@ -554,6 +569,25 @@
   justify-content: flex-start;
   padding: 24px 20px;
   text-align: center;
+}
+
+.carouselDots {
+  display: none;
+}
+
+.carouselDot {
+  background: var(--fg-border);
+  border: 0;
+  border-radius: 50%;
+  height: 8px;
+  padding: 0;
+  transition: background-color var(--dur-micro), transform var(--dur-micro);
+  width: 8px;
+}
+
+.carouselDotActive {
+  background: var(--fg-accent);
+  transform: scale(1.25);
 }
 
 .stepIcon {
@@ -582,7 +616,7 @@
 .reverseCards {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 28px;
 }
 
@@ -601,6 +635,467 @@
 
 .agentClosing > p {
   margin-bottom: 32px;
+}
+
+.problemGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 40px;
+}
+
+.problemGrid > div {
+  height: 100%;
+}
+
+.problemGrid article {
+  background: var(--fg-card-bg);
+  border: 1px solid var(--fg-card-border);
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.problemGrid .standardBadge {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.problemCardIcon {
+  color: var(--fg-accent);
+  height: 32px;
+  margin: 0 auto;
+  width: 32px;
+}
+
+.problemGrid h3 {
+  color: var(--fg-text);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 20px 0 0;
+}
+
+.problemGrid p {
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 12px 0 0;
+}
+
+.pillarEyebrow {
+  color: var(--fg-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  margin: 0 0 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.venn {
+  height: 350px;
+  margin: 48px auto 0;
+  position: relative;
+  width: 350px;
+}
+
+.vennCircle {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  height: 220px;
+  justify-content: center;
+  mix-blend-mode: multiply;
+  position: absolute;
+  text-align: center;
+  width: 220px;
+}
+
+.vennCircle span {
+  max-width: 130px;
+  padding: 0 12px;
+}
+
+.vennTop {
+  background: var(--fg-accent-soft);
+  left: 65px;
+  top: 0;
+}
+
+.vennLeft {
+  background: var(--fg-accent-soft);
+  left: 0;
+  top: 130px;
+}
+
+.vennRight {
+  background: var(--fg-accent-soft);
+  left: 130px;
+  top: 130px;
+}
+
+.pillarList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 48px;
+}
+
+.pillarList > div {
+  height: 100%;
+}
+
+.pillarList article {
+  background: var(--fg-card-bg);
+  border: 1px solid var(--fg-card-border);
+  border-top: 3px solid var(--fg-accent);
+  height: 100%;
+  padding: 32px 28px;
+}
+
+.pillarList h3 {
+  color: var(--fg-text);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.pillarList p {
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 14px 0 0;
+}
+
+.formula {
+  align-items: stretch;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.formulaBlock {
+  background: var(--fg-card-bg);
+  border: 1px solid var(--fg-card-border);
+  color: var(--fg-text);
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 260px;
+  padding: 24px 20px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.formulaResult {
+  background: var(--fg-accent-soft);
+  border-color: var(--fg-accent);
+  color: var(--fg-accent);
+  font-weight: 600;
+}
+
+.formulaOp {
+  align-self: center;
+  color: var(--fg-muted);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.standardsRow {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.standardsRow > div {
+  height: 100%;
+}
+
+.standardsRow article {
+  background: var(--fg-card-bg);
+  border: 1px solid var(--fg-card-border);
+  height: 100%;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.standardBadge {
+  color: var(--fg-accent);
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.standardsRow h3 {
+  color: var(--fg-text);
+  font-size: 17px;
+  font-weight: 500;
+  margin: 14px 0 0;
+}
+
+.standardsRow p {
+  color: var(--fg-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px 0 0;
+}
+
+.comparisonGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 40px;
+}
+
+.comparisonColumn {
+  background: var(--fg-card-bg);
+  border: 1px solid var(--fg-card-border);
+  padding: 32px 36px;
+}
+
+.comparisonColumnAccent {
+  background: var(--fg-accent-soft);
+  border-color: var(--fg-accent);
+}
+
+.comparisonColumn h3 {
+  color: var(--fg-text);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.comparisonColumnAccent h3 {
+  color: var(--fg-accent);
+}
+
+.comparisonColumn ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comparisonColumn li {
+  border-top: 1px solid var(--fg-border);
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.comparisonColumn li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.imagePlaceholder {
+  align-items: center;
+  background: var(--fg-panel-bg);
+  border: 1px dashed var(--fg-border);
+  color: var(--fg-muted);
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+}
+
+.architecture .imagePlaceholder {
+  height: 320px;
+  margin-top: 48px;
+}
+
+.coovDiagram {
+  margin-top: 48px;
+}
+
+.coovWordmark {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.coovWordmark span {
+  color: var(--fg-text);
+  font-family: var(--font-syne), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.coovWordmark svg {
+  color: var(--fg-accent);
+  height: 24px;
+  width: 24px;
+}
+
+.coovPanel {
+  background: var(--fg-panel-bg);
+  border: 1px solid var(--fg-border);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.coovBadge {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.coovBadge svg {
+  color: var(--fg-accent);
+  height: 20px;
+  width: 20px;
+}
+
+.coovBadge span {
+  color: var(--fg-text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.coovBadgeCaption {
+  color: var(--fg-muted);
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.coovFlowLabels {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 8px;
+}
+
+.coovFlowLabel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.coovConnector {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 44px;
+}
+
+.coovConnectorLine {
+  background: var(--fg-accent);
+  flex: 1;
+  width: 1px;
+}
+
+.coovConnector svg {
+  color: var(--fg-accent);
+  flex-shrink: 0;
+  height: 14px;
+  margin-top: -1px;
+  width: 14px;
+}
+
+.coovFlowPill {
+  background: var(--surface);
+  border: 1px solid var(--fg-border);
+  border-radius: 20px;
+  color: var(--fg-text);
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+.coovRoles {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.coovRoleGroup {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  justify-content: center;
+}
+
+.coovRole {
+  background: var(--fg-accent-soft);
+  border-radius: 24px;
+  color: var(--fg-accent);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.coovRoleArrow {
+  color: var(--fg-muted);
+  flex-shrink: 0;
+  height: 16px;
+  width: 16px;
+}
+
+.coovCaptions {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.coovCaptions span {
+  color: var(--fg-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.deviceGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 48px;
+}
+
+.deviceGrid > div {
+  height: 100%;
+}
+
+.deviceGrid article {
+  height: 100%;
+}
+
+.deviceGrid .imagePlaceholder {
+  aspect-ratio: 4 / 3;
+  margin: 0;
+}
+
+.deviceGrid h3 {
+  color: var(--fg-text);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 20px 0 0;
+}
+
+.deviceGrid p {
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0 0;
 }
 
 .founder {
@@ -634,6 +1129,14 @@
   line-height: 1.6;
   margin: 16px auto 0;
   max-width: 560px;
+}
+
+.founderSubtitle p {
+  margin: 0;
+}
+
+.founderSubtitle p + p {
+  margin-top: 12px;
 }
 
 .founderLinks {
@@ -735,17 +1238,30 @@
 
   .sovereigntyCards,
   .principles,
-  .reverseCards {
+  .reverseCards,
+  .problemGrid,
+  .pillarList,
+  .comparisonGrid {
     grid-template-columns: 1fr;
   }
 
-  .stepCards {
+  .stepCards,
+  .standardsRow,
+  .deviceGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .principles article,
   .reverseCards article {
     min-height: 0;
+  }
+
+  .formula {
+    flex-direction: column;
+  }
+
+  .formulaBlock {
+    max-width: none;
   }
 }
 
@@ -832,12 +1348,17 @@
     padding-top: 80px;
   }
 
+  .pillars,
   .myAi,
-  .agent {
+  .aiInterface,
+  .agent,
+  .architecture,
+  .multiDevice,
+  .coov {
     padding-top: 80px;
   }
 
-  .agent {
+  .coov {
     padding-bottom: 96px;
   }
 
@@ -847,7 +1368,53 @@
   }
 
   .stepCards {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-padding-inline: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .stepCards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stepCards > div {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+
+  .stepCards article {
+    min-height: 190px;
+  }
+
+  .carouselDots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .coovPanel {
+    padding: 28px 20px;
+  }
+
+  .coovFlowLabels,
+  .coovCaptions {
     grid-template-columns: 1fr;
+  }
+
+  .coovRoles {
+    flex-direction: column;
+  }
+
+  .coovRoleGroup {
+    flex-direction: column;
+  }
+
+  .coovRoleArrow {
+    transform: rotate(90deg);
   }
 
   .reverseLead {
