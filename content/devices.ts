@@ -16,7 +16,7 @@ export const devicesContent = {
       name: "YALI",
       heading: "K-POP Artist AI Companion, YALI",
       body: "It brings the artist you love into your everyday moments through personalized greetings, recommendations, memories, and experiences.",
-      tagline: "A daily companion built around the artist you love",
+      tagline: "Daily interactions built around the artist you love",
       image: "/images/figma/devices-card-yali.png",
       href: "/devices/yali",
     },
