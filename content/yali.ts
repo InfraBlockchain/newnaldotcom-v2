@@ -1,7 +1,7 @@
 export const yaliContent = {
   hero: {
     eyebrow: "YALI · AI ARTIST COMPANION", title: "Your artist living in your life.", emphasis: "living in your life.",
-    lead: "YALI is your AI Artist Companion, powered by Newnal AIOS.",
+    lead: "YALI is your dedicated AI Artist, powered by Newnal aios.",
     leadDetail: "It brings the artist you love into your everyday moments through personalized greetings, conversations, recommendations, memories, and experiences.",
     negatives: ["Not another fan app.", "Not another notification.", "Not a chatbot."], closing: "Daily interactions built around the artist you love.",
   },
@@ -13,7 +13,7 @@ export const yaliContent = {
   philosophy:{
     eyebrow:"· FOR FANS, NOT FOLLOWERS ·",
     title:"Made for fans, not followers.",
-    lead:"A companion you keep close, not an app you forget to open. Carry the artist's world with you.",
+    lead:"YALI is designed to feel personal, collectible, and alive — interactions that flow into your life, not an app you forget to open.",
     circles:[
       ["Personal Device",["daily moments","mood","routine","preferences"]],
       ["Artist Universe",["voice","content","style","world"]],
