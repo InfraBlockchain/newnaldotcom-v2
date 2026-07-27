@@ -1,12 +1,12 @@
 export const onniContent = {
   hero: {
     eyebrow: "ONNI · AI CARE COMPANION",
-    title: "AI Care Companion for Little Ones",
+    title: "AI Care for Little Ones",
     emphasis: "Little Ones",
     lead: "Care that grows with your baby",
-    leadDetail: "ONNI is an AI care companion for babies and young children\n— designed to support safety, growth, sleep, feeding, and everyday moments of connection.",
+    leadDetail: "ONNI is AI care for babies and young children\n— designed to support safety, growth, sleep, feeding, and everyday moments of connection.",
     negatives: ["Not just a baby monitor.", "Not just a night light.", "Not just a sound machine."],
-    closing: "A companion that helps parents understand, comfort, and remember the earliest days of life.",
+    closing: "An AI device that helps parents understand, comfort, and remember the earliest days of life.",
   },
   personalized: {
     title: "Support that stays with your baby’s rhythm",
