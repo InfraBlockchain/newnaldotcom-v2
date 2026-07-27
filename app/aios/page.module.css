@@ -702,37 +702,53 @@
 
 .vennCircle {
   align-items: center;
-  border-radius: 50%;
   display: flex;
   font-size: 13px;
   font-weight: 600;
   height: 220px;
   justify-content: center;
-  mix-blend-mode: multiply;
   position: absolute;
   text-align: center;
   width: 220px;
 }
 
+.vennCircle::before {
+  border-radius: 50%;
+  content: "";
+  inset: 0;
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
 .vennCircle span {
   max-width: 130px;
   padding: 0 12px;
+  position: relative;
+}
+
+.vennTop::before {
+  background: var(--fg-accent-soft);
+}
+
+.vennLeft::before {
+  background: var(--fg-accent-soft);
+}
+
+.vennRight::before {
+  background: var(--fg-accent-soft);
 }
 
 .vennTop {
-  background: var(--fg-accent-soft);
   left: 65px;
   top: 0;
 }
 
 .vennLeft {
-  background: var(--fg-accent-soft);
   left: 0;
   top: 130px;
 }
 
 .vennRight {
-  background: var(--fg-accent-soft);
   left: 130px;
   top: 130px;
 }
