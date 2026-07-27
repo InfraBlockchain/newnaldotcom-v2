@@ -278,7 +278,7 @@
 
   .card {
     min-height: 170px;
-    padding: 22px 70px 22px 0;
+    padding: 22px 20px;
   }
 
   .card + .card {
@@ -296,6 +296,6 @@
 
   .cardArrow {
     bottom: 22px;
-    right: 0;
+    right: 20px;
   }
 }
