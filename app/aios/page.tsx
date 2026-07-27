@@ -70,6 +70,10 @@ function Lines({ text }: { text: string }) {
   return text.split("\n").map((line, index) => <span key={`${line}-${index}`}>{line}</span>);
 }
 
+function Paragraphs({ items }: { items: readonly string[] }) {
+  return items.map((paragraph, index) => <p key={`${index}-${paragraph}`}><Lines text={paragraph} /></p>);
+}
+
 function SectionTitle({ children }: { children: ReactNode }) {
   return <h2 className={styles.lowerTitle}>{children}</h2>;
 }
@@ -124,7 +128,7 @@ export default function AiosPage() {
           <div className={styles.eraGrid}>
             <Reveal className={styles.eraCopy}>
               <p>{c.era.subhead}</p>
-              <p><Lines text={c.era.body} /></p>
+              <Paragraphs items={c.era.paragraphs} />
               <p>{c.era.conclusion}</p>
             </Reveal>
             <Reveal delay={80}><EraTimeline /></Reveal>
@@ -137,14 +141,13 @@ export default function AiosPage() {
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
               <SectionTitle>{c.structuralProblem.title}</SectionTitle>
-              <p className={styles.shortLead}><Lines text={c.structuralProblem.intro} /></p>
-              <p><Lines text={c.structuralProblem.body} /></p>
-              <p className={styles.problemConclusion}>{c.structuralProblem.cardsLabel}</p>
+              <Paragraphs items={c.structuralProblem.paragraphs} />
             </Reveal>
             <div className={styles.problemGrid}>
               {c.structuralProblem.cards.map((card, index) => (
                 <Reveal key={card.title} delay={index * 70}>
                   <article>
+                    <span className={styles.standardBadge}>{card.number}</span>
                     <ProblemIcon icon={card.icon} />
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>
@@ -159,7 +162,7 @@ export default function AiosPage() {
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
               <SectionTitle>{c.pillars.title}</SectionTitle>
-              <p>{c.pillars.intro}</p>
+              <Paragraphs items={c.pillars.paragraphs} />
             </Reveal>
             <Reveal delay={80}>
               <div className={styles.venn}>
@@ -173,7 +176,7 @@ export default function AiosPage() {
                 <Reveal key={item.name} delay={index * 70}>
                   <article>
                     <h3>{item.name}</h3>
-                    <p>{item.text}</p>
+                    <Paragraphs items={item.paragraphs} />
                   </article>
                 </Reveal>
               ))}
@@ -187,8 +190,7 @@ export default function AiosPage() {
             <Reveal className={styles.centeredSection}>
               <PillarEyebrow>{c.myData.headline1}</PillarEyebrow>
               <SectionTitle>{c.myData.headline2}</SectionTitle>
-              <p><Lines text={c.myData.intro} /></p>
-              <p className={styles.shortLead}><Lines text={c.myData.bridge} /></p>
+              <Paragraphs items={c.myData.paragraphs} />
             </Reveal>
             <Reveal delay={60}>
               <div className={styles.formula}>
@@ -219,8 +221,7 @@ export default function AiosPage() {
             <Reveal className={styles.centeredSection}>
               <PillarEyebrow>{c.aiInterface.headline1}</PillarEyebrow>
               <SectionTitle>{c.aiInterface.headline2}</SectionTitle>
-              {c.aiInterface.intro.map((line) => <p key={line}>{line}</p>)}
-              <p className={styles.problemConclusion}><Lines text={c.aiInterface.bridge} /></p>
+              <Paragraphs items={c.aiInterface.paragraphs} />
             </Reveal>
             <div className={styles.comparisonGrid}>
               <div className={styles.comparisonColumn}>
@@ -259,13 +260,12 @@ export default function AiosPage() {
                 <Reveal key={step} delay={index * 80}>
                   <article>
                     <span>{String(index + 1).padStart(2, "0")}</span>
-                    <p>{step}</p>
+                    <p><Lines text={step} /></p>
                   </article>
                 </Reveal>
               ))}
             </div>
             <Reveal className={styles.agentClosing}>
-              <p className={styles.reverseLead}>{c.agentPlace.comparisonLabel}</p>
               <div className={styles.comparisonGrid}>
                 <div className={styles.comparisonColumn}>
                   <h3>{c.agentPlace.comparison.before.label}</h3>
@@ -284,7 +284,7 @@ export default function AiosPage() {
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
               <SectionTitle>{c.architecture.title}</SectionTitle>
-              <p><Lines text={c.architecture.text} /></p>
+              <Paragraphs items={c.architecture.paragraphs} />
             </Reveal>
             <Reveal delay={60}>
               <div className={styles.imagePlaceholder} aria-label="Agent Place Architecture diagram — coming soon">
@@ -298,7 +298,7 @@ export default function AiosPage() {
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
               <SectionTitle>{c.multiDevice.title}</SectionTitle>
-              <p><Lines text={c.multiDevice.text} /></p>
+              <Paragraphs items={c.multiDevice.paragraphs} />
             </Reveal>
             <div className={styles.deviceGrid}>
               {c.multiDevice.devices.map((device, index) => (
@@ -318,7 +318,7 @@ export default function AiosPage() {
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
               <SectionTitle>{c.coov.title}</SectionTitle>
-              <p><Lines text={c.coov.text} /></p>
+              <Paragraphs items={c.coov.paragraphs} />
             </Reveal>
             <Reveal delay={60}>
               <div className={styles.imagePlaceholder} aria-label="COOV diagram — coming soon">
@@ -333,7 +333,7 @@ export default function AiosPage() {
         <div className="container">
           <Reveal className={styles.founderInner}>
             <h2>{c.founder.title}</h2>
-            <p className={styles.founderSubtitle}>{c.founder.subtitle}</p>
+            <div className={styles.founderSubtitle}><Paragraphs items={c.founder.paragraphs} /></div>
             <div className={`${styles.ipDownloads} ${styles.founderLinks}`}>
               {c.founder.links.map((link) => {
                 const isAnchor = link.href.startsWith("#");

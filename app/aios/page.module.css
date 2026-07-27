@@ -54,7 +54,11 @@
 .hero p span,
 .eraCopy p span,
 .problemConclusion span,
-.centeredSection p span {
+.centeredSection p span,
+.stepCards p span,
+.reverseCards p span,
+.pillarList p span,
+.founderSubtitle p span {
   display: block;
 }
 
@@ -463,7 +467,7 @@
 }
 
 .centeredSection p + p {
-  margin-top: 2px;
+  margin-top: 20px;
 }
 
 .lowerTitle {
@@ -544,7 +548,7 @@
 .stepCards {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 40px;
 }
 
@@ -593,7 +597,7 @@
 .reverseCards {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 28px;
 }
 
@@ -631,6 +635,11 @@
   height: 100%;
   padding: 40px;
   text-align: center;
+}
+
+.problemGrid .standardBadge {
+  display: block;
+  margin-bottom: 12px;
 }
 
 .problemCardIcon {
@@ -949,6 +958,14 @@
   line-height: 1.6;
   margin: 16px auto 0;
   max-width: 560px;
+}
+
+.founderSubtitle p {
+  margin: 0;
+}
+
+.founderSubtitle p + p {
+  margin-top: 12px;
 }
 
 .founderLinks {
