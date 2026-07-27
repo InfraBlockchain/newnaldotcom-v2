@@ -37,6 +37,10 @@ export default function HomePage() {
             </Link>
           ))}
         </nav>
+        <div className={styles.homeFooter}>
+          <Link className={styles.homeFooterLogo} href="/">Newnal</Link>
+          <p className={styles.homeFooterCopyright}>© 2026 Newnal. All rights reserved.</p>
+        </div>
       </section>
     </main>
   );
