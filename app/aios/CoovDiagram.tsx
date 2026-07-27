@@ -27,8 +27,11 @@ export function CoovDiagram() {
         <div className={styles.coovFlowLabels}>
           {flows.map((flow) => (
             <div className={styles.coovFlowLabel} key={flow.label}>
-              <ArrowUpIcon aria-hidden="true" />
-              <span>{flow.label}</span>
+              <span className={styles.coovConnector} aria-hidden="true">
+                <span className={styles.coovConnectorLine} />
+                <ArrowUpIcon />
+              </span>
+              <span className={styles.coovFlowPill}>{flow.label}</span>
             </div>
           ))}
         </div>

@@ -977,7 +977,7 @@
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 32px;
+  margin-top: 8px;
 }
 
 .coovFlowLabel {
@@ -987,14 +987,28 @@
   text-align: center;
 }
 
-.coovFlowLabel svg {
-  color: var(--fg-accent);
-  height: 16px;
-  margin-bottom: 8px;
-  width: 16px;
+.coovConnector {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 44px;
 }
 
-.coovFlowLabel span {
+.coovConnectorLine {
+  background: var(--fg-accent);
+  flex: 1;
+  width: 1px;
+}
+
+.coovConnector svg {
+  color: var(--fg-accent);
+  flex-shrink: 0;
+  height: 14px;
+  margin-top: -1px;
+  width: 14px;
+}
+
+.coovFlowPill {
   background: var(--surface);
   border: 1px solid var(--fg-border);
   border-radius: 20px;
