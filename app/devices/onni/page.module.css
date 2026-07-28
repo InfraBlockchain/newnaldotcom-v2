@@ -72,7 +72,13 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
+  .page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail {
+    margin-inline: auto !important;
+    max-width: none;
+    width: max-content;
+  }
+
   .page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail span {
     white-space: nowrap;
   }

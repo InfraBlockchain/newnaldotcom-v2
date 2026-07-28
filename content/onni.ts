@@ -51,7 +51,7 @@ export const onniContent = {
       { time: "VISUAL DEVELOPMENT", title: "Visual Development", description: "High-contrast black-and-white patterns for early focus and visual engagement.", image: "/images/onni/everyday-play.png", scene: "Baby engaging with visual development content" },
       { time: "EMOTIONAL DEVELOPMENT", title: "Emotional Development", description: "Songs, lullabies, and familiar voices that help create comfort and connection.", image: "/images/onni/everyday-music.png", scene: "Baby soothed by familiar sounds" },
       { time: "MULTILINGUAL EXPOSURE", title: "Multilingual Exposure", description: "Parent AI can speak, sing, and read in multiple languages — introducing language naturally through everyday moments.", image: "/images/onni/everyday-evening.png", scene: "ONNI sharing multilingual content with a baby" },
-      { time: "MEMORY ALBUM", title: "Memory Album", description: "ONNI can help capture and organize precious milestones, from the first rollover to the first time sitting alone.", image: "/images/onni/family-stories.png", scene: "Family remembering baby milestones with ONNI" },
+      { time: "MEMORY ALBUM", title: "Memory Album", description: "ONNI can help capture and organize precious milestones, from the first rollover to the first time sitting alone.", image: "/images/onni/memory-album.png", scene: "Parents viewing their baby's milestones in the ONNI memory album" },
     ],
   },
   moments: {
@@ -59,10 +59,10 @@ export const onniContent = {
     lead: "Parents cannot be next to the crib every second. ONNI helps you stay connected from the kitchen, the living room, the office, or anywhere you need to be. Check in through the app, listen, watch, speak, or let ONNI play a familiar parent voice when your baby needs comfort. ONNI gives parents a calmer way to stay close — without turning every moment into anxiety.",
     cards: [
       { title: "Remote Monitoring", description: "Check your baby’s status in real time through the ONNI app.", image: "/images/onni/family-updates.png", scene: "Parent checking ONNI remotely" },
-      { title: "Parent Call", description: "Wake or comfort your baby with a familiar parent voice.", image: "/images/onni/family-stories.png", scene: "Parent comforting a baby through ONNI" },
+      { title: "Parent Call", description: "Wake or comfort your baby with a familiar parent voice.", image: "/images/onni/parent-call.png", scene: "Baby seeing a parent through an ONNI video call" },
       { title: "Live View", description: "See what ONNI sees from your phone, even while cooking or working nearby.", image: "/images/onni/family-hero.png", scene: "Parent watching a live ONNI view" },
       { title: "Family Access", description: "Allow selected caregivers or family members to check in when needed.", image: "/images/onni/family-independence.png", scene: "Family staying connected through ONNI" },
-      { title: "Gentle Alerts", description: "Receive notifications when ONNI notices meaningful changes in sleep, sound, motion, or routine.", image: "/images/onni/everyday-evening.png", scene: "ONNI providing a gentle care alert" },
+      { title: "Gentle Alerts", description: "Receive notifications when ONNI notices meaningful changes in sleep, sound, motion, or routine.", image: "/images/onni/gentle-alerts.png", scene: "Parent receiving a gentle ONNI sleep alert beside the baby's crib" },
     ],
   },
   spec: {
