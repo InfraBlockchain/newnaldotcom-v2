@@ -51,7 +51,7 @@ export const aiosContent = {
     ],
   },
   myData: {
-    headline1: "Pillar 1",
+    headline1: "Pillar 1 - My Data",
     headline2: "Public AI understands the world. My AI understands you",
     paragraphs: [
       "AI trained on public data can understand the world.",
@@ -60,7 +60,7 @@ export const aiosContent = {
       "Newnal aios creates that layer through My Data.",
     ],
     formula: { left: "Public AI:\nLLM world knowledge", plus: "My Data:\npersonal context", result: "My AI:\nAI that interprets the world through your life" },
-    standardsLabel: "Four Standards",
+    standardsLabel: "Four Golden Standards of Newnal My Data",
     standards: [
       { name: "Permission", text: "Grant, revoke, scope, and duration." },
       { name: "Provenance", text: "Verify the origin and integrity of data." },
@@ -69,7 +69,7 @@ export const aiosContent = {
     ],
   },
   aiInterface: {
-    headline1: "Pillar 2",
+    headline1: "Pillar 2 - AI Interface",
     headline2: "Not a user interface. An AI interface",
     paragraphs: [
       "Most AI products today still begin with a blank input box.",
@@ -81,15 +81,12 @@ export const aiosContent = {
     after: { label: "AI Suggestion System", items: ["Preemptive", "Context-aware suggestions", "Final user decision", "My AI"] },
   },
   agentPlace: {
-    headline1: "Pillar 3",
+    headline1: "Pillar 3 - Agent Place",
     headline2: "Services 'reverse-login' to your AI",
     beforeLabel: "The App Store model made users log into every service.",
     before: ["Download the app.", "Create an account.", "Verify identity.", "Grant permissions.", "Enter payment.", "Repeat."],
     afterLabel: "Agent Place reverses the model.",
-    after: [
-      "Instead of users logging into services, services and AI agents request permission to connect to My AI.",
-      "The user holds the authority.\nThe data remains user-owned.\nPermission and verification are standardized.",
-    ],
+    after: "Instead of users logging into services, services and AI agents request permission to connect to My AI.\n\nThe user holds the authority.\nThe data remains user-owned.\nPermission and verification are standardized.",
     comparison: {
       before: { label: "App Store Model", items: ["Login overload", "Data extraction", "Platform dependency", "Fragmented service experience"] },
       after: { label: "Agent Place Model", items: ["Reverse Login", "User-held permission authority", "User-owned data", "Verified agent requests", "Personalized service matching"] },
@@ -113,12 +110,12 @@ export const aiosContent = {
       "Each device expresses the same operating system in a different form.",
     ],
     devices: [
-      { name: "Newnal Phone", text: "A proprietary AI smartphone device to showcase Newnal's AI-native operating system." },
-      { name: "YALI", text: "An official AI KPOP Artist Device that connects artist identity with each fan's personal context." },
-      { name: "ILLI", text: "An AI Life Device for the Golden Generation, designed around care, independence, and family connection." },
-      { name: "ONNI", text: "An AI Infant Care Device designed around sleep, feeding, growth, and parent connection." },
-      { name: "UFO", text: "A real-world adventure AI device that turns movement, places, and treasure hunting into an AI-powered outdoor game." },
-      { name: "Private Phone", text: "A defensive-sovereignty communication device for protected communication and complete disconnection." },
+      { name: "Newnal Phone", text: "A proprietary AI smartphone device to showcase Newnal's AI-native operating system.", image: "/images/aios/devices/newnal-phone.png" },
+      { name: "YALI", text: "An official AI KPOP Artist Device that connects artist identity with each fan's personal context.", image: "/images/aios/devices/yali.png" },
+      { name: "ILLI", text: "An AI Life Device for the Golden Generation, designed around care, independence, and family connection.", image: "/images/aios/devices/illi.png" },
+      { name: "ONNI", text: "An AI Infant Care Device designed around sleep, feeding, growth, and parent connection.", image: "/images/aios/devices/onni.png" },
+      { name: "UFO", text: "A real-world adventure AI device that turns movement, places, and treasure hunting into an AI-powered outdoor game.", image: "/images/aios/devices/ufo.png" },
+      { name: "Private Phone", text: "A defensive-sovereignty communication device for protected communication and complete disconnection.", image: "/images/aios/devices/private-phone.png" },
     ],
   },
   coov: {
@@ -129,7 +126,7 @@ export const aiosContent = {
     ],
   },
   founder: {
-    title: "AI should not just answer you. It should understand you",
+    title: "AI should not just answer you.\nIt should understand you",
     paragraphs: [
       "The next operating system will not be defined by apps, icons, or input boxes.",
       "It will be defined by personal context, permissioned data, proactive intelligence, and agents that work around the user.",

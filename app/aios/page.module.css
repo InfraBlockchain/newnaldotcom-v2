@@ -57,8 +57,10 @@
 .centeredSection p span,
 .stepCards p span,
 .reverseCards p span,
+.reverseBody p span,
 .pillarList p span,
-.founderSubtitle p span {
+.founderSubtitle p span,
+.founder h2 span {
   display: block;
 }
 
@@ -505,6 +507,11 @@
   color: var(--fg-accent);
 }
 
+.coovHighlight {
+  color: var(--fg-accent);
+  font-weight: 700;
+}
+
 .principles {
   display: grid;
   gap: 20px;
@@ -623,6 +630,21 @@
 .reverseCards article {
   min-height: 142px;
   padding: 30px 28px;
+}
+
+.reverseBody {
+  background: var(--fg-card-bg);
+  border: 1px solid var(--fg-card-border);
+  color: var(--fg-text);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-top: 28px;
+  padding: 32px;
+  text-align: center;
+}
+
+.reverseBody p {
+  margin: 0;
 }
 
 .agentClosing {
@@ -1129,9 +1151,17 @@
   height: 100%;
 }
 
-.deviceGrid .imagePlaceholder {
+.deviceImage {
   aspect-ratio: 4 / 3;
+  background: var(--fg-panel-bg);
+  border: 1px solid var(--fg-border);
   margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.deviceImage img {
+  object-fit: cover;
 }
 
 .deviceGrid h3 {

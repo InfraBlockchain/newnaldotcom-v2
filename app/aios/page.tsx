@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Image from "next/image";
+import type { ReactNode } from "react";
 import {
   ArrowDownTrayIcon,
   ArrowRightEndOnRectangleIcon,
@@ -75,6 +75,18 @@ function Lines({ text }: { text: string }) {
 
 function Paragraphs({ items }: { items: readonly string[] }) {
   return items.map((paragraph, index) => <p key={`${index}-${paragraph}`}><Lines text={paragraph} /></p>);
+}
+
+function CoovParagraphs({ items }: { items: readonly string[] }) {
+  const coovDescription = "(COOV - digital COVID vaccine platform used nationwide in South Korea)";
+
+  return items.map((paragraph, index) => {
+    const [before, after] = paragraph.split(coovDescription);
+
+    if (after === undefined) return <p key={`${index}-${paragraph}`}><Lines text={paragraph} /></p>;
+
+    return <p key={`${index}-${paragraph}`}><Lines text={before} /><strong className={styles.coovHighlight}>{coovDescription}</strong><Lines text={after} /></p>;
+  });
 }
 
 function SectionTitle({ children }: { children: ReactNode }) {
@@ -258,16 +270,7 @@ export default function AiosPage() {
               ))}
             </StepCarousel>
             <Reveal><p className={styles.reverseLead}>{c.agentPlace.afterLabel}</p></Reveal>
-            <div className={styles.reverseCards}>
-              {c.agentPlace.after.map((step, index) => (
-                <Reveal key={step} delay={index * 80}>
-                  <article>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <p><Lines text={step} /></p>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
+            <Reveal className={styles.reverseBody}><p><Lines text={c.agentPlace.after} /></p></Reveal>
             <Reveal className={styles.agentClosing}>
               <div className={styles.comparisonGrid}>
                 <div className={styles.comparisonColumn}>
@@ -315,7 +318,14 @@ export default function AiosPage() {
               {c.multiDevice.devices.map((device, index) => (
                 <Reveal key={device.name} delay={index * 50}>
                   <article>
-                    <div className={styles.imagePlaceholder} aria-label={`${device.name} image — coming soon`} />
+                    <div className={styles.deviceImage}>
+                      <Image
+                        src={device.image}
+                        alt={`${device.name} device`}
+                        fill
+                        sizes="(max-width: 767px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      />
+                    </div>
                     <h3>{device.name}</h3>
                     <p>{device.text}</p>
                   </article>
@@ -329,7 +339,7 @@ export default function AiosPage() {
           <div className={styles.aiosContainer}>
             <Reveal className={styles.centeredSection}>
               <SectionTitle>{c.coov.title}</SectionTitle>
-              <Paragraphs items={c.coov.paragraphs} />
+              <CoovParagraphs items={c.coov.paragraphs} />
             </Reveal>
             <Reveal delay={60}><CoovDiagram /></Reveal>
           </div>
@@ -339,7 +349,7 @@ export default function AiosPage() {
       <section className={`${styles.founder} section`}>
         <div className="container">
           <Reveal className={styles.founderInner}>
-            <h2>{c.founder.title}</h2>
+            <h2><Lines text={c.founder.title} /></h2>
             <div className={styles.founderSubtitle}><Paragraphs items={c.founder.paragraphs} /></div>
             <div className={`${styles.ipDownloads} ${styles.founderLinks}`}>
               {c.founder.links.map((link) => {
