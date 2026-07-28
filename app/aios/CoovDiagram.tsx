@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { CubeTransparentIcon } from "@heroicons/react/24/outline";
 import styles from "./page.module.css";
 
 const W = 900;
-const H = 460;
+const H = 560;
 const pct = (px: number, axis: "x" | "y") => `${(px / (axis === "x" ? W : H)) * 100}%`;
 
 const flows = [
@@ -18,9 +17,9 @@ const roles = [
   { x: 750, label: "Verifier" },
 ] as const;
 
-const PILL_Y = 210;
-const ROLE_Y = 300;
-const CAPTION_Y = 350;
+const PILL_Y = 362;
+const ROLE_Y = 454;
+const CAPTION_Y = 512;
 
 export function CoovDiagram() {
   return (
@@ -32,34 +31,31 @@ export function CoovDiagram() {
 
         <svg className={styles.coovLines} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true">
           <defs>
-            <marker id="coovArrowBlue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
-              <path d="M0,0 L8,4 L0,8 Z" fill="var(--fg-accent)" />
+            <marker id="coovArrowBlue" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 Z" fill="var(--fg-accent)" />
             </marker>
-            <marker id="coovArrowDark" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse">
-              <path d="M0,0 L7,3.5 L0,7 Z" fill="var(--fg-muted)" />
+            <marker id="coovArrowDark" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="7.5" refY="4" orient="auto-start-reverse">
+              <path d="M0,0 L8,4 L0,8 Z" fill="var(--fg-muted)" />
             </marker>
           </defs>
 
-          {/* badge -> flow-label connectors (arrow points up/into the badge) */}
-          <path d="M450,190 L450,77" stroke="var(--fg-accent)" strokeWidth="2" fill="none" markerEnd="url(#coovArrowBlue)" />
-          <path d="M150,190 L150,130 L380,130" stroke="var(--fg-accent)" strokeWidth="2" fill="none" markerEnd="url(#coovArrowBlue)" />
-          <path d="M750,190 L750,130 L520,130" stroke="var(--fg-accent)" strokeWidth="2" fill="none" markerEnd="url(#coovArrowBlue)" />
+          {/* flow-label -> badge connectors (arrow points up/into the badge) */}
+          <path d="M450,340 L450,232" stroke="var(--fg-accent)" strokeWidth="2" fill="none" markerEnd="url(#coovArrowBlue)" />
+          <path d="M150,340 L150,205 L360,205" stroke="var(--fg-accent)" strokeWidth="2" fill="none" markerEnd="url(#coovArrowBlue)" />
+          <path d="M750,340 L750,205 L540,205" stroke="var(--fg-accent)" strokeWidth="2" fill="none" markerEnd="url(#coovArrowBlue)" />
 
           {/* flow-label -> role-pill connectors */}
-          <path d="M150,230 L150,279" stroke="var(--fg-border)" strokeWidth="1.5" fill="none" />
-          <path d="M450,230 L450,279" stroke="var(--fg-border)" strokeWidth="1.5" fill="none" />
-          <path d="M750,230 L750,279" stroke="var(--fg-border)" strokeWidth="1.5" fill="none" />
+          <path d="M150,384 L150,430" stroke="var(--fg-border)" strokeWidth="1.5" fill="none" />
+          <path d="M450,384 L450,430" stroke="var(--fg-border)" strokeWidth="1.5" fill="none" />
+          <path d="M750,384 L750,430" stroke="var(--fg-border)" strokeWidth="1.5" fill="none" />
 
           {/* role -> role arrows */}
-          <path d="M200,292 L200,308 M200,300 L370,300" stroke="var(--fg-muted)" strokeWidth="1.5" fill="none" markerEnd="url(#coovArrowDark)" />
-          <path d="M525,292 L525,308 M525,300 L695,300" stroke="var(--fg-muted)" strokeWidth="1.5" fill="none" markerEnd="url(#coovArrowDark)" />
+          <path d="M210,454 L368,454" stroke="var(--fg-muted)" strokeWidth="1.5" fill="none" markerEnd="url(#coovArrowDark)" />
+          <path d="M532,454 L690,454" stroke="var(--fg-muted)" strokeWidth="1.5" fill="none" markerEnd="url(#coovArrowDark)" />
         </svg>
 
-        <div className={styles.coovBadgeCard} style={{ left: pct(450, "x"), top: pct(10, "y") }}>
-          <div className={styles.coovBadge}>
-            <CubeTransparentIcon aria-hidden="true" />
-            <span>InfraBlockchain</span>
-          </div>
+        <div className={styles.coovBadgeCard} style={{ left: pct(450, "x"), top: pct(150, "y") }}>
+          <Image className={styles.coovBadgeLogo} src="/images/aios/infrablockchain-logo.png" alt="InfraBlockchain" width={528} height={100} />
           <small className={styles.coovBadgeCaption}>Created by Blockchain Labs</small>
         </div>
 
@@ -80,10 +76,7 @@ export function CoovDiagram() {
       </div>
 
       <div className={styles.coovMobile}>
-        <div className={styles.coovBadge}>
-          <CubeTransparentIcon aria-hidden="true" />
-          <span>InfraBlockchain</span>
-        </div>
+        <Image className={styles.coovBadgeLogo} src="/images/aios/infrablockchain-logo.png" alt="InfraBlockchain" width={528} height={100} />
         <small className={styles.coovBadgeCaption}>Created by Blockchain Labs</small>
 
         {flows.map((flow, index) => (

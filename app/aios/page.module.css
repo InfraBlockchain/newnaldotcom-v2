@@ -925,6 +925,27 @@
   margin-top: 48px;
 }
 
+.architectureDiagram {
+  margin: 48px auto 0;
+  max-width: 960px;
+}
+
+.architectureDiagramScroll {
+  border: 1px solid var(--fg-border);
+  border-radius: 16px;
+  overflow-x: auto;
+  padding: 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.architectureDiagram img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  min-width: 680px;
+  width: 100%;
+}
+
 .coovDiagram {
   margin-top: 48px;
 }
@@ -946,9 +967,9 @@
   background: var(--fg-panel-bg);
   border: 1px solid var(--fg-border);
   border-radius: 16px;
-  height: 80.43%;
+  height: 90%;
   position: absolute;
-  top: 13.04%;
+  top: 5%;
   width: 100%;
 }
 
@@ -970,23 +991,11 @@
   white-space: nowrap;
 }
 
-.coovBadge {
-  align-items: center;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
-
-.coovBadge svg {
-  color: var(--fg-accent);
-  height: 20px;
-  width: 20px;
-}
-
-.coovBadge span {
-  color: var(--fg-text);
-  font-size: 16px;
-  font-weight: 600;
+.coovBadgeLogo {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 150px;
 }
 
 .coovBadgeCaption {
@@ -1032,7 +1041,7 @@
   display: none;
 }
 
-.coovMobile .coovBadge {
+.coovMobile .coovBadgeLogo {
   margin-bottom: 4px;
 }
 
