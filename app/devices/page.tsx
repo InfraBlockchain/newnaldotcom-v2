@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { Reveal } from "@/components/shared/Reveal";
 import { devicesContent as c } from "@/content/devices";
 import { devicesFontClassName } from "./fonts";
@@ -40,16 +39,15 @@ export default function DevicesPage() {
                 src={slide.image}
                 alt=""
                 fill
-                sizes="(max-width: 900px) 86vw, 25vw"
+                sizes="(max-width: 767px) 100vw, (max-width: 900px) 50vw, 25vw"
                 priority={index === 0}
               />
+              <span className={styles.cardNumber}>0{index + 1}</span>
               <span className={styles.cardLabel}>
                 {slide.name}
                 <small className={styles.cardLabelSub}>Powered by Newnal aios</small>
               </span>
-              <span className={styles.arrow} aria-hidden="true">
-                <ChevronRightIcon />
-              </span>
+              <span className={styles.arrow} aria-hidden="true">↗</span>
             </Link>
           </Reveal>
         ))}

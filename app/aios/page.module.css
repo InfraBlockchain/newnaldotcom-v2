@@ -975,7 +975,7 @@
 .coovWordmark {
   display: block;
   height: auto;
-  margin: 0 auto 8px;
+  margin: 0 auto 20px;
   width: 160px;
 }
 
@@ -1005,12 +1005,23 @@
 
 .coovBadgeCard {
   background: var(--surface);
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px;
   box-shadow: 0 12px 20px -8px rgba(10, 10, 15, .12);
   padding: 14px 28px 16px;
   position: absolute;
   transform: translateX(-50%);
   white-space: nowrap;
+}
+
+.coovBadgeStack {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.coovBadgeStack .coovBadgeCard {
+  position: relative;
+  transform: none;
 }
 
 .coovBadgeLogo {

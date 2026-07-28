@@ -20,12 +20,11 @@ const roles = [
 const PILL_Y = 362;
 const ROLE_Y = 454;
 const CAPTION_Y = 512;
+const BADGE_STACK_Y = 92;
 
 export function CoovDiagram() {
   return (
     <div className={styles.coovDiagram} role="img" aria-label="COOV verifiable-credential flow: Issuer, Holder, and Verifier all anchor records to the InfraBlockchain ledger">
-      <Image className={styles.coovWordmark} src="/images/aios/coov-logo.png" alt="COOV" width={235} height={57} />
-
       <div className={styles.coovCanvas} style={{ aspectRatio: `${W} / ${H}` }}>
         <div className={styles.coovPanel} />
 
@@ -54,9 +53,12 @@ export function CoovDiagram() {
           <path d="M532,454 L690,454" stroke="var(--fg-muted)" strokeWidth="1.5" fill="none" markerEnd="url(#coovArrowDark)" />
         </svg>
 
-        <div className={styles.coovBadgeCard} style={{ left: pct(450, "x"), top: pct(150, "y") }}>
-          <Image className={styles.coovBadgeLogo} src="/images/aios/infrablockchain-logo.png" alt="InfraBlockchain" width={528} height={100} />
-          <small className={styles.coovBadgeCaption}>Created by Blockchain Labs</small>
+        <div className={styles.coovBadgeStack} style={{ left: pct(450, "x"), top: pct(BADGE_STACK_Y, "y") }}>
+          <Image className={styles.coovWordmark} src="/images/aios/coov-logo.png" alt="COOV" width={235} height={57} />
+          <div className={styles.coovBadgeCard}>
+            <Image className={styles.coovBadgeLogo} src="/images/aios/infrablockchain-logo.png" alt="InfraBlockchain" width={528} height={100} />
+            <small className={styles.coovBadgeCaption}>Created by Blockchain Labs</small>
+          </div>
         </div>
 
         {flows.map((flow) => (
@@ -76,6 +78,7 @@ export function CoovDiagram() {
       </div>
 
       <div className={styles.coovMobile}>
+        <Image className={styles.coovWordmark} src="/images/aios/coov-logo.png" alt="COOV" width={235} height={57} />
         <Image className={styles.coovBadgeLogo} src="/images/aios/infrablockchain-logo.png" alt="InfraBlockchain" width={528} height={100} />
         <small className={styles.coovBadgeCaption}>Created by Blockchain Labs</small>
 
