@@ -30,7 +30,9 @@ export function Spectrum() {
   // the decorative capsule has to follow the same math or it drifts from the real hit target near 0/100.
   const usableWidth = Math.max(trackWidth - THUMB_WIDTH, 0);
   const handlePx = THUMB_WIDTH / 2 + (value / 100) * usableWidth;
-  const fillWidth = value === 100 ? trackWidth : handlePx;
+  // At the 0 endpoint the handle itself still sits half a thumb-width into the track.
+  // Keep the fill fully hidden there, then reveal it as soon as the value moves right.
+  const fillWidth = value === 0 ? 0 : value === 100 ? trackWidth : handlePx;
 
   return (
     <div className={styles.spectrum} role="group" aria-label="Data sovereignty spectrum from Private Phone at 0 to Newnal aios at 100">
