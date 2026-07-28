@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Image from "next/image";
 import {
   ArrowDownTrayIcon,
   ArrowRightEndOnRectangleIcon,
@@ -289,9 +290,17 @@ export default function AiosPage() {
               <Paragraphs items={c.architecture.paragraphs} />
             </Reveal>
             <Reveal delay={60}>
-              <div className={styles.imagePlaceholder} aria-label="Agent Place Architecture diagram — coming soon">
-                <span>Diagram coming soon</span>
-              </div>
+              <figure className={styles.architectureDiagram}>
+                <div className={styles.architectureDiagramScroll}>
+                  <Image
+                    src="/images/aios/os-architecture.png"
+                    alt="Layered comparison of a Mobile Computing OS (iOS/Android) and the Newnal AI Computing OS. Newnal keeps every existing layer — Application, Human Touch, Core Services, Kernel, Hardware — and adds AI-native counterparts (ai Agent, ai Touch, Personal ai Action Graph Generator, ai Core Services, ai Kernel), all connected to a Personal ai Cloud Agent and the InfraBlockchain public blockchain."
+                    width={2000}
+                    height={1628}
+                    sizes="(max-width: 900px) 720px, 900px"
+                  />
+                </div>
+              </figure>
             </Reveal>
           </div>
         </section>
