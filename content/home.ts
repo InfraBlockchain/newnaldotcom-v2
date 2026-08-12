@@ -32,7 +32,7 @@ export const homeContent = {
     {
       id: "devices",
       title: "Devices",
-      subtitle: "Powered by Newnal",
+      subtitle: "Powered by Newnal aios",
       statement: ["One AIOS. Distinct companions for different lives."],
       cardLabel: [
         [{ text: "Companion Devices" }],
