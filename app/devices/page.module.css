@@ -36,19 +36,33 @@
 
 .heroCopy h1 span { display: block; }
 
+.heroCopy h1 .heroSubheading {
+  margin-top: .28em;
+}
+
 .heroCopy p {
-  font-size: clamp(1.2rem, 1.65vw, 1.85rem);
   letter-spacing: -.055em;
-  line-height: 1.18;
-  margin-bottom: 38px;
   margin-inline: auto;
-  max-width: 560px;
 }
 
 .heroCopy p span { display: block; }
 
-.heroClosing { color: #070708; }
-.heroCopy p:not(.heroClosing) { color: #5c5c63; }
+.heroDescription {
+  color: #5c5c63;
+  font-size: clamp(1rem, 1.15vw, 1.3rem);
+  line-height: 1.35;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.heroClosing {
+  color: #070708;
+  font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0;
+  max-width: 560px;
+}
 
 .paths {
   border-bottom: 1px solid #cfcfd4;
@@ -220,7 +234,8 @@
 @media (max-width: 767px) {
   .heroCopy { padding: 62px 20px 52px; }
   .heroCopy h1 { font-size: clamp(2.8rem, 12vw, 4rem); margin-bottom: 26px; }
-  .heroCopy p { font-size: 1.25rem; margin-bottom: 30px; }
+  .heroDescription { font-size: 1rem; margin-bottom: 26px; }
+  .heroClosing { font-size: 1.25rem; }
   .hero { min-height: 480px; padding: 56px 20px; }
   .paths { display: block; }
   .pathReveal + .pathReveal { border-left: 0; border-top: 1px solid #cfcfd4; }

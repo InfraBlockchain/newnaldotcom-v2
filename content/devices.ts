@@ -1,12 +1,12 @@
-// Verbatim copy per docs/spec/06-figma-final-aios-devices.md §3 (D1 hero, D2 slide table).
-// Do not paraphrase — the user confirmed this copy on 2026-07-15.
+// Product copy for the Companion Devices hero and cards.
 export const devicesContent = {
   hero: {
-    heading: ["AI Devices", "for the lives", "we actually live."],
+    heading: ["AI Devices", "Powered by Newnal aios"],
     rhythm: [
       "For the artist you love.",
       "For the family you care for.",
       "For the world waiting outside.",
+      "For the little ones you raise.",
     ],
     closing: "All centered around you.",
   },

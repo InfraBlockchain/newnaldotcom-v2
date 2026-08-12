@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Companion Devices",
-  description: c.hero.rhythm.join(" "),
+  description: c.hero.heading.join(" "),
 };
 
 export default function DevicesPage() {
@@ -17,16 +17,20 @@ export default function DevicesPage() {
       <section className={styles.hero} aria-labelledby="devices-title">
         <Reveal className={styles.heroCopy}>
           <h1 id="devices-title">
-            {c.hero.heading.map((line) => (
-              <span key={line}>{line}</span>
+            {c.hero.heading.map((line, index) => (
+              <span key={line} className={index === 1 ? styles.heroSubheading : undefined}>
+                {line}
+              </span>
             ))}
           </h1>
-          <p>
-            {c.hero.rhythm.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </p>
-          <p className={styles.heroClosing}>{c.hero.closing}</p>
+          {c.hero.rhythm.length > 0 ? (
+            <p className={styles.heroDescription}>
+              {c.hero.rhythm.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </p>
+          ) : null}
+          {c.hero.closing ? <p className={styles.heroClosing}>{c.hero.closing}</p> : null}
         </Reveal>
       </section>
 
