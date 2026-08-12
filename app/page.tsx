@@ -32,9 +32,6 @@ export default function HomePage() {
                 {path.id === "devices" && "subtitle" in path ? (
                   <p className={styles.cardSubtitle}>{path.subtitle}</p>
                 ) : null}
-                <p className={styles.cardStatement}>
-                  {path.statement.map((line) => <span key={line}>{line}</span>)}
-                </p>
               </div>
               <span className={styles.cardArrow} aria-hidden="true">↗</span>
             </Link>
