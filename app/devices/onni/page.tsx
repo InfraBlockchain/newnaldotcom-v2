@@ -1,94 +1,149 @@
 import type { Metadata } from "next";
+import { ClockIcon, CpuChipIcon, MicrophoneIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Link from "next/link";
+import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
+import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
+import { ScrollRail } from "@/components/shared/ScrollRail";
 import { onniContent as c } from "@/content/onni";
-import styles from "./page.module.css";
+import styles from "../yali/page.module.css";
+import onniStyles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "ONNI",
-  description: c.hero.lead,
-};
+export const metadata: Metadata = { title: "ONNI", description: c.hero.lead };
+
+function ChapterHead({ title, lead, center = false, noWrapLines = false }: { title: string; lead: string | readonly string[]; center?: boolean; noWrapLines?: boolean }) {
+  return (
+    <Reveal className={`${styles.chapterHead} ${center ? styles.center : ""}`}>
+      <h2 className={noWrapLines ? onniStyles.noWrapTitle : undefined}>
+        {title.split("\n").map((line) => <span key={line}>{line}</span>)}
+      </h2>
+      {typeof lead === "string" ? <p>{lead}</p> : <div className={styles.chapterLead}>{lead.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>}
+    </Reveal>
+  );
+}
+
+const philosophyIcons = [ClockIcon, MicrophoneIcon, CpuChipIcon] as const;
+
+function PhilosophyIcon({ index }: { index: number }) {
+  const Icon = philosophyIcons[index] ?? philosophyIcons[philosophyIcons.length - 1];
+  return <Icon aria-hidden="true" />;
+}
 
 export default function OnniPage() {
   return (
-    <main id="main-content" className={styles.page} data-theme="onni">
+    <main id="main-content" className={`${styles.page} ${onniStyles.page}`} data-theme="onni">
       <section className={styles.hero}>
-        <div className={`container ${styles.heroGrid}`}>
-          <Reveal className={styles.heroCopy}>
-            <p className={styles.eyebrow}>{c.hero.eyebrow}</p>
-            <h1>{c.hero.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
-            <p>{c.hero.lead}</p>
-            <p className={styles.heroDetail}>{c.hero.detail}</p>
-          </Reveal>
-          <Reveal className={styles.heroImage}>
-            <Image
-              src="/images/figma/devices-card-onni.png"
-              alt="ONNI family AI companion in a child's room"
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 48vw"
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className={styles.features}>
         <div className="container">
-          <Reveal className={styles.sectionHead}>
-            <p className={styles.eyebrow}>{c.features.eyebrow}</p>
-            <h2>{c.features.title}</h2>
-            <p>{c.features.lead}</p>
+          <Reveal className={styles.heroHead}>
+            <h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1>
+            <p className={onniStyles.heroTagline}>{c.hero.lead}</p>
+            <p className={onniStyles.heroDetail}>
+              {c.hero.leadDetail.split("\n").map((line) => <span key={line}>{line}</span>)}
+            </p>
           </Reveal>
-          <div className={styles.featureGrid}>
-            {c.features.cards.map((card, index) => (
-              <Reveal key={card.number} delay={index * 80}>
-                <article className={styles.featureCard}>
-                  <span>{card.number}</span>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                </article>
-              </Reveal>
-            ))}
+          <Reveal className={styles.heroStatement}>
+            <div className={styles.negatives}>
+              <div className={styles.negativeLines}>{c.hero.negatives.map((line) => <p key={line}>{line}</p>)}</div>
+            </div>
+            <p className={styles.heroClosing}>{c.hero.closing}</p>
+          </Reveal>
+        </div>
+        <Reveal className={styles.heroFilm}>
+          <AutoPauseVideo
+            className={styles.heroFilmVideo}
+            src="/images/onni/hero-film.mp4"
+            poster="/images/figma/devices-card-onni.png"
+            ariaLabel="ONNI AI care companion film"
+          />
+        </Reveal>
+      </section>
+
+      <section id="chapter-1" className={`${styles.dark} ${styles.personalized} ${onniStyles.personalized}`}>
+        <div className="container">
+          <ChapterHead title={c.personalized.title} lead={c.personalized.lead} center />
+          <div className={`${styles.personalizedGrid} ${onniStyles.personalizedGrid}`}>
+            <div className={styles.proofs}>
+              {c.personalized.proofs.map(([num, unit, title, text], index) => (
+                <Reveal key={num} delay={index * 80}>
+                  <article><div><strong>{num}</strong><span>{unit}</span></div><h3>{title}</h3><p>{text}</p></article>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className={styles.deviceVignette}>
+              <div className={styles.screen}>
+                <p className={styles.vignetteTime}>{c.personalized.vignette.time}</p>
+                <p className={styles.message}>{c.personalized.vignette.message}</p>
+                <div className={styles.wave}>{Array.from({ length: 30 }).map((_, index) => <i key={index} />)}</div>
+                <span>{c.personalized.vignette.playing}</span>
+                <strong>{c.personalized.vignette.track}</strong>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      <section className={styles.family}>
-        <div className={`container ${styles.familyGrid}`}>
-          <Reveal className={styles.familyCopy}>
-            <p className={styles.eyebrow}>{c.family.eyebrow}</p>
-            <h2>{c.family.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h2>
-            <blockquote>{c.family.quote}</blockquote>
-          </Reveal>
-          <div className={styles.principles}>
-            {c.family.principles.map(([title, text], index) => (
-              <Reveal key={title} delay={index * 80}>
-                <article>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.spec}>
-        <div className={`container ${styles.specGrid}`}>
-          <Reveal className={styles.specHead}>
-            <p className={styles.eyebrow}>{c.spec.eyebrow}</p>
-            <h2>{c.spec.title}</h2>
-            <Link className={styles.backLink} href="/devices">Explore all companions <span aria-hidden="true">→</span></Link>
-          </Reveal>
-          <Reveal className={styles.specTable}>
-            {c.spec.rows.map(([label, value]) => (
-              <div key={label}>
-                <span>{label}</span>
-                <p>{value}</p>
+      <section className="section">
+        <div className="container">
+          <ChapterHead title={c.philosophy.title} lead={c.philosophy.lead} center />
+          <Reveal className={styles.venn}>
+            <svg viewBox="0 0 900 700" role="img" aria-label="Venn diagram of child, family, and shared memories forming ONNI">
+              <circle cx="290" cy="250" r="225" /><circle cx="610" cy="250" r="225" /><circle cx="450" cy="480" r="225" />
+            </svg>
+            {c.philosophy.circles.map(([title, items], index) => (
+              <div key={title} className={styles[`vennText${index + 1}`]}>
+                <PhilosophyIcon index={index} /><h3>{title}</h3><ul>{items.map((item) => <li key={item}>{item}</li>)}</ul>
               </div>
             ))}
+            <strong>ONNI</strong>
           </Reveal>
+          <p className={styles.vennCaption}>Powered by Newnal</p>
+        </div>
+      </section>
+
+      <section id="chapter-2" className={`${styles.everyday} section`}>
+        <div className="container">
+          <div className={styles.everydayHead}>
+            <ChapterHead title={c.everyday.title} lead="" noWrapLines />
+            <Reveal><blockquote>{c.everyday.quote}</blockquote><p>{c.everyday.support.map((line) => <span key={line}>{line}</span>)}</p></Reveal>
+          </div>
+          <ScrollRail className={styles.timeline}>
+            {c.everyday.tiles.map((tile, index) => (
+              <Reveal key={tile.title} className={`${styles.moment} ${index % 2 ? styles.reverse : ""}`}>
+                <div className={styles.momentCopy}><span>{tile.time}</span><h3>{tile.title}</h3><p>{tile.description}</p></div>
+                <div className={styles.momentImage}><Image src={tile.image} alt={tile.scene} fill sizes="(max-width: 767px) 100vw, 50vw" /></div>
+              </Reveal>
+            ))}
+          </ScrollRail>
+        </div>
+      </section>
+
+      <section id="chapter-3" className={styles.moments}>
+        <div className={styles.concert}>
+          <Image src="/images/onni/family-hero.png" alt="Parent staying connected to ONNI at home" fill sizes="100vw" />
+          <div className={styles.concertShade} />
+          <div className={styles.lights}>{Array.from({ length: 18 }).map((_, index) => <i key={index} />)}</div>
+          <ChapterHead title={c.moments.title} lead={c.moments.lead} center />
+        </div>
+        <div className={styles.darkCards}>
+          <div className="container">
+            <div className={styles.momentCards}>
+              {c.moments.cards.map((card, index) => (
+                <Reveal key={card.title} delay={index * 80}>
+                  <article><div className={styles.cardImage}><Image src={card.image} alt={card.scene} fill sizes="(max-width: 767px) 100vw, 33vw" /></div><div><h3>{card.title}</h3><p>{card.description}</p></div></article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="chapter-4" className={`${styles.spec} section`}>
+        <div className="container">
+          <Reveal><p className="eyebrow">SPEC</p><h2>{c.spec.title}</h2><p>{c.spec.lead}</p></Reveal>
+          <div className={styles.specGrid}>
+            <Reveal className={styles.specTable}>{c.spec.rows.map(([label, value]) => <div key={label}><span>{label}</span><p>{value}</p></div>)}</Reveal>
+            <Reveal className={styles.deviceRender}><Image src="/images/onni/spec-device.png" alt="ONNI family AI companion" fill sizes="(max-width: 767px) 100vw, 40vw" /></Reveal>
+          </div>
         </div>
       </section>
     </main>

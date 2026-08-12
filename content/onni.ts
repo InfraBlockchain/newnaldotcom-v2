@@ -1,51 +1,80 @@
 export const onniContent = {
   hero: {
-    eyebrow: "ONNI · FAMILY AI COMPANION",
-    title: "Growing together,\nevery day.",
-    lead: "ONNI is a warm, playful AI companion for young children and the families who care for them.",
-    detail: "It turns everyday curiosity, routines, and shared moments into experiences that help children feel seen while keeping parents connected and in control.",
+    eyebrow: "ONNI · AI CARE COMPANION",
+    title: "AI Care for Little Ones",
+    emphasis: "Little Ones",
+    lead: "Care that grows with your baby",
+    leadDetail: "ONNI is AI care for babies and young children\n— designed to support safety, growth, sleep, feeding, and everyday moments of connection.",
+    negatives: ["Not just a baby monitor.", "Not just a night light.", "Not just a sound machine."],
+    closing: "An AI device that helps parents understand, comfort, and remember the earliest days of life.",
   },
-  features: {
-    eyebrow: "01 · EVERYDAY COMPANIONSHIP",
-    title: "A companion for the moments in between.",
-    lead: "ONNI is designed for the small parts of family life that deserve a little more attention, imagination, and care.",
-    cards: [
-      {
-        number: "01",
-        title: "Curious conversations",
-        text: "Stories, questions, and playful prompts that meet children where their imagination already is.",
-      },
-      {
-        number: "02",
-        title: "Gentle routines",
-        text: "A friendly presence for getting ready, winding down, and finding a rhythm that works for the whole family.",
-      },
-      {
-        number: "03",
-        title: "Shared memories",
-        text: "Moments that can be revisited together, helping families make meaning from the everyday.",
-      },
+  personalized: {
+    title: "Support that stays with your baby’s rhythm",
+    lead: [
+      "Babies do not live by perfect schedules. But every small moment matters.",
+      "ONNI helps parents follow the rhythm of the day — feeding, naps, tummy time, soothing sounds, night light, and the little changes that are easy to miss.",
+    ],
+    proofs: [
+      ["24hr", "gentle care", "Support throughout the day and night.", "ONNI helps parents stay aware of feeding, sleep, play, and comfort moments — without needing to remember everything alone."],
+      ["1", "daily rhythm", "One connected view of your baby’s day.", "Feeding logs, nap records, tummy time, soothing sounds, and memory moments come together in one natural care flow."],
+      ["0", "extra burden", "Care records without another complicated app.", "Talk to ONNI, check the app, or let the device quietly support the routine — so parents can focus more on the baby, not the tracking."],
+    ],
+    vignette: {
+      time: "ONNI · DAILY RHYTHM",
+      message: "From morning wake-up to bedtime, ONNI stays close to the moments that make up your baby’s care.",
+      playing: "GENTLE CARE",
+      track: "A calmer rhythm for every day",
+    },
+  },
+  philosophy: {
+    title: "It understands the rhythm\nbehind every little moment",
+    lead: [
+      "Care for a baby is not one thing.",
+      "It is sleep, feeding, play, comfort, growth, sound, light, memory, and routine — all changing week by week.",
+      "With the parent’s permission, ONNI learns from your baby’s daily patterns and helps turn scattered moments into a clearer picture of care.",
+    ],
+    circles: [
+      ["Baby Routine", ["Sleep", "Feeding", "Play", "Tummy time", "Growth moments"]],
+      ["Parent Input", ["Voice notes", "Feeding logs", "Schedule preferences", "Family messages"]],
+      ["Newnal AIOS", ["Pattern recognition", "Gentle reminders", "Personalized content", "Memory organization"]],
     ],
   },
-  family: {
-    eyebrow: "02 · BUILT FOR FAMILY LIFE",
-    title: "Close to your child.\nConnected to your family.",
-    quote: "“The best companion is one that helps a child grow independently while keeping the people who love them close.”",
-    principles: [
-      ["Family-controlled", "Parents decide how ONNI participates in their family's day."],
-      ["Private by design", "Your family's moments belong to your family, not to a feed."],
-      ["Made to grow", "ONNI adapts with a child's changing interests, routines, and imagination."],
+  everyday: {
+    title: "Play, learn, and grow —\none small moment at a time",
+    quote: "ONNI is designed to support your baby’s early development with gentle visual, sound, and interaction content.",
+    support: [
+      "From black-and-white focus patterns for early visual stimulation to songs, stories, and multilingual exposure, ONNI turns everyday care into small moments of growth.",
+      "The content changes as your baby grows — helping parents provide age-appropriate stimulation without constantly searching for what to play next.",
+    ],
+    tiles: [
+      { time: "TUMMY TIME", title: "Tummy Time Content", description: "Visual patterns, friendly faces, songs, and playful prompts designed for tummy-time sessions.", image: "/images/onni/everyday-morning.png", scene: "Baby enjoying tummy-time content with ONNI" },
+      { time: "VISUAL DEVELOPMENT", title: "Visual Development", description: "High-contrast black-and-white patterns for early focus and visual engagement.", image: "/images/onni/everyday-play.png", scene: "Baby engaging with visual development content" },
+      { time: "EMOTIONAL DEVELOPMENT", title: "Emotional Development", description: "Songs, lullabies, and familiar voices that help create comfort and connection.", image: "/images/onni/everyday-music.png", scene: "Baby soothed by familiar sounds" },
+      { time: "MULTILINGUAL EXPOSURE", title: "Multilingual Exposure", description: "Parent AI can speak, sing, and read in multiple languages — introducing language naturally through everyday moments.", image: "/images/onni/everyday-evening.png", scene: "ONNI sharing multilingual content with a baby" },
+      { time: "MEMORY ALBUM", title: "Memory Album", description: "ONNI can help capture and organize precious milestones, from the first rollover to the first time sitting alone.", image: "/images/onni/memory-album.png", scene: "Parents viewing their baby's milestones in the ONNI memory album" },
+    ],
+  },
+  moments: {
+    title: "Step away without feeling far away",
+    lead: "Parents cannot be next to the crib every second. ONNI helps you stay connected from the kitchen, the living room, the office, or anywhere you need to be. Check in through the app, listen, watch, speak, or let ONNI play a familiar parent voice when your baby needs comfort. ONNI gives parents a calmer way to stay close — without turning every moment into anxiety.",
+    cards: [
+      { title: "Remote Monitoring", description: "Check your baby’s status in real time through the ONNI app.", image: "/images/onni/family-updates.png", scene: "Parent checking ONNI remotely" },
+      { title: "Parent Call", description: "Wake or comfort your baby with a familiar parent voice.", image: "/images/onni/parent-call.png", scene: "Baby seeing a parent through an ONNI video call" },
+      { title: "Live View", description: "See what ONNI sees from your phone, even while cooking or working nearby.", image: "/images/onni/family-hero.png", scene: "Parent watching a live ONNI view" },
+      { title: "Family Access", description: "Allow selected caregivers or family members to check in when needed.", image: "/images/onni/family-independence.png", scene: "Family staying connected through ONNI" },
+      { title: "Gentle Alerts", description: "Receive notifications when ONNI notices meaningful changes in sleep, sound, motion, or routine.", image: "/images/onni/gentle-alerts.png", scene: "Parent receiving a gentle ONNI sleep alert beside the baby's crib" },
     ],
   },
   spec: {
-    eyebrow: "03 · ONNI AT A GLANCE",
-    title: "Designed to belong at home.",
+    title: "Made for the nursery.\nReady for everyday care.",
+    lead: "A compact care companion designed to sit naturally in the nursery and support everyday family routines.",
     rows: [
-      ["OPERATING SYSTEM", "Powered by Newnal aios"],
-      ["COMPANION MODE", "Voice, visual, and family-aware interactions"],
-      ["FAMILY CONTROLS", "Parent-managed permissions and shared settings"],
-      ["CONNECTIVITY", "Secure Wi-Fi and Bluetooth connection"],
-      ["PRIVACY", "Your family data stays under your control"],
+      ["OPERATING SYSTEM", "Powered by Newnal ‘aios’"],
+      ["DIMENSIONS", "65 mm diameter × 21 mm depth"],
+      ["DISPLAY", "2.8-inch circular AMOLED display"],
+      ["CONNECTIVITY", "Wi-Fi and Bluetooth connectivity"],
+      ["LIGHTING", "360° translucent LED light guide ring"],
+      ["AUDIO", "30cc independent acoustic enclosure"],
     ],
   },
 } as const;

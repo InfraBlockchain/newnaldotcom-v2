@@ -1,57 +1,45 @@
 import Link from "next/link";
-import { Reveal } from "@/components/shared/Reveal";
 import { homeContent } from "@/content/home";
 import styles from "./page.module.css";
 
 export default function HomePage() {
   return (
-    <main id="main-content" className={styles.home}>
-      <section className={styles.hero} aria-labelledby="home-title">
-        <div className={styles.heroInner}>
-          <Reveal className={styles.heroCopy}>
-            <h1 id="home-title">
-              {homeContent.hero.title.map((line, lineIndex) => (
-                <span key={lineIndex} className={styles.titleLine}>
-                  {line.map((segment) => (
-                    <span
-                      key={segment.text}
-                      className={
-                        "accent" in segment
-                          ? styles.accent
-                          : "secondary" in segment
-                            ? styles.secondary
-                            : undefined
-                      }
-                    >
-                      {segment.text}
-                    </span>
-                  ))}
-                </span>
-              ))}
-            </h1>
-            <p className={styles.heroDescription}>
-              {homeContent.hero.description.map((line) => <span key={line}>{line}</span>)}
-            </p>
-          </Reveal>
+    <main id="main-content" className={styles.home} data-page="home">
+      <section className={styles.homeSection} aria-labelledby="home-title">
+        <div className={styles.heading}>
+          <h1 id="home-title">
+            {homeContent.hero.title.map((line, lineIndex) => (
+              <span key={lineIndex} className={styles.titleLine}>
+                {line.map((segment) => (
+                  <span
+                    key={segment.text}
+                    className={"accent" in segment ? styles.accent : undefined}
+                  >
+                    {segment.text}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </h1>
         </div>
-        <div className={styles.heroFoot}>
-          <p>One intelligence, seamlessly present.</p>
-          <a href="#products">Discover Newnal <span aria-hidden="true">↓</span></a>
-        </div>
-      </section>
-      <section id="products" className={styles.paths} aria-labelledby="products-title">
-        <h2 id="products-title" className="srOnly">Explore Newnal products</h2>
-        <div className={styles.pathGrid}>
+        <nav className={styles.productGrid} aria-label="Explore Newnal products">
           {homeContent.paths.map((path, index) => (
-            <Reveal key={path.href} delay={index * 80} className={styles.pathReveal}>
-              <Link className={`${styles.card} ${styles[path.tone]}`} href={path.href}>
-                <span className={styles.index}>0{index + 1}</span>
-                <h3>{path.title.map((line) => <span key={line}>{line}</span>)}</h3>
-                <p>{path.description.map((line) => <span key={line}>{line}</span>)}</p>
-                <span className={styles.arrow} aria-hidden="true">→</span>
-              </Link>
-            </Reveal>
+            <Link key={path.href} className={`${styles.card} ${styles[path.id]}`} href={path.href}>
+              <span className={styles.cardNumber}>0{index + 1}</span>
+              <span className={styles.cardGlow} aria-hidden="true" />
+              <div className={styles.cardCopy}>
+                <h2>{path.title}</h2>
+                {path.id === "devices" && "subtitle" in path ? (
+                  <p className={styles.cardSubtitle}>{path.subtitle}</p>
+                ) : null}
+              </div>
+              <span className={styles.cardArrow} aria-hidden="true">↗</span>
+            </Link>
           ))}
+        </nav>
+        <div className={styles.homeFooter}>
+          <Link className={styles.homeFooterLogo} href="/">Newnal</Link>
+          <p className={styles.homeFooterCopyright}>© 2026 Newnal. All rights reserved.</p>
         </div>
       </section>
     </main>

@@ -1,285 +1,629 @@
 .page {
-  background: #fdfbf8;
-  color: #1f1a17;
-  overflow: hidden;
+  --violet: #c7663e;
+  --violet-deep: #914125;
+  --lavender: #efb17d;
+  --stage: #241611;
+  --stage-2: #3d2117;
+  --on-stage: #fff4ea;
+  --on-stage-soft: #dec4b3;
+  --bg: #fff7ef;
+  --ink: #321d15;
+  --ink-soft: #775c4d;
+  --line: rgba(70, 35, 22, .18);
+  background: #241611;
+  color: #fff4ea;
 }
 
-.page h1,
-.page h2,
-.page h3 {
-  font-family: var(--font-body), sans-serif;
-  font-weight: 400;
-  letter-spacing: -.055em;
-}
-
-.hero {
+.page > section:nth-of-type(1) {
   background:
-    radial-gradient(circle at 78% 20%, rgba(247, 193, 104, .26), transparent 28%),
-    radial-gradient(circle at 16% 90%, rgba(247, 153, 135, .16), transparent 34%),
-    #fdfbf8;
-  padding: clamp(64px, 8vw, 128px) 0;
+    radial-gradient(circle at 78% 22%, rgba(222, 112, 61, .35), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(239, 177, 125, .2), transparent 34%),
+    #241611 !important;
 }
 
-.heroGrid {
-  align-items: center;
-  display: grid;
-  gap: clamp(40px, 7vw, 120px);
-  grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(5) p {
+  color: #dec4b3 !important;
 }
 
-.heroCopy {
-  max-width: 610px;
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p:first-of-type,
+.page > section:nth-of-type(2) strong,
+.page > section:nth-of-type(2) :global([class*="chapterHead"]) > p:last-child {
+  color: #fff4ea !important;
 }
 
-.eyebrow {
-  color: #91623d;
-  font-family: var(--font-mono), monospace;
-  font-size: .68rem;
-  letter-spacing: .15em;
-  margin: 0 0 20px;
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]),
+.page > section:nth-of-type(2) :global([class*="chapterHead"]) :global(.eyebrow),
+.page > section:nth-of-type(5) :global([class*="chapterHead"]) :global(.eyebrow),
+.page > section:nth-of-type(6) :global(.eyebrow),
+.page > section:nth-of-type(2) :global([class*="proofs"]) strong,
+.page > section:nth-of-type(2) :global([class*="proofs"]) span {
+  color: #efb17d !important;
 }
 
-.heroCopy h1 {
-  font-size: clamp(3.2rem, 5.6vw, 6.25rem);
-  line-height: .9;
-  margin: 0;
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]) i {
+  background: #efb17d;
+  box-shadow: 0 0 14px rgba(239, 177, 125, .7);
 }
 
-.heroCopy h1 span,
-.familyCopy h2 span {
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroTagline {
+  color: #a94e29 !important;
+  font-size: clamp(1.25rem, 1.8vw, 1.8rem) !important;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.15 !important;
+  margin-top: 28px !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroTagline + p.heroDetail {
+  margin-top: 12px !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail {
+  color: #a94e29 !important;
+  font-size: clamp(1rem, 1.2vw, 1.35rem) !important;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.2 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail span {
   display: block;
 }
 
-.heroCopy > p {
-  color: #5e5148;
-  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
-  letter-spacing: -.025em;
-  line-height: 1.45;
-  margin: 32px 0 0;
-  max-width: 520px;
+@media (min-width: 1100px) {
+  .page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail {
+    margin-inline: auto !important;
+    max-width: none;
+    width: max-content;
+  }
+
+  .page > section:nth-of-type(1) :global([class*="heroHead"]) p.heroDetail span {
+    white-space: nowrap;
+  }
 }
 
-.heroCopy .heroDetail {
-  color: #786b62;
-  font-size: 1rem;
-  margin-top: 16px;
+.noWrapTitle span {
+  display: block;
 }
 
-.heroImage {
-  aspect-ratio: 4 / 3;
-  border-radius: 24px;
-  box-shadow: 0 34px 80px rgba(85, 54, 30, .18);
-  overflow: hidden;
-  position: relative;
+@media (min-width: 768px) {
+  .noWrapTitle span {
+    white-space: nowrap;
+  }
 }
 
-.heroImage img {
-  object-fit: cover;
+.page > section:nth-of-type(1) :global([class*="negatives"]) p {
+  color: #fff4ea !important;
+  text-decoration-color: #e98752;
 }
 
-.features,
-.family,
-.spec {
-  padding: clamp(80px, 10vw, 152px) 0;
+.page > section:nth-of-type(1) :global([class*="negatives"]) strong span {
+  border-color: #e98752;
 }
 
-.features {
+.page > section:nth-of-type(1) :global([class*="heroFilm"]) {
+  border-color: rgba(239, 177, 125, .28);
+}
+
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(5) {
+  background: #2a1812 !important;
+  color: #fff4ea;
+}
+
+.page > section:nth-of-type(2) :global([class*="personalized"]),
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #60341f, #1b0f0b 72%) !important;
+  border-color: rgba(239, 177, 125, .34);
+  box-shadow: 0 0 80px rgba(222, 112, 61, .2);
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(6) {
+  background: #fff7ef !important;
+  color: #321d15 !important;
+}
+
+.page > section:nth-of-type(3) h2,
+.page > section:nth-of-type(3) h3,
+.page > section:nth-of-type(4) h2,
+.page > section:nth-of-type(4) h3,
+.page > section:nth-of-type(6) h2,
+.page > section:nth-of-type(6) h3 {
+  color: #321d15 !important;
+}
+
+.page > section:nth-of-type(3) p,
+.page > section:nth-of-type(4) p,
+.page > section:nth-of-type(6) p {
+  color: #775c4d !important;
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) {
+  background: radial-gradient(circle at 50% 50%, rgba(222, 112, 61, .18), transparent 46%);
+  border-color: rgba(199, 102, 62, .22);
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) circle {
+  fill: rgba(232, 135, 82, .12);
+  stroke: #c7663e;
+}
+
+@media (min-width: 768px) {
+  .page > section:nth-of-type(3) :global([class*="vennText1"]),
+  .page > section:nth-of-type(3) :global([class*="vennText2"]) {
+    top: 18%;
+  }
+}
+
+.page > section:nth-of-type(3) :global([class*="venn"]) > div > span,
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span,
+.page > section:nth-of-type(6) :global([class*="specTable"]) span {
+  color: #914125 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(239, 177, 125, .2), transparent 30%),
+    #fff7ef !important;
+}
+
+.page > section:nth-of-type(4) :global([class*="moment"]) {
+  border-color: rgba(199, 102, 62, .2);
+}
+
+.page > section:nth-of-type(5) > div:first-child {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(222, 112, 61, .34), transparent 46%),
+    #321a12 !important;
+}
+
+.page > section:nth-of-type(5) > div:last-child {
+  background: #241611 !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #3a2117;
+  border-color: rgba(239, 177, 125, .2);
+}
+
+.page > section:nth-of-type(6) {
+  background: #f7e6d7 !important;
+}
+
+.page > section:nth-of-type(6) :global([class*="specTable"]) {
+  border-color: #c7663e;
+}
+
+.page > section:nth-of-type(6) :global([class*="specTable"]) > div {
+  border-color: rgba(70, 35, 22, .18);
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) {
+  background:
+    radial-gradient(circle at 50% 40%, #f4c99e, #d78252 72%);
+  border-color: rgba(199, 102, 62, .28);
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) img {
+  filter: none;
+  object-fit: contain;
+  padding: 24px;
+}
+
+/* Keep ONNI warm but bright: every stage uses a light surface and dark type. */
+.page {
+  --stage: #fff8f1;
+  --stage-2: #f7dfca;
+  --on-stage: #382217;
+  --on-stage-soft: #775b4c;
+  background: #fff8f1;
+  color: #382217;
+}
+
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 174, 112, .36), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(255, 210, 170, .34), transparent 34%),
+    #fff8f1 !important;
+}
+
+.page > section:nth-of-type(1),
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(5),
+.page > section:nth-of-type(6) {
+  color: #382217 !important;
+}
+
+.page > section:nth-of-type(1) h1,
+.page > section:nth-of-type(1) h2,
+.page > section:nth-of-type(1) h3,
+.page > section:nth-of-type(2) h2,
+.page > section:nth-of-type(2) h3,
+.page > section:nth-of-type(2) strong,
+.page > section:nth-of-type(5) h2,
+.page > section:nth-of-type(5) h3,
+.page > section:nth-of-type(5) strong {
+  color: #382217 !important;
+}
+
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(5) p {
+  color: #775b4c !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]),
+.page > section:nth-of-type(2) :global([class*="proofs"]) strong,
+.page > section:nth-of-type(2) :global([class*="proofs"]) span,
+.page > section:nth-of-type(5) :global([class*="momentCard"]) > span {
+  color: #a94e29 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="negatives"]) p {
+  color: #382217 !important;
+}
+
+.page > section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(255, 190, 135, .28), transparent 30%),
+    #fff1e4 !important;
+}
+
+.page > section:nth-of-type(2) :global([class*="personalized"]),
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #ffe3c4, #f2c59e 72%) !important;
+  border-color: rgba(199, 102, 62, .34);
+  box-shadow: 0 0 80px rgba(222, 112, 61, .14);
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(6) {
+  background: #fff8f1 !important;
+}
+
+.page > section:nth-of-type(5) {
+  background: #fff0e1 !important;
+}
+
+.page > section:nth-of-type(5) > div:first-child {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 179, 119, .36), transparent 46%),
+    #f7dfca !important;
+}
+
+.page > section:nth-of-type(5) > div:last-child {
+  background: #fff0e1 !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="concertShade"]) {
+  background: linear-gradient(180deg, rgba(255, 248, 241, .16), rgba(96, 45, 23, .22));
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #fff8f1;
+  border-color: rgba(199, 102, 62, .24);
+}
+
+.page > section:nth-of-type(2):global([class*="personalized"]) {
+  background: transparent !important;
+}
+
+.page > section:nth-of-type(4) :global([class*="momentImage"]) img {
+  filter: brightness(1.12) saturate(1.06);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentImage"])::after {
+  background: linear-gradient(180deg, rgba(29, 15, 8, 0) 32%, rgba(29, 15, 8, .52)) !important;
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span {
+  color: #ffd5b4 !important;
+  text-shadow: 0 1px 8px rgba(29, 15, 8, .55);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) h3 {
+  color: #fffaf5 !important;
+  text-shadow: 0 2px 12px rgba(29, 15, 8, .65);
+}
+
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) p {
+  color: rgba(255, 250, 245, .9) !important;
+  text-shadow: 0 1px 8px rgba(29, 15, 8, .65);
+}
+
+.page {
+  background: #fff9e6;
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(6) {
+  background: #fff9e6 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background: #fff6d5 !important;
+}
+
+/* ONNI's unified sunny-yellow palette. */
+.page {
+  --violet: #c99b00;
+  --violet-deep: #8c6b00;
+  --lavender: #f2cd45;
+  --stage: #fff9d8;
+  --stage-2: #fff0a4;
+  --on-stage: #453700;
+  --on-stage-soft: #746118;
+  --bg: #fff9d8;
+  --ink: #453700;
+  --ink-soft: #746118;
+  --line: rgba(105, 80, 0, .2);
+  background: #fff9d8;
+  color: #453700;
+}
+
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 220, 77, .46), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(255, 240, 153, .5), transparent 34%),
+    #fff9d8 !important;
+}
+
+.page > section:nth-of-type(1),
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(5),
+.page > section:nth-of-type(6) {
+  color: #453700 !important;
+}
+
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(5) p {
+  color: #746118 !important;
+}
+
+.page > section:nth-of-type(1) :global([class*="productEyebrow"]),
+.page > section:nth-of-type(2) :global([class*="proofs"]) strong,
+.page > section:nth-of-type(2) :global([class*="proofs"]) span,
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span,
+.page > section:nth-of-type(6) :global([class*="specTable"]) span {
+  color: #9a7800 !important;
+}
+
+.page > section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(255, 225, 92, .36), transparent 30%),
+    #fff4b8 !important;
+}
+
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #fff6be, #e7bd2e 72%) !important;
+  border-color: rgba(201, 155, 0, .38);
+  box-shadow: 0 0 80px rgba(224, 184, 34, .22);
+}
+
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(6) {
+  background: #fff9d8 !important;
+}
+
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 230, 105, .36), transparent 30%),
+    #fff5bf !important;
+}
+
+.page > section:nth-of-type(5) {
+  background: #fff2a7 !important;
+}
+
+.page > section:nth-of-type(5) > div:first-child {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 216, 62, .42), transparent 46%),
+    #ffed91 !important;
+}
+
+.page > section:nth-of-type(5) > div:last-child {
+  background: #fff2a7 !important;
+}
+
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #fffbe6;
+  border-color: rgba(185, 143, 0, .28);
+}
+
+.page > section:nth-of-type(6) {
+  background: #fff0a7 !important;
+}
+
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) {
+  background:
+    radial-gradient(circle at 50% 40%, #fff3a9, #e2b917 72%);
+  border-color: rgba(185, 143, 0, .32);
+}
+
+/* White foundation with yellow light as an accent, not a surface color. */
+.page {
+  --violet: #d3a400;
+  --violet-deep: #8a6a00;
+  --lavender: #f1ce4c;
+  --stage: #fff;
+  --stage-2: #fff;
+  --on-stage: #16130a;
+  --on-stage-soft: #625a35;
+  --bg: #fff;
+  --ink: #16130a;
+  --ink-soft: #625a35;
+  --line: rgba(22, 19, 10, .16);
   background: #fff;
+  color: #16130a;
 }
 
-.sectionHead {
-  max-width: 720px;
+.page > section:nth-of-type(1),
+.page > section:nth-of-type(2),
+.page > section:nth-of-type(3),
+.page > section:nth-of-type(4),
+.page > section:nth-of-type(5),
+.page > section:nth-of-type(6) {
+  background: #fff !important;
+  color: #16130a !important;
 }
 
-.sectionHead h2,
-.familyCopy h2,
-.specHead h2 {
-  font-size: clamp(2.5rem, 4.3vw, 4.8rem);
-  line-height: .94;
-  margin: 0;
+.page > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 224, 68, .32), transparent 28%),
+    radial-gradient(circle at 18% 88%, rgba(255, 239, 143, .22), transparent 34%),
+    #fff !important;
 }
 
-.sectionHead > p:last-child {
-  color: #665b54;
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
-  line-height: 1.5;
-  margin: 26px 0 0;
-  max-width: 620px;
+.page > section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255, 228, 82, .2), transparent 30%),
+    #fff !important;
 }
 
-.featureGrid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 64px;
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(255, 229, 92, .18), transparent 30%),
+    #fff !important;
 }
 
-.featureCard {
-  background: #f7f0e8;
-  border-radius: 16px;
-  min-height: 300px;
-  padding: 28px;
+.page > section:nth-of-type(5) {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(255, 222, 57, .22), transparent 32%),
+    #fff !important;
 }
 
-.featureCard > span {
-  color: #91623d;
-  font-family: var(--font-mono), monospace;
-  font-size: .68rem;
-  letter-spacing: .12em;
+.page > section:nth-of-type(5) > div:first-child,
+.page > section:nth-of-type(5) > div:last-child {
+  background: transparent !important;
 }
 
-.featureCard h3 {
-  font-size: clamp(1.65rem, 2vw, 2.15rem);
-  line-height: 1;
-  margin: 72px 0 16px;
+.page > section:nth-of-type(1) h1,
+.page > section:nth-of-type(1) h2,
+.page > section:nth-of-type(1) h3,
+.page > section:nth-of-type(2) h2,
+.page > section:nth-of-type(2) h3,
+.page > section:nth-of-type(2) strong,
+.page > section:nth-of-type(3) h2,
+.page > section:nth-of-type(3) h3,
+.page > section:nth-of-type(4) h2,
+.page > section:nth-of-type(4) h3,
+.page > section:nth-of-type(5) h2,
+.page > section:nth-of-type(5) h3,
+.page > section:nth-of-type(6) h2,
+.page > section:nth-of-type(6) h3 {
+  color: #16130a !important;
 }
 
-.featureCard p,
-.principles p,
-.specTable p {
-  color: #665b54;
-  font-size: .95rem;
-  line-height: 1.5;
-  margin: 0;
+.page > section:nth-of-type(1) p,
+.page > section:nth-of-type(2) p,
+.page > section:nth-of-type(3) p,
+.page > section:nth-of-type(4) p,
+.page > section:nth-of-type(5) p,
+.page > section:nth-of-type(6) p {
+  color: #625a35 !important;
 }
 
-.family {
-  background: #2e2926;
-  color: #fffaf5;
+.page > section:nth-of-type(2) :global([class*="screen"]) {
+  background:
+    radial-gradient(circle at 50% 38%, #fffef4, #fff0a1 72%) !important;
+  border-color: rgba(211, 164, 0, .28);
+  box-shadow: 0 0 80px rgba(242, 203, 55, .2);
 }
 
-.familyGrid,
-.specGrid {
-  align-items: start;
-  display: grid;
-  gap: clamp(48px, 10vw, 160px);
-  grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+.page > section:nth-of-type(5) :global([class*="concertShade"]) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(80, 62, 0, .18));
 }
 
-.family .eyebrow {
-  color: #e5af76;
+.page > section:nth-of-type(5) :global([class*="momentCards"]) article {
+  background: #fff;
+  border-color: rgba(211, 164, 0, .22);
 }
 
-.familyCopy h2 {
-  max-width: 530px;
+.page > section:nth-of-type(6) :global([class*="deviceRender"]) {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 235, 117, .72), rgba(255, 255, 255, 0) 70%),
+    #fff;
+  border-color: rgba(211, 164, 0, .24);
 }
 
-.familyCopy blockquote {
-  color: #d9d0c9;
-  font-size: clamp(1.05rem, 1.5vw, 1.45rem);
-  letter-spacing: -.025em;
-  line-height: 1.35;
-  margin: 40px 0 0;
-  max-width: 500px;
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) > span {
+  color: #fff3b0 !important;
+  text-shadow: 0 1px 8px rgba(30, 24, 0, .55);
 }
 
-.principles article {
-  border-top: 1px solid rgba(255, 250, 245, .2);
-  padding: 24px 0 30px;
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) h3 {
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(30, 24, 0, .65);
 }
 
-.principles article:last-child {
-  border-bottom: 1px solid rgba(255, 250, 245, .2);
+.page > section:nth-of-type(4) :global([class*="momentCopy"]) p {
+  color: rgba(255, 255, 255, .9) !important;
+  text-shadow: 0 1px 8px rgba(30, 24, 0, .65);
 }
 
-.principles h3 {
-  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
-  margin: 0 0 10px;
+.page :global([class*="personalized"]) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-.principles p {
-  color: #d9d0c9;
-  max-width: 480px;
+.page > section:nth-of-type(3) {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 226, 88, .1), transparent 34%),
+    #fffef8 !important;
 }
 
-.spec {
-  background: #f4e9de;
+.page > section:nth-of-type(4) {
+  background:
+    radial-gradient(circle at 12% 82%, rgba(255, 226, 88, .12), transparent 36%),
+    #fffef8 !important;
 }
 
-.specHead {
-  position: sticky;
-  top: 96px;
+.page > section:nth-of-type(6) {
+  background:
+    radial-gradient(circle at 80% 28%, rgba(255, 226, 88, .14), transparent 38%),
+    #fffef8 !important;
 }
 
-.specTable {
-  border-top: 2px solid #1f1a17;
+.personalized,
+.personalizedGrid {
+  background: transparent !important;
 }
 
-.specTable > div {
-  border-bottom: 1px solid rgba(31, 26, 23, .2);
-  display: grid;
-  gap: 20px;
-  grid-template-columns: minmax(130px, .55fr) 1fr;
-  padding: 20px 0;
+.page > section:nth-of-type(2) .personalizedGrid {
+  background: transparent !important;
 }
 
-.specTable span {
-  color: #91623d;
-  font-family: var(--font-mono), monospace;
-  font-size: .65rem;
-  letter-spacing: .1em;
+.page > section:nth-of-type(5) :global([class*="concert"]) :global([class*="chapterHead"]) h2 {
+  color: #fffdf2 !important;
+  text-shadow: 0 2px 16px rgba(38, 28, 0, .72);
 }
 
-.backLink {
-  align-items: center;
-  color: #1f1a17;
-  display: inline-flex;
-  font-size: .95rem;
-  gap: 12px;
-  margin-top: 42px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.page > section:nth-of-type(5) :global([class*="concert"]) :global([class*="chapterHead"]) p {
+  color: rgba(255, 253, 242, .94) !important;
+  text-shadow: 0 1px 10px rgba(38, 28, 0, .7);
 }
 
-.backLink span {
-  font-size: 1.2rem;
+.page > section:nth-of-type(3) :global([class*="venn"]) {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 220, 70, .2), transparent 48%);
+  border-color: rgba(211, 164, 0, .24);
 }
 
-@media (max-width: 900px) {
-  .heroGrid,
-  .familyGrid,
-  .specGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .heroImage {
-    max-width: 720px;
-  }
-
-  .featureGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .featureCard {
-    min-height: 0;
-  }
-
-  .featureCard h3 {
-    margin-top: 44px;
-  }
-
-  .specHead {
-    position: static;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero,
-  .features,
-  .family,
-  .spec {
-    padding: 72px 0;
-  }
-
-  .heroCopy h1 {
-    font-size: clamp(3rem, 14vw, 4.6rem);
-  }
-
-  .featureGrid {
-    margin-top: 40px;
-  }
-
-  .specTable > div {
-    grid-template-columns: 1fr;
-  }
+.page > section:nth-of-type(3) :global([class*="venn"]) circle {
+  fill: rgba(255, 218, 64, .16);
+  stroke: #d3a400;
 }

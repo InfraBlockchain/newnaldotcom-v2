@@ -6,7 +6,7 @@ import styles from "./header.module.css";
 
 const links = [
   ["Newnal aios", "/aios"],
-  ["Companion Devices", "/devices"],
+  ["Devices", "/devices"],
   ["Private Phone", "/private-phone"],
 ] as const;
 

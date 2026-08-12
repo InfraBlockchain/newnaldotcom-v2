@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { Reveal } from "@/components/shared/Reveal";
 import { homeContent } from "@/content/home";
 import styles from "./HomeHero.module.css";
@@ -56,7 +57,24 @@ export function HomeHero({
             </span>
           ))}
         </h1>
+        <p className={styles.intro}>
+          {homeContent.hero.intro.map((segment) => (
+            "bold" in segment ? (
+              <strong key={segment.text}>{segment.text}</strong>
+            ) : (
+              <span key={segment.text}>{segment.text}</span>
+            )
+          ))}
+        </p>
       </Reveal>
+      {!hasArtwork ? (
+        <div className={styles.scrollRow}>
+          <span className={styles.scrollHint} aria-hidden="true">
+            <span>scroll</span>
+            <ArrowDownIcon />
+          </span>
+        </div>
+      ) : null}
       {children}
     </section>
   );

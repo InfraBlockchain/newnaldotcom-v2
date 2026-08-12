@@ -1,12 +1,12 @@
 export const illiContent = {
   hero: {
     eyebrow: "ILLI · FAMILY CARE COMPANION",
-    title: "AI Companion for the Golden Generation",
-    subtitle: "- Care that feels like family.",
+    title: "AI Care for the Golden Generation",
+    subtitle: "- comfort that feels like family.",
     emphasis: "",
-    lead: "ILLI is an AI Life Companion for the Golden Generation — helping older adults stay independent, supported, and connected with family throughout the day.",
+    lead: "ILLI is an AI Life Care Device for the Golden Generation — helping older adults stay independent, supported, and connected with family throughout the day.",
     negatives: ["Not a smart speaker.", "Not a medical alert button.", "Not another screen for occasional video calls."],
-    closing: "A companion that understands daily life.",
+    closing: "An AI care device that understands daily life.",
   },
   personalized: {
     eyebrow: "01 · SUPPORTIVE PRESENCE",
