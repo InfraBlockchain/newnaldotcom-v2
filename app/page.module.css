@@ -156,6 +156,7 @@
 .cardCopy {
   align-self: end;
   max-width: 34rem;
+  padding-right: clamp(54px, 4vw, 78px);
   position: relative;
   z-index: 1;
 }
@@ -167,6 +168,10 @@
   letter-spacing: -.07em;
   line-height: .85;
   margin: 0;
+}
+
+.private h2 {
+  font-size: clamp(1.9rem, 2.65vw, 3.45rem);
 }
 
 .card p {
@@ -290,6 +295,14 @@
   }
 
   .card h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .cardCopy {
+    padding-right: 48px;
+  }
+
+  .private h2 {
     font-size: clamp(2rem, 9vw, 2.8rem);
   }
 
