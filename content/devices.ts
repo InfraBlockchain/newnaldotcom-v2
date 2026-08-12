@@ -2,7 +2,7 @@
 // Do not paraphrase — the user confirmed this copy on 2026-07-15.
 export const devicesContent = {
   hero: {
-    heading: ["AI Devices", "for the lives", "we actually live."],
+    heading: ["AI Devices", "Powered by Newnal aios"],
     rhythm: [
       "For the artist you love.",
       "For the family you care for.",
