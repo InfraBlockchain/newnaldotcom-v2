@@ -5,7 +5,6 @@ import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
-import { YaliSubnav } from "@/components/shared/YaliSubnav";
 import { onniContent as c } from "@/content/onni";
 import styles from "../yali/page.module.css";
 import onniStyles from "./page.module.css";
@@ -33,7 +32,6 @@ function PhilosophyIcon({ index }: { index: number }) {
 export default function OnniPage() {
   return (
     <main id="main-content" className={`${styles.page} ${onniStyles.page}`} data-theme="onni">
-      <YaliSubnav device="ONNI" />
       <section className={styles.hero}>
         <div className="container">
           <Reveal className={styles.heroHead}>

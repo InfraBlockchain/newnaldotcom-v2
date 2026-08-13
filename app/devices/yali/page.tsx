@@ -5,7 +5,6 @@ import { EmphasizedText } from "@/components/shared/EmphasizedText";
 import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
-import { YaliSubnav } from "@/components/shared/YaliSubnav";
 import { yaliContent as c } from "@/content/yali";
 import styles from "./page.module.css";
 
@@ -29,7 +28,6 @@ function PhilosophyIcon({ index }: { index: number }) {
 
 export default function YaliPage(){
   return <main id="main-content" className={styles.page} data-theme="yali">
-    <YaliSubnav device="YALI" />
     <section className={styles.hero}>
       <div className="container"><Reveal className={styles.heroHead}><h1><EmphasizedText text={c.hero.title} emphasis={c.hero.emphasis} /></h1><p>{c.hero.lead}</p><p>{c.hero.leadDetail}</p></Reveal>
         <Reveal className={styles.heroStatement}><div className={styles.negatives}><div className={styles.negativeLines}>{c.hero.negatives.map((line) => <p key={line}>{line}</p>)}</div></div><p className={styles.heroClosing}>{c.hero.closing}</p></Reveal>

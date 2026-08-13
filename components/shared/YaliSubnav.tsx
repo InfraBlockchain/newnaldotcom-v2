@@ -1,26 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./YaliSubnav.module.css";
 
 const chapters = [
-  ["chapter-1", "01"], ["chapter-2", "02"], ["chapter-3", "03"], ["chapter-4", "04"],
+  ["chapter-1", "01 Personalized Fandom"], ["chapter-2", "02 Everyday Moments"], ["chapter-3", "03 Moments That Matter"], ["chapter-4", "04 The Device"],
 ] as const;
 
-const devices = {
-  YALI: { href: "/devices/yali", tagline: "AI Artist Companion" },
-  ILLI: { href: "/devices/illi", tagline: "AI Companion for the Golden Generation" },
-  ONNI: { href: "/devices/onni", tagline: "Family AI Companion" },
-} as const;
-
-type DeviceName = keyof typeof devices;
-
-export function YaliSubnav({ device }: { device: DeviceName }) {
+export function YaliSubnav() {
+  const [progress, setProgress] = useState(0);
   const [chapter, setChapter] = useState<(typeof chapters)[number][1]>(chapters[0][1]);
-
   useEffect(() => {
     const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
       let next: (typeof chapters)[number][1] = chapters[0][1];
       for (const [id, label] of chapters) {
         const node = document.getElementById(id);
@@ -34,21 +28,7 @@ export function YaliSubnav({ device }: { device: DeviceName }) {
     return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
   }, []);
 
-  return <nav className={styles.nav} aria-label={`${device} page navigation`}>
-    <div className={styles.inner}>
-      <div className={styles.brand}><strong>{device}</strong><span>· {devices[device].tagline}</span></div>
-      <div className={styles.chapterLinks} aria-label="Page chapters">
-        {chapters.map(([id, label]) => <a key={id} className={chapter === label ? styles.current : ""} href={`#${id}`} aria-current={chapter === label ? "step" : undefined}>{label}</a>)}
-      </div>
-      <div className={styles.actions}>
-        <div className={styles.switcher} aria-label="Companion device pages">
-          {Object.entries(devices).map(([name, details]) => name === device
-            ? <strong key={name} aria-current="page">{name}</strong>
-            : <Link key={name} href={details.href}>{name}</Link>)}
-          <Link href="/devices/ufo">UFO</Link>
-        </div>
-        <a href={`mailto:contact@newnal.com?subject=Get%20${device}`}>Get {device}</a>
-      </div>
-    </div>
+  return <nav className={styles.nav} aria-label="YALI page navigation">
+    <div className={styles.inner}><div className={styles.brand}><strong>YALI</strong><span>· AI Artist Companion</span></div><div className={styles.chapter}><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle className={styles.progress} cx="10" cy="10" r="8" style={{"--progress":progress} as CSSProperties}/></svg><span>{chapter}</span></div><div className={styles.actions}><div className={styles.switcher}><b>YALI</b><Link href="/devices/illi">ILLI</Link><Link href="/devices/ufo">UFO</Link></div><a href="mailto:contact@newnal.com?subject=Get%20YALI">Get YALI</a></div></div>
   </nav>;
 }
