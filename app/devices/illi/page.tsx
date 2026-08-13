@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AutoPauseVideo } from "@/components/shared/AutoPauseVideo";
 import { Reveal } from "@/components/shared/Reveal";
 import { ScrollRail } from "@/components/shared/ScrollRail";
+import { YaliSubnav } from "@/components/shared/YaliSubnav";
 import { illiContent as c } from "@/content/illi";
 import styles from "./page.module.css";
 
@@ -27,6 +28,7 @@ function PhilosophyIcon({ index }: { index: number }) {
 
 export default function IlIiPage(){
   return <main id="main-content" className={styles.page} data-theme="illi">
+    <YaliSubnav device="ILLI" />
     <section className={styles.hero}>
       <div className="container"><Reveal className={styles.heroHead}><h1>{c.hero.title}</h1>{c.hero.subtitle && <h2 className={styles.subtitle}>{c.hero.subtitle}</h2>}<p>{c.hero.lead}</p></Reveal>
         <Reveal className={styles.heroStatement}><div className={styles.negatives}><div className={styles.negativeLines}>{c.hero.negatives.map((line) => <p key={line}>{line}</p>)}</div></div><p className={styles.heroClosing}>{c.hero.closing}</p></Reveal>

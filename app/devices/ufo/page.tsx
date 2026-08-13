@@ -6,6 +6,7 @@ import { UfoHero } from "@/components/ufo/sections/UfoHero";
 import { UfoPowerGauge } from "@/components/ufo/sections/UfoPowerGauge";
 import { UfoSignalGuide } from "@/components/ufo/sections/UfoSignalGuide";
 import { UfoSpecTable } from "@/components/ufo/sections/UfoSpecTable";
+import { UfoSubnav } from "@/components/ufo/UfoSubnav";
 import { ufoContent } from "@/content/ufo";
 import styles from "./page.module.css";
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function UfoPage() {
   return (
     <main id="main-content" className={styles.page} data-theme="ufo">
+      <UfoSubnav />
       <UfoHero />
       <UfoDarkShowcase />
       <UfoEditorialBand />

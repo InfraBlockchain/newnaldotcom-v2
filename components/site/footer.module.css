@@ -1,6 +1,7 @@
 .footer {
-  background: #fff;
-  color: var(--fg-ink);
+  background: #f7f7f8;
+  border-top: 1px solid rgba(19, 19, 22, .08);
+  color: var(--ink);
 }
 
 .inner {
@@ -31,6 +32,16 @@
 :global(body:has([data-theme="private"])) .footer {
   background: #f8f9fb;
   color: #0a0e16;
+}
+
+:global(body:has([data-theme="yali"])) .footer {
+  background: #f7f5fb;
+  color: #16101f;
+}
+
+:global(body:has([data-theme="ufo"])) .footer {
+  background: #f5f9ff;
+  color: #12233c;
 }
 
 @media (max-width: 1199px) {

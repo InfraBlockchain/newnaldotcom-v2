@@ -1,6 +1,8 @@
 .header {
-  background: #fff;
-  color: var(--fg-ink);
+  --shell-bg: #f7f7f8;
+  background: var(--shell-bg);
+  border-bottom: 1px solid rgba(19, 19, 22, .08);
+  color: var(--ink);
   height: 64px;
   position: sticky;
   top: 0;
@@ -37,7 +39,7 @@
 .nav a {
   border: 1px solid transparent;
   border-radius: 30px;
-  color: rgba(10, 10, 10, .5);
+  color: color-mix(in srgb, currentColor 52%, transparent);
   flex: 0 0 auto;
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
@@ -53,8 +55,8 @@
 }
 
 .nav .active {
-  border-color: #848484;
-  color: var(--fg-ink);
+  border-color: currentColor;
+  color: inherit;
 }
 
 .yaliHeader {
@@ -62,6 +64,7 @@
 }
 
 :global(body:has([data-theme="private"])) .header {
+  --shell-bg: #f8f9fb;
   background: #f8f9fb;
   color: #0a0e16;
 }
@@ -80,6 +83,28 @@
   color: #0052a3;
 }
 
+:global(body:has([data-theme="yali"])) .header {
+  --shell-bg: #f7f5fb;
+  background: var(--shell-bg);
+  color: #16101f;
+}
+
+:global(body:has([data-theme="yali"])) .nav .active {
+  border-color: #6c4bd8;
+  color: #4b2fa6;
+}
+
+:global(body:has([data-theme="ufo"])) .header {
+  --shell-bg: #f5f9ff;
+  background: var(--shell-bg);
+  color: #12233c;
+}
+
+:global(body:has([data-theme="ufo"])) .nav .active {
+  border-color: #1769c2;
+  color: #1769c2;
+}
+
 @media (max-width: 1199px) {
   .inner {
     padding-inline: 40px;
@@ -90,6 +115,7 @@
   .inner {
     display: flex;
     gap: 24px;
+    position: relative;
     padding-inline: 20px;
   }
 
@@ -104,6 +130,23 @@
     overflow-x: auto;
     padding-right: 20px;
     scrollbar-width: none;
+  }
+
+  .inner::after {
+    align-items: center;
+    background: linear-gradient(to right, transparent, var(--shell-bg) 54%);
+    color: currentColor;
+    content: "›";
+    display: flex;
+    font-size: 1.35rem;
+    height: 100%;
+    justify-content: flex-end;
+    padding-right: 8px;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
   }
 
   .nav::-webkit-scrollbar {

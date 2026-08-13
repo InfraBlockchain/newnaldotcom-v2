@@ -260,6 +260,24 @@
   }
 }
 
+@media (max-height: 760px) and (min-width: 768px) {
+  .home {
+    height: auto;
+    min-height: calc(100svh - 64px);
+    overflow: visible;
+  }
+
+  .homeSection {
+    height: auto;
+    min-height: calc(100svh - 64px);
+    grid-template-rows: minmax(320px, 1fr) minmax(240px, 32vh) auto;
+  }
+
+  .heading {
+    padding-top: 72px;
+  }
+}
+
 @media (max-width: 767px) {
   .home {
     height: auto;
