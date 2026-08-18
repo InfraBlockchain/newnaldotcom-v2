@@ -22,8 +22,8 @@ export default function HomePage() {
           <p className={styles.heroLead}>
             Newnal aios leads the way with intelligence that belongs to you.
           </p>
-          <Link className={styles.primaryAction} href="/aios">
-            Explore Newnal aios <span aria-hidden="true">↗</span>
+          <Link className={styles.primaryAction} href="#aios-introduction">
+            Meet Newnal aios <span aria-hidden="true">↓</span>
           </Link>
         </div>
         <div className={styles.heroArtwork}>
@@ -38,7 +38,7 @@ export default function HomePage() {
         <p className={styles.heroNote}>Personal intelligence. Under your control.</p>
       </section>
 
-      <section className={styles.belief} aria-labelledby="belief-title">
+      <section id="aios-introduction" className={styles.belief} aria-labelledby="belief-title">
         <p className={styles.sectionLabel}>A different starting point</p>
         <div className={styles.beliefStatement}>
           <h2 id="belief-title">

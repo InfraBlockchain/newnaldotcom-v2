@@ -150,6 +150,7 @@
   gap: 32px;
   grid-template-columns: minmax(180px, .52fr) minmax(0, 1.48fr);
   padding: clamp(92px, 12vw, 176px) clamp(24px, 5.55vw, 80px);
+  scroll-margin-top: 64px;
 }
 
 .sectionLabel {
