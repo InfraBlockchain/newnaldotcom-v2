@@ -68,6 +68,7 @@
   background: #f7f8fb;
   border-bottom-color: rgba(21, 25, 37, .12);
   color: #151925;
+  display: none;
 }
 
 :global(body:has([data-page="home"])) .nav a {
