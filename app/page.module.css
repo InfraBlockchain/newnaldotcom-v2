@@ -706,12 +706,14 @@
 .project {
   background: #273750;
   color: #fff;
+  display: block;
   grid-column: span 6;
   min-height: 460px;
   overflow: hidden;
   padding: clamp(28px, 4vw, 52px);
   position: relative;
   transition: transform 240ms var(--ease-soft);
+  width: 100%;
 }
 
 .project:nth-child(2) {
