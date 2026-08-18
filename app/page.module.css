@@ -699,14 +699,15 @@
 .projectGrid {
   display: grid;
   gap: 12px;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   margin-top: clamp(62px, 8vw, 112px);
 }
 
 .project {
   background: #273750;
   color: #fff;
-  min-height: 450px;
+  grid-column: span 6;
+  min-height: 460px;
   overflow: hidden;
   padding: clamp(28px, 4vw, 52px);
   position: relative;
@@ -714,21 +715,25 @@
 }
 
 .project:nth-child(2) {
-  margin-top: 68px;
+  margin-top: 0;
 }
 
 .project:nth-child(3) {
-  margin-top: -34px;
+  grid-column: span 4;
+  margin-top: 0;
+  min-height: 360px;
 }
 
 .project:nth-child(4) {
-  margin-top: 38px;
+  grid-column: span 4;
+  margin-top: 0;
+  min-height: 360px;
 }
 
 .project:nth-child(5) {
-  grid-column: 1 / -1;
-  margin-top: 36px;
-  min-height: 350px;
+  grid-column: span 4;
+  margin-top: 0;
+  min-height: 360px;
 }
 
 .projectImage {
@@ -1056,7 +1061,9 @@
 
   .project,
   .project:nth-child(2),
-  .project:nth-child(3) {
+  .project:nth-child(3),
+  .project:nth-child(4),
+  .project:nth-child(5) {
     margin-top: 12px;
     min-height: 330px;
   }
