@@ -126,9 +126,9 @@ export default function HomePage() {
               <Image className={styles.projectImage} src={project.image} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" />
               <span className={styles.projectShade} aria-hidden="true" />
               <div className={styles.projectCopy}>
-                <span className={styles.projectArrow} aria-hidden="true">↗</span>
                 <h3>{project.title}</h3>
                 <p>{project.body}</p>
+                <span className={styles.projectArrow} aria-hidden="true">↗</span>
               </div>
             </Link>
           ))}
