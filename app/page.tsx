@@ -115,6 +115,35 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
+
+      <section className={styles.projects} aria-labelledby="projects-title">
+        <div className={styles.sectionIntro}>
+          <p className={styles.sectionLabel}>{c.projects.eyebrow}</p>
+          <h2 id="projects-title">{c.projects.title}</h2>
+        </div>
+        <div className={styles.projectGrid}>
+          {c.projects.items.map((project) => (
+            <Link key={project.title} className={styles.project} href={project.href}>
+              <span className={styles.projectArrow} aria-hidden="true">↗</span>
+              <h3>{project.title}</h3>
+              <p>{project.body}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.company} aria-labelledby="company-title">
+        <div>
+          <p className={styles.sectionLabel}>{c.company.eyebrow}</p>
+          <h2 id="company-title">{c.company.title}</h2>
+        </div>
+        <div className={styles.companyCopy}>
+          <p>{c.company.body}</p>
+          <a className={styles.companyAction} href="mailto:contact@newnal.com?subject=Partner%20with%20Newnal">
+            파트너십 문의 <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
     </main>
   );
 }

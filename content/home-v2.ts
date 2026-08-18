@@ -81,4 +81,30 @@ export const homeV2Content = {
       "120개국에서 사용된 검증 기반 서비스 경험",
     ],
   },
+  projects: {
+    eyebrow: "Projects",
+    title: "Newnal aios는 다양한 경험으로 확장됩니다.",
+    items: [
+      {
+        title: "Newnal aios",
+        body: "개인의 데이터와 맥락을 이해하는 AI-native Operating System.",
+        href: "/aios",
+      },
+      {
+        title: "Companion Devices",
+        body: "Newnal aios를 다양한 산업과 사용 환경으로 확장하는 파트너 디바이스.",
+        href: "/devices",
+      },
+      {
+        title: "Private Phone",
+        body: "신뢰가 깨지는 순간까지 보호하는 Newnal의 보안과 프라이버시 기술 제품.",
+        href: "/private-phone",
+      },
+    ],
+  },
+  company: {
+    eyebrow: "Company",
+    title: "AI 시대의 디바이스와 서비스를 함께 만들 파트너를 찾습니다.",
+    body: "Newnal은 개인의 데이터, 맥락, 에이전트, 디바이스가 하나의 구조 안에서 작동하는 새로운 컴퓨팅 경험을 만듭니다.",
+  },
 } as const;
