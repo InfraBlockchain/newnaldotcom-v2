@@ -115,71 +115,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.partnerDevices} aria-labelledby="partner-devices-title">
-        <div className={styles.partnerHeader}>
-          <div>
-            <p className={styles.sectionLabel}>{c.partnerDevices.eyebrow}</p>
-            <h2 id="partner-devices-title">{c.partnerDevices.title}</h2>
-          </div>
-          <div className={styles.bodyCopy}>
-            {c.partnerDevices.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </div>
-        <div className={styles.partnerImage}>
-          <Image
-            src="/images/devices/hero-companions.png"
-            alt="Newnal aios와 함께 동작하는 다양한 컴패니언 디바이스"
-            fill
-            sizes="(max-width: 767px) 100vw, 89vw"
-          />
-        </div>
-        <div className={styles.deviceExamples}>
-          {c.partnerDevices.examples.map((device) => (
-            <article key={device.title} className={styles.deviceExample}>
-              <Image src={device.image} alt={`${device.title} 디바이스 콘셉트`} fill sizes="(max-width: 767px) 100vw, 50vw" />
-              <div className={styles.deviceOverlay} />
-              <div className={styles.deviceCopy}>
-                <h3>{device.title}</h3>
-                <p>{device.body}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className={styles.partnerClosing}>
-          {c.partnerDevices.subtext.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        </div>
-      </section>
-
-      <section className={styles.privatePhone} aria-labelledby="private-phone-title">
-        <div className={styles.privateHeader}>
-          <div>
-            <p className={styles.sectionLabel}>{c.privatePhone.eyebrow}</p>
-            <h2 id="private-phone-title">{c.privatePhone.title}</h2>
-          </div>
-          <div className={styles.bodyCopy}>
-            {c.privatePhone.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </div>
-        <div className={styles.privateVisual}>
-          <Image
-            src="/images/private/hero-private-phone.png"
-            alt="Newnal Private Phone 기기"
-            fill
-            sizes="(max-width: 767px) 100vw, 89vw"
-          />
-        </div>
-        <div className={styles.technologyList}>
-          {c.privatePhone.technologies.map((technology) => (
-            <article key={technology.number} className={styles.technology}>
-              <p>{technology.number}</p>
-              <h3>{technology.title}</h3>
-              <span>{technology.body}</span>
-            </article>
-          ))}
-        </div>
-        <p className={styles.privateClosing}>{c.privatePhone.subtext}</p>
-      </section>
-
       <section className={styles.projects} aria-labelledby="projects-title">
         <div className={styles.sectionIntro}>
           <p className={styles.sectionLabel}>{c.projects.eyebrow}</p>
@@ -188,9 +123,13 @@ export default function HomePage() {
         <div className={styles.projectGrid}>
           {c.projects.items.map((project) => (
             <Link key={project.title} className={styles.project} href={project.href}>
-              <span className={styles.projectArrow} aria-hidden="true">↗</span>
-              <h3>{project.title}</h3>
-              <p>{project.body}</p>
+              <Image className={styles.projectImage} src={project.image} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" />
+              <span className={styles.projectShade} aria-hidden="true" />
+              <div className={styles.projectCopy}>
+                <span className={styles.projectArrow} aria-hidden="true">↗</span>
+                <h3>{project.title}</h3>
+                <p>{project.body}</p>
+              </div>
             </Link>
           ))}
         </div>
