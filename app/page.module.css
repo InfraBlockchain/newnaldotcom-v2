@@ -20,6 +20,8 @@
 .why,
 .pillars,
 .architecture,
+.partnerDevices,
+.privatePhone,
 .projects,
 .company {
   margin-inline: auto;
@@ -41,7 +43,6 @@
   z-index: 1;
 }
 
-.kicker,
 .sectionLabel,
 .pillarNumber,
 .eraLine {
@@ -51,11 +52,6 @@
   letter-spacing: .13em;
   line-height: 1.4;
   text-transform: uppercase;
-}
-
-.kicker {
-  color: var(--home-accent);
-  margin: 0 0 28px;
 }
 
 .hero h1,
@@ -175,6 +171,8 @@
 .why,
 .pillars,
 .architecture,
+.partnerDevices,
+.privatePhone,
 .projects,
 .company {
   border-top: 1px solid var(--home-line);
@@ -475,6 +473,221 @@
   margin-bottom: 9px;
 }
 
+.partnerDevices,
+.privatePhone {
+  border-top: 1px solid var(--home-line);
+  padding: clamp(92px, 12vw, 174px) clamp(24px, 5.55vw, 80px);
+}
+
+.partnerDevices {
+  background: #e9edf5;
+}
+
+.partnerHeader,
+.privateHeader {
+  display: grid;
+  gap: clamp(44px, 8vw, 120px);
+  grid-template-columns: minmax(0, 1.04fr) minmax(280px, .76fr);
+}
+
+.partnerHeader h2,
+.privateHeader h2 {
+  font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
+  font-size: clamp(2.85rem, 4.8vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1.03;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.partnerImage {
+  aspect-ratio: 1.95;
+  background: #cedcef;
+  margin-top: clamp(58px, 8vw, 108px);
+  overflow: hidden;
+  position: relative;
+}
+
+.partnerImage img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.deviceExamples {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.deviceExample {
+  background: #26354d;
+  color: #fff;
+  min-height: 460px;
+  overflow: hidden;
+  padding: clamp(26px, 3.4vw, 46px);
+  position: relative;
+}
+
+.deviceExample:nth-child(2) {
+  margin-top: 62px;
+}
+
+.deviceExample:nth-child(3) {
+  margin-top: -30px;
+}
+
+.deviceExample:nth-child(4) {
+  margin-top: 32px;
+}
+
+.deviceExample > img {
+  object-fit: cover;
+  transition: transform 500ms var(--ease-soft);
+}
+
+.deviceOverlay {
+  background: linear-gradient(180deg, rgba(12, 17, 29, .08) 18%, rgba(12, 17, 29, .84) 100%);
+  inset: 0;
+  position: absolute;
+}
+
+.deviceCopy {
+  bottom: clamp(26px, 3.4vw, 46px);
+  left: clamp(26px, 3.4vw, 46px);
+  max-width: 29rem;
+  position: absolute;
+  right: clamp(26px, 3.4vw, 46px);
+  z-index: 1;
+}
+
+.deviceCopy h3 {
+  font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
+  font-size: clamp(2.1rem, 3.8vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1;
+  margin: 0;
+}
+
+.deviceCopy p {
+  color: rgba(255, 255, 255, .8);
+  font-size: .94rem;
+  letter-spacing: -.015em;
+  line-height: 1.62;
+  margin: 16px 0 0;
+}
+
+.deviceExample:hover > img {
+  transform: scale(1.05);
+}
+
+.partnerClosing {
+  border-top: 1px solid var(--home-line);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, .5fr);
+  margin-top: clamp(72px, 10vw, 144px);
+  padding-top: 20px;
+}
+
+.partnerClosing p {
+  color: var(--home-muted);
+  font-size: 1rem;
+  letter-spacing: -.018em;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.partnerClosing p:last-child {
+  color: var(--home-ink);
+  font-size: clamp(1.25rem, 1.85vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.privatePhone {
+  background: #151925;
+  color: #f7f8fb;
+}
+
+.privatePhone .sectionLabel {
+  color: #9eb4ff;
+}
+
+.privatePhone .bodyCopy {
+  color: rgba(255, 255, 255, .76);
+}
+
+.privateVisual {
+  aspect-ratio: 1.95;
+  background: #21293a;
+  margin-top: clamp(58px, 8vw, 108px);
+  overflow: hidden;
+  position: relative;
+}
+
+.privateVisual img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.technologyList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.technology {
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+  min-height: 245px;
+  padding: 30px 42px 34px 0;
+}
+
+.technology:nth-child(even) {
+  padding-left: 42px;
+  padding-right: 0;
+}
+
+.technology > p {
+  color: #9eb4ff;
+  font-family: var(--font-mono), monospace;
+  font-size: .68rem;
+  letter-spacing: .13em;
+  margin: 0 0 38px;
+}
+
+.technology h3 {
+  font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 26rem;
+}
+
+.technology span {
+  color: rgba(255, 255, 255, .68);
+  display: block;
+  font-size: .91rem;
+  letter-spacing: -.012em;
+  line-height: 1.65;
+  margin-top: 16px;
+  max-width: 32rem;
+}
+
+.privateClosing {
+  color: #9eb4ff;
+  font-size: clamp(1.45rem, 2.4vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -.035em;
+  line-height: 1.42;
+  margin: clamp(72px, 10vw, 138px) 0 0;
+  max-width: 43rem;
+}
+
 .projects {
   background: #f7f8fb;
 }
@@ -677,6 +890,8 @@
   .why,
   .pillars,
   .architecture,
+  .partnerDevices,
+  .privatePhone,
   .projects,
   .company {
     padding: 92px 20px;
@@ -755,6 +970,66 @@
 
   .proof li + li {
     margin-top: 26px;
+  }
+
+  .partnerHeader,
+  .privateHeader,
+  .partnerClosing {
+    display: block;
+  }
+
+  .partnerHeader h2,
+  .privateHeader h2 {
+    font-size: clamp(2.75rem, 11.4vw, 4.3rem);
+  }
+
+  .partnerHeader .bodyCopy,
+  .privateHeader .bodyCopy {
+    margin-top: 38px;
+  }
+
+  .partnerImage,
+  .privateVisual {
+    aspect-ratio: .98;
+    margin-top: 54px;
+  }
+
+  .deviceExamples {
+    display: block;
+  }
+
+  .deviceExample,
+  .deviceExample:nth-child(2),
+  .deviceExample:nth-child(3),
+  .deviceExample:nth-child(4) {
+    margin-top: 12px;
+    min-height: 420px;
+  }
+
+  .deviceExample:first-child {
+    margin-top: 0;
+  }
+
+  .partnerClosing {
+    margin-top: 74px;
+  }
+
+  .partnerClosing p + p {
+    margin-top: 26px;
+  }
+
+  .technologyList {
+    display: block;
+  }
+
+  .technology,
+  .technology:nth-child(even) {
+    min-height: 0;
+    padding: 30px 0 34px;
+  }
+
+  .technology > p {
+    margin-bottom: 24px;
   }
 
   .projectGrid,

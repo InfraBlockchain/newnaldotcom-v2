@@ -81,6 +81,82 @@ export const homeV2Content = {
       "120개국에서 사용된 검증 기반 서비스 경험",
     ],
   },
+  partnerDevices: {
+    eyebrow: "Partner device platform",
+    title: "Newnal aios는 파트너의 디바이스 위에서 확장됩니다.",
+    body: [
+      "Newnal은 모든 디바이스를 직접 만들려는 회사가 아닙니다. Newnal aios는 다양한 파트너사가 자신들의 산업, 고객, 하드웨어, 디자인, 유통 구조에 맞춰 AI-native device를 만들 수 있도록 하는 운영체제 플랫폼입니다.",
+      "YALI, ILLI, ONNI, UFO와 같은 디바이스 콘셉트는 Newnal aios가 어떤 방식으로 산업별 경험으로 확장될 수 있는지를 보여주는 예시입니다. 실제 제품은 파트너사의 요구에 따라 하드웨어, 디자인, 기능, 콘텐츠, 서비스 구조를 함께 설계할 수 있습니다.",
+    ],
+    examples: [
+      {
+        title: "YALI",
+        body: "엔터테인먼트 파트너를 위한 공식 K-pop Artist AI Companion. 아티스트의 공식 AI Persona와 팬의 My Data를 연결해, 팬덤을 일방향 콘텐츠 소비에서 개인화된 관계 경험으로 확장합니다.",
+        image: "/images/devices/slide-yali.png",
+      },
+      {
+        title: "ILLI",
+        body: "시니어 케어 파트너를 위한 AI Life Companion. 일상 관리, 가족 연결, 안전 알림, 정서적 교감을 하나의 홈 디바이스 경험으로 통합합니다.",
+        image: "/images/devices/slide-illi.png",
+      },
+      {
+        title: "ONNI",
+        body: "영유아 케어 파트너를 위한 AI Care Companion. 수면, 수유, 성장 기록, 원격 모니터링, 발달 콘텐츠를 부모 친화적인 AI 케어 경험으로 연결합니다.",
+        image: "/images/onni/family-hero.png",
+      },
+      {
+        title: "UFO",
+        body: "게임, 리테일, 도시 경험 파트너를 위한 Real-world Adventure Device. 걷기, 탐험, 위치 기반 미션, 보상 시스템을 결합해 현실 공간을 AI 기반 게임 필드로 만듭니다.",
+        image: "/images/devices/slide-ufo.png",
+      },
+    ],
+    subtext: [
+      "Newnal aios는 파트너가 새로운 AI 디바이스를 더 빠르게 기획하고, 검증하고, 출시할 수 있도록 돕습니다.",
+      "파트너의 산업. 파트너의 고객. 파트너의 디바이스. Newnal의 AI-native OS.",
+    ],
+  },
+  privatePhone: {
+    eyebrow: "Proprietary Newnal technology",
+    title: "신뢰가 깨지는 순간까지 보호하는 Private Phone.",
+    body: [
+      "Private Phone은 Newnal의 자체 기술로 구현되는 고보안 커뮤니케이션 제품입니다.",
+      "일반 보안폰이 해커로부터 사용자를 보호한다면, Newnal Private Phone은 대화 상대방이 스크린샷을 찍거나, 통화를 녹음하거나, 대화를 맥락 없이 유출하는 상황까지 고려합니다.",
+      "핵심은 단순 암호화가 아닙니다. 신원, 음성, 메시지 기록, 연락 구조를 모두 분리해 유출된 정보가 곧바로 사용자의 말과 정체성으로 확정되지 않도록 설계합니다.",
+    ],
+    technologies: [
+      {
+        number: "01",
+        title: "Decentralized Identity",
+        body: "개인 전화번호, 이메일, 실제 신원을 노출하지 않고 커뮤니케이션할 수 있는 탈식별 ID 구조.",
+      },
+      {
+        number: "02",
+        title: "Independent Message Histories",
+        body: "각 기기가 독립적인 대화 기록을 보유합니다. 하나의 스크린샷이 절대적인 원본으로 기능하기 어렵도록 설계됩니다.",
+      },
+      {
+        number: "03",
+        title: "Real-Time Voice Modulation",
+        body: "통화 중 사용자의 원래 음성 지문이 그대로 전달되지 않도록 실시간으로 음성을 변환합니다.",
+      },
+      {
+        number: "04",
+        title: "End-to-End & On-Device Encryption",
+        body: "메시지와 통화는 전송 과정에서 암호화되고, 민감한 데이터는 기기 내부에서도 보호됩니다.",
+      },
+      {
+        number: "05",
+        title: "Unique Number per Connection",
+        body: "연락처 동기화나 영구 번호를 사용하지 않습니다. 각 관계마다 고유한 Newnal Number를 생성해, 한 사람과 하나의 독립된 연결을 만듭니다.",
+      },
+      {
+        number: "06",
+        title: "Free Connection App",
+        body: "상대방이 Private Phone을 가지고 있지 않아도 연결은 가능합니다. Private Phone 사용자가 고유 번호를 생성하고 공유하면, 상대방은 무료 연결 앱을 통해 암호화된 1:1 채널에 참여할 수 있습니다.",
+      },
+    ],
+    subtext: "무료 앱은 연결을 확장합니다. Private Phone은 보호를 완성합니다.",
+  },
   projects: {
     eyebrow: "Projects",
     title: "Newnal aios는 다양한 경험으로 확장됩니다.",
