@@ -1,9 +1,9 @@
 .home {
-  --home-ink: #f4f5f7;
-  --home-muted: #aeb2be;
-  --home-line: rgba(235, 238, 246, .18);
-  --home-accent: #93a8ff;
-  background: #10121a;
+  --home-ink: #151925;
+  --home-muted: #5d6575;
+  --home-line: rgba(21, 25, 37, .16);
+  --home-accent: #3154d6;
+  background: #f7f8fb;
   color: var(--home-ink);
   overflow: hidden;
 }
@@ -76,8 +76,8 @@
 .primaryAction,
 .closingAction {
   align-items: center;
-  background: var(--home-ink);
-  color: #12141d;
+  background: #151925;
+  color: #f7f8fb;
   display: inline-flex;
   font-family: var(--font-inter), sans-serif;
   font-size: .9rem;
@@ -98,6 +98,7 @@
 .primaryAction:hover,
 .closingAction:hover {
   background: var(--home-accent);
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -188,7 +189,7 @@
 }
 
 .catalog {
-  background: #1a1e2a;
+  background: #e9edf5;
   padding: clamp(76px, 9vw, 128px) clamp(24px, 5.55vw, 80px);
 }
 
@@ -391,7 +392,7 @@
 }
 
 .closing {
-  background: #10121a;
+  background: #f7f8fb;
   border-top: 1px solid var(--home-line);
   padding: clamp(96px, 13vw, 190px) clamp(24px, 13vw, 192px);
 }

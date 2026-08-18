@@ -30,9 +30,9 @@
 }
 
 :global(body:has([data-page="home"])) .footer {
-  background: #10121a;
-  border-top-color: rgba(235, 238, 246, .14);
-  color: #f4f5f7;
+  background: #f7f8fb;
+  border-top-color: rgba(21, 25, 37, .12);
+  color: #151925;
 }
 
 :global(body:has([data-theme="private"])) .footer {

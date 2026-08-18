@@ -64,19 +64,19 @@
 }
 
 :global(body:has([data-page="home"])) .header {
-  --shell-bg: #10121a;
-  background: #10121a;
-  border-bottom-color: rgba(235, 238, 246, .14);
-  color: #f4f5f7;
+  --shell-bg: #f7f8fb;
+  background: #f7f8fb;
+  border-bottom-color: rgba(21, 25, 37, .12);
+  color: #151925;
 }
 
 :global(body:has([data-page="home"])) .nav a {
-  color: rgba(244, 245, 247, .58);
+  color: rgba(21, 25, 37, .58);
 }
 
 :global(body:has([data-page="home"])) .nav a:hover,
 :global(body:has([data-page="home"])) .nav .active {
-  color: #f4f5f7;
+  color: #151925;
 }
 
 :global(body:has([data-theme="private"])) .header {
