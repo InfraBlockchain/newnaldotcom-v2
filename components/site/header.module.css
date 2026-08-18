@@ -63,6 +63,22 @@
   position: relative;
 }
 
+:global(body:has([data-page="home"])) .header {
+  --shell-bg: #10121a;
+  background: #10121a;
+  border-bottom-color: rgba(235, 238, 246, .14);
+  color: #f4f5f7;
+}
+
+:global(body:has([data-page="home"])) .nav a {
+  color: rgba(244, 245, 247, .58);
+}
+
+:global(body:has([data-page="home"])) .nav a:hover,
+:global(body:has([data-page="home"])) .nav .active {
+  color: #f4f5f7;
+}
+
 :global(body:has([data-theme="private"])) .header {
   --shell-bg: #f8f9fb;
   background: #f8f9fb;

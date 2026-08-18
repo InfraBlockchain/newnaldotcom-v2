@@ -29,6 +29,12 @@
   margin: 0;
 }
 
+:global(body:has([data-page="home"])) .footer {
+  background: #10121a;
+  border-top-color: rgba(235, 238, 246, .14);
+  color: #f4f5f7;
+}
+
 :global(body:has([data-theme="private"])) .footer {
   background: #f8f9fb;
   color: #0a0e16;
