@@ -707,26 +707,10 @@
   color: var(--home-ink);
   display: block;
   min-height: 132px;
-  overflow: hidden;
   padding: 28px clamp(18px, 3vw, 42px);
   position: relative;
   transition: color 300ms var(--ease-soft);
   width: 100%;
-}
-
-.projectImage {
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1.04);
-  transition: opacity 350ms var(--ease-soft), transform 600ms var(--ease-soft);
-}
-
-.projectShade {
-  background: linear-gradient(180deg, rgba(12, 17, 29, .06) 18%, rgba(12, 17, 29, .84) 100%);
-  inset: 0;
-  opacity: 0;
-  position: absolute;
-  transition: opacity 350ms var(--ease-soft);
 }
 
 .projectCopy {
@@ -771,29 +755,19 @@
 
 .project:hover,
 .project:focus-visible {
-  color: #fff;
-}
-
-.project:hover .projectImage,
-.project:focus-visible .projectImage {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.project:hover .projectShade,
-.project:focus-visible .projectShade {
-  opacity: 1;
+  background: #e9edf5;
+  color: var(--home-ink);
 }
 
 .project:hover p,
 .project:focus-visible p {
-  color: rgba(255, 255, 255, .8);
+  color: var(--home-muted);
 }
 
 .project:hover .projectArrow,
 .project:focus-visible .projectArrow {
-  background: #fff;
-  color: #151925;
+  background: var(--home-accent);
+  color: #fff;
   transform: rotate(45deg);
 }
 

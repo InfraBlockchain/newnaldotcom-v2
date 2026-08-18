@@ -123,8 +123,6 @@ export default function HomePage() {
         <div className={styles.projectGrid}>
           {c.projects.items.map((project) => (
             <Link key={project.title} className={styles.project} href={project.href}>
-              <Image className={styles.projectImage} src={project.image} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" />
-              <span className={styles.projectShade} aria-hidden="true" />
               <div className={styles.projectCopy}>
                 <h3>{project.title}</h3>
                 <p>{project.body}</p>
