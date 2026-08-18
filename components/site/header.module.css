@@ -36,6 +36,31 @@
   min-width: 0;
 }
 
+.homeNav {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-self: end;
+}
+
+.homeNav a {
+  border: 1px solid rgba(21, 25, 37, .22);
+  color: #151925;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 8px 12px;
+  transition: background-color var(--dur-micro), border-color var(--dur-micro), color var(--dur-micro);
+  white-space: nowrap;
+}
+
+.homeNav a:hover {
+  background: #151925;
+  border-color: #151925;
+  color: #fff;
+}
+
 .nav a {
   border: 1px solid transparent;
   border-radius: 30px;
@@ -68,7 +93,6 @@
   background: #f7f8fb;
   border-bottom-color: rgba(21, 25, 37, .12);
   color: #151925;
-  display: none;
 }
 
 :global(body:has([data-page="home"])) .nav a {
@@ -147,6 +171,20 @@
     overflow-x: auto;
     padding-right: 20px;
     scrollbar-width: none;
+  }
+
+  .homeNav {
+    gap: 6px;
+    margin-left: auto;
+  }
+
+  .homeNav a {
+    font-size: 11px;
+    padding: 7px 8px;
+  }
+
+  :global(body:has([data-page="home"])) .inner::after {
+    display: none;
   }
 
   .inner::after {

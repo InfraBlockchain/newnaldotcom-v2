@@ -31,7 +31,7 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
-  min-height: max(820px, 100dvh);
+  min-height: max(820px, calc(100dvh - 64px));
   padding: clamp(52px, 7vw, 104px) clamp(24px, 5.55vw, 80px) clamp(44px, 5vw, 72px);
   position: relative;
 }
@@ -900,7 +900,7 @@
   .hero {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 64px);
     padding: 44px 20px 28px;
   }
 
