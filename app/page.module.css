@@ -608,21 +608,21 @@
 }
 
 .privatePhone {
-  background: #151925;
-  color: #f7f8fb;
+  background: #f7f8fb;
+  color: var(--home-ink);
 }
 
 .privatePhone .sectionLabel {
-  color: #9eb4ff;
+  color: var(--home-accent);
 }
 
 .privatePhone .bodyCopy {
-  color: rgba(255, 255, 255, .76);
+  color: #303847;
 }
 
 .privateVisual {
   aspect-ratio: 1.95;
-  background: #21293a;
+  background: #e9edf5;
   margin-top: clamp(58px, 8vw, 108px);
   overflow: hidden;
   position: relative;
@@ -640,7 +640,7 @@
 }
 
 .technology {
-  border-bottom: 1px solid rgba(255, 255, 255, .16);
+  border-bottom: 1px solid var(--home-line);
   min-height: 245px;
   padding: 30px 42px 34px 0;
 }
@@ -651,7 +651,7 @@
 }
 
 .technology > p {
-  color: #9eb4ff;
+  color: var(--home-accent);
   font-family: var(--font-mono), monospace;
   font-size: .68rem;
   letter-spacing: .13em;
@@ -669,7 +669,7 @@
 }
 
 .technology span {
-  color: rgba(255, 255, 255, .68);
+  color: var(--home-muted);
   display: block;
   font-size: .91rem;
   letter-spacing: -.012em;
@@ -679,7 +679,7 @@
 }
 
 .privateClosing {
-  color: #9eb4ff;
+  color: var(--home-accent);
   font-size: clamp(1.45rem, 2.4vw, 2.3rem);
   font-weight: 600;
   letter-spacing: -.035em;
@@ -720,8 +720,8 @@
 }
 
 .project:nth-child(3) {
-  background: #3154d6;
-  color: #fff;
+  background: #d0dcfb;
+  color: var(--home-ink);
   grid-column: 1 / -1;
   margin-top: 28px;
   min-height: 290px;
@@ -759,12 +759,12 @@
 }
 
 .project:nth-child(3) p {
-  color: rgba(255, 255, 255, .78);
+  color: var(--home-muted);
 }
 
 .project:hover,
 .project:focus-visible {
-  background: #151925;
+  background: #3154d6;
   color: #fff;
   transform: translateY(-6px);
 }
