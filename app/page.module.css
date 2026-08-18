@@ -797,12 +797,31 @@
   align-self: end;
 }
 
-.companyCopy > p {
+.companySubtext {
+  border-top: 1px solid var(--home-line);
   color: #303847;
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: -.018em;
-  line-height: 1.7;
+  line-height: 1.65;
+  margin-top: 40px;
+  padding-top: 18px;
+}
+
+.companySubtext p {
   margin: 0;
+}
+
+.companySubtext p + p {
+  margin-top: 4px;
+}
+
+.companyActions {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
 }
 
 .companyAction {
@@ -817,12 +836,40 @@
   padding-bottom: 7px;
 }
 
-.companyAction span {
+.companyActionPrimary {
+  align-items: center;
+  background: #151925;
+  color: #fff;
+  display: inline-flex;
+  font-size: .94rem;
+  font-weight: 500;
+  gap: 16px;
+  padding: 14px 18px 14px 20px;
+  transition: background-color 220ms var(--ease-soft), transform 220ms var(--ease-soft);
+}
+
+.companyActionPrimary:hover {
+  background: var(--home-accent);
+  transform: translateY(-2px);
+}
+
+.companyActionPrimary:active {
+  transform: translateY(1px);
+}
+
+.companyAction,
+.companyActionPrimary {
+  margin-top: 0;
+}
+
+.companyAction span,
+.companyActionPrimary span {
   font-size: 1.1rem;
   transition: transform 220ms var(--ease-soft);
 }
 
-.companyAction:hover span {
+.companyAction:hover span,
+.companyActionPrimary:hover span {
   transform: rotate(45deg);
 }
 

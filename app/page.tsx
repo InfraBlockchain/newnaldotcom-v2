@@ -139,10 +139,23 @@ export default function HomePage() {
           <h2 id="company-title">{c.company.title}</h2>
         </div>
         <div className={styles.companyCopy}>
-          <p>{c.company.body}</p>
-          <a className={styles.companyAction} href="mailto:contact@newnal.com?subject=Partner%20with%20Newnal">
-            파트너십 문의 <span aria-hidden="true">↗</span>
-          </a>
+          <div className={styles.bodyCopy}>
+            {c.company.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <div className={styles.companySubtext}>
+            {c.company.subtext.map((line) => <p key={line}>{line}</p>)}
+          </div>
+          <div className={styles.companyActions}>
+            {c.company.actions.map((action, index) => (
+              <a
+                key={action.label}
+                className={index === 0 ? styles.companyActionPrimary : styles.companyAction}
+                href={`mailto:contact@newnal.com?subject=${encodeURIComponent(action.subject)}`}
+              >
+                {action.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>

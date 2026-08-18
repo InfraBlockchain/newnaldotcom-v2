@@ -189,8 +189,23 @@ export const homeV2Content = {
     ],
   },
   company: {
-    eyebrow: "Company",
+    eyebrow: "Build with Newnal",
     title: "AI 시대의 디바이스와 서비스를 함께 만들 파트너를 찾습니다.",
-    body: "Newnal은 개인의 데이터, 맥락, 에이전트, 디바이스가 하나의 구조 안에서 작동하는 새로운 컴퓨팅 경험을 만듭니다.",
+    body: [
+      "Newnal aios는 하나의 제품이 아니라, AI 시대의 새로운 디바이스와 서비스가 만들어질 수 있는 운영체제 기반입니다.",
+      "우리는 엔터테인먼트, 케어, 교육, 게임, 리테일, 보안, 통신, 금융, 공공 인프라 등 다양한 영역의 파트너와 함께 Newnal aios의 적용 가능성을 확장하고자 합니다.",
+      "파트너는 자신의 고객과 산업을 가지고 있습니다. Newnal은 그 위에 AI-native OS, My Data, AI Interface, Agent Place, 보안 통신 기술을 제공합니다.",
+    ],
+    subtext: [
+      "새로운 AI 디바이스를 만들고 싶은 기업.",
+      "자사 IP와 고객 데이터를 AI 경험으로 확장하고 싶은 파트너.",
+      "AI-native OS 위에서 새로운 서비스를 설계하고 싶은 투자사와 기관.",
+      "Newnal은 그 다음 단계를 함께 만들 준비가 되어 있습니다.",
+    ],
+    actions: [
+      { label: "파트너십 문의", subject: "Partner with Newnal" },
+      { label: "Newnal aios 소개자료 요청", subject: "Request Newnal aios Deck" },
+      { label: "Private Phone 미팅 요청", subject: "Request Private Phone Meeting" },
+    ],
   },
 } as const;
