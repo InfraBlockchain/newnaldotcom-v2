@@ -39,7 +39,7 @@
 }
 
 .heroCopy {
-  max-width: 760px;
+  max-width: 1400px;
   position: relative;
   text-align: center;
   z-index: 1;
@@ -68,19 +68,20 @@
 }
 
 .hero h1 {
-  font-size: clamp(3.5rem, 5.8vw, 6.8rem);
+  font-size: clamp(3.5rem, 7.25vw, 9.5rem);
   line-height: .98;
-  max-width: 680px;
+  max-width: 1400px;
   margin-inline: auto;
 }
 
 .hero h1 span {
   display: block;
+  white-space: nowrap;
 }
 
 .heroLead {
   color: var(--home-accent);
-  font-size: clamp(1.2rem, 1.6vw, 1.55rem);
+  font-size: clamp(1.2rem, 1.4vw, 1.7rem);
   font-weight: 500;
   letter-spacing: -.03em;
   line-height: 1.5;
@@ -102,7 +103,7 @@
 
 .heroBody {
   color: var(--home-muted);
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.05vw, 1.25rem);
   letter-spacing: -.02em;
   line-height: 1.7;
   margin-top: 24px;
@@ -384,9 +385,26 @@
 
 .architecture {
   background: #f0f3f8;
+}
+
+.architectureHeader {
+  max-width: 1260px;
+}
+
+.architectureHeader h2 {
+  font-size: clamp(3.2rem, 5.2vw, 6.4rem);
+  line-height: .98;
+}
+
+.architectureHeader h2 span {
+  display: block;
+}
+
+.architectureDetails {
   display: grid;
   gap: clamp(52px, 8vw, 112px);
-  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  margin-top: clamp(62px, 9vw, 132px);
 }
 
 .architectureCopy {
@@ -432,7 +450,7 @@
   border-top: 1px solid var(--home-line);
   display: grid;
   gap: 20px;
-  grid-template-columns: minmax(120px, .7fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(190px, .72fr) minmax(0, 1.28fr);
   padding: 20px 0;
 }
 
@@ -443,6 +461,7 @@
   font-weight: 600;
   letter-spacing: -.065em;
   line-height: .9;
+  white-space: nowrap;
 }
 
 .proof span {
@@ -886,6 +905,10 @@
     font-size: clamp(3.25rem, 13.8vw, 4.7rem);
   }
 
+  .hero h1 span {
+    white-space: normal;
+  }
+
   .heroNote {
     margin-top: 34px;
   }
@@ -903,7 +926,8 @@
 
   .sovereignty,
   .whyContent,
-  .architecture {
+  .architecture,
+  .architectureDetails {
     display: block;
   }
 
@@ -957,7 +981,7 @@
   }
 
   .architectureCopy .bodyCopy {
-    margin-top: 30px;
+    margin-top: 0;
   }
 
   .proof {

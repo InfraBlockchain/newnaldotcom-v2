@@ -81,24 +81,28 @@ export default function HomePage() {
       </section>
 
       <section className={styles.architecture} aria-labelledby="architecture-title">
-        <div className={styles.architectureCopy}>
+        <div className={styles.architectureHeader}>
           <p className={styles.sectionLabel}>{c.architecture.eyebrow}</p>
-          <h2 id="architecture-title">{c.architecture.title}</h2>
+          <h2 id="architecture-title">기존 시스템을 버리지 않고,<span>AI-native layer를 더합니다.</span></h2>
+        </div>
+        <div className={styles.architectureDetails}>
+          <div className={styles.architectureCopy}>
           <div className={styles.bodyCopy}>
             {c.architecture.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <p className={styles.continuity}>{c.architecture.statement}</p>
-        </div>
-        <div className={styles.proof}>
-          <p>{c.architecture.subtext}</p>
-          <ul>
-            {c.architecture.proof.map((point) => (
-              <li key={point.value}>
-                <strong>{point.value}</strong>
-                <span>{point.label}</span>
-              </li>
-            ))}
-          </ul>
+          </div>
+          <div className={styles.proof}>
+            <p>{c.architecture.subtext}</p>
+            <ul>
+              {c.architecture.proof.map((point) => (
+                <li key={point.value}>
+                  <strong>{point.value}</strong>
+                  <span>{point.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
