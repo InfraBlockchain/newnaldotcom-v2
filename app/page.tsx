@@ -8,7 +8,7 @@ export default function HomePage() {
     <main id="main-content" className={styles.home} data-page="home">
       <section className={styles.hero} aria-labelledby="home-title">
         <div className={styles.heroCopy}>
-          <h1 id="home-title">{c.hero.title}</h1>
+          <h1 id="home-title">AI 시대의 <span>운영체제를 만듭니다.</span></h1>
           <div className={styles.heroLead}>
             {c.hero.lead.map((line) => <p key={line}>{line}</p>)}
           </div>
@@ -18,15 +18,6 @@ export default function HomePage() {
           <Link className={styles.primaryAction} href="#data-sovereignty">
             Newnal aios 소개 보기 <span aria-hidden="true">↓</span>
           </Link>
-        </div>
-        <div className={styles.heroArtwork}>
-          <Image
-            src="/images/home/door/v3-hero-bg.png"
-            alt="Newnal aios를 표현하는 추상적인 파란 리본 형태"
-            fill
-            priority
-            sizes="(max-width: 767px) 100vw, 54vw"
-          />
         </div>
         <p className={styles.heroNote}>{c.hero.subtext}</p>
       </section>

@@ -29,17 +29,19 @@
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: max(820px, calc(100dvh - 64px));
   padding: clamp(52px, 7vw, 104px) clamp(24px, 5.55vw, 80px) clamp(44px, 5vw, 72px);
   position: relative;
 }
 
 .heroCopy {
-  align-self: center;
   max-width: 760px;
   position: relative;
+  text-align: center;
   z-index: 1;
 }
 
@@ -69,6 +71,11 @@
   font-size: clamp(3.5rem, 5.8vw, 6.8rem);
   line-height: .98;
   max-width: 680px;
+  margin-inline: auto;
+}
+
+.hero h1 span {
+  display: block;
 }
 
 .heroLead {
@@ -78,6 +85,7 @@
   letter-spacing: -.03em;
   line-height: 1.5;
   margin-top: 34px;
+  margin-inline: auto;
 }
 
 .heroLead p,
@@ -99,6 +107,7 @@
   line-height: 1.7;
   margin-top: 24px;
   max-width: 42rem;
+  margin-inline: auto;
 }
 
 .primaryAction {
@@ -133,38 +142,16 @@
   transform: translateY(1px);
 }
 
-.heroArtwork {
-  align-self: center;
-  aspect-ratio: 1.05;
-  justify-self: end;
-  max-width: 690px;
-  position: relative;
-  width: 100%;
-}
-
-.heroArtwork::before {
-  background: radial-gradient(circle, rgba(49, 84, 214, .18), transparent 67%);
-  content: "";
-  inset: -14%;
-  position: absolute;
-}
-
-.heroArtwork img {
-  object-fit: contain;
-  position: relative;
-}
-
 .heroNote {
-  align-self: end;
   border-top: 1px solid var(--home-line);
   color: var(--home-muted);
   font-size: .86rem;
-  grid-column: 1 / -1;
   letter-spacing: -.01em;
   line-height: 1.65;
-  margin: 36px 0 0;
+  margin: 44px auto 0;
   max-width: 760px;
   padding-top: 16px;
+  text-align: center;
 }
 
 .sovereignty,
@@ -898,29 +885,16 @@
 
 @media (max-width: 767px) {
   .hero {
-    display: flex;
-    flex-direction: column;
     min-height: calc(100dvh - 64px);
     padding: 44px 20px 28px;
-  }
-
-  .heroCopy {
-    order: 2;
   }
 
   .hero h1 {
     font-size: clamp(3.25rem, 13.8vw, 4.7rem);
   }
 
-  .heroArtwork {
-    margin: 0 auto 28px;
-    max-height: 310px;
-    order: 1;
-  }
-
   .heroNote {
     margin-top: 34px;
-    order: 3;
   }
 
   .sovereignty,
