@@ -321,160 +321,47 @@
 }
 
 .pillarGrid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: 1.18fr .82fr;
+  border-top: 1px solid var(--home-line);
   margin-top: clamp(62px, 9vw, 120px);
 }
 
 .pillar {
-  background: #e9edf5;
-  display: flex;
-  flex-direction: column;
-  min-height: 450px;
-  padding: clamp(28px, 4vw, 52px);
-}
-
-.pillar:nth-child(2) {
-  background: #dbe4f8;
-  margin-top: 92px;
-}
-
-.pillar:nth-child(3) {
-  background: #3154d6;
-  color: #fff;
-  grid-column: 1 / -1;
-  margin-top: 36px;
-  min-height: 350px;
+  border-bottom: 1px solid var(--home-line);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 82px minmax(210px, .78fr) minmax(0, 1.22fr);
+  padding: clamp(32px, 4.5vw, 64px) 0;
 }
 
 .pillarNumber {
   color: var(--home-accent);
-  margin: 0 0 28px;
-}
-
-.pillar:nth-child(3) .pillarNumber {
-  color: rgba(255, 255, 255, .72);
-}
-
-.pillarVisual {
-  align-items: center;
-  display: flex;
-  font-family: var(--font-mono), monospace;
-  font-size: .62rem;
-  letter-spacing: .04em;
-  line-height: 1;
-  margin-bottom: clamp(30px, 4vw, 48px);
-  min-height: 148px;
-  position: relative;
-}
-
-.pillarVisual span,
-.pillarVisual strong {
-  align-items: center;
-  border: 1px solid currentColor;
-  display: flex;
-  font-weight: 400;
-  justify-content: center;
-  padding: 9px 11px;
-  position: relative;
-}
-
-.pillarVisual strong {
-  font-weight: 500;
-}
-
-.myDataVisual {
-  color: #3154d6;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1.2fr;
-}
-
-.myDataVisual strong {
-  background: #3154d6;
-  color: #fff;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.myDataVisual span:nth-child(4) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.myDataVisual span:nth-child(5) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-.myDataVisual span:last-child {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.interfaceVisual {
-  color: #263b75;
-  gap: 8px;
-  justify-content: space-between;
-}
-
-.interfaceVisual i {
-  font-size: 1.15rem;
-  font-style: normal;
-}
-
-.interfaceVisual strong {
-  background: #263b75;
-  color: #fff;
-  padding-inline: 16px;
-}
-
-.agentVisual {
-  color: rgba(255, 255, 255, .78);
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-.agentVisual strong {
-  background: #fff;
-  color: #3154d6;
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.agentVisual span:last-child {
-  grid-column: 2;
-  grid-row: 2;
+  margin: 0;
 }
 
 .pillar h3 {
   font-size: clamp(2.3rem, 3.8vw, 4.6rem);
+  margin: 0;
 }
 
 .pillarSummary {
+  grid-column: 2;
   font-size: 1.07rem;
   font-weight: 500;
   letter-spacing: -.018em;
   line-height: 1.55;
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   max-width: 24rem;
 }
 
 .pillarBody {
   color: var(--home-muted);
   font-size: .95rem;
+  grid-column: 3;
+  grid-row: 1 / span 2;
   letter-spacing: -.012em;
   line-height: 1.7;
-  margin: 32px 0 0;
+  margin: 0;
   max-width: 34rem;
-}
-
-.pillar:nth-child(3) .pillarBody {
-  color: rgba(255, 255, 255, .78);
 }
 
 .architecture {
@@ -1059,28 +946,24 @@
   }
 
   .pillarGrid {
-    display: block;
     margin-top: 54px;
   }
 
-  .pillar,
-  .pillar:nth-child(2),
-  .pillar:nth-child(3) {
+  .pillar {
+    display: block;
+    padding: 34px 0;
+  }
+
+  .pillar h3 {
+    margin-top: 22px;
+  }
+
+  .pillarSummary {
     margin-top: 12px;
-    min-height: 420px;
   }
 
-  .pillar:first-child {
-    margin-top: 0;
-  }
-
-  .pillarVisual {
-    min-height: 124px;
-  }
-
-  .interfaceVisual {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  .pillarBody {
+    margin-top: 28px;
   }
 
   .architectureCopy .bodyCopy {
