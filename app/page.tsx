@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { homeV2Content as c } from "@/content/home-v2";
 import styles from "./page.module.css";
@@ -90,18 +89,15 @@ export default function HomePage() {
           </div>
           <p className={styles.continuity}>{c.architecture.statement}</p>
         </div>
-        <div className={styles.diagram}>
-          <Image
-            src="/images/aios/os-architecture.png"
-            alt="기존 모바일 운영체제에 Newnal AI 컴퓨팅 계층을 더하는 구조"
-            fill
-            sizes="(max-width: 767px) 100vw, 58vw"
-          />
-        </div>
         <div className={styles.proof}>
           <p>{c.architecture.subtext}</p>
           <ul>
-            {c.architecture.proof.map((point) => <li key={point}>{point}</li>)}
+            {c.architecture.proof.map((point) => (
+              <li key={point.value}>
+                <strong>{point.value}</strong>
+                <span>{point.label}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

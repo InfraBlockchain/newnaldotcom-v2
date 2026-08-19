@@ -407,57 +407,50 @@
   text-transform: uppercase;
 }
 
-.diagram {
-  align-self: start;
-  aspect-ratio: 1.23;
-  background: #fff;
-  position: relative;
-}
-
-.diagram img {
-  object-fit: contain;
-  padding: clamp(10px, 2vw, 28px);
-}
-
 .proof {
-  border-top: 1px solid var(--home-line);
+  align-self: stretch;
+  background: #fff;
   color: var(--home-muted);
-  font-size: .94rem;
-  grid-column: 1 / -1;
-  letter-spacing: -.018em;
-  line-height: 1.55;
-  margin-top: clamp(4px, 5vw, 60px);
-  padding-top: 18px;
+  font-size: 1rem;
+  letter-spacing: -.015em;
+  line-height: 1.65;
+  padding: clamp(28px, 4vw, 52px);
 }
 
 .proof p {
   margin: 0;
-  max-width: 44rem;
 }
 
 .proof ul {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
-  margin: 36px 0 0;
+  margin: 42px 0 0;
   padding: 0;
 }
 
 .proof li {
-  color: var(--home-ink);
-  font-family: var(--font-mono), monospace;
-  font-size: .73rem;
-  letter-spacing: .02em;
-  line-height: 1.5;
+  align-items: baseline;
+  border-top: 1px solid var(--home-line);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(120px, .7fr) minmax(0, 1.3fr);
+  padding: 20px 0;
 }
 
-.proof li::before {
+.proof strong {
   color: var(--home-accent);
-  content: "↗";
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 9px;
+  font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
+  font-size: clamp(2.5rem, 4.2vw, 4.7rem);
+  font-weight: 600;
+  letter-spacing: -.065em;
+  line-height: .9;
+}
+
+.proof span {
+  color: var(--home-ink);
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.35;
 }
 
 .partnerDevices,
@@ -967,20 +960,23 @@
     margin-top: 30px;
   }
 
-  .diagram {
-    margin-top: 56px;
-  }
-
   .proof {
     margin-top: 54px;
   }
 
   .proof ul {
-    display: block;
+    margin-top: 32px;
   }
 
-  .proof li + li {
-    margin-top: 26px;
+  .proof li {
+    align-items: start;
+    display: block;
+    padding: 20px 0;
+  }
+
+  .proof span {
+    display: block;
+    margin-top: 10px;
   }
 
   .partnerHeader,

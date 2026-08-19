@@ -76,9 +76,9 @@ export const homeV2Content = {
     statement: "Not replacement. Continuity.",
     subtext: "Newnal의 기술 기반은 이미 대규모 인프라 운영 경험 위에 있습니다. Blockchain Labs가 구축한 InfraBlockchain과 COOV 기반 기술은 데이터 소유, 인증, 검증, 대규모 디지털 인프라 운영 역량을 증명해왔습니다.",
     proof: [
-      "43M+ 사용자 규모의 인프라 경험",
-      "30M+ 일일 트랜잭션 처리 경험",
-      "120개국에서 사용된 검증 기반 서비스 경험",
+      { value: "43M+", label: "사용자 규모의 인프라 경험" },
+      { value: "30M+", label: "일일 트랜잭션 처리 경험" },
+      { value: "120개국", label: "에서 사용된 검증 기반 서비스 경험" },
     ],
   },
   partnerDevices: {
