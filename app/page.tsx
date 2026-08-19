@@ -2,6 +2,30 @@ import Link from "next/link";
 import { homeV2Content as c } from "@/content/home-v2";
 import styles from "./page.module.css";
 
+function PillarVisual({ number }: { number: string }) {
+  if (number === "01") {
+    return (
+      <div className={`${styles.pillarVisual} ${styles.myDataVisual}`} aria-hidden="true">
+        <span>Sleep</span><span>Schedule</span><span>Location</span><strong>My AI</strong><span>Relations</span><span>Activity</span>
+      </div>
+    );
+  }
+
+  if (number === "02") {
+    return (
+      <div className={`${styles.pillarVisual} ${styles.interfaceVisual}`} aria-hidden="true">
+        <span>Context</span><i>→</i><strong>Suggest</strong><i>→</i><span>Choose</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${styles.pillarVisual} ${styles.agentVisual}`} aria-hidden="true">
+      <span>Services</span><span>Agents</span><strong>My AI</strong><span>Permission</span>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <main id="main-content" className={styles.home} data-page="home">
@@ -72,6 +96,7 @@ export default function HomePage() {
           {c.pillars.items.map((pillar) => (
             <article key={pillar.title} className={styles.pillar}>
               <p className={styles.pillarNumber}>{pillar.number}</p>
+              <PillarVisual number={pillar.number} />
               <h3>{pillar.title}</h3>
               <p className={styles.pillarSummary}>{pillar.summary}</p>
               <p className={styles.pillarBody}>{pillar.body}</p>
