@@ -683,44 +683,12 @@
 }
 
 .deviceExample {
-  background: #26354d;
-  color: #fff;
-  min-height: 460px;
-  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--home-line);
+  color: var(--home-ink);
+  min-height: 300px;
   padding: clamp(26px, 3.4vw, 46px);
-  position: relative;
-}
-
-.deviceExample:nth-child(2) {
-  margin-top: 62px;
-}
-
-.deviceExample:nth-child(3) {
-  margin-top: -30px;
-}
-
-.deviceExample:nth-child(4) {
-  margin-top: 32px;
-}
-
-.deviceExample > img {
-  object-fit: cover;
-  transition: transform 500ms var(--ease-soft);
-}
-
-.deviceOverlay {
-  background: linear-gradient(180deg, rgba(12, 17, 29, .08) 18%, rgba(12, 17, 29, .84) 100%);
-  inset: 0;
-  position: absolute;
-}
-
-.deviceCopy {
-  bottom: clamp(26px, 3.4vw, 46px);
-  left: clamp(26px, 3.4vw, 46px);
-  max-width: 29rem;
-  position: absolute;
-  right: clamp(26px, 3.4vw, 46px);
-  z-index: 1;
+  transition: background-color 220ms var(--ease-soft), transform 220ms var(--ease-soft);
 }
 
 .deviceCopy h3 {
@@ -732,16 +700,27 @@
   margin: 0;
 }
 
+.deviceCopy > span {
+  color: var(--home-accent);
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .13em;
+  margin-bottom: clamp(58px, 7vw, 94px);
+}
+
 .deviceCopy p {
-  color: rgba(255, 255, 255, .8);
+  color: var(--home-muted);
   font-size: .94rem;
   letter-spacing: -.015em;
   line-height: 1.62;
   margin: 16px 0 0;
 }
 
-.deviceExample:hover > img {
-  transform: scale(1.05);
+.deviceExample:hover {
+  background: #f7f8fb;
+  transform: translateY(-3px);
 }
 
 .partnerClosing {
@@ -1311,12 +1290,9 @@
     display: block;
   }
 
-  .deviceExample,
-  .deviceExample:nth-child(2),
-  .deviceExample:nth-child(3),
-  .deviceExample:nth-child(4) {
+  .deviceExample {
     margin-top: 12px;
-    min-height: 420px;
+    min-height: 280px;
   }
 
   .deviceExample:first-child {

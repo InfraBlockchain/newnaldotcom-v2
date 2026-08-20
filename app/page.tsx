@@ -133,11 +133,10 @@ export default function HomePage() {
           </div>
         </div>
         <div className={styles.deviceExamples}>
-          {c.partnerDevices.examples.map((device) => (
+          {c.partnerDevices.examples.map((device, index) => (
             <article key={device.title} className={styles.deviceExample}>
-              <Image src={device.image} alt={`${device.title} device`} fill sizes="(max-width: 767px) 100vw, 50vw" />
-              <div className={styles.deviceOverlay} />
               <div className={styles.deviceCopy}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{device.title}</h3>
                 <p>{device.body}</p>
               </div>
