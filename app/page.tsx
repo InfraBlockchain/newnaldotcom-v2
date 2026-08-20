@@ -169,32 +169,6 @@ export default function HomePage() {
         <p className={styles.privateClosing}>{c.privatePhone.subtext}</p>
       </section>
 
-      <section className={styles.company} aria-labelledby="company-title">
-        <div>
-          <p className={styles.sectionLabel}>{c.company.eyebrow}</p>
-          <h2 id="company-title">{c.company.title}</h2>
-        </div>
-        <div className={styles.companyCopy}>
-          <div className={styles.bodyCopy}>
-            {c.company.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-          <div className={styles.companySubtext}>
-            {c.company.subtext.map((line) => <p key={line}>{line}</p>)}
-          </div>
-          <div className={styles.companyActions}>
-            {c.company.actions.map((action, index) => (
-              <a
-                key={action.label}
-                className={index === 0 ? styles.companyActionPrimary : styles.companyAction}
-                href={`mailto:contact@newnal.com?subject=${encodeURIComponent(action.subject)}`}
-              >
-                {action.label} <span aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className={styles.story} aria-labelledby="story-title">
         <div className={styles.storyHeader}>
           <h2 id="story-title">{c.story.title}</h2>
@@ -229,6 +203,32 @@ export default function HomePage() {
           <figure className={styles.coovDiagram}>
             <Image src={c.coov.image} alt="COOV blockchain-based COVID vaccine pass verification flow" width={760} height={509} sizes="(max-width: 767px) 100vw, 58vw" />
           </figure>
+        </div>
+      </section>
+
+      <section className={styles.company} aria-labelledby="company-title">
+        <div>
+          <p className={styles.sectionLabel}>{c.company.eyebrow}</p>
+          <h2 id="company-title">{c.company.title}</h2>
+        </div>
+        <div className={styles.companyCopy}>
+          <div className={styles.bodyCopy}>
+            {c.company.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <div className={styles.companySubtext}>
+            {c.company.subtext.map((line) => <p key={line}>{line}</p>)}
+          </div>
+          <div className={styles.companyActions}>
+            {c.company.actions.map((action, index) => (
+              <a
+                key={action.label}
+                className={index === 0 ? styles.companyActionPrimary : styles.companyAction}
+                href={`mailto:contact@newnal.com?subject=${encodeURIComponent(action.subject)}`}
+              >
+                {action.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>
