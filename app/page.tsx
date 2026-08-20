@@ -36,13 +36,11 @@ export default function HomePage() {
             {c.sovereignty.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <aside className={styles.sovereigntySummary}>
-            <span>Newnal&apos;s approach</span>
             <p>{c.sovereignty.subtext}</p>
           </aside>
           <div className={styles.choiceGrid}>
-            {c.sovereignty.choices.map((choice, index) => (
-              <article key={choice.title} className={styles.choice} data-choice={index}>
-                <p className={styles.choiceNumber}>0{index + 1}</p>
+            {c.sovereignty.choices.map((choice) => (
+              <article key={choice.title} className={styles.choice}>
                 <h3>{choice.title}</h3>
                 <p>{choice.body}</p>
               </article>

@@ -245,22 +245,10 @@
 }
 
 .sovereigntySummary {
-  background: #eceff5;
-  border-left: 3px solid var(--home-accent);
+  border-top: 1px solid var(--home-line);
   margin-top: clamp(32px, 4vw, 48px);
   max-width: 52rem;
-  padding: clamp(22px, 3vw, 32px);
-}
-
-.sovereigntySummary span {
-  color: var(--home-accent);
-  display: block;
-  font-family: var(--font-mono), monospace;
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .13em;
-  line-height: 1.4;
-  text-transform: uppercase;
+  padding-top: 20px;
 }
 
 .sovereigntySummary p {
@@ -269,7 +257,7 @@
   font-weight: 500;
   letter-spacing: -.03em;
   line-height: 1.5;
-  margin: 14px 0 0;
+  margin: 0;
 }
 
 .choiceGrid {
@@ -281,28 +269,13 @@
 
 .choice {
   background: #eceff5;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: clamp(320px, 28vw, 390px);
-  padding: clamp(26px, 3.5vw, 48px);
-}
-
-.choice[data-choice="1"] {
-  background: #263a90;
-  color: #fff;
-}
-
-.choiceNumber {
-  color: var(--home-accent);
-  font-family: var(--font-mono), monospace;
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.choice[data-choice="1"] .choiceNumber {
-  color: #c8d3ff;
+  justify-content: flex-start;
+  min-height: clamp(280px, 22vw, 340px);
+  padding: clamp(40px, 4vw, 56px);
+  text-align: center;
 }
 
 .choice h3,
@@ -321,25 +294,17 @@
   letter-spacing: -.015em;
   line-height: 1.6;
   margin: 18px 0 0;
-  max-width: 15rem;
+  max-width: 22rem;
   position: relative;
 }
 
-.choice .choiceNumber {
-  margin: 0;
-}
-
 .choice h3 {
-  font-size: clamp(1.9rem, 3.1vw, 3.65rem);
-  margin: auto 0 0;
+  font-size: clamp(1.85rem, 2.7vw, 3.15rem);
+  margin: 0;
 }
 
 .choice > p:last-child {
   margin: 16px 0 0;
-}
-
-.choice[data-choice="1"] > p:last-child {
-  color: rgba(255, 255, 255, .75);
 }
 
 .why {
@@ -1176,7 +1141,7 @@
   }
 
   .choice {
-    min-height: 380px;
+    min-height: 260px;
   }
 
   .eraLine {
