@@ -245,7 +245,7 @@
 }
 
 .sovereigntySummary {
-  margin-top: clamp(32px, 4vw, 48px);
+  margin-top: clamp(20px, 2.5vw, 32px);
   margin-inline: auto;
   max-width: 44rem;
   text-align: center;
@@ -258,6 +258,7 @@
   letter-spacing: -.03em;
   line-height: 1.5;
   margin: 0;
+  white-space: pre-line;
 }
 
 .choiceGrid {

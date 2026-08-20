@@ -19,7 +19,7 @@ export const homeV2Content = {
       "Newnal aios는 사용자가 허락한 데이터와 삶의 맥락을 AI가 이해하도록 만들어, 개인화된 AI 경험과 새로운 서비스 가치를 열어줍니다.",
       "반대로 Private Phone은 개인 데이터가 외부와 연결되지 않는 독립적인 통신 환경을 만들어, 원치 않는 노출과 디지털 흔적으로부터 사용자를 보호합니다.",
     ],
-    subtext: "Newnal은 데이터의 적극적 활용과 완전한 차단이라는 두 방향을 모두 가능하게 하는 하나의 기술 기반을 구축합니다.",
+    subtext: "Newnal은 데이터의 적극적 활용과 완전한 차단이라는\n두 방향을 모두 가능하게 하는 하나의 기술 기반을 구축합니다.",
     choices: [
       {
         title: "Active Sovereignty",
