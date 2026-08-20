@@ -7,18 +7,19 @@ export default function HomePage() {
     <main id="main-content" className={styles.home} data-page="home">
       <section className={styles.hero} aria-labelledby="home-title">
         <div className={styles.heroCopy}>
+          <p className={styles.heroEyebrow}>Newnal aios / AI-native operating system</p>
           <h1 id="home-title">AI 시대의 <span>운영체제를 만듭니다.</span></h1>
-          <div className={styles.heroLead}>
-            {c.hero.lead.map((line) => <p key={line}>{line}</p>)}
-          </div>
           <div className={styles.heroBody}>
-            {c.hero.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <p>{c.hero.body[0]}</p>
           </div>
           <Link className={styles.primaryAction} href="#data-sovereignty">
             Newnal aios 소개 보기 <span aria-hidden="true">↓</span>
           </Link>
         </div>
-        <p className={styles.heroNote}>{c.hero.subtext}</p>
+        <div className={styles.heroNote}>
+          <p>{c.hero.lead.join(" ")}</p>
+          <p>{c.hero.body[1]}</p>
+        </div>
       </section>
 
       <section id="data-sovereignty" className={styles.sovereignty} aria-labelledby="sovereignty-title">
@@ -28,12 +29,14 @@ export default function HomePage() {
         </div>
         <div className={styles.sovereigntyContent}>
           <div className={styles.bodyCopy}>
-            {c.sovereignty.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <p>{c.sovereignty.body[0]}</p>
           </div>
           <p className={styles.sectionSummary}>{c.sovereignty.subtext}</p>
           <div className={styles.choiceGrid}>
-            {c.sovereignty.choices.map((choice) => (
-              <article key={choice.title} className={styles.choice}>
+            {c.sovereignty.choices.map((choice, index) => (
+              <article key={choice.title} className={styles.choice} data-choice={index}>
+                <div className={styles.choiceVisual} aria-hidden="true"><i /><i /><i /></div>
+                <p className={styles.choiceNumber}>0{index + 1}</p>
                 <h3>{choice.title}</h3>
                 <p>{choice.body}</p>
               </article>
@@ -69,8 +72,9 @@ export default function HomePage() {
           <p className={styles.pillarIntro}>{c.pillars.intro}</p>
         </div>
         <div className={styles.pillarGrid}>
-          {c.pillars.items.map((pillar) => (
-            <article key={pillar.title} className={styles.pillar}>
+          {c.pillars.items.map((pillar, index) => (
+            <article key={pillar.title} className={styles.pillar} data-pillar={index}>
+              <div className={styles.pillarVisual} aria-hidden="true"><i /><i /><i /></div>
               <p className={styles.pillarNumber}>{pillar.number}</p>
               <h3>{pillar.title}</h3>
               <p className={styles.pillarSummary}>{pillar.summary}</p>
