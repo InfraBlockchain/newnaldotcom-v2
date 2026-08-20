@@ -222,10 +222,11 @@
 }
 
 .sovereigntyContent {
-  display: grid;
-  gap: 28px clamp(40px, 7vw, 96px);
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
   margin-top: clamp(44px, 6vw, 80px);
+}
+
+.sovereigntyContent > .bodyCopy {
+  max-width: 52rem;
 }
 
 .bodyCopy {
@@ -235,7 +236,6 @@
   line-height: 1.7;
 }
 
-.sectionSummary,
 .whySummary {
   color: var(--home-muted);
   font-size: var(--body-size);
@@ -244,11 +244,38 @@
   margin: 0;
 }
 
+.sovereigntySummary {
+  background: #eceff5;
+  border-left: 3px solid var(--home-accent);
+  margin-top: clamp(32px, 4vw, 48px);
+  max-width: 52rem;
+  padding: clamp(22px, 3vw, 32px);
+}
+
+.sovereigntySummary span {
+  color: var(--home-accent);
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.sovereigntySummary p {
+  color: var(--home-ink);
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -.03em;
+  line-height: 1.5;
+  margin: 14px 0 0;
+}
+
 .choiceGrid {
   display: grid;
   gap: var(--card-gap);
   grid-template-columns: 1fr 1fr;
-  grid-column: 1 / -1;
   margin-top: clamp(40px, 5vw, 64px);
 }
 
