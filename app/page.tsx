@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CircleStackIcon, SparklesIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import { ScrollToSovereignty } from "@/components/home/ScrollToSovereignty";
 import { homeV2Content as c } from "@/content/home-v2";
@@ -227,8 +226,25 @@ export default function HomePage() {
           <div className={styles.bodyCopy}>
             {c.coov.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
-          <figure className={styles.coovDiagram}>
-            <Image src={c.coov.image} alt="COOV blockchain-based COVID vaccine pass verification flow" width={760} height={514} sizes="(max-width: 767px) 100vw, 58vw" />
+          <figure className={styles.coovDiagram} aria-label="COOV decentralized credential verification flow">
+            <div className={styles.coovGraphic}>
+              <article className={styles.coovNode}>
+                <span>01</span>
+                <strong>Personal Credential</strong>
+                <small>개인의 민감한 정보는 개인에게 남습니다.</small>
+              </article>
+              <div className={styles.coovConnector} aria-hidden="true"><i /><span>Encrypted proof</span></div>
+              <article className={styles.coovNode}>
+                <span>02</span>
+                <strong>Verifier</strong>
+                <small>필요한 사실만 빠르게 확인합니다.</small>
+              </article>
+              <article className={styles.coovLedger}>
+                <span>InfraBlockchain</span>
+                <strong>Proof verified without centralized storage.</strong>
+                <small>증명서의 진위만 검증하고, 개인 데이터를 중앙 서버에 모으지 않습니다.</small>
+              </article>
+            </div>
           </figure>
         </div>
       </section>
