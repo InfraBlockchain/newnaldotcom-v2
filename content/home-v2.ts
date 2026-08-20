@@ -98,6 +98,10 @@ export const homeV2Content = {
     ],
     examples: [
       {
+        title: "Private Phone",
+        body: "신뢰가 깨지는 순간까지 보호하는 Newnal의 고보안 커뮤니케이션 제품입니다.",
+      },
+      {
         title: "YALI",
         body: "엔터테인먼트 파트너를 위한 공식 K-pop Artist AI Companion. 아티스트의 공식 AI Persona와 팬의 My Data를 연결해, 팬덤을 일방향 콘텐츠 소비에서 개인화된 관계 경험으로 확장합니다.",
         image: "/images/devices/slide-yali.png",
@@ -116,10 +120,6 @@ export const homeV2Content = {
         title: "UFO",
         body: "게임·리테일·도시 경험 파트너를 위한 Real-world Adventure Device. 걷기, 탐험, 위치 기반 미션, 보상 시스템을 결합해 현실 공간을 AI 기반 게임 필드로 만듭니다.",
         image: "/images/devices/slide-ufo.png",
-      },
-      {
-        title: "Private Phone",
-        body: "신뢰가 깨지는 순간까지 보호하는 Newnal의 고보안 커뮤니케이션 제품입니다.",
       },
       {
         title: "ULLI",
