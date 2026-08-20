@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ScrollToSovereignty } from "@/components/home/ScrollToSovereignty";
 import { homeV2Content as c } from "@/content/home-v2";
 import styles from "./page.module.css";
 
@@ -12,9 +13,7 @@ export default function HomePage() {
           <div className={styles.heroBody}>
             <p>{c.hero.body[0]}</p>
           </div>
-          <Link className={styles.primaryAction} href="#data-sovereignty">
-            Newnal aios 소개 보기 <span aria-hidden="true">↓</span>
-          </Link>
+          <ScrollToSovereignty className={styles.primaryAction} />
         </div>
         <div className={styles.heroNote}>
           <p>{c.hero.lead.join(" ")}</p>

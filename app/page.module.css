@@ -9,7 +9,7 @@
   --home-accent: #3154d6;
   background: #f7f8fb;
   color: var(--home-ink);
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .home h1,
@@ -116,7 +116,9 @@
 .primaryAction {
   align-items: center;
   background: #151925;
+  border: 0;
   color: #f7f8fb;
+  cursor: pointer;
   display: inline-flex;
   font-family: var(--font-inter), sans-serif;
   font-size: .9rem;
