@@ -39,7 +39,6 @@ export default function HomePage() {
           <div className={styles.choiceGrid}>
             {c.sovereignty.choices.map((choice, index) => (
               <article key={choice.title} className={styles.choice} data-choice={index}>
-                <div className={styles.choiceVisual} aria-hidden="true"><i /><i /><i /></div>
                 <p className={styles.choiceNumber}>0{index + 1}</p>
                 <h3>{choice.title}</h3>
                 <p>{choice.body}</p>

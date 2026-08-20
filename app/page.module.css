@@ -7,6 +7,12 @@
   --home-muted: #5d6575;
   --home-line: rgba(21, 25, 37, .16);
   --home-accent: #3154d6;
+  --content-width: 1280px;
+  --section-inline: clamp(24px, 5.55vw, 80px);
+  --section-space: clamp(88px, 10vw, 144px);
+  --section-title: clamp(2.7rem, 4.35vw, 5rem);
+  --body-size: clamp(1rem, 1.08vw, 1.12rem);
+  --card-gap: 16px;
   background: #f7f8fb;
   color: var(--home-ink);
   overflow-x: clip;
@@ -31,7 +37,7 @@
 .story,
 .coovProof {
   margin-inline: auto;
-  max-width: 1440px;
+  max-width: var(--content-width);
 }
 
 .hero {
@@ -39,13 +45,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: max(820px, calc(100dvh - 64px));
-  padding: clamp(52px, 7vw, 104px) clamp(24px, 5.55vw, 80px) clamp(44px, 5vw, 72px);
+  min-height: clamp(680px, calc(100dvh - 64px), 820px);
+  padding: clamp(52px, 7vw, 88px) var(--section-inline) clamp(44px, 5vw, 64px);
   position: relative;
 }
 
 .heroCopy {
-  max-width: 1400px;
+  max-width: 1120px;
   position: relative;
   text-align: center;
   z-index: 1;
@@ -84,8 +90,8 @@
 }
 
 .hero h1 {
-  font-size: clamp(3.3rem, 6.55vw, 8.5rem);
-  line-height: .98;
+  font-size: clamp(3.15rem, 6.1vw, 7.5rem);
+  line-height: 1.01;
   max-width: 1260px;
   margin-inline: auto;
 }
@@ -101,7 +107,7 @@
   font-weight: 500;
   letter-spacing: -.03em;
   line-height: 1.5;
-  margin: 30px auto 0;
+  margin: 28px auto 0;
 }
 
 .heroLead p {
@@ -124,11 +130,11 @@
 
 .heroBody {
   color: var(--home-muted);
-  font-size: clamp(1rem, 1.05vw, 1.25rem);
+  font-size: var(--body-size);
   letter-spacing: -.02em;
-  line-height: 1.7;
-  margin-top: 20px;
-  max-width: 42rem;
+  line-height: 1.68;
+  margin-top: 18px;
+  max-width: 40rem;
   margin-inline: auto;
 }
 
@@ -172,8 +178,8 @@
   font-size: .82rem;
   letter-spacing: -.01em;
   line-height: 1.65;
-  margin: 44px auto 0;
-  max-width: 700px;
+  margin: 38px auto 0;
+  max-width: 640px;
   padding-top: 16px;
   text-align: center;
 }
@@ -195,7 +201,7 @@
 .projects,
 .company {
   border-top: 1px solid var(--home-line);
-  padding: clamp(92px, 12vw, 174px) clamp(24px, 5.55vw, 80px);
+  padding: var(--section-space) var(--section-inline);
   scroll-margin-top: 64px;
 }
 
@@ -211,28 +217,28 @@
 .sectionIntro h2,
 .why h2,
 .architecture h2 {
-  font-size: clamp(2.85rem, 4.6vw, 5.4rem);
-  line-height: 1.02;
+  font-size: var(--section-title);
+  line-height: 1.06;
 }
 
 .sovereigntyContent {
   display: grid;
-  gap: 28px clamp(40px, 7vw, 110px);
+  gap: 28px clamp(40px, 7vw, 96px);
   grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-  margin-top: clamp(48px, 7vw, 100px);
+  margin-top: clamp(44px, 6vw, 80px);
 }
 
 .bodyCopy {
   color: #303847;
-  font-size: clamp(1rem, 1.16vw, 1.12rem);
+  font-size: var(--body-size);
   letter-spacing: -.018em;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .sectionSummary,
 .whySummary {
   color: var(--home-muted);
-  font-size: 1.02rem;
+  font-size: var(--body-size);
   letter-spacing: -.02em;
   line-height: 1.65;
   margin: 0;
@@ -240,76 +246,23 @@
 
 .choiceGrid {
   display: grid;
-  gap: 16px;
+  gap: var(--card-gap);
   grid-template-columns: 1fr 1fr;
   grid-column: 1 / -1;
-  margin-top: clamp(36px, 5vw, 64px);
+  margin-top: clamp(40px, 5vw, 64px);
 }
 
 .choice {
   background: #eceff5;
-  min-height: clamp(330px, 31vw, 450px);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(320px, 28vw, 390px);
   padding: clamp(26px, 3.5vw, 48px);
-  position: relative;
 }
 
 .choice[data-choice="1"] {
   background: #263a90;
   color: #fff;
-  margin-top: clamp(32px, 5vw, 70px);
-}
-
-.choiceVisual {
-  height: 42%;
-  inset: 0 0 auto;
-  overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-}
-
-.choiceVisual i {
-  background: linear-gradient(135deg, rgba(255, 255, 255, .95), rgba(171, 188, 255, .1));
-  border-radius: 50%;
-  display: block;
-  filter: blur(2px);
-  height: 15vw;
-  max-height: 220px;
-  max-width: 220px;
-  min-height: 135px;
-  min-width: 135px;
-  position: absolute;
-  right: 16%;
-  top: -44%;
-  width: 15vw;
-}
-
-.choiceVisual i:nth-child(2) {
-  background: #b7c4fb;
-  height: 11vw;
-  right: 37%;
-  top: -12%;
-  width: 11vw;
-}
-
-.choiceVisual i:nth-child(3) {
-  background: #7d91ef;
-  height: 7vw;
-  right: 4%;
-  top: 24%;
-  width: 7vw;
-}
-
-.choice[data-choice="1"] .choiceVisual i {
-  background: linear-gradient(135deg, #d7e0ff, #5e78ef);
-}
-
-.choice[data-choice="1"] .choiceVisual i:nth-child(2) {
-  background: #fff;
-}
-
-.choice[data-choice="1"] .choiceVisual i:nth-child(3) {
-  background: #7990ff;
 }
 
 .choiceNumber {
@@ -318,8 +271,6 @@
   font-size: .68rem;
   font-weight: 500;
   letter-spacing: .13em;
-  margin: 0;
-  position: relative;
   text-transform: uppercase;
 }
 
@@ -347,19 +298,17 @@
   position: relative;
 }
 
-.choice h3 {
-  bottom: clamp(82px, 9vw, 120px);
-  font-size: clamp(2rem, 3.3vw, 4rem);
-  left: clamp(26px, 3.5vw, 48px);
+.choice .choiceNumber {
   margin: 0;
-  position: absolute;
+}
+
+.choice h3 {
+  font-size: clamp(1.9rem, 3.1vw, 3.65rem);
+  margin: auto 0 0;
 }
 
 .choice > p:last-child {
-  bottom: clamp(26px, 3.5vw, 48px);
-  left: clamp(26px, 3.5vw, 48px);
-  margin: 0;
-  position: absolute;
+  margin: 16px 0 0;
 }
 
 .choice[data-choice="1"] > p:last-child {
@@ -387,7 +336,7 @@
   display: flex;
   gap: clamp(10px, 2vw, 24px);
   justify-content: center;
-  margin: clamp(68px, 10vw, 132px) auto;
+  margin: clamp(56px, 8vw, 100px) auto;
   max-width: 880px;
 }
 
@@ -412,7 +361,7 @@
 
 .whyContent {
   display: grid;
-  gap: 56px;
+  gap: clamp(40px, 6vw, 80px);
   grid-template-columns: minmax(0, 1.12fr) minmax(220px, .5fr);
   margin-inline: auto;
   max-width: 1030px;
@@ -421,7 +370,7 @@
 .whySummary {
   border-top: 1px solid var(--home-line);
   color: #303847;
-  font-size: clamp(1.2rem, 1.75vw, 1.6rem);
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
   font-weight: 500;
   line-height: 1.5;
   margin: 0;
@@ -451,16 +400,16 @@
 .pillarGrid {
   align-items: stretch;
   display: grid;
-  gap: 16px;
+  gap: var(--card-gap);
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(62px, 9vw, 120px);
+  margin-top: clamp(48px, 7vw, 88px);
 }
 
 .pillar {
   background: #eceff5;
   display: flex;
   flex-direction: column;
-  min-height: clamp(480px, 36vw, 540px);
+  min-height: clamp(440px, 33vw, 500px);
   padding: clamp(26px, 3.2vw, 44px);
   position: relative;
 }
@@ -480,15 +429,15 @@
   border: 1px solid rgba(21, 25, 37, .14);
   color: var(--home-accent);
   display: flex;
-  height: 64px;
+  height: 56px;
   justify-content: center;
-  width: 64px;
+  width: 56px;
 }
 
 .pillarIcon svg {
-  height: 30px;
+  height: 26px;
   stroke-width: 1.4;
-  width: 30px;
+  width: 26px;
 }
 
 .pillar:nth-child(3) .pillarIcon {
@@ -545,8 +494,8 @@
 }
 
 .architectureHeader h2 {
-  font-size: clamp(3.2rem, 5.2vw, 6.4rem);
-  line-height: .98;
+  font-size: var(--section-title);
+  line-height: 1.04;
 }
 
 .architectureHeader h2 span {
@@ -557,7 +506,7 @@
   display: grid;
   gap: clamp(52px, 8vw, 112px);
   grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
-  margin-top: clamp(62px, 9vw, 132px);
+  margin-top: clamp(52px, 7vw, 88px);
 }
 
 .architectureCopy {
@@ -594,7 +543,7 @@
   font-size: 1rem;
   letter-spacing: -.015em;
   line-height: 1.65;
-  padding: clamp(28px, 4vw, 52px);
+  padding: clamp(28px, 4vw, 48px);
 }
 
 .proof p {
@@ -637,7 +586,7 @@
 .partnerDevices,
 .privatePhone {
   border-top: 1px solid var(--home-line);
-  padding: clamp(92px, 12vw, 174px) clamp(24px, 5.55vw, 80px);
+  padding: var(--section-space) var(--section-inline);
 }
 
 .partnerDevices {
@@ -654,10 +603,10 @@
 .partnerHeader h2,
 .privateHeader h2 {
   font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
-  font-size: clamp(2.85rem, 4.8vw, 5.6rem);
+  font-size: var(--section-title);
   font-weight: 600;
   letter-spacing: -.055em;
-  line-height: 1.03;
+  line-height: 1.06;
   margin: 0;
   text-wrap: balance;
 }
@@ -677,23 +626,23 @@
 
 .deviceExamples {
   display: grid;
-  gap: 12px;
+  gap: var(--card-gap);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 12px;
+  margin-top: clamp(48px, 7vw, 88px);
 }
 
 .deviceExample {
   background: #fff;
   border: 1px solid var(--home-line);
   color: var(--home-ink);
-  min-height: 300px;
+  min-height: 330px;
   padding: clamp(26px, 3.4vw, 46px);
   transition: background-color 220ms var(--ease-soft), transform 220ms var(--ease-soft);
 }
 
 .deviceCopy h3 {
   font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
-  font-size: clamp(2.1rem, 3.8vw, 4.5rem);
+  font-size: clamp(2rem, 3.2vw, 3.7rem);
   font-weight: 600;
   letter-spacing: -.055em;
   line-height: 1;
@@ -707,7 +656,7 @@
   font-size: .68rem;
   font-weight: 500;
   letter-spacing: .13em;
-  margin-bottom: clamp(58px, 7vw, 94px);
+  margin-bottom: clamp(48px, 6vw, 76px);
 }
 
 .deviceCopy p {
@@ -728,7 +677,7 @@
   display: grid;
   gap: 18px;
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, .5fr);
-  margin-top: clamp(72px, 10vw, 144px);
+  margin-top: clamp(64px, 8vw, 104px);
   padding-top: 20px;
 }
 
@@ -763,7 +712,7 @@
 .privateVisual {
   aspect-ratio: 1.95;
   background: #e9edf5;
-  margin-top: clamp(58px, 8vw, 108px);
+  margin-top: clamp(48px, 7vw, 88px);
   overflow: hidden;
   position: relative;
 }
@@ -781,8 +730,8 @@
 
 .technology {
   border-bottom: 1px solid var(--home-line);
-  min-height: 245px;
-  padding: 30px 42px 34px 0;
+  min-height: 230px;
+  padding: 28px 42px 32px 0;
 }
 
 .technology:nth-child(even) {
@@ -795,7 +744,7 @@
   font-family: var(--font-mono), monospace;
   font-size: .68rem;
   letter-spacing: .13em;
-  margin: 0 0 38px;
+  margin: 0 0 28px;
 }
 
 .technology h3 {
@@ -824,7 +773,7 @@
   font-weight: 600;
   letter-spacing: -.035em;
   line-height: 1.42;
-  margin: clamp(72px, 10vw, 138px) 0 0;
+  margin: clamp(64px, 8vw, 104px) 0 0;
   max-width: 43rem;
 }
 
@@ -925,10 +874,10 @@
 
 .company h2 {
   font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
-  font-size: clamp(2.85rem, 4.8vw, 5.6rem);
+  font-size: var(--section-title);
   font-weight: 600;
   letter-spacing: -.055em;
-  line-height: 1.03;
+  line-height: 1.06;
   margin: 0;
   text-wrap: balance;
 }
@@ -1016,7 +965,7 @@
 .story,
 .coovProof {
   border-top: 1px solid var(--home-line);
-  padding: clamp(92px, 12vw, 174px) clamp(24px, 5.55vw, 80px);
+  padding: var(--section-space) var(--section-inline);
 }
 
 .story {
@@ -1033,10 +982,10 @@
 .story h2,
 .coovProof h2 {
   font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
-  font-size: clamp(2.85rem, 4.8vw, 5.6rem);
+  font-size: var(--section-title);
   font-weight: 600;
   letter-spacing: -.055em;
-  line-height: 1.03;
+  line-height: 1.06;
   margin: 0;
   text-wrap: balance;
 }
