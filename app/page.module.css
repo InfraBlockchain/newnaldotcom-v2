@@ -776,7 +776,7 @@
 .technologyList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 12px;
+  margin-top: clamp(58px, 8vw, 108px);
 }
 
 .technology {

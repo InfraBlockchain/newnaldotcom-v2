@@ -158,9 +158,6 @@ export default function HomePage() {
             {c.privatePhone.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
-        <div className={styles.privateVisual}>
-          <Image src="/images/private/hero-private-phone.png" alt="Newnal Private Phone" fill sizes="(max-width: 767px) 100vw, 90vw" />
-        </div>
         <div className={styles.technologyList}>
           {c.privatePhone.technologies.map((technology) => (
             <article key={technology.number} className={styles.technology}>
