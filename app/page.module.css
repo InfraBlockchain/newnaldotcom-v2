@@ -1116,104 +1116,9 @@
   padding: clamp(20px, 3vw, 42px);
 }
 
-.coovGraphic {
-  align-items: center;
-  display: grid;
-  gap: 18px;
-  grid-template-columns: minmax(0, 1fr) minmax(120px, .6fr) minmax(0, 1fr);
-}
-
-.coovNode,
-.coovLedger {
-  border: 1px solid var(--home-line);
-  min-height: 220px;
-  padding: clamp(20px, 2.5vw, 32px);
-}
-
-.coovNode > span,
-.coovLedger > span {
-  color: var(--home-accent);
-  display: block;
-  font-family: var(--font-mono), monospace;
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.coovNode strong,
-.coovLedger strong {
-  display: block;
-  font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-weight: 600;
-  letter-spacing: -.04em;
-  line-height: 1.12;
-  margin-top: 34px;
-}
-
-.coovNode small,
-.coovLedger small {
-  color: var(--home-muted);
-  display: block;
-  font-size: .83rem;
-  letter-spacing: -.01em;
-  line-height: 1.55;
-  margin-top: 14px;
-}
-
-.coovConnector {
-  color: var(--home-accent);
-  text-align: center;
-}
-
-.coovConnector i {
-  background: currentColor;
-  display: block;
-  height: 1px;
-  position: relative;
+.coovDiagram img {
+  height: auto;
   width: 100%;
-}
-
-.coovConnector i::after {
-  border-color: transparent transparent transparent currentColor;
-  border-style: solid;
-  border-width: 5px 0 5px 8px;
-  content: "";
-  position: absolute;
-  right: 0;
-  top: -5px;
-}
-
-.coovConnector span {
-  display: block;
-  font-family: var(--font-mono), monospace;
-  font-size: .62rem;
-  letter-spacing: .08em;
-  margin-top: 10px;
-  text-transform: uppercase;
-}
-
-.coovLedger {
-  background: #263a90;
-  border: 0;
-  color: #fff;
-  grid-column: 1 / -1;
-  min-height: 178px;
-}
-
-.coovLedger > span {
-  color: #c8d3ff;
-}
-
-.coovLedger strong {
-  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
-  margin-top: 24px;
-}
-
-.coovLedger small {
-  color: rgba(255, 255, 255, .72);
-  max-width: 32rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1440,19 +1345,6 @@
 
   .coovDiagram {
     margin-top: 42px;
-  }
-
-  .coovGraphic {
-    display: block;
-  }
-
-  .coovConnector {
-    margin: 18px auto;
-    width: 70%;
-  }
-
-  .coovLedger {
-    margin-top: 24px;
   }
 
   .project {

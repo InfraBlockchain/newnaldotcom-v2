@@ -244,5 +244,6 @@ export const homeV2Content = {
       "그 믿음은 COOV를 통해 현실에서 검증되었습니다. COOV는 개인의 민감한 정보를 중앙 서버에 모으지 않으면서도, 증명서의 진위 여부를 빠르고 안전하게 확인할 수 있는 구조를 보여주었습니다.",
       "Newnal은 이 경험을 통해 대규모 인증, 검증, 데이터 소유, 분산 인프라 운영에 필요한 기술과 노하우를 축적했습니다.",
     ],
+    image: "/images/aios/coov-proof-diagram.png",
   },
 } as const;
