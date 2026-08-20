@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { CircleStackIcon, SparklesIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import { ScrollToSovereignty } from "@/components/home/ScrollToSovereignty";
 import { homeV2Content as c } from "@/content/home-v2";
 import styles from "./page.module.css";
+
+const pillarIcons = [CircleStackIcon, SparklesIcon, UserGroupIcon] as const;
 
 export default function HomePage() {
   return (
@@ -71,15 +74,19 @@ export default function HomePage() {
           <p className={styles.pillarIntro}>{c.pillars.intro}</p>
         </div>
         <div className={styles.pillarGrid}>
-          {c.pillars.items.map((pillar, index) => (
-            <article key={pillar.title} className={styles.pillar} data-pillar={index}>
-              <div className={styles.pillarVisual} aria-hidden="true"><i /><i /><i /></div>
-              <p className={styles.pillarNumber}>{pillar.number}</p>
-              <h3>{pillar.title}</h3>
-              <p className={styles.pillarSummary}>{pillar.summary}</p>
-              <p className={styles.pillarBody}>{pillar.body}</p>
-            </article>
-          ))}
+          {c.pillars.items.map((pillar, index) => {
+            const Icon = pillarIcons[index] ?? CircleStackIcon;
+
+            return (
+              <article key={pillar.title} className={styles.pillar} data-pillar={index}>
+                <div className={styles.pillarIcon} aria-hidden="true"><Icon /></div>
+                <p className={styles.pillarNumber}>{pillar.number}</p>
+                <h3>{pillar.title}</h3>
+                <p className={styles.pillarSummary}>{pillar.summary}</p>
+                <p className={styles.pillarBody}>{pillar.body}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

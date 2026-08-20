@@ -425,6 +425,7 @@
 }
 
 .pillarGrid {
+  align-items: stretch;
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -435,15 +436,13 @@
   background: #eceff5;
   display: flex;
   flex-direction: column;
-  min-height: clamp(440px, 40vw, 550px);
-  overflow: hidden;
+  min-height: clamp(480px, 36vw, 540px);
   padding: clamp(26px, 3.2vw, 44px);
   position: relative;
 }
 
 .pillar:nth-child(2) {
   background: #e4e9f8;
-  margin-top: clamp(32px, 5vw, 70px);
 }
 
 .pillar:nth-child(3) {
@@ -451,56 +450,32 @@
   color: #fff;
 }
 
-.pillarVisual {
-  height: 42%;
-  inset: 0 0 auto;
-  overflow: hidden;
-  pointer-events: none;
-  position: absolute;
+.pillarIcon {
+  align-items: center;
+  background: rgba(255, 255, 255, .58);
+  border: 1px solid rgba(21, 25, 37, .14);
+  color: var(--home-accent);
+  display: flex;
+  height: 64px;
+  justify-content: center;
+  width: 64px;
 }
 
-.pillarVisual i {
-  background: #b3c1fb;
-  border-radius: 50%;
-  display: block;
-  height: 12vw;
-  max-height: 180px;
-  max-width: 180px;
-  min-height: 120px;
-  min-width: 120px;
-  position: absolute;
-  right: -5%;
-  top: -30%;
-  width: 12vw;
+.pillarIcon svg {
+  height: 30px;
+  stroke-width: 1.4;
+  width: 30px;
 }
 
-.pillarVisual i:nth-child(2) {
-  background: rgba(255, 255, 255, .94);
-  height: 9vw;
-  right: 31%;
-  top: 16%;
-  width: 9vw;
-}
-
-.pillarVisual i:nth-child(3) {
-  background: #7188ec;
-  height: 6vw;
-  right: 61%;
-  top: -10%;
-  width: 6vw;
-}
-
-.pillar[data-pillar="1"] .pillarVisual i {
-  border-radius: 32% 68% 58% 42%;
-}
-
-.pillar[data-pillar="2"] .pillarVisual i {
-  background: #c7d2ff;
+.pillar:nth-child(3) .pillarIcon {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .32);
+  color: #dce3ff;
 }
 
 .pillarNumber {
   color: var(--home-accent);
-  margin: 0;
+  margin: 30px 0 0;
   position: relative;
 }
 
@@ -1120,7 +1095,7 @@
   }
 
   .pillar {
-    min-height: 390px;
+    min-height: 440px;
     padding: 30px;
   }
 
@@ -1129,7 +1104,7 @@
   }
 
   .pillar:nth-child(2) {
-    margin-top: 46px;
+    margin-top: 14px;
   }
 
   .pillar h3 {
