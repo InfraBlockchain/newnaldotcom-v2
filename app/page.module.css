@@ -27,7 +27,9 @@
 .partnerDevices,
 .privatePhone,
 .projects,
-.company {
+.company,
+.story,
+.coovProof {
   margin-inline: auto;
   max-width: 1440px;
 }
@@ -93,6 +95,23 @@
   white-space: nowrap;
 }
 
+.heroLead {
+  color: var(--home-accent);
+  font-size: clamp(1.08rem, 1.35vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -.03em;
+  line-height: 1.5;
+  margin: 30px auto 0;
+}
+
+.heroLead p {
+  margin: 0;
+}
+
+.heroLead p + p {
+  margin-top: 4px;
+}
+
 .heroBody p,
 .bodyCopy p {
   margin: 0;
@@ -108,8 +127,8 @@
   font-size: clamp(1rem, 1.05vw, 1.25rem);
   letter-spacing: -.02em;
   line-height: 1.7;
-  margin-top: 34px;
-  max-width: 38rem;
+  margin-top: 20px;
+  max-width: 42rem;
   margin-inline: auto;
 }
 
@@ -424,6 +443,11 @@
   margin: 32px 0 0;
 }
 
+.pillarOverview {
+  margin-top: 24px;
+  max-width: 48rem;
+}
+
 .pillarGrid {
   align-items: stretch;
   display: grid;
@@ -552,6 +576,15 @@
   letter-spacing: .1em;
   margin: 36px 0 0;
   text-transform: uppercase;
+}
+
+.architectureClosing {
+  color: var(--home-ink);
+  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.45;
+  margin: 16px 0 0;
 }
 
 .proof {
@@ -1001,6 +1034,114 @@
   transform: rotate(45deg);
 }
 
+.story,
+.coovProof {
+  border-top: 1px solid var(--home-line);
+  padding: clamp(92px, 12vw, 174px) clamp(24px, 5.55vw, 80px);
+}
+
+.story {
+  background: #f7f8fb;
+}
+
+.storyHeader,
+.storyDetails {
+  display: grid;
+  gap: clamp(44px, 8vw, 120px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .75fr);
+}
+
+.story h2,
+.coovProof h2 {
+  font-family: var(--font-body), "Pretendard Variable", Pretendard, sans-serif;
+  font-size: clamp(2.85rem, 4.8vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1.03;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.storyDetails {
+  border-top: 1px solid var(--home-line);
+  margin-top: clamp(64px, 9vw, 124px);
+  padding-top: 22px;
+}
+
+.storySubtext {
+  color: var(--home-ink);
+  font-size: clamp(1.15rem, 1.65vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.5;
+}
+
+.storySubtext p {
+  margin: 0;
+}
+
+.storySubtext p + p {
+  margin-top: 18px;
+}
+
+.milestones {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.milestones li {
+  align-items: baseline;
+  border-top: 1px solid var(--home-line);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(88px, .32fr) minmax(0, 1.68fr);
+  padding: 18px 0;
+}
+
+.milestones strong {
+  color: var(--home-accent);
+  font-family: var(--font-mono), monospace;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.milestones span {
+  color: var(--home-muted);
+  font-size: .96rem;
+  letter-spacing: -.015em;
+  line-height: 1.6;
+}
+
+.coovProof {
+  background: #e9edf5;
+}
+
+.coovHeader {
+  max-width: 1060px;
+}
+
+.coovDetails {
+  align-items: start;
+  display: grid;
+  gap: clamp(44px, 8vw, 120px);
+  grid-template-columns: minmax(240px, .58fr) minmax(0, 1.42fr);
+  margin-top: clamp(58px, 8vw, 108px);
+}
+
+.coovDiagram {
+  background: #fff;
+  margin: 0;
+  padding: clamp(20px, 3vw, 42px);
+}
+
+.coovDiagram img {
+  height: auto;
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .heroCopy,
   .heroArtwork {
@@ -1049,7 +1190,9 @@
   .partnerDevices,
   .privatePhone,
   .projects,
-  .company {
+  .company,
+  .story,
+  .coovProof {
     padding: 92px 20px;
   }
 
@@ -1204,6 +1347,28 @@
 
   .company {
     display: block;
+  }
+
+  .storyHeader,
+  .storyDetails,
+  .coovDetails {
+    display: block;
+  }
+
+  .storyDetails {
+    margin-top: 54px;
+  }
+
+  .milestones {
+    margin-top: 42px;
+  }
+
+  .coovDetails {
+    margin-top: 54px;
+  }
+
+  .coovDiagram {
+    margin-top: 42px;
   }
 
   .project {

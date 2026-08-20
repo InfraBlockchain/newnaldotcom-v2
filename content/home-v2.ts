@@ -45,6 +45,11 @@ export const homeV2Content = {
     eyebrow: "Newnal aios 3 pillars",
     title: "Newnal aios를 구성하는 세 가지 기둥.",
     intro: "Newnal aios는 세 가지 핵심 구조 위에서 작동합니다.",
+    main: [
+      "첫째, My Data. 개인의 데이터가 AI 개인화의 기반이 됩니다.",
+      "둘째, AI Interface. 사용자가 계속 입력하는 인터페이스가 아니라, AI가 먼저 맥락을 이해하고 제안하는 인터페이스입니다.",
+      "셋째, Agent Place. 서비스와 AI 에이전트가 사용자의 허락을 받아 My AI에 접속하고, 사용자를 위해 경쟁하는 새로운 에이전트 생태계입니다.",
+    ],
     items: [
       {
         number: "01",
@@ -74,6 +79,7 @@ export const homeV2Content = {
       "그 위에 Newnal은 My Data, My AI, AI Interface, Agent Place가 작동하는 AI-native layer를 더합니다. 즉, Newnal aios는 기존 시스템과의 단절이 아니라 연결입니다.",
     ],
     statement: "Not replacement. Continuity.",
+    closing: "그리고 그 연속성 위에서 진짜 AI 경험이 시작됩니다.",
     subtext: "Newnal의 기술 기반은 이미 대규모 인프라 운영 경험 위에 있습니다. Blockchain Labs가 구축한 InfraBlockchain과 COOV 기반 기술은 데이터 소유, 인증, 검증, 대규모 디지털 인프라 운영 역량을 증명해왔습니다.",
     proof: [
       { value: "43M+", label: "사용자 규모의 인프라 경험" },
@@ -85,8 +91,10 @@ export const homeV2Content = {
     eyebrow: "Partner device platform",
     title: "Newnal aios는 파트너의 디바이스 위에서 확장됩니다.",
     body: [
-      "Newnal은 모든 디바이스를 직접 만들려는 회사가 아닙니다. Newnal aios는 다양한 파트너사가 자신들의 산업, 고객, 하드웨어, 디자인, 유통 구조에 맞춰 AI-native device를 만들 수 있도록 하는 운영체제 플랫폼입니다.",
-      "YALI, ILLI, ONNI, UFO와 같은 디바이스 콘셉트는 Newnal aios가 어떤 방식으로 산업별 경험으로 확장될 수 있는지를 보여주는 예시입니다. 실제 제품은 파트너사의 요구에 따라 하드웨어, 디자인, 기능, 콘텐츠, 서비스 구조를 함께 설계할 수 있습니다.",
+      "Newnal은 모든 디바이스를 직접 만들려는 회사가 아닙니다.",
+      "Newnal aios는 다양한 파트너사가 자신들의 산업, 고객, 하드웨어, 디자인, 유통 구조에 맞춰 AI-native device를 만들 수 있도록 하는 운영체제 플랫폼입니다.",
+      "YALI, ILLI, ONNI, UFO와 같은 디바이스 콘셉트는 Newnal aios가 어떤 방식으로 산업별 경험으로 확장될 수 있는지를 보여주는 예시입니다.",
+      "실제 제품은 파트너사의 요구에 따라 하드웨어, 디자인, 기능, 콘텐츠, 서비스 구조를 함께 설계할 수 있습니다.",
     ],
     examples: [
       {
@@ -106,7 +114,7 @@ export const homeV2Content = {
       },
       {
         title: "UFO",
-        body: "게임, 리테일, 도시 경험 파트너를 위한 Real-world Adventure Device. 걷기, 탐험, 위치 기반 미션, 보상 시스템을 결합해 현실 공간을 AI 기반 게임 필드로 만듭니다.",
+        body: "게임·리테일·도시 경험 파트너를 위한 Real-world Adventure Device. 걷기, 탐험, 위치 기반 미션, 보상 시스템을 결합해 현실 공간을 AI 기반 게임 필드로 만듭니다.",
         image: "/images/devices/slide-ufo.png",
       },
     ],
@@ -121,7 +129,8 @@ export const homeV2Content = {
     body: [
       "Private Phone은 Newnal의 자체 기술로 구현되는 고보안 커뮤니케이션 제품입니다.",
       "일반 보안폰이 해커로부터 사용자를 보호한다면, Newnal Private Phone은 대화 상대방이 스크린샷을 찍거나, 통화를 녹음하거나, 대화를 맥락 없이 유출하는 상황까지 고려합니다.",
-      "핵심은 단순 암호화가 아닙니다. 신원, 음성, 메시지 기록, 연락 구조를 모두 분리해 유출된 정보가 곧바로 사용자의 말과 정체성으로 확정되지 않도록 설계합니다.",
+      "핵심은 단순 암호화가 아닙니다.",
+      "신원, 음성, 메시지 기록, 연락 구조를 모두 분리해 유출된 정보가 곧바로 사용자의 말과 정체성으로 확정되지 않도록 설계합니다.",
     ],
     technologies: [
       {
@@ -207,5 +216,34 @@ export const homeV2Content = {
       { label: "Newnal aios 소개자료 요청", subject: "Request Newnal aios Deck" },
       { label: "Private Phone 미팅 요청", subject: "Request Private Phone Meeting" },
     ],
+  },
+  story: {
+    title: "우리는 오래전부터 같은 문제를 풀어왔습니다.",
+    body: [
+      "Newnal의 시작은 하나의 질문이었습니다. 기술이 발전할수록 더 많은 데이터와 가치가 만들어지는데, 그 데이터의 주인인 개인은 왜 정작 그 가치에서 멀어지는가.",
+      "Newnal은 이 질문을 블록체인, 개인 데이터, 검증 인프라, 그리고 AI-native OS로 이어지는 하나의 긴 여정으로 풀어왔습니다.",
+      "2013년부터 우리는 개인이 자신의 데이터를 소유하고, 통제하고, 활용할 수 있는 구조를 고민해왔습니다. 단기적인 유행이나 빠른 수익보다, 개인 데이터 주권이라는 더 큰 방향을 선택했습니다.",
+      "그 선택은 쉽지 않았지만, Newnal이 오늘 AI 시대의 운영체제를 말할 수 있는 이유가 되었습니다.",
+    ],
+    subtext: [
+      "Newnal의 지난 여정은 하나의 일관된 방향 위에 있습니다.",
+      "개인의 데이터는 개인에게. 데이터의 사용은 투명하게. AI의 가치는 다시 사람에게.",
+    ],
+    milestones: [
+      { year: "2013", text: "개인 데이터 주권과 검증 인프라에 대한 문제의식에서 시작." },
+      { year: "2018", text: "가상화폐 없는 퍼블릭 블록체인이라는 독자적 방향 정립." },
+      { year: "2020-2021", text: "COOV를 통해 블록체인 기반 검증 기술의 실사용 가능성을 대규모로 증명." },
+      { year: "2022-", text: "개인 데이터를 수집, 정리, 저장, 활용할 수 있는 기반 시스템 개발." },
+      { year: "Now", text: "그 모든 기반 위에서 Newnal aios, AI-native OS를 구축." },
+    ],
+  },
+  coov: {
+    title: "철학에 머물지 않고, 현실에서 증명했습니다.",
+    body: [
+      "Newnal은 단순히 미래를 이야기하는 회사가 아닙니다. 우리는 블록체인이 투기적 자산을 위한 기술이 아니라, 개인의 정보를 안전하게 증명하고 검증하는 사회적 인프라가 될 수 있다고 믿었습니다.",
+      "그 믿음은 COOV를 통해 현실에서 검증되었습니다. COOV는 개인의 민감한 정보를 중앙 서버에 모으지 않으면서도, 증명서의 진위 여부를 빠르고 안전하게 확인할 수 있는 구조를 보여주었습니다.",
+      "Newnal은 이 경험을 통해 대규모 인증, 검증, 데이터 소유, 분산 인프라 운영에 필요한 기술과 노하우를 축적했습니다.",
+    ],
+    image: "/images/aios/coov-proof-diagram.png",
   },
 } as const;

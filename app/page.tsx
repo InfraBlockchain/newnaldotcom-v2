@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import { CircleStackIcon, SparklesIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import { ScrollToSovereignty } from "@/components/home/ScrollToSovereignty";
 import { homeV2Content as c } from "@/content/home-v2";
@@ -13,14 +13,16 @@ export default function HomePage() {
         <div className={styles.heroCopy}>
           <p className={styles.heroEyebrow}>Newnal aios / AI-native operating system</p>
           <h1 id="home-title">AI 시대의 <span>운영체제를 만듭니다.</span></h1>
+          <div className={styles.heroLead}>
+            {c.hero.lead.map((line) => <p key={line}>{line}</p>)}
+          </div>
           <div className={styles.heroBody}>
-            <p>{c.hero.body[0]}</p>
+            {c.hero.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <ScrollToSovereignty className={styles.primaryAction} />
         </div>
         <div className={styles.heroNote}>
-          <p>{c.hero.lead.join(" ")}</p>
-          <p>{c.hero.body[1]}</p>
+          <p>{c.hero.subtext}</p>
         </div>
       </section>
 
@@ -31,7 +33,7 @@ export default function HomePage() {
         </div>
         <div className={styles.sovereigntyContent}>
           <div className={styles.bodyCopy}>
-            <p>{c.sovereignty.body[0]}</p>
+            {c.sovereignty.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <p className={styles.sectionSummary}>{c.sovereignty.subtext}</p>
           <div className={styles.choiceGrid}>
@@ -72,6 +74,9 @@ export default function HomePage() {
           <p className={styles.sectionLabel}>{c.pillars.eyebrow}</p>
           <h2 id="pillars-title">{c.pillars.title}</h2>
           <p className={styles.pillarIntro}>{c.pillars.intro}</p>
+          <div className={`${styles.bodyCopy} ${styles.pillarOverview}`}>
+            {c.pillars.main.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
         </div>
         <div className={styles.pillarGrid}>
           {c.pillars.items.map((pillar, index) => {
@@ -101,6 +106,7 @@ export default function HomePage() {
             {c.architecture.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <p className={styles.continuity}>{c.architecture.statement}</p>
+          <p className={styles.architectureClosing}>{c.architecture.closing}</p>
           </div>
           <div className={styles.proof}>
             <p>{c.architecture.subtext}</p>
@@ -116,22 +122,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.projects} aria-labelledby="projects-title">
-        <div className={styles.sectionIntro}>
-          <p className={styles.sectionLabel}>{c.projects.eyebrow}</p>
-          <h2 id="projects-title">{c.projects.title}</h2>
+      <section className={styles.partnerDevices} aria-labelledby="partner-devices-title">
+        <div className={styles.partnerHeader}>
+          <div>
+            <p className={styles.sectionLabel}>{c.partnerDevices.eyebrow}</p>
+            <h2 id="partner-devices-title">{c.partnerDevices.title}</h2>
+          </div>
+          <div className={styles.bodyCopy}>
+            {c.partnerDevices.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
         </div>
-        <div className={styles.projectGrid}>
-          {c.projects.items.map((project) => (
-            <Link key={project.title} className={styles.project} href={project.href}>
-              <div className={styles.projectCopy}>
-                <h3>{project.title}</h3>
-                <p>{project.body}</p>
-                <span className={styles.projectArrow} aria-hidden="true">↗</span>
+        <div className={styles.deviceExamples}>
+          {c.partnerDevices.examples.map((device) => (
+            <article key={device.title} className={styles.deviceExample}>
+              <Image src={device.image} alt={`${device.title} device`} fill sizes="(max-width: 767px) 100vw, 50vw" />
+              <div className={styles.deviceOverlay} />
+              <div className={styles.deviceCopy}>
+                <h3>{device.title}</h3>
+                <p>{device.body}</p>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
+        <div className={styles.partnerClosing}>
+          {c.partnerDevices.subtext.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section className={styles.privatePhone} aria-labelledby="private-phone-title">
+        <div className={styles.privateHeader}>
+          <div>
+            <p className={styles.sectionLabel}>{c.privatePhone.eyebrow}</p>
+            <h2 id="private-phone-title">{c.privatePhone.title}</h2>
+          </div>
+          <div className={styles.bodyCopy}>
+            {c.privatePhone.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+        </div>
+        <div className={styles.privateVisual}>
+          <Image src="/images/private/hero-private-phone.png" alt="Newnal Private Phone" fill sizes="(max-width: 767px) 100vw, 90vw" />
+        </div>
+        <div className={styles.technologyList}>
+          {c.privatePhone.technologies.map((technology) => (
+            <article key={technology.number} className={styles.technology}>
+              <p>{technology.number}</p>
+              <h3>{technology.title}</h3>
+              <span>{technology.body}</span>
+            </article>
+          ))}
+        </div>
+        <p className={styles.privateClosing}>{c.privatePhone.subtext}</p>
       </section>
 
       <section className={styles.company} aria-labelledby="company-title">
@@ -157,6 +197,43 @@ export default function HomePage() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={styles.story} aria-labelledby="story-title">
+        <div className={styles.storyHeader}>
+          <h2 id="story-title">{c.story.title}</h2>
+          <div className={styles.bodyCopy}>
+            {c.story.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+        </div>
+        <div className={styles.storyDetails}>
+          <div className={styles.storySubtext}>
+            {c.story.subtext.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <ol className={styles.milestones}>
+            {c.story.milestones.map((milestone) => (
+              <li key={milestone.year}>
+                <strong>{milestone.year}</strong>
+                <span>{milestone.text}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className={styles.coovProof} aria-labelledby="coov-title">
+        <div className={styles.coovHeader}>
+          <p className={styles.sectionLabel}>COOV</p>
+          <h2 id="coov-title">{c.coov.title}</h2>
+        </div>
+        <div className={styles.coovDetails}>
+          <div className={styles.bodyCopy}>
+            {c.coov.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <figure className={styles.coovDiagram}>
+            <Image src={c.coov.image} alt="COOV blockchain-based COVID vaccine pass verification flow" width={760} height={514} sizes="(max-width: 767px) 100vw, 58vw" />
+          </figure>
         </div>
       </section>
     </main>
