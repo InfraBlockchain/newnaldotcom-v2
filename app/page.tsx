@@ -147,28 +147,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.privatePhone} aria-labelledby="private-phone-title">
-        <div className={styles.privateHeader}>
-          <div>
-            <p className={styles.sectionLabel}>{c.privatePhone.eyebrow}</p>
-            <h2 id="private-phone-title">{c.privatePhone.title}</h2>
-          </div>
-          <div className={styles.bodyCopy}>
-            {c.privatePhone.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </div>
-        <div className={styles.technologyList}>
-          {c.privatePhone.technologies.map((technology) => (
-            <article key={technology.number} className={styles.technology}>
-              <p>{technology.number}</p>
-              <h3>{technology.title}</h3>
-              <span>{technology.body}</span>
-            </article>
-          ))}
-        </div>
-        <p className={styles.privateClosing}>{c.privatePhone.subtext}</p>
-      </section>
-
       <section className={styles.story} aria-labelledby="story-title">
         <div className={styles.storyHeader}>
           <h2 id="story-title">{c.story.title}</h2>
