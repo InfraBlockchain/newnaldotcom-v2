@@ -18,10 +18,10 @@ export default function HomePage() {
           <div className={styles.heroBody}>
             {c.hero.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
+          <div className={styles.heroNote}>
+            <p>{c.hero.subtext}</p>
+          </div>
           <ScrollToSovereignty className={styles.primaryAction} />
-        </div>
-        <div className={styles.heroNote}>
-          <p>{c.hero.subtext}</p>
         </div>
       </section>
 
