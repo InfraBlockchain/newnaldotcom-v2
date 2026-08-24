@@ -11,7 +11,6 @@ export default function HomePage() {
     <main id="main-content" className={styles.home} data-page="home">
       <section className={styles.hero} aria-labelledby="home-title">
         <div className={styles.heroCopy}>
-          <p className={styles.heroEyebrow}>Newnal aios / AI-native operating system</p>
           <h1 id="home-title">AI 시대의 <span>운영체제를 만듭니다.</span></h1>
           <div className={styles.heroLead}>
             {c.hero.lead.map((line) => <p key={line}>{line}</p>)}
@@ -28,7 +27,6 @@ export default function HomePage() {
 
       <section id="data-sovereignty" className={styles.sovereignty} aria-labelledby="sovereignty-title">
         <div className={styles.sectionIntro}>
-          <p className={styles.sectionLabel}>{c.sovereignty.eyebrow}</p>
           <h2 id="sovereignty-title">{c.sovereignty.title}</h2>
         </div>
         <div className={styles.sovereigntyContent}>
@@ -54,7 +52,6 @@ export default function HomePage() {
 
       <section className={styles.why} aria-labelledby="why-title">
         <div className={styles.whyHeader}>
-          <p className={styles.sectionLabel}>{c.why.eyebrow}</p>
           <h2 id="why-title">{c.why.title}</h2>
         </div>
         <div className={styles.eraLine} aria-hidden="true">
@@ -74,7 +71,6 @@ export default function HomePage() {
 
       <section className={styles.pillars} aria-labelledby="pillars-title">
         <div className={styles.sectionIntro}>
-          <p className={styles.sectionLabel}>{c.pillars.eyebrow}</p>
           <h2 id="pillars-title">{c.pillars.title}</h2>
           <p className={styles.pillarIntro}>{c.pillars.intro}</p>
           <div className={`${styles.bodyCopy} ${styles.pillarOverview}`}>
@@ -100,7 +96,6 @@ export default function HomePage() {
 
       <section className={styles.architecture} aria-labelledby="architecture-title">
         <div className={styles.architectureHeader}>
-          <p className={styles.sectionLabel}>{c.architecture.eyebrow}</p>
           <h2 id="architecture-title">기존 시스템을 버리지 않고,<span>AI-native layer를 더합니다.</span></h2>
         </div>
         <div className={styles.architectureDetails}>
@@ -128,7 +123,6 @@ export default function HomePage() {
       <section className={styles.partnerDevices} aria-labelledby="partner-devices-title">
         <div className={styles.partnerHeader}>
           <div>
-            <p className={styles.sectionLabel}>{c.partnerDevices.eyebrow}</p>
             <h2 id="partner-devices-title">{c.partnerDevices.title}</h2>
           </div>
           <div className={styles.bodyCopy}>
@@ -175,7 +169,6 @@ export default function HomePage() {
 
       <section className={styles.coovProof} aria-labelledby="coov-title">
         <div className={styles.coovHeader}>
-          <p className={styles.sectionLabel}>COOV</p>
           <h2 id="coov-title">{c.coov.title}</h2>
         </div>
         <div className={styles.coovDetails}>
@@ -190,7 +183,6 @@ export default function HomePage() {
 
       <section className={styles.company} aria-labelledby="company-title">
         <div>
-          <p className={styles.sectionLabel}>{c.company.eyebrow}</p>
           <h2 id="company-title">{c.company.title}</h2>
         </div>
         <div className={styles.companyCopy}>
