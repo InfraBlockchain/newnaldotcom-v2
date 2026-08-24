@@ -7,9 +7,10 @@ export const homeV2Content = {
     ],
     body: [
       "Newnal은 개인의 데이터, 맥락, 에이전트, 디바이스가 하나의 구조 안에서 작동하는 AI-native Operating System, Newnal aios를 만들고 있습니다.",
-      "기존 OS 위에 AI 앱을 하나 더 얹는 방식이 아니라, AI가 사람을 이해하고, 제안하고, 실행할 수 있는 새로운 운영체제 구조입니다.",
+      "개인의 정보 주권을 기반으로, 세상의 AI가 나를 이해하고, 나를 위해 움직이며, 나의 삶을 확장하는 AI-native OS.",
+      "그것이 Newnal aios입니다.",
     ],
-    subtext: "Newnal aios는 개인 데이터 기반 AI 경험을 가능하게 하고, 파트너 디바이스는 이를 다양한 산업과 사용 환경으로 확장하며, Private Phone은 Newnal의 보안과 프라이버시 기술을 자체 제품으로 구현합니다.",
+    subtext: "Newnal aios는 개인의 My Data를 기반으로 나만의 AI를 만들고, 기존 입력 중심의 User Interface를 선제적 제안 중심의 AI Interface로 바꾸며, 다양한 서비스와 에이전트가 사용자 허락 아래 연결되는 새로운 Agent Place를 엽니다.",
   },
   sovereignty: {
     eyebrow: "One architecture. Complete data sovereignty.",
