@@ -6,8 +6,8 @@ export const homeV2Content = {
       "새로운 컴퓨팅 시대의 중심입니다.",
     ],
     body: [
-      "Newnal은 개인의 데이터, 맥락, 에이전트, 디바이스가 하나의 구조 안에서 작동하는 AI-native Operating System, Newnal aios를 만들고 있습니다.",
-      "개인의 정보 주권을 기반으로, 세상의 AI가 나를 이해하고, 나를 위해 움직이며, 나의 삶을 확장하는 AI-native OS.",
+      "Newnal은 개인의 데이터, 맥락, 에이전트, 디바이스가 하나의 구조 안에서 작동하는\nAI-native Operating System, Newnal aios를 만들고 있습니다.",
+      "개인의 정보 주권을 기반으로, 세상의 AI가 나를 이해하고,\n나를 위해 움직이며, 나의 삶을 확장하는 AI-native OS.",
       "그것이 Newnal aios입니다.",
     ],
     subtext: "Newnal aios는 개인의 My Data를 기반으로 나만의 AI를 만들고, 기존 입력 중심의 User Interface를 선제적 제안 중심의 AI Interface로 바꾸며, 다양한 서비스와 에이전트가 사용자 허락 아래 연결되는 새로운 Agent Place를 엽니다.",

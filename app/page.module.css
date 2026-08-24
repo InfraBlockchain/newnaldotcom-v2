@@ -130,6 +130,10 @@
   margin-inline: auto;
 }
 
+.heroBody p {
+  white-space: pre-line;
+}
+
 .primaryAction {
   align-items: center;
   background: #151925;
