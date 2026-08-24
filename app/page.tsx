@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CircleStackIcon, SparklesIcon, UserGroupIcon } from "@heroicons/react/24/outline";
+import { CircleStackIcon, LockClosedIcon, SparklesIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import { ScrollToSovereignty } from "@/components/home/ScrollToSovereignty";
 import { homeV2Content as c } from "@/content/home-v2";
 import styles from "./page.module.css";
@@ -41,7 +41,10 @@ export default function HomePage() {
           <div className={styles.choiceGrid}>
             {c.sovereignty.choices.map((choice) => (
               <article key={choice.title} className={styles.choice}>
-                <h3>{choice.title}</h3>
+                <div className={styles.choiceTitle}>
+                  <LockClosedIcon aria-hidden="true" />
+                  <h3>{choice.title}</h3>
+                </div>
                 <p>{choice.body}</p>
               </article>
             ))}
