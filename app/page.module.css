@@ -146,6 +146,10 @@
   object-fit: cover;
 }
 
+.scenarioCard:first-child .scenarioImage {
+  object-position: 65% center;
+}
+
 .scenarioMeta {
   background: rgba(247, 248, 251, .96);
   bottom: 0;
