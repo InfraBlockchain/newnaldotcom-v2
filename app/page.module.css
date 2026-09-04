@@ -74,6 +74,13 @@
   margin-top: 10px;
 }
 
+.heroBody p:first-child {
+  color: var(--accent);
+  font-size: clamp(1.14rem, 1.45vw, 1.42rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 .primaryAction {
   align-items: center;
   background: var(--ink);
