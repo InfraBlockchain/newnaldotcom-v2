@@ -19,7 +19,7 @@ export function ScrollToSovereignty({ className }: ScrollToSovereigntyProps) {
 
   return (
     <button className={className} type="button" onClick={scrollToSovereignty}>
-      Newnal aios 소개 보기 <span aria-hidden="true">↓</span>
+      AI 디바이스 보기 <span aria-hidden="true">↓</span>
     </button>
   );
 }
