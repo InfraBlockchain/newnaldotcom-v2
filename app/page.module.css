@@ -136,39 +136,25 @@
 
 .scenarioCard {
   aspect-ratio: 1.08;
-  background: linear-gradient(140deg, #f8f9fc 0%, #dce4f5 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: #dce4f5;
   min-height: 240px;
   overflow: hidden;
-  padding: clamp(22px, 2.6vw, 38px);
   position: relative;
 }
 
-.scenarioCard::after {
-  border: 1px solid rgba(49, 84, 214, .22);
-  border-radius: 50%;
-  content: "";
-  height: 72%;
+.scenarioImage {
+  object-fit: cover;
+}
+
+.scenarioMeta {
+  background: rgba(247, 248, 251, .96);
+  bottom: 0;
+  left: 0;
+  padding: 16px 20px;
   position: absolute;
-  right: -22%;
-  top: -26%;
-  width: 72%;
+  right: 0;
 }
 
-.scenarioCard:nth-child(2)::after,
-.scenarioCard:nth-child(5)::after {
-  background: rgba(49, 84, 214, .08);
-  border: 0;
-}
-
-.scenarioCard:nth-child(3),
-.scenarioCard:nth-child(6) {
-  background: linear-gradient(140deg, #e2e7f7 0%, #c5d0ee 100%);
-}
-
-.scenarioCard span,
 .pillar > span {
   color: var(--accent);
   font-family: var(--font-mono), monospace;
@@ -180,14 +166,11 @@
 }
 
 .scenarioCard h3 {
-  font-size: clamp(1.35rem, 1.9vw, 2rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.3rem);
   font-weight: 500;
   letter-spacing: -.045em;
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0;
-  max-width: 12rem;
-  position: relative;
-  z-index: 1;
 }
 
 .sectionClosing {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ScrollToSovereignty } from "@/components/home/ScrollToSovereignty";
 import { homeV2Content as c } from "@/content/home-v2";
 import styles from "./page.module.css";
@@ -20,10 +21,12 @@ export default function HomePage() {
           <h2 id="devices-title">{c.devices.title}</h2>
         </div>
         <div className={styles.scenarioGrid}>
-          {c.devices.scenarios.map((scenario, index) => (
-            <article key={scenario} className={styles.scenarioCard}>
-              <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{scenario}</h3>
+          {c.devices.scenarios.map((scenario) => (
+            <article key={scenario.title} className={styles.scenarioCard}>
+              <Image className={styles.scenarioImage} src={scenario.image} alt={scenario.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+              <div className={styles.scenarioMeta}>
+                <h3>{scenario.title}</h3>
+              </div>
             </article>
           ))}
         </div>
