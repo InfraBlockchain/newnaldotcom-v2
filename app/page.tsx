@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className={styles.scenarioGrid}>
           {c.devices.scenarios.map((scenario) => (
             <article key={scenario.title} className={styles.scenarioCard}>
-              <Image className={styles.scenarioImage} src={scenario.image} alt={scenario.title} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+              <Image className={styles.scenarioImage} src={scenario.image} alt={scenario.title} width={scenario.width} height={scenario.height} sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
               <div className={styles.scenarioMeta}>
                 <h3>{scenario.title}</h3>
               </div>

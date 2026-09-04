@@ -135,28 +135,19 @@
 }
 
 .scenarioCard {
-  aspect-ratio: 1.08;
-  background: #dce4f5;
-  min-height: 240px;
+  background: #fff;
   overflow: hidden;
-  position: relative;
 }
 
 .scenarioImage {
-  object-fit: cover;
-}
-
-.scenarioCard:first-child .scenarioImage {
-  object-position: 65% center;
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .scenarioMeta {
-  background: rgba(247, 248, 251, .96);
-  bottom: 0;
-  left: 0;
+  background: #fff;
   padding: 16px 20px;
-  position: absolute;
-  right: 0;
 }
 
 .pillar > span {
@@ -440,11 +431,6 @@
   .pillarGrid,
   .metricGrid {
     grid-template-columns: 1fr;
-  }
-
-  .scenarioCard {
-    aspect-ratio: 1.45;
-    min-height: 210px;
   }
 
   .pillar {

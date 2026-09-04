@@ -9,12 +9,12 @@ export const homeV2Content = {
   devices: {
     title: "산업마다 다른 AI 디바이스 — 모두 하나의 aios 위에서 만들어집니다.",
     scenarios: [
-      { title: "시니어를 위한 AI 디바이스", image: "/images/home/device-scenarios/senior.png" },
-      { title: "아이를 위한 AI 디바이스", image: "/images/home/device-scenarios/children.png" },
-      { title: "팬을 위한 아티스트 공식 AI", image: "/images/home/device-scenarios/fans.png" },
-      { title: "스포츠 팬을 위한 AI 디바이스", image: "/images/home/device-scenarios/sports.png" },
-      { title: "반려 가정을 위한 AI 디바이스", image: "/images/home/device-scenarios/pets.png" },
-      { title: "웰니스를 위한 AI 디바이스", image: "/images/home/device-scenarios/wellness.png" },
+      { title: "시니어를 위한 AI 디바이스", image: "/images/home/device-scenarios/senior.png", width: 1451, height: 861 },
+      { title: "아이를 위한 AI 디바이스", image: "/images/home/device-scenarios/children.png", width: 1536, height: 1024 },
+      { title: "팬을 위한 아티스트 공식 AI", image: "/images/home/device-scenarios/fans.png", width: 1536, height: 1024 },
+      { title: "스포츠 팬을 위한 AI 디바이스", image: "/images/home/device-scenarios/sports.png", width: 1536, height: 1024 },
+      { title: "반려 가정을 위한 AI 디바이스", image: "/images/home/device-scenarios/pets.png", width: 1536, height: 1024 },
+      { title: "웰니스를 위한 AI 디바이스", image: "/images/home/device-scenarios/wellness.png", width: 1536, height: 1024 },
     ],
     closing: "이외에도 다양한 산업군에 적용이 가능합니다.",
   },
