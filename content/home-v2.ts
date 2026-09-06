@@ -83,7 +83,9 @@ export const homeV2Content = {
     body: "뉴날은 자체 AI 운영체제(aios)로 AI 디바이스를 만드는 파운드리입니다. 2013년 샌프란시스코에서 설립되었고, 대한민국 4,300만 명이 사용한 백신 패스 COOV를 개발·운영했으며, 미국·한국·유럽·국제에 90여 건의 특허를 등록·출원했습니다. 이사회 의장은 권오현(前 삼성전자 회장), 주요 주주는 LiveX AI와 스마일게이트이며, LiveX AI 창업자 Jia Li가 공동 창업자로 참여하고 있습니다.",
   },
   contact: {
-    label: "파트너십 문의",
+    label: "문의 (Contact)",
+    introduction: "사업 분야를 알려주시면, 귀사의 서비스가 어떻게 aios 위에서 디바이스로 구현되는지 보여드립니다.",
+    emailLabel: "파트너십 문의",
     email: "partner@newnal.com",
     closing: "Newnal Inc. — 자체 AI 운영체제(aios)로 AI 디바이스를 만드는 파운드리 · © 2026 Newnal Inc.",
   },

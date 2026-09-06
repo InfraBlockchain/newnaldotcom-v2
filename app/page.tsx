@@ -125,7 +125,8 @@ export default function HomePage() {
       <section className={`${styles.contact} ${styles.section}`} aria-labelledby="contact-title">
         <div>
           <h2 id="contact-title">{c.contact.label}</h2>
-          <a href={`mailto:${c.contact.email}`} className={styles.email}>{c.contact.email} <span aria-hidden="true">↗</span></a>
+          <p className={styles.contactIntroduction}>{c.contact.introduction}</p>
+          <a href={`mailto:${c.contact.email}`} className={styles.email}>{c.contact.emailLabel} — {c.contact.email} <span aria-hidden="true">↗</span></a>
         </div>
         <p>{c.contact.closing}</p>
       </section>
