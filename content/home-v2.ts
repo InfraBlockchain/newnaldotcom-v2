@@ -87,6 +87,6 @@ export const homeV2Content = {
     introduction: "사업 분야를 알려주시면, 귀사의 서비스가 어떻게 aios 위에서 디바이스로 구현되는지 보여드립니다.",
     emailLabel: "파트너십 문의",
     email: "partner@newnal.com",
-    closing: "Newnal Inc. — 자체 AI 운영체제(aios)로 AI 디바이스를 만드는 파운드리 · © 2026 Newnal Inc.",
+    closing: "Newnal Inc. — 자체 AI 운영체제(aios)로 다양한 기업들을 위한 AI 디바이스를 만드는 파운드리 · © 2026 Newnal Inc.",
   },
 } as const;
